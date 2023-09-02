@@ -1,3 +1,5 @@
+# Branche de développement de Noémie da Silva
+
 # Développement d'un thème Wordpress 
 ## 5W5 - Projet Web en équipe 2023
 ### Auteur du thème : Noémie da Silva, Victor Desjardins, Vincent Gélinas, Vincent Hum, Dac Anne Nguyen
