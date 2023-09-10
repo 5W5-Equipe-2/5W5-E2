@@ -48,9 +48,9 @@ add_theme_support('custom-background');
 function enregistrer_sidebar() {
 
     register_sidebar( array(
-        'name' => __( 'Footer 1', '2023-5W5-E2' ),
+        'name' => __( 'Footer 1', '5W5-E2' ),
         'id' => 'footer_1',
-        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '2023-5W5-E2' ),
+        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '5W5-E2' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
@@ -58,9 +58,9 @@ function enregistrer_sidebar() {
     ) );
 
     register_sidebar( array(
-        'name' => __( 'Footer 2', '2023-5W5-E2' ),
+        'name' => __( 'Footer 2', '5W5-E2' ),
         'id' => 'footer_2',
-        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '2023-5W5-E2' ),
+        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '5W5-E2' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
@@ -68,9 +68,9 @@ function enregistrer_sidebar() {
     ) );
 
     register_sidebar( array(
-        'name' => __( 'Footer 3', '2023-5W5-E2' ),
+        'name' => __( 'Footer 3', '5W5-E2' ),
         'id' => 'footer_3',
-        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '2023-5W5-E2' ),
+        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '5W5-E2' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
