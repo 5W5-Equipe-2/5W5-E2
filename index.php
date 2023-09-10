@@ -5,7 +5,7 @@
  */
 ?>
 <?php get_header(); ?>
-<main>
+<main class="site_main">
 <h5>index.php</h5>
 <?php
     if (have_posts()): 

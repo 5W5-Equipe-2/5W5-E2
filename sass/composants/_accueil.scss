@@ -1,0 +1,22 @@
+/* 
+** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
+ ---> les balises section, article, les div
+*/
+
+.accueil_description {
+  width: 100%;
+  min-height: 5vh;
+  background-color: hsl(180, 13%, 60%);
+}
+
+.accueil_evenements {
+  width: 100%;
+  min-height: 5vh;
+  background-color: hsl(180, 13%, 65%);
+}
+
+.accueil_programme {
+  width: 100%;
+  min-height: 5vh;
+  background-color: hsl(180, 13%, 70%);
+}

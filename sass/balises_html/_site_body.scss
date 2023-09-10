@@ -1,0 +1,12 @@
+/* 
+** Tout ce qui concerne la balise body
+** 
+*/
+
+body {
+  width: 100vw;
+   /* Éviter la barre de défilement horizontale */
+   max-width: 100%;
+  height: 100%;
+  background-color: hsl(180, 13%, 8%);
+}

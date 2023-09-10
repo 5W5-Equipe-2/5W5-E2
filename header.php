@@ -10,7 +10,20 @@
 </head>
 
 <body>
-     <header>
-     <h5>header.php</h5>
+     <header class="site_entete">
+     <h1><a href="<?= bloginfo('url') ?>"><?= bloginfo('name') ?></a></h1>
+      <h2><?= bloginfo('description') ?></h2>
+
+      <!-- Navigation principale (div) -->
+      <?php wp_nav_menu(array(
+          "menu" => "entete",
+          "container" => "nav"
+        )) ?>
+
+
+        <div class="">
+          <?php get_search_form(); ?>
+        </div>
+
     </header>
  

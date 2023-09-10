@@ -1,0 +1,16 @@
+/* 
+** Tout ce qui concerne la balise main
+*/
+
+.site_main {
+  width: 100%;
+  min-height: 80vh;
+  background-color: hsl(180, 13%, 75%);
+}
+
+.site_main_accueil {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

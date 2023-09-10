@@ -320,9 +320,112 @@ template {
   display: none;
 }
 
-/*normalisation supp avec pseudo éléments */
+/* 
+** Tout ce qui concerne de la normalisation supplémentaire
+*/
+/*normalisation avec pseudo éléments */
 *, ::before, ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* 
+** Tout ce qui concerne des dimensions
+*/
+/* Palliers pour les requêtes média */
+/** 
+
+Fichier pour les variables du thème (couleurs, root, polices)
+
+*/
+:root {
+  /* ***************************************************************************** Couleurs *** */
+  --test: hsl(195, 86%, 62%);
+  /* ***************************************************************************** Polices **** */
+  /* ***************************************************************************** Espacement *** */
+}
+
+/* 
+** Tout ce qui concerne la balise body
+** 
+*/
+body {
+  width: 100vw;
+  /* Éviter la barre de défilement horizontale */
+  max-width: 100%;
+  height: 100%;
+  background-color: hsl(180, 13%, 8%);
+}
+
+/* 
+** Tout ce qui concerne la balise header
+*/
+.site_entete {
+  width: 100%;
+  background-color: hsl(180, 13%, 50%);
+}
+
+/* 
+** Tout ce qui concerne la balise main
+*/
+.site_main {
+  width: 100%;
+  min-height: 80vh;
+  background-color: hsl(180, 13%, 75%);
+}
+
+.site_main_accueil {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 
+** Tout ce qui concerne la balise footer
+*/
+.site_pied_page {
+  width: 100%;
+  min-height: 10vh;
+  background-color: hsl(180, 13%, 50%);
+  display: flex;
+}
+.site_pied_page .sidebar {
+  min-width: 4vw;
+  min-height: 4vh;
+  background-color: var(--test);
+  margin: 0.5rem;
+}
+
+/* Fichier pour le style de la barre de recherche
+** Et search.php
+*/
+/* Pour front-page.php */
+.media_vedette {
+  width: 100%;
+  min-height: 70vh;
+  background-color: var(--test);
+}
+
+/* 
+** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
+ ---> les balises section, article, les div
+*/
+.accueil_description {
+  width: 100%;
+  min-height: 5vh;
+  background-color: hsl(180, 13%, 60%);
+}
+
+.accueil_evenements {
+  width: 100%;
+  min-height: 5vh;
+  background-color: hsl(180, 13%, 65%);
+}
+
+.accueil_programme {
+  width: 100%;
+  min-height: 5vh;
+  background-color: hsl(180, 13%, 70%);
 }/*# sourceMappingURL=style.css.map */
