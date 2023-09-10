@@ -4,8 +4,8 @@
 ### Titre du projet : Refonte du site web TIM Maisonneuve
 ### Professeur : Eddy Martin & Jonathan Martel, TIM, collège de Maisonneuve
 
-- Déploiement du projet sur le serveur (À venir) :
-  - https://
+- Déploiement du projet sur le serveur (ramnode) :
+  - https://5w5.ndasilva.ca/
 
 ## Objectifs et besoins du client :
   Le département des Techniques d'intégration multimédia du Collège de Maisonneuve souhaite refaire faire son site web afin de mettre en valeur une vision évoluée et actuelle du programme afin d'amener son public cible à s'y intéresser. Le site sera être développé avec un CMS (Wordpress).
