@@ -1,0 +1,9 @@
+Liste des catégories et leur utilisation :
+Slug entre ()
+
+Accueil (accueil) : pour les éléments à afficher sur la page d'accueil
+
+Évènements (evenements) : Catégorie générale pour tous les évènements
+  - Comité étudiant (ev-comite) : Catégorie pour les évènements du comité étudiant
+  - Département (ev-departement) : Catégorie pour les évènements du département
+

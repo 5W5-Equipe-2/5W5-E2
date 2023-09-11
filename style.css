@@ -335,6 +335,12 @@ h1, h2, h3, h4, h5, h6, li, ul, ol, a {
   padding: 0;
 }
 
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
 /* 
 ** Tout ce qui concerne des dimensions
 */
@@ -346,9 +352,118 @@ Fichier pour les variables du thème (couleurs, root, polices)
 */
 :root {
   /* ***************************************************************************** Couleurs *** */
-  --test: hsl(195, 86%, 62%);
-  /* ***************************************************************************** Polices **** */
+  --test: hsl(195, 86%, 52%);
+  --noir: hsl(192, 38%, 3%);
+  --couleur1: hsl(195, 86%, 62%);
+  --courleur2: hsl(91, 86%, 62%);
+  /* **************************************************************** Polices *** */
+  --police-sans:"Roboto", sans-serif;
+  --police-serif:"Roboto Slab", serif;
   /* ***************************************************************************** Espacement *** */
+}
+
+/*
+CSS Clam font-size generator : https://clamp.font-size.app/
+*/
+h1 {
+  font-size: clamp(1.3rem, -0.0385rem + 3vw, 2rem);
+}
+
+h2 {
+  font-size: clamp(1.2rem, -0.3125rem + 2.8vw, 2.2rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+}
+
+h4 {
+  font-size: clamp(1rem, -0.1875rem + 2.2vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(0.9rem, 1.7vw, 1.4rem);
+}
+
+h6 {
+  font-size: clamp(0.8rem, 0.125rem + 1.2vw, 1.2rem);
+}
+
+p,
+ul,
+li {
+  font-size: clamp(0.8rem, 0.6rem + 1.16vw, 1rem);
+  font-family: var(--police-sans);
+  line-height: 150%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--police-sans);
+}
+
+li > p {
+  display: inline;
+}
+
+input {
+  font-size: clamp(0.8rem, 0.125rem + 1.2vw, 1.1rem);
+}
+
+strong,
+b,
+em,
+i {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.4rem;
+}
+
+figcaption {
+  font-size: clamp(0.7rem, 0.125rem + 1.2vw, 1.1rem);
+  font-family: var(--police-serif);
+  transform: translateY(-0.2rem);
+  margin: 0 2rem;
+  line-height: 130%;
+}
+
+a li, a a,
+.site_entete h1 li,
+.site_entete h1 a,
+.menu-item li,
+.menu-item a {
+  color: var(--couleur1);
+  text-decoration: none;
+}
+a li:visited, a a:visited,
+.site_entete h1 li:visited,
+.site_entete h1 a:visited,
+.menu-item li:visited,
+.menu-item a:visited {
+  color: var(--couleur1);
+}
+a li:hover, a li:focus, a li:active, a a:hover, a a:focus, a a:active,
+.site_entete h1 li:hover,
+.site_entete h1 li:focus,
+.site_entete h1 li:active,
+.site_entete h1 a:hover,
+.site_entete h1 a:focus,
+.site_entete h1 a:active,
+.menu-item li:hover,
+.menu-item li:focus,
+.menu-item li:active,
+.menu-item a:hover,
+.menu-item a:focus,
+.menu-item a:active {
+  color: var(--couleur2);
 }
 
 /* 
@@ -400,7 +515,7 @@ body {
 .site_pied_page .sidebar {
   min-width: 4vw;
   min-height: 4vh;
-  background-color: var(--test);
+  border: 1px solid var(--test);
   margin: 0.5rem;
 }
 
@@ -420,18 +535,18 @@ body {
 */
 .accueil_description {
   width: 100%;
-  min-height: 5vh;
+  min-height: 50vh;
   background-color: hsl(180, 13%, 60%);
 }
 
 .accueil_evenements {
   width: 100%;
-  min-height: 5vh;
+  min-height: 50vh;
   background-color: hsl(180, 13%, 65%);
 }
 
 .accueil_programme {
   width: 100%;
-  min-height: 5vh;
+  min-height: 50vh;
   background-color: hsl(180, 13%, 70%);
 }/*# sourceMappingURL=style.css.map */
