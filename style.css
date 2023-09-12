@@ -354,8 +354,8 @@ Fichier pour les variables du thème (couleurs, root, polices)
   /* ***************************************************************************** Couleurs *** */
   --test: hsl(195, 86%, 52%);
   --noir: hsl(192, 38%, 3%);
-  --couleur1: hsl(195, 86%, 62%);
-  --courleur2: hsl(91, 86%, 62%);
+  --couleur1: hsl(253, 56%, 30%);
+  --couleur2: hsl(195, 86%, 62%);
   /* **************************************************************** Polices *** */
   --police-sans:"Roboto", sans-serif;
   --police-serif:"Roboto Slab", serif;
@@ -435,34 +435,14 @@ figcaption {
   line-height: 130%;
 }
 
-a li, a a,
-.site_entete h1 li,
-.site_entete h1 a,
-.menu-item li,
-.menu-item a {
+a {
   color: var(--couleur1);
   text-decoration: none;
 }
-a li:visited, a a:visited,
-.site_entete h1 li:visited,
-.site_entete h1 a:visited,
-.menu-item li:visited,
-.menu-item a:visited {
+a:visited {
   color: var(--couleur1);
 }
-a li:hover, a li:focus, a li:active, a a:hover, a a:focus, a a:active,
-.site_entete h1 li:hover,
-.site_entete h1 li:focus,
-.site_entete h1 li:active,
-.site_entete h1 a:hover,
-.site_entete h1 a:focus,
-.site_entete h1 a:active,
-.menu-item li:hover,
-.menu-item li:focus,
-.menu-item li:active,
-.menu-item a:hover,
-.menu-item a:focus,
-.menu-item a:active {
+a:hover, a:focus, a:active {
   color: var(--couleur2);
 }
 

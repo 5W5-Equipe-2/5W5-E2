@@ -1,17 +1,13 @@
-
-a,
-.site_entete h1,
-.menu-item {
- li, a {
-    color : var(--couleur1);
-    text-decoration: none;
-    &:visited {
-      color: var(--couleur1);
-    }
-    &:hover,
-    &:focus,
-    &:active {
-      color : var(--couleur2);
-    }
+a {
+  color: var(--couleur1);
+  text-decoration: none;
+  &:visited {
+    color: var(--couleur1);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--couleur2);
   }
 }
+
