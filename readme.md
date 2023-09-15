@@ -6,7 +6,7 @@
 3.	Une navigation organisée selon l'organigramme prévue à l’étape d’analyse
 4.	Un prototype de page d'accueil
 5.	Début d’une structure de fichier Sass  personnalisé
-6.	Modification dees fichiers modèles: header.php, footer.php, front-page.php, single.php, 404.php, search.php, category.php, functions.php, template-parts
+6.	Modification des fichiers modèles: header.php, footer.php, front-page.php, single.php, 404.php, search.php, category.php, functions.php, template-parts
 
 - Déploiement du projet sur le serveur (ramnode) :
   - https://5w5.ndasilva.ca/
