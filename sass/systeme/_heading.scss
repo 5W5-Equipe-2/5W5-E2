@@ -70,7 +70,7 @@ img {
 figcaption {
   font-size: clamp(0.7rem, 0.125rem + 1.2vw, 1.1rem); 
   font-family: var(--police-serif);
-  transform: translateY(-0.2rem);
-  margin: 0 2rem;
   line-height: 130%;
+  margin: 0 2rem;
+  transform: translateY(-0.2rem);
 }

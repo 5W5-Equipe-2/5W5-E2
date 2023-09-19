@@ -4,16 +4,16 @@
 
 
 .site_pied_page {
-  width: 100%;
-  min-height: 10vh;
   background-color: hsl(180, 13%, 50%);
-
   display: flex;
+  min-height: 10vh;
+  width: 100%;
+
 
   .sidebar {
-    min-width: 4vw;
-    min-height: 4vh;
     border: 1px solid var(--test);
     margin: 0.5rem;
+    min-height: 4vh;
+    min-width: 4vw;
   }
 }

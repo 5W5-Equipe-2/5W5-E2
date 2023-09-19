@@ -325,9 +325,9 @@ template {
 */
 /*normalisation avec pseudo éléments */
 *, ::before, ::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 h1, h2, h3, h4, h5, h6, li, ul, ol, a {
@@ -352,8 +352,8 @@ Fichier pour les variables du thème (couleurs, root, polices)
 */
 :root {
   /* ***************************************************************************** Couleurs *** */
-  --test: hsl(195, 86%, 52%);
   --noir: hsl(192, 38%, 3%);
+  --test: hsl(195, 86%, 52%);
   --couleur1: hsl(253, 56%, 30%);
   --couleur2: hsl(195, 86%, 62%);
   /* **************************************************************** Polices *** */
@@ -430,9 +430,9 @@ img {
 figcaption {
   font-size: clamp(0.7rem, 0.125rem + 1.2vw, 1.1rem);
   font-family: var(--police-serif);
-  transform: translateY(-0.2rem);
-  margin: 0 2rem;
   line-height: 130%;
+  margin: 0 2rem;
+  transform: translateY(-0.2rem);
 }
 
 a {
@@ -451,52 +451,52 @@ a:hover, a:focus, a:active {
 ** 
 */
 body {
-  width: 100vw;
+  background-color: hsl(180, 13%, 8%);
+  height: 100%;
   /* Éviter la barre de défilement horizontale */
   max-width: 100%;
-  height: 100%;
-  background-color: hsl(180, 13%, 8%);
+  width: 100vw;
 }
 
 /* 
 ** Tout ce qui concerne la balise header
 */
 .site_entete {
-  width: 100%;
-  min-height: 10vh;
   background-color: hsl(180, 13%, 50%);
+  min-height: 10vh;
+  width: 100%;
 }
 
 /* 
 ** Tout ce qui concerne la balise main
 */
 .site_main {
-  width: 100%;
-  min-height: 80vh;
   background-color: hsl(180, 13%, 75%);
+  min-height: 80vh;
+  width: 100%;
 }
 
 .site_main_accueil {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }
 
 /* 
 ** Tout ce qui concerne la balise footer
 */
 .site_pied_page {
-  width: 100%;
-  min-height: 10vh;
   background-color: hsl(180, 13%, 50%);
   display: flex;
+  min-height: 10vh;
+  width: 100%;
 }
 .site_pied_page .sidebar {
-  min-width: 4vw;
-  min-height: 4vh;
   border: 1px solid var(--test);
   margin: 0.5rem;
+  min-height: 4vh;
+  min-width: 4vw;
 }
 
 /* Fichier pour le style de la barre de recherche
@@ -504,9 +504,9 @@ body {
 */
 /* Pour front-page.php */
 .media_vedette {
-  width: 100%;
-  min-height: 70vh;
   background-color: var(--test);
+  min-height: 70vh;
+  width: 100%;
 }
 
 /* 
@@ -514,19 +514,19 @@ body {
  ---> les balises section, article, les div
 */
 .accueil_description {
-  width: 100%;
-  min-height: 50vh;
   background-color: hsl(180, 13%, 60%);
+  min-height: 50vh;
+  width: 100%;
 }
 
 .accueil_evenements {
-  width: 100%;
-  min-height: 50vh;
   background-color: hsl(180, 13%, 65%);
+  min-height: 50vh;
+  width: 100%;
 }
 
 .accueil_programme {
-  width: 100%;
-  min-height: 50vh;
   background-color: hsl(180, 13%, 70%);
+  min-height: 50vh;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
