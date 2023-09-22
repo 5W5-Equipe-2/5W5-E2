@@ -8,7 +8,7 @@
   - https://5w5.ndasilva.ca/
 
 ## Objectifs et besoins du client :
-  Le département des Techniques d'intégration multimédia du Collège de Maisonneuve souhaite refaire faire son site web afin de mettre en valeur une vision évoluée et actuelle du programme afin d'amener son public cible à s'y intéresser. Le site sera être développé avec un CMS (Wordpress).
+  Le département des Techniques d'intégration multimédia du Collège de Maisonneuve souhaite refaire faire son site web afin de mettre en valeur une vision évoluée et actuelle du programme afin d'amener son public cible à s'y intéresser. Le site sera être développé avec un CMS (WordPress).
 
 ## Public cible :
   - Futurs étudiants
