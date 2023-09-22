@@ -1,6 +1,6 @@
-# Développement d'un thème Wordpress 
+# Développement d'un thème WordPress 
 ## 5W5 - Projet Web en équipe 2023
-### Auteur du thème : Noémie da Silva, Victor Desjardins, Vincent Gélinas, Vincent Hum, Dac Anne Nguyen
+### Auteurs du thème : Noémie da Silva, Victor Desjardins, Vincent Gélinas, Vincent Hum, Dac Anne Nguyen
 ### Titre du projet : Refonte du site web TIM Maisonneuve
 ### Professeur : Eddy Martin & Jonathan Martel, TIM, collège de Maisonneuve
 
