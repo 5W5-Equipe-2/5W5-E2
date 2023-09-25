@@ -11,7 +11,8 @@ function ajouter_styles()
     );
 
     /* Intégration des polices de Google */
-wp_enqueue_style('style-goolefont', 'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet', false);
+wp_enqueue_style('style-goolefont', 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet', false);
+    
 
 }
 add_action('wp_enqueue_scripts', 'ajouter_styles' );
