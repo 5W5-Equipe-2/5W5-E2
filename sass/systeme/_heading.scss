@@ -31,7 +31,7 @@ ul,
 li
  {
   font-size: clamp(0.8rem, 0.6rem + 1.16vw, 1rem);
-  font-family: var(--police-sans);
+  font-family: var(--police-texte);
   line-height: 150%;
 }
 
@@ -41,7 +41,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--police-sans);
+  font-family: var(--police-titre);
 }
 
 
@@ -69,7 +69,7 @@ img {
 
 figcaption {
   font-size: clamp(0.7rem, 0.125rem + 1.2vw, 1.1rem); 
-  font-family: var(--police-serif);
+  font-family: var(--police-texte);
   line-height: 130%;
   margin: 0 2rem;
   transform: translateY(-0.2rem);
