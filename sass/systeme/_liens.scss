@@ -1,13 +1,13 @@
 a {
-  color: var(--couleur1);
+  color: var(--noir);
   text-decoration: none;
   &:visited {
-    color: var(--couleur1);
+    color: var(--cyan);
   }
   &:hover,
   &:focus,
   &:active {
-    color: var(--couleur2);
+    color: var(--orange);
   }
 }
 
