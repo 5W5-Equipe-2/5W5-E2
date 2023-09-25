@@ -8,20 +8,22 @@ Fichier pour les variables du thème (couleurs, root, polices)
 
 /* ***************************************************************************** Couleurs *** */
 
---noir:  hsl(192, 38%, 3%);
+--noir:  hsl(0, 0%, 0%);
+--simili-noir: hsl(236, 18%, 19%);
+--blanc: hsl(30, 100%, 99%);
 --test: hsl(195, 86%, 52%);
-
-
-
 --couleur1: hsl(253, 56%, 30%);
 --couleur2: hsl(195, 86%, 62%);
+--orange: hsl(29, 100%, 65%);
+--cyan: hsl(180, 100%, 92%);
+  
+  
+  
 
 
-  /* **************************************************************** Polices *** */
-  --police-sans:'Roboto', sans-serif;
-  --police-serif:'Roboto Slab', serif;
-
-
+/* **************************************************************** Polices *** */
+--police-sans:'DM Sans', sans-serif;
+--police-serif:'Space Grotesk', sans-serif;
 
 
 
