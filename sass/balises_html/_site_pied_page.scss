@@ -5,7 +5,8 @@
 
 .site_pied_page {
   align-items: center;
-  background-color: hsl(180, 13%, 50%);
+  background-color: var(--noir);
+  color: var(--blanc);
   display: flex;
   justify-content: space-evenly;
   min-height: 10vh;

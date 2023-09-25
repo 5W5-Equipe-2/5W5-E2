@@ -6,19 +6,19 @@
 
 
 .accueil_description {
-  background-color: hsl(180, 13%, 60%);
+  background-color: var(--blanc);
   min-height: 50vh; 
   width: 100%;
 }
 
 .accueil_evenements {
-  background-color: hsl(180, 13%, 65%);
+  background-color: var(--primaire);
   min-height: 50vh; 
   width: 100%;
 }
 
 .accueil_programme {
-  background-color: hsl(180, 13%, 70%);
+  background-color: var(--complementaire);
   min-height: 50vh; 
   width: 100%;
 }

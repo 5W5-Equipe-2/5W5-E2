@@ -453,7 +453,7 @@ a:hover, a:focus, a:active {
 ** 
 */
 body {
-  background-color: hsl(180, 13%, 8%);
+  background-color: var(--blanc);
   height: 100%;
   /* Éviter la barre de défilement horizontale */
   max-width: 100%;
@@ -464,7 +464,7 @@ body {
 ** Tout ce qui concerne la balise header
 */
 .site_entete {
-  background-color: hsl(180, 13%, 50%);
+  background-color: var(--noir);
   min-height: 10vh;
   width: 100%;
 }
@@ -473,7 +473,7 @@ body {
 ** Tout ce qui concerne la balise main
 */
 .site_main {
-  background-color: hsl(180, 13%, 75%);
+  background-color: var(--blanc);
   min-height: 80vh;
   width: 100%;
 }
@@ -490,7 +490,8 @@ body {
 */
 .site_pied_page {
   align-items: center;
-  background-color: hsl(180, 13%, 50%);
+  background-color: var(--noir);
+  color: var(--blanc);
   display: flex;
   justify-content: space-evenly;
   min-height: 10vh;
@@ -518,19 +519,19 @@ body {
  ---> les balises section, article, les div
 */
 .accueil_description {
-  background-color: hsl(180, 13%, 60%);
+  background-color: var(--blanc);
   min-height: 50vh;
   width: 100%;
 }
 
 .accueil_evenements {
-  background-color: hsl(180, 13%, 65%);
+  background-color: var(--primaire);
   min-height: 50vh;
   width: 100%;
 }
 
 .accueil_programme {
-  background-color: hsl(180, 13%, 70%);
+  background-color: var(--complementaire);
   min-height: 50vh;
   width: 100%;
 }/*# sourceMappingURL=style.css.map */
