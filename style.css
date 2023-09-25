@@ -352,13 +352,15 @@ Fichier pour les variables du thème (couleurs, root, polices)
 */
 :root {
   /* ***************************************************************************** Couleurs *** */
-  --noir: hsl(192, 38%, 3%);
-  --test: hsl(195, 86%, 52%);
-  --couleur1: hsl(253, 56%, 30%);
-  --couleur2: hsl(195, 86%, 62%);
+  --noir: hsl(0, 0%, 0%);
+  --simili-noir: hsl(236, 18%, 19%);
+  --blanc: hsl(30, 100%, 99%);
+  --primaire: hsl(29, 100%, 65%);
+  --complementaire: hsl(180, 100%, 92%);
+  --test: hsl(195, 86%, 62%);
   /* **************************************************************** Polices *** */
-  --police-sans:"Roboto", sans-serif;
-  --police-serif:"Roboto Slab", serif;
+  --police-texte:"DM Sans", sans-serif;
+  --police-titre:"Space Grotesk", sans-serif;
   /* ***************************************************************************** Espacement *** */
 }
 
@@ -393,7 +395,7 @@ p,
 ul,
 li {
   font-size: clamp(0.8rem, 0.6rem + 1.16vw, 1rem);
-  font-family: var(--police-sans);
+  font-family: var(--police-texte);
   line-height: 150%;
 }
 
@@ -403,7 +405,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--police-sans);
+  font-family: var(--police-titre);
 }
 
 li > p {
@@ -429,21 +431,21 @@ img {
 
 figcaption {
   font-size: clamp(0.7rem, 0.125rem + 1.2vw, 1.1rem);
-  font-family: var(--police-serif);
+  font-family: var(--police-texte);
   line-height: 130%;
   margin: 0 2rem;
   transform: translateY(-0.2rem);
 }
 
 a {
-  color: var(--couleur1);
+  color: var(--noir);
   text-decoration: none;
 }
 a:visited {
-  color: var(--couleur1);
+  color: var(--complementaire);
 }
 a:hover, a:focus, a:active {
-  color: var(--couleur2);
+  color: var(--primaire);
 }
 
 /* 
