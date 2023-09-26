@@ -3,8 +3,56 @@
 */
 
 .site_entete {
-  width: 100%;
+  background-color: var(--noir);
   min-height: 10vh;
-  background-color: hsl(180, 13%, 50%);
+  width: 100%;
 
 }
+/* ------------------------------------------ Bouton burger */
+.burger {
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  @media screen and (min-width : 992px) {
+     display :none; 
+  }
+}
+
+#chkMenu {
+  display : none;
+}
+/* ------------------------------------------ Burger */
+#chkMenu:checked ~ .menu-entete-container  {
+  transform: translateX(0);
+}
+
+.menu-entete-container { // nav
+  transform : translateX(300px);
+  transition : transform .5s;
+  @media screen and (min-width:992px) {
+      transform : translateX(0);
+  }
+
+  .menu{ // ul
+      display : flex;
+      flex-direction: column; 
+      list-style-type: none;
+      align-items: flex-end;
+      justify-content: flex-start;
+      @media screen and (min-width : 992px ){
+         flex-direction: row; 
+         align-items: center;
+         justify-content: flex-end;
+
+      }
+      .menu-item { //li
+          color : rgb(0, 42, 85);
+          a {
+          display : block;
+          padding : 5px 20px;
+          white-space: nowrap;
+          }
+      }
+  }
+  }

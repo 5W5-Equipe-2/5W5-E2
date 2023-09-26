@@ -1,0 +1,76 @@
+/*
+CSS Clam font-size generator : https://clamp.font-size.app/
+*/
+
+h1 {
+  font-size: clamp(1.3rem, -0.0385rem + 3vw, 2rem);
+}
+h2 {
+  font-size: clamp(1.2rem, -0.3125rem + 2.8vw, 2.2rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+}
+
+h4 {
+  font-size: clamp(1rem, -0.1875rem + 2.2vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(0.9rem, 1.7vw, 1.4rem);
+}
+
+
+h6 {
+  font-size: clamp(0.8rem, 0.125rem + 1.2vw, 1.2rem);
+}
+
+p,
+ul,
+li
+ {
+  font-size: clamp(0.8rem, 0.6rem + 1.16vw, 1rem);
+  font-family: var(--police-texte);
+  line-height: 150%;
+}
+
+h1,
+h2, 
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--police-titre);
+}
+
+
+li>p {
+  display: inline;
+}
+
+
+input {
+  font-size: clamp(0.8rem, 0.125rem + 1.2vw, 1.1rem);
+}
+
+strong,
+b,
+em,
+i {
+  font-weight: bold;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 0.4rem;
+}
+
+figcaption {
+  font-size: clamp(0.7rem, 0.125rem + 1.2vw, 1.1rem); 
+  font-family: var(--police-texte);
+  line-height: 130%;
+  margin: 0 2rem;
+  transform: translateY(-0.2rem);
+}

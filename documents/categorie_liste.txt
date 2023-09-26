@@ -1,0 +1,20 @@
+Liste des catégories et leur utilisation :
+Slug entre ()
+
+Accueil (accueil) : pour les éléments à afficher sur la page d'accueil
+
+Évènements (evenements) : Catégorie générale pour tous les évènements
+  - Comité étudiant (ev-comite) : Catégorie pour les évènements du comité étudiant
+  - Département (ev-departement) : Catégorie pour les évènements du département
+
+
+/******************************************************************************/
+/************************Template-part*****************************************/
+/******************************************************************************/
+
+Pour faire fonctionner modele (template-part), le nom du fichier doit être nommé : categorie-slug.php
+où il faut remplacer "slug" par le mot (slug) entrée dans Wordpress
+
+Cela permettra de fonctionner avec la requête dans category.php:
+  //Localiser si un modèle de template-part personnalisé existe
+    $categorie_modele = locate_template('template-parts/categorie-' . $categorie->slug . '.php');

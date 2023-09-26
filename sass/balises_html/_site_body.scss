@@ -4,10 +4,10 @@
 */
 
 body {
-  width: 100vw;
-   /* Éviter la barre de défilement horizontale */
-  max-width: 100%;
+  
+  background-color: var(--blanc);
   height: 100%;
-
-  background-color: hsl(180, 13%, 8%);
+  /* Éviter la barre de défilement horizontale */
+  max-width: 100%;
+  width: 100vw;
 }

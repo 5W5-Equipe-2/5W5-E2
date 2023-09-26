@@ -1,0 +1,34 @@
+/** 
+
+Fichier pour les variables du thème (couleurs, root, polices)
+
+*/
+
+:root{
+
+/* ***************************************************************************** Couleurs *** */
+
+--noir:  hsl(0, 0%, 0%);
+--simili-noir: hsl(236, 18%, 19%);
+--blanc: hsl(30, 100%, 99%);
+--primaire: hsl(29, 100%, 65%);
+--complementaire: hsl(180, 100%, 92%);
+  
+--test: hsl(195, 86%, 62%);
+
+  
+  
+
+
+/* **************************************************************** Polices *** */
+--police-texte:'DM Sans', sans-serif;
+--police-titre:'Space Grotesk', sans-serif;
+
+
+
+/* ***************************************************************************** Espacement *** */
+
+
+
+
+}

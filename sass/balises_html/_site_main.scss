@@ -3,14 +3,14 @@
 */
 
 .site_main {
-  width: 100%;
+  background-color: var(--blanc);
   min-height: 80vh;
-  background-color: hsl(180, 13%, 75%);
+  width: 100%;
 }
 
 .site_main_accueil {
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
 }

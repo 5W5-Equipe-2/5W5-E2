@@ -1,0 +1,13 @@
+a {
+  color: var(--noir);
+  text-decoration: none;
+  &:visited {
+    color: var(--complementaire);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--primaire);
+  }
+}
+

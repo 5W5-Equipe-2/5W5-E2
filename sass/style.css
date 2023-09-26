@@ -85,7 +85,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -453,7 +454,7 @@ a:hover, a:focus, a:active {
 ** 
 */
 body {
-  background-color: var(--blanc);
+  background-color: hsl(180, 13%, 8%);
   height: 100%;
   /* Éviter la barre de défilement horizontale */
   max-width: 100%;
@@ -464,16 +465,70 @@ body {
 ** Tout ce qui concerne la balise header
 */
 .site_entete {
-  background-color: var(--noir);
+  background-color: hsl(180, 13%, 50%);
   min-height: 10vh;
   width: 100%;
+}
+
+/* ------------------------------------------ Bouton burger */
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+}
+@media screen and (min-width: 992px) {
+  .burger {
+    display: none;
+  }
+}
+
+#chkMenu {
+  display: none;
+}
+
+/* ------------------------------------------ Burger */
+#chkMenu:checked ~ .menu-entete-container {
+  transform: translateX(0);
+}
+
+.menu-entete-container {
+  transform: translateX(300px);
+  transition: transform 0.5s;
+}
+@media screen and (min-width: 992px) {
+  .menu-entete-container {
+    transform: translateX(0);
+  }
+}
+.menu-entete-container .menu {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 992px) {
+  .menu-entete-container .menu {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+.menu-entete-container .menu .menu-item {
+  color: rgb(0, 42, 85);
+}
+.menu-entete-container .menu .menu-item a {
+  display: block;
+  padding: 5px 20px;
+  white-space: nowrap;
 }
 
 /* 
 ** Tout ce qui concerne la balise main
 */
 .site_main {
-  background-color: var(--blanc);
+  background-color: hsl(180, 13%, 75%);
   min-height: 80vh;
   width: 100%;
 }
@@ -490,8 +545,7 @@ body {
 */
 .site_pied_page {
   align-items: center;
-  background-color: var(--noir);
-  color: var(--blanc);
+  background-color: hsl(180, 13%, 50%);
   display: flex;
   justify-content: space-evenly;
   min-height: 10vh;
@@ -519,19 +573,19 @@ body {
  ---> les balises section, article, les div
 */
 .accueil_description {
-  background-color: var(--blanc);
+  background-color: hsl(180, 13%, 60%);
   min-height: 50vh;
   width: 100%;
 }
 
 .accueil_evenements {
-  background-color: var(--primaire);
+  background-color: hsl(180, 13%, 65%);
   min-height: 50vh;
   width: 100%;
 }
 
 .accueil_programme {
-  background-color: var(--complementaire);
+  background-color: hsl(180, 13%, 70%);
   min-height: 50vh;
   width: 100%;
 }/*# sourceMappingURL=style.css.map */
