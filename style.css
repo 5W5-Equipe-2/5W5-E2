@@ -469,6 +469,60 @@ body {
   width: 100%;
 }
 
+/* ------------------------------------------ Bouton burger */
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+}
+@media screen and (min-width: 992px) {
+  .burger {
+    display: none;
+  }
+}
+
+#chkMenu {
+  display: none;
+}
+
+/* ------------------------------------------ Burger */
+#chkMenu:checked ~ .menu-entete-container {
+  transform: translateX(0);
+}
+
+.menu-entete-container {
+  transform: translateX(300px);
+  transition: transform 0.5s;
+}
+@media screen and (min-width: 992px) {
+  .menu-entete-container {
+    transform: translateX(0);
+  }
+}
+.menu-entete-container .menu {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+@media screen and (min-width: 992px) {
+  .menu-entete-container .menu {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+.menu-entete-container .menu .menu-item {
+  color: rgb(0, 42, 85);
+}
+.menu-entete-container .menu .menu-item a {
+  display: block;
+  padding: 5px 20px;
+  white-space: nowrap;
+}
+
 /* 
 ** Tout ce qui concerne la balise main
 */
@@ -507,6 +561,11 @@ body {
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
 */
+.recherche__bouton {
+  background: transparent;
+  border: none;
+}
+
 /* Pour front-page.php */
 .media_vedette {
   /* background-color: var(--test);*/
