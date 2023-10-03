@@ -1,4 +1,4 @@
-# Branche de développement du Sprint 01
+# Branche de développement du Sprint 02
 
 ## Le Sprint 02 est dédié à la programmation PHP et JS du thème. 
 
