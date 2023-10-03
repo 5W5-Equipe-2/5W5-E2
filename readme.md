@@ -1,6 +1,6 @@
 # Branche de développement du Sprint 01
 
-## Le Sprint 02 est dédié à la programmation le PHP et JS  du thème. 
+## Le Sprint 02 est dédié à la programmation PHP et JS du thème. 
 
 - Déploiement du projet sur le serveur (ramnode) :
   - https://5w5.ndasilva.ca/
