@@ -5,17 +5,26 @@
  * 
  */
 ?>
+
+<?php
+// Image temporaire Sprint 02 / Chemin de l'image
+$imagePath = "wp-content/themes/5W5-E2/images/media_vedette_test.jpg";
+?>
+
 <?php get_header(); ?>
 <main class="site_main site_main_accueil">
 
   <section class="media_vedette">
-    <h3>Media Vedette</h3>
+  <div class="img-wrapper">
+<!-- Image temporaire Sprint 02 -->
+  <img src="<?php echo $imagePath; ?>" alt="Image vedette">
+</div>
+    <span>T</span>
+    <span>I</span>
+    <span>M</span>
   </section>
 
-  <section class="accueil_description">
-    <h4>Courte description du programme / Phrase punch</h4>
-  </section>
-
+ 
   <section class="accueil_evenements">
   <h4>Évènements</h4>
   <?php

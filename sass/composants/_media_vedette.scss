@@ -1,7 +1,66 @@
 /* Pour front-page.php */
 
 .media_vedette {
-  background-color: var(--test);
-  min-height: 70vh; 
-  width: 100%;
+ 
+    height: 100%;
+    min-height: 100%; 
+    opacity: 0.8;
+    position: relative;
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+   
+  }
+
+/*
+Code basé sur le CSS Duotone Generator
+https://cssduotone.com/
+*/
+
+
+:root {
+  --base:              #000000;
+  --ar-blend:          screen;
+  --blur:              0px;
+  --av-blend:          exclusion;
+  --avant-plan:        #1d1d37;
+  --opacite:           0.7;
+}
+
+.img-wrapper {
+  background-color:    var(--base);
+  display:             flex;
+  flex:                1 1 100%;
+  height:              100%;
+  overflow:            hidden;
+  position:            relative;
+}
+
+
+.img-wrapper img {
+  filter:              grayscale(100%) contrast(1) blur(var(--blur));
+  flex:                1 0 100%;
+  height:              100%;
+  max-width:           100%;
+  mix-blend-mode:      var(--ar-blend);
+  object-fit:          cover;
+  opacity:             var(--opacite);
+  position:            relative;
+  width:               100%;
+}
+
+.img-wrapper::before {
+  background-color:    var(--avant-plan);
+  bottom:              0;
+  content:             '';
+  height:              100%;
+  left:                0;
+  mix-blend-mode:      var(--av-blend);
+  position:            absolute;
+  right:               0;
+  top:                 0;
+  width:               100%;
+  z-index:             1
 }
