@@ -3,7 +3,7 @@
 */
 
 .site_entete {
-  background-color: var(--noir);
+  background-color: var(--noir); 
   min-height: 10vh;
   width: 100%;
 
@@ -11,7 +11,7 @@
 /* ------------------------------------------ Bouton burger */
 .burger {
   display : flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 25px;
   @media screen and (min-width : 992px) {
@@ -20,7 +20,7 @@
 }
 
 #chkMenu {
-  display : none;
+  display : flex;
 }
 /* ------------------------------------------ Burger */
 #chkMenu:checked ~ .menu-entete-container  {

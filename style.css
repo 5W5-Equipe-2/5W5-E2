@@ -472,7 +472,7 @@ body {
 /* ------------------------------------------ Bouton burger */
 .burger {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   width: 25px;
 }
@@ -483,7 +483,7 @@ body {
 }
 
 #chkMenu {
-  display: none;
+  display: flex;
 }
 
 /* ------------------------------------------ Burger */
