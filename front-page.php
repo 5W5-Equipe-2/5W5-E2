@@ -7,11 +7,8 @@
 ?>
 
 <?php
-// Chemin de l'image
+// Image temporaire Sprint 02 / Chemin de l'image
 $imagePath = "wp-content/themes/5W5-E2/images/media_vedette_test.jpg";
-$imagePath2 = "wp-content/themes/5W5-E2/images/media_vedette_test2.jpg";
-$imagePath3 = "wp-content/themes/5W5-E2/images/media_vedette_test3.jpg";
-$imagePath4 = "wp-content/themes/5W5-E2/images/media_vedette_test4.png";
 ?>
 
 <?php get_header(); ?>
@@ -19,41 +16,15 @@ $imagePath4 = "wp-content/themes/5W5-E2/images/media_vedette_test4.png";
 
   <section class="media_vedette">
   <div class="img-wrapper">
-  <!-- The `::before` pseudo-element will apear here in the Broweser(DOM) and in web-inspector. -->
+<!-- Image temporaire Sprint 02 -->
   <img src="<?php echo $imagePath; ?>" alt="Image vedette">
 </div>
-    <h3>Media Vedette</h3>
-
+    <span>T</span>
+    <span>I</span>
+    <span>M</span>
   </section>
 
-  <section class="media_vedette">
-<div class="img-wrapper img-wrapper-2">
-<!-- The `::before` pseudo-element will apear here in the Broweser(DOM) and in web-inspector. -->
-<img src="<?php echo $imagePath2; ?>" alt="Image vedette">
-</div>
-  <h3>Media Vedette test 2</h3>
-</section>
-
-<section class="media_vedette">
-<div class="img-wrapper">
-<!-- The `::before` pseudo-element will apear here in the Broweser(DOM) and in web-inspector. -->
-<img src="<?php echo $imagePath3; ?>" alt="Image vedette">
-</div>
-  <h3>Media Vedette test 3</h3>
-</section>
-
-<section class="media_vedette">
-<div class="img-wrapper img-wrapper-2">
-<!-- The `::before` pseudo-element will apear here in the Broweser(DOM) and in web-inspector. -->
-<img src="<?php echo $imagePath4; ?>" alt="Image vedette">
-</div>
-  <h3>Media Vedette test 4</h3>
-</section>
-
-  <section class="accueil_description">
-    <h4>Courte description du programme / Phrase punch</h4>
-  </section>
-
+ 
   <section class="accueil_evenements">
   <h4>Évènements</h4>
   <?php
