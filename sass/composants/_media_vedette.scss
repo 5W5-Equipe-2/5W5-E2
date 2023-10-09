@@ -1,7 +1,10 @@
 /* Pour front-page.php */
 
 .media_vedette {
+  /* animation: anim_media 6s infinite reverse;*/
+   /* background-color: var(--test);*/
  
+
     height: 100%;
     min-height: 100%; 
     opacity: 0.8;
@@ -22,11 +25,12 @@ https://cssduotone.com/
 
 :root {
   --base:              #000000;
-  --ar-blend:          screen;
+  --bg-blend:          screen;
   --blur:              0px;
-  --av-blend:          exclusion;
-  --avant-plan:        #1d1d37;
-  --opacite:           0.7;
+  --fg-blend:          exclusion;
+  --foreground:        #1d1d37;
+  --opacity:           0.7;
+  --spacing:           0px;
 }
 
 .img-wrapper {
@@ -35,6 +39,7 @@ https://cssduotone.com/
   flex:                1 1 100%;
   height:              100%;
   overflow:            hidden;
+  padding:             var(--spacing);
   position:            relative;
 }
 
@@ -44,20 +49,20 @@ https://cssduotone.com/
   flex:                1 0 100%;
   height:              100%;
   max-width:           100%;
-  mix-blend-mode:      var(--ar-blend);
+  mix-blend-mode:      var(--bg-blend);
   object-fit:          cover;
-  opacity:             var(--opacite);
+  opacity:             var(--opacity);
   position:            relative;
   width:               100%;
 }
 
 .img-wrapper::before {
-  background-color:    var(--avant-plan);
+  background-color:    var(--foreground);
   bottom:              0;
   content:             '';
   height:              100%;
   left:                0;
-  mix-blend-mode:      var(--av-blend);
+  mix-blend-mode:      var(--fg-blend);
   position:            absolute;
   right:               0;
   top:                 0;

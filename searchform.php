@@ -15,12 +15,10 @@
     placeholder="Rechercher..." value="<?php echo get_search_query(); ?>" name="s" />
 
     <button class="recherche__bouton" type="submit" class="search-submit">
-
-    <!--   <span class="recherche__icone">&#x1F50D;</span> -->
-
-  Rechercher
-
-  </span>
+   
+    <span class="recherche__icone">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/loupe.svg" alt="Loupe" />
+      </span>
 
     </button>
 

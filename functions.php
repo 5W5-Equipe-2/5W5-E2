@@ -100,4 +100,3 @@ function e2_modifie_requete_principal($query) //s'exécute à chaque page
 add_action('pre_get_posts', 'e2_modifie_requete_principal'); 
 
 /*----------------------------------------------------------------------------- Masquer nom de catégorie */
-
