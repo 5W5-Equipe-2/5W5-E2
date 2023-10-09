@@ -438,7 +438,7 @@ figcaption {
 }
 
 a {
-  color: var(--noir);
+  color: var(--blanc);
   text-decoration: none;
 }
 a:visited {
@@ -561,8 +561,19 @@ body {
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
 */
+.recherche__bouton {
+  background: transparent;
+  border: none;
+  transform: translateY(0.2rem);
+}
+
 /* Pour front-page.php */
 .media_vedette {
+<<<<<<< HEAD
+=======
+  /* animation: anim_media 6s infinite reverse;*/
+  /* background-color: var(--test);*/
+>>>>>>> 32f7591335cd13404d62ebf2c7ea52f33efb22f1
   height: 100%;
   min-height: 100%;
   opacity: 0.8;
@@ -579,11 +590,20 @@ https://cssduotone.com/
 */
 :root {
   --base: #000000;
+<<<<<<< HEAD
   --ar-blend: screen;
   --blur: 0px;
   --av-blend: exclusion;
   --avant-plan: #1d1d37;
   --opacite: 0.7;
+=======
+  --bg-blend: screen;
+  --blur: 0px;
+  --fg-blend: exclusion;
+  --foreground: #1d1d37;
+  --opacity: 0.7;
+  --spacing: 0px;
+>>>>>>> 32f7591335cd13404d62ebf2c7ea52f33efb22f1
 }
 
 .img-wrapper {
@@ -592,6 +612,10 @@ https://cssduotone.com/
   flex: 1 1 100%;
   height: 100%;
   overflow: hidden;
+<<<<<<< HEAD
+=======
+  padding: var(--spacing);
+>>>>>>> 32f7591335cd13404d62ebf2c7ea52f33efb22f1
   position: relative;
 }
 
@@ -600,20 +624,34 @@ https://cssduotone.com/
   flex: 1 0 100%;
   height: 100%;
   max-width: 100%;
+<<<<<<< HEAD
   mix-blend-mode: var(--ar-blend);
   object-fit: cover;
   opacity: var(--opacite);
+=======
+  mix-blend-mode: var(--bg-blend);
+  object-fit: cover;
+  opacity: var(--opacity);
+>>>>>>> 32f7591335cd13404d62ebf2c7ea52f33efb22f1
   position: relative;
   width: 100%;
 }
 
 .img-wrapper::before {
+<<<<<<< HEAD
   background-color: var(--avant-plan);
+=======
+  background-color: var(--foreground);
+>>>>>>> 32f7591335cd13404d62ebf2c7ea52f33efb22f1
   bottom: 0;
   content: "";
   height: 100%;
   left: 0;
+<<<<<<< HEAD
   mix-blend-mode: var(--av-blend);
+=======
+  mix-blend-mode: var(--fg-blend);
+>>>>>>> 32f7591335cd13404d62ebf2c7ea52f33efb22f1
   position: absolute;
   right: 0;
   top: 0;
