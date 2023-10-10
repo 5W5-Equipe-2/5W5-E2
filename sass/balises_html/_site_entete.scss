@@ -2,9 +2,9 @@
 ** Tout ce qui concerne la balise header
 */
 
-.site_entete {
+.site_header {
   background-color: var(--noir); 
-  min-height: 10vh;
+  min-height: 8vh;
   width: 100%;
 
 }
@@ -15,12 +15,14 @@
   align-items: center;
   width: 25px;
   @media screen and (min-width : 992px) {
-     display :none; 
+     //display :none; 
   }
 }
 
 #chkMenu {
   display : flex;
+  position: absolute;
+  right: 3vw;
 }
 /* ------------------------------------------ Burger */
 #chkMenu:checked ~ .menu-entete-container  {
@@ -31,7 +33,7 @@
   transform : translateX(300px);
   transition : transform .5s;
   @media screen and (min-width:992px) {
-      transform : translateX(0);
+      //transform : translateX(0);
   }
 
   .menu{ // ul
@@ -55,4 +57,118 @@
           }
       }
   }
+  }
+
+  /*---------------------Menu visible lorsque la case à cocher est coché---------------------*/
+  .site__menu {
+    background-color: var(--noir);
+    left: 0;
+    height: 90vh; // Moins la hauteur de  .site__header__barre dans _aside-contenu.scss
+    opacity: 0;
+    position: fixed;
+    max-width: 100vw;
+    top: 10vh; // Moins la hauteur de  .site__header__barre  dans _aside-contenu.scss
+    //transform: translate(0, -120%);
+    //transition: transform 400ms, opacity 100ms;
+    width: 100%;
+    z-index: 2;
+
+  /* @media screen and (min-width: $largeur__bureau) { 
+      height: 100vh;
+      top: 0;
+      transform: translate(120%, 0);
+      width: 100vw;
+    } */
+
+    .site__header__recherche {
+     margin: 0.5rem;
+
+     @media screen and (min-width: $largeur__bureau)  {
+      margin: 3rem 0 1.8rem 0;
+     }
+    }
+
+    .site__header__titre {
+          & img {
+        box-shadow: none;
+      }
+
+    h1,
+      a {
+        font-size: clamp(1.4rem, 0.5rem + 1.8vw, 3rem);
+        margin: 0.2rem 0;
+      }
+     h2 {
+       color: var(--couleur2);
+       font-family: var(--police-sans);
+        font-size: clamp(1rem, -0.1875rem + 1.6vw, 2rem);
+        margin-top: 0.2em;
+      }
+    }
+
+    /*-----------------------------------------------------------------menu-entête */
+    /* ********************** Balise nav *******************/
+    ul#menu-entete.menu {
+      margin: 1rem;
+      padding: 0;
+
+      @media screen and (min-width: $largeur__bureau) {
+        transform: translateY(-10%);
+      }
+    }
+
+     .menu {
+      align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+  
+
+      .menu-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        list-style-type: none;
+        margin-top: 1rem;
+        transition: transform 400ms ease-in;
+
+        a {
+          align-self: flex-end;
+          color: var(--fonce-2);
+          font-family: var(--police-mono);
+          font-size: clamp(1rem, 0.125rem + 2vw, 1.8rem);
+          letter-spacing: -0.02rem;
+          line-height: 120%;
+          text-align: center;
+          text-shadow: var(--accent-ombre);
+          text-transform: uppercase;
+          transition: text-shadow 400ms;
+          word-spacing: -0.1rem;
+        }
+
+        a:hover {
+          color: var(--texte-clair);
+          text-shadow: none;
+          transition: color 600ms;
+        }
+
+        a:active {
+          color: var(--couleur3);
+          text-shadow: none;
+        }
+      }
+      .menu-item:hover,
+      .menu-item:active {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  /*---------------------case a cocher---------------------*/
+
+  #chkMenu:checked ~ .site__menu {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: transform 400ms, opacity 100ms;
   }
