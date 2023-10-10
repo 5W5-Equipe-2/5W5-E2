@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Fichier pour l'affichage de la page de programme
+ * Template name: programme
  * 
  */
 ?>
@@ -35,42 +35,50 @@
     <?php /****** Liste de cours *******/ ?>
     <section class="Liste_programme">
 
+        <div id="content">
+            <div id="interactive-table">
+                <!-- Boutons de session -->
+                <div id="session-buttons">
+                    <button class="session-button" data-session="session1">Session 1</button>
+                    <button class="session-button" data-session="session2">Session 2</button>
+                    <button class="session-button" data-session="session3">Session 3</button>
+                    <button class="session-button" data-session="session4">Session 4</button>
+                    <button class="session-button" data-session="session5">Session 5</button>
+                    <button class="session-button" data-session="session6">Session 6</button>
+                </div>
 
-    <!-- Boutons de session -->
-    <button id="session1Button">Session 1</button>
-    <button id="session2Button">Session 2</button>
-    
-                <!-- Tableau des cours -->
-    <table>
-        <thead>
-            <tr>
-                <th>Session</th>
-                <th>Cours</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr class="session1 course">
-                <td>Session 1</td>
-                <td>Cours 1.1</td>
-            </tr>
-            <tr class="session1 course">
-                <td>Session 1</td>
-                <td>Cours 1.2</td>
-            </tr>
-            <tr class="session2 course">
-                <td>Session 2</td>
-                <td>Cours 2.1</td>
-            </tr>
-            <tr class="session2 course">
-                <td>Session 2</td>
-                <td>Cours 2.2</td>
-            </tr>
-        </tbody>
-    </table>
+                <!-- Tableau interactif -->
+                <div id="table-container">
+                    <!-- Le contenu du tableau interactif sera généré par JavaScript ici -->
+                </div>
+                <div id="article_programme1">
+                    <?php
+                    $args = array(
+                        'post_type' => 'post',  // Type de contenu : Article
+                        'category_name' => 'session1,cours',  // Catégories/slug "session1" et "cours"
+                        'category__not_in' => array(get_cat_ID('projets')),  // Exclure la catégorie/slug "projets"
+                        'posts_per_page' => -1,  // Nombre illimité d'articles par page
+                    );
 
+                    $query = new WP_Query($args);
 
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            // Affichez le contenu de l'article ici
+                            the_title();  // Titre de l'article
+                            the_content();  // Contenu de l'article
+                        endwhile;
+                    else :
+                        // Aucun article trouvé
+                        echo 'Aucun article correspondant aux critères.';
+                    endif;
 
-
+                    // Réinitialiser la requête WP
+                    wp_reset_postdata();
+                    ?>
+                </div>
+            </div>
+        </div>
 
         <div class="grille_cours">
 

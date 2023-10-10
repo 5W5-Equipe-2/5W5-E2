@@ -101,3 +101,15 @@ add_action('pre_get_posts', 'e2_modifie_requete_principal');
 
 /*----------------------------------------------------------------------------- Masquer nom de catégorie */
 
+
+
+/**---------------------------------------------------------------------------- Ajouter le script.js a la page programme */
+function ajouter_script_personnalise() {
+    if (is_page('programme')) { // Vérifie si la page actuelle est 'programme'
+        wp_enqueue_script('nom-du-script', get_template_directory_uri() . '/JS/script.js', array('jquery'), null, true);
+        // 'nom-du-script' est un identifiant unique pour votre script
+        // true signifie que le script sera placé dans le pied de page (juste avant </body>)
+    }
+}
+add_action('wp_enqueue_scripts', 'ajouter_script_personnalise');
+
