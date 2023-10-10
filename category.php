@@ -9,7 +9,7 @@
 
 <main class="site_main">
     <?php
-     /****Requêtes SQL de WP****************************************************/
+    /****Requêtes SQL de WP****************************************************/
     $categorie = get_queried_object();
     $args = array(
         'category_name' => $categorie->slug,
@@ -17,11 +17,30 @@
         'order' => 'ASC'
     );
     $query = new WP_Query($args);
+    ?>
 
+
+    <!-- Navigation par catégories / filtres (div) -->
+
+   <?php 
+      if (in_category('evenements')) {
+      $ma_categorie = "evt";
+    }
+if (in_category('projets')) {
+      $ma_categorie = "projet";
+    } 
+  
+   wp_nav_menu(array(
+     "theme_location" => $ma_categorie,
+        "container" => "div",    
+        "container_class" => "menu-trier"
+    )); ?>
+
+<?php
     /****Localiser et assigner un template-part*********************************/
     //Assigner le modèle de template-part personnalisé 
     $categorie_modele = locate_template('template-parts/categorie-' . $categorie->slug . '.php');
-    
+
     // Utiliser le modèle par défaut si un modèle personnalisé n'existe pas
     if (empty($categorie_modele)) {
         $categorie_modele = locate_template('template-parts/categorie-defaut.php');
@@ -29,7 +48,7 @@
     ?>
 
     <!-- Affichage dans WordPress --------------------------------------------------->
-    <h2 class=""><?php echo $categorie->name ?></h2>
+    <!--     <h2 class=""><?php echo $categorie->name ?></h2> -->
     <section class="">
         <?php
         if ($query->have_posts()) :

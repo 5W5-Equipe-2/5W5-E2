@@ -448,6 +448,10 @@ a:hover, a:focus, a:active {
   color: var(--primaire);
 }
 
+.menu-trier {
+  background-color: var(--simili-noir);
+}
+
 /* 
 ** Tout ce qui concerne la balise body
 ** 

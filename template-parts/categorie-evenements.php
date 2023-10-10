@@ -6,16 +6,17 @@
   ?>
 
 <!-- Affichage dans WordPress ----------------------------------------------------->
+
 <article class="">
    <!--  Afficher l'image -->
   <?php  if(has_post_thumbnail()) {
     the_post_thumbnail('thumbnail');
    //echo get_the_ID();
   } 
-else {
+/* else {
    //Afficher une image par défaut
     echo get_the_post_thumbnail(27,'thumbnail' );
-  }
+  } */
 ?>
 <!--  Afficher les infos de l'article -->
   <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>

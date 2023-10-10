@@ -22,12 +22,15 @@ add_action('wp_enqueue_scripts', 'ajouter_styles' );
 function enregistrement_nav_menu()
 {
     register_nav_menus(array(
-        'principal' => 'Menu principal',
+        'entete' => 'Menu entete',
+        'evt' => 'Menu évènement',
+        'projet' => 'Menu projet',
        /* 'footer'  => 'Menu pied de page',
         'aside'  => 'Menu secondaire',*/
  ));
 }
-add_action('after_setup_theme', 'enregistrement_nav_menu', 0); 
+/* add_action('after_setup_theme', 'enregistrement_nav_menu', 0);  */
+add_action('init', 'enregistrement_nav_menu', 0); 
 
 
 /*------------------------------------------------------------------------------ add_theme_support() */
