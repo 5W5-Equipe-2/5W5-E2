@@ -18,7 +18,7 @@ wp_enqueue_style('style-goolefont', 'https://fonts.googleapis.com/css2?family=DM
 add_action('wp_enqueue_scripts', 'ajouter_styles' );
 
 
-/* ----------------------------------------------------------------------------- Enregistrement des menus */
+/* ----- Enregistrement des menus *************************************************/
 function enregistrement_nav_menu()
 {
     register_nav_menus(array(
@@ -33,7 +33,7 @@ function enregistrement_nav_menu()
 add_action('init', 'enregistrement_nav_menu', 0); 
 
 
-/*------------------------------------------------------------------------------ add_theme_support() */
+/*---------- add_theme_support() *************************************************/
 add_theme_support('title-tag');
 add_theme_support(
     'custom-logo',
@@ -46,9 +46,11 @@ add_theme_support('post-thumbnails');
 add_theme_support('custom-background');
 
 
-/*----------------------------------------------------------------------------- Enregistrer le sidebar */
+/*-------------- Enregistrer le sidebar *******************************************/
 
-/* À utiliser dans : footer.php) */
+/****** 
+ À utiliser dans : footer.php) 
+ **********************************/
 function enregistrer_sidebar() {
 
     register_sidebar( array(
@@ -86,7 +88,7 @@ add_action( 'widgets_init', 'enregistrer_sidebar' );
 
 
 
-/*----------------------------------------------------------------------------- Modifier la requête principale */
+/*---------------- Modifier la requête principale **********************************/
 function e2_modifie_requete_principal($query) //s'exécute à chaque page
 {
     if (
@@ -101,5 +103,3 @@ function e2_modifie_requete_principal($query) //s'exécute à chaque page
 }
 
 add_action('pre_get_posts', 'e2_modifie_requete_principal'); 
-
-/*----------------------------------------------------------------------------- Masquer nom de catégorie */
