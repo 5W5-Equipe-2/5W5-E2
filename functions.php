@@ -104,12 +104,71 @@ add_action('pre_get_posts', 'e2_modifie_requete_principal');
 
 
 /**---------------------------------------------------------------------------- Ajouter le script.js a la page programme */
-function ajouter_script_personnalise() {
-    if (is_page('programme')) { // Vérifie si la page actuelle est 'programme'
-        wp_enqueue_script('nom-du-script', get_template_directory_uri() . '/JS/script.js', array('jquery'), null, true);
-        // 'nom-du-script' est un identifiant unique pour votre script
-        // true signifie que le script sera placé dans le pied de page (juste avant </body>)
-    }
+
+function enqueue_custom_script() {
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/JS/script.js', array('jquery'), '1.0', true);
 }
-add_action('wp_enqueue_scripts', 'ajouter_script_personnalise');
+
+add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+
+function enqueue_jquery() {
+    wp_enqueue_script('jquery');
+}
+add_action('wp_enqueue_scripts', 'enqueue_jquery');
+
+function filter_posts() {
+    $session = sanitize_text_field($_POST['session']);
+
+    // Construction des arguments de requête WP
+    $args = array(
+        'post_type' => 'post',
+        'posts_per_page' => -1, // Affichez tous les articles correspondants
+        'tax_query' => array(
+            'relation' => 'AND', // Utilisez une relation "ET" pour satisfaire toutes les conditions
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => 'cours', // L'article doit avoir le slug "cours"
+            ),
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => 'projet', // Excluez les articles ayant le slug "projet"
+                'operator' => 'NOT IN',
+            ),
+            array(
+                'taxonomy' => 'category',
+                'field' => 'slug',
+                'terms' => 'session-' . $session, // Le slug de la session sélectionnée
+            ),
+        ),
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+            // Affichez ici le contenu de l'article comme vous le souhaitez
+            the_title();
+            the_content();
+        endwhile;
+    else :
+        echo 'Aucun article trouvé.';
+    endif;
+
+    wp_reset_postdata();
+
+    die();
+}
+
+add_action('wp_ajax_filter_posts', 'filter_posts');
+add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
+
+function add_ajax_url() {
+    echo '<script type="text/javascript">
+        var ajaxurl = "' . admin_url('admin-ajax.php') . '";
+    </script>';
+}
+
+add_action('wp_head', 'add_ajax_url');
 
