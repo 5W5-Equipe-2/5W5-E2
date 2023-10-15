@@ -41,6 +41,25 @@ if (in_category('projets')) {
     //Assigner le modèle de template-part personnalisé 
     $categorie_modele = locate_template('template-parts/categorie-' . $categorie->slug . '.php');
 
+    // Si le modèle n'est pas trouvé et que la catégorie actuelle a un parent
+    if (empty($categorie_modele) && $categorie->parent != 0) {
+    // Récupérer la catégorie parent
+    $categorie_parent = get_category($categorie->parent);
+
+    // Tant qu'un modèle personnalisé n'est pas trouvé et qu'il y a un parent
+    while (empty($categorie_modele) && $categorie_parent) {
+        // Chercher un modèle personnalisé pour la catégorie parente
+        $parent_modele = locate_template('template-parts/categorie-' . $categorie_parent->slug . '.php');
+        if (!empty($parent_modele)) {
+            $categorie_modele = $parent_modele;
+            break;
+        }
+
+        // Si le modèle n'est pas trouvé pour la catégorie parente, chercher le parent de la catégorie parente
+        $categorie_parent = get_category($categorie_parent->parent);
+    }
+}
+
     // Utiliser le modèle par défaut si un modèle personnalisé n'existe pas
     if (empty($categorie_modele)) {
         $categorie_modele = locate_template('template-parts/categorie-defaut.php');
