@@ -98,7 +98,7 @@ $titre = get_the_title();
         </svg>
         <p>
             <!-- Afficher les informations des champs AFC -->
-            <?php the_field('date_et_heure'); ?>
+            <p><?php the_modified_time('j F Y \à G:i'); ?></p>
         </p>
     </div>
     </div>
