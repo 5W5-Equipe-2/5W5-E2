@@ -15,10 +15,6 @@
       if (have_posts()) :
         while (have_posts()) : the_post();
           the_title('<h1 class="single_titre">', '</h1>');
-
-          /****** *À COMPLÉTER* **************************************************/
-          /* Requête média pour charger le bon thumbnail ******* ****************/
-          the_post_thumbnail('large');
           the_content();
         endwhile;
       endif;
