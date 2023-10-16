@@ -110,36 +110,42 @@ function enqueue_custom_script() {
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
-
+/**---------------------------------------------------------------------------- Ajouter url ajax */
+function add_ajax_url() {
+    echo '<script type="text/javascript">
+        var ajaxurl = "' . admin_url('admin-ajax.php') . '";
+    </script>';
+}
+/**---------------------------------------------------------------------------- Ajouter url ajax au head */
+add_action('wp_head', 'add_ajax_url');
 function enqueue_jquery() {
     wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'enqueue_jquery');
-
+/**---------------------------------------------------------------------------- filtrer les posts programme */
 function filter_posts() {
     $session = sanitize_text_field($_POST['session']);
 
-    // Construction des arguments de requête WP
     $args = array(
         'post_type' => 'post',
         'posts_per_page' => -1, // Affichez tous les articles correspondants
         'tax_query' => array(
-            'relation' => 'AND', // Utilisez une relation "ET" pour satisfaire toutes les conditions
+            'relation' => 'AND',
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
-                'terms' => 'cours', // L'article doit avoir le slug "cours"
+                'terms' => 'cours',
             ),
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
-                'terms' => 'projet', // Excluez les articles ayant le slug "projet"
+                'terms' => 'projet',
                 'operator' => 'NOT IN',
             ),
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
-                'terms' => 'session-' . $session, // Le slug de la session sélectionnée
+                'terms' => 'session-' . $session,
             ),
         ),
     );
@@ -148,9 +154,16 @@ function filter_posts() {
 
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
-            // Affichez ici le contenu de l'article comme vous le souhaitez
-            the_title();
-            the_content();
+            // Récupérez les données de l'article
+            $article_id = get_the_ID();
+            $article_title = get_the_title();
+            $article_content = get_the_content();
+
+            // Générez un bouton pour chaque article
+            echo '<button class="article-button" data-article-id="' . $article_id . '">' . $article_title . '</button>';
+
+            // Générez un conteneur pour le contenu de l'article
+            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . $article_content . '</div>';
         endwhile;
     else :
         echo 'Aucun article trouvé.';
@@ -164,11 +177,19 @@ function filter_posts() {
 add_action('wp_ajax_filter_posts', 'filter_posts');
 add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
 
-function add_ajax_url() {
-    echo '<script type="text/javascript">
-        var ajaxurl = "' . admin_url('admin-ajax.php') . '";
-    </script>';
+
+function get_article_content() {
+    $article_id = intval($_POST['article_id']);
+    $article_content = get_post_field('post_content', $article_id);
+    $article_title = get_post_field('post_title', $article_id);
+    
+    echo $article_title;
+    echo $article_content;
+    die();
 }
 
-add_action('wp_head', 'add_ajax_url');
+add_action('wp_ajax_get_article_content', 'get_article_content');
+add_action('wp_ajax_nopriv_get_article_content', 'get_article_content');
+
+
 

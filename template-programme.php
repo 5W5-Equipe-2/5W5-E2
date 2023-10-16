@@ -6,6 +6,7 @@
  */
 ?>
 <?php get_header(); ?>
+
 <main class="site_main site_main_programme">
 
     <?php /****** Introduction au programme *******/ ?>
@@ -34,7 +35,7 @@
 
     <?php /****** Liste de cours *******/ ?>
     <section class="Liste_programme">
-
+        <h2>Liste des cours</h2>
         <button class="filter-button" data-session="1">Session 1</button>
         <button class="filter-button" data-session="2">Session 2</button>
         <button class="filter-button" data-session="3">Session 3</button>
@@ -47,8 +48,9 @@
         </div>
 
         <div class="grille_cours">
-
+            <a href="#">Grille de cours</a>
         </div>
+        
     </section>
 
     <?php /****** Carrousel profs *******/ ?>
