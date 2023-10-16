@@ -19,14 +19,14 @@ $query = new WP_Query($args);
   <article class="">
     <?php
 
-    /****Si c'est la catégorie projets *************************************************/
+    /****Modèle si c'est la catégorie projets *************************************************/
     if (in_category('projets')) {
       if (have_posts()) :
         while (have_posts()) : the_post();
-          the_title('<h2 class="single_titre">', '</h2>');
+          the_title('<h2 class="single-titre">', '</h2>');
           the_content(); ?>
           <!-- Afficher les informations des champs AFC -->
-          <h3>Auteur(s) : <?php the_field('auteur'); ?></h3>
+          <h3>Auteur : <?php the_field('auteur'); ?></h3>
 
           <!-- Obtenir les termes (catégories) associés à l'article -->
           <?php
@@ -37,19 +37,22 @@ $query = new WP_Query($args);
               // Il s'agit d'une sous-catégorie
               $terme_parent = get_term($categories->parent, 'category');
               // Le slug du parent commence par "session"
-              if (strpos($terme_parent->slug, 'session') === 0) {?>
-              <h4>Réalisé dans :
-              <?php
-                echo $categories->name;
-                break; // Arrêtez la boucle 
-                ?>
-                </h4>
-                <?php
+              if (strpos($terme_parent->slug, 'session') === 0) {
+                $categorie_lien = get_term_link($categories); // Obtenir l'URL de la catégorie
+                if (!is_wp_error($categorie_lien)) {
+          ?>
+                  <h4>Réalisé dans :
+                    <a href="<?php echo esc_url($categorie_lien); ?>">
+                      <?php echo substr($categories->name, 4); ?>
+                    </a>
+                  </h4>
+          <?php
+                }
+                break; // Arrêtez la boucle
               }
             }
           }
           ?>
-
           <div>
             <!-- Afficher l'icône, la saison et l'année-->
             <div>
@@ -70,7 +73,16 @@ $query = new WP_Query($args);
               <h5> <?php the_field('saison'); ?></h5>
               <h5> <?php the_field('annee'); ?></h5>
             </div>
-            <p>Information additionnelle : <?php the_field('informations_additonnelles'); ?></p>
+            <?php
+            // Récupérez la valeur du champ AFC 'informations_additonnelles'
+            $informations_additonnelles = get_field('informations_additonnelles');
+            // Vérifiez si le champ n'est pas vide
+            if (!empty($informations_additonnelles)) {
+            ?>
+              <p>Information additionnelle : <?php echo $informations_additonnelles; ?></p>
+            <?php
+            }
+            ?>
       <?php
         endwhile;
       endif;
