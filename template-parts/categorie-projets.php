@@ -1,9 +1,10 @@
 <?php
 /**
- * Template part pour afficher par défaut s'il n'y a pas de template part au nom d'une catégorie
+ * Template part la catégorie projets
  */
     $titre = get_the_title();
   ?>
+  <h1>PROJETS</h1>
 <article class="">
   <?php  if(has_post_thumbnail()) {
     the_post_thumbnail('thumbnail');

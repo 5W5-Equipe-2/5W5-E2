@@ -24,9 +24,7 @@ function enregistrement_nav_menu()
     register_nav_menus(array(
         'entete' => 'Menu entete',
         'evt' => 'Menu évènement',
-        'projet' => 'Menu projet',
-       /* 'footer'  => 'Menu pied de page',
-        'aside'  => 'Menu secondaire',*/
+        'projets' => 'Menu projets',
  ));
 }
 /* add_action('after_setup_theme', 'enregistrement_nav_menu', 0);  */

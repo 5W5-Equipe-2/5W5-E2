@@ -448,7 +448,11 @@ a:hover, a:focus, a:active {
   color: var(--primaire);
 }
 
-.menu-trier {
+.menu-projets {
+  background-color: var(--simili-noir);
+}
+
+.menu-evenements {
   background-color: var(--simili-noir);
 }
 

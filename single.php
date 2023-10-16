@@ -6,15 +6,18 @@
  */
 
 /****Requêtes SQL de WP****************************************************/
-$categorie = get_queried_object();
-$args = array(
-  'category_name' => $categorie->slug,
-);
-$query = new WP_Query($args);
-?>
+    $categorie = get_queried_object();
+    $args = array(
+        'category_name' => $categorie->slug,
+        'orderby' => 'title',
+        'order' => 'ASC'
+    );
+    $query = new WP_Query($args);
+    ?>
 
 <!-- /****Affichage dans WordPress****************************************************/ -->
 <?php get_header(); ?>
+
 <main class="site_main">
   <article class="">
     <?php
