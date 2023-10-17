@@ -1,3 +1,4 @@
+/**---------------------------------------------------------------------------- function pour le bouton pour l'affichage des articles dans la liste des cours */
 jQuery(document).ready(function($) {
     // Fonction pour effectuer la requête AJAX et obtenir les boutons
     function filterPosts(session) {

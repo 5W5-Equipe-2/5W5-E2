@@ -103,6 +103,9 @@ add_action('pre_get_posts', 'e2_modifie_requete_principal');
 
 
 
+
+
+
 /**---------------------------------------------------------------------------- Ajouter le script.js a la page programme */
 
 function enqueue_custom_script() {
@@ -202,12 +205,7 @@ function filter_posts() {
 
 add_action('wp_ajax_filter_posts', 'filter_posts');
 add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
-
-
-
-
-
-
+/**---------------------------------------------------------------------------- Afficher le contenu des articles */
 function get_article_content() {
     $article_id = intval($_POST['article_id']);
     $article_content = get_post_field('post_content', $article_id);
