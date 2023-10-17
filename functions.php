@@ -163,7 +163,33 @@ function filter_posts() {
             echo '<button class="article-button" data-article-id="' . $article_id . '">' . $article_title . '</button>';
 
             // Générez un conteneur pour le contenu de l'article
-            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . $article_content . '</div>';
+            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . $article_content;
+
+            // Récupérez les articles ayant la même catégorie que le slug du titre de l'article actuel
+            $related_articles_args = array(
+                'post_type' => 'post',
+                'posts_per_page' => 3,
+                'category_name' => $article_title, // Utilisez la catégorie pour correspondre
+                'post__not_in' => array($article_id), // Excluez l'article actuel
+            );
+
+            $related_articles_query = new WP_Query($related_articles_args);
+
+            if ($related_articles_query->have_posts()) :
+                echo '<div class="related-articles">';
+                while ($related_articles_query->have_posts()) : $related_articles_query->the_post();
+                    // Récupérez la feature image (à la une) de l'article
+                    $thumbnail_url = get_the_post_thumbnail(get_the_ID(), 'thumbnail');
+                    if ($thumbnail_url) {
+                        // Générez un lien vers l'article correspondant
+                        $article_permalink = get_permalink();
+                        echo '<a href="' . esc_url($article_permalink) . '">' . $thumbnail_url . '</a>';
+                    }
+                endwhile;
+                echo '</div>';
+            endif;
+
+            echo '</div>'; // Fermez le conteneur du contenu de l'article
         endwhile;
     else :
         echo 'Aucun article trouvé.';
@@ -176,6 +202,10 @@ function filter_posts() {
 
 add_action('wp_ajax_filter_posts', 'filter_posts');
 add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
+
+
+
+
 
 
 function get_article_content() {

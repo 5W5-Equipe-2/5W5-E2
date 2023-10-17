@@ -35,3 +35,5 @@ jQuery(document).ready(function($) {
     // Au chargement de la page, déclenchez la requête AJAX pour la "session1"
     filterPosts('1');
 });
+
+

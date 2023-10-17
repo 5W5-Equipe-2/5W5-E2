@@ -29,8 +29,8 @@
     <?php /****** Les Inscriptions *******/ ?>
     <section class="inscription_programme">
         <h2>Veux t'inscrire?</h2>
-        <a href="#" class="boutonInscription">Étudiant d'un jour</a>
-        <a href="#" class="boutonInscription">Inscription au programme</a>
+        <a href="https://www.cmaisonneuve.qc.ca/accueil/etudiant-dun-jour/" class="boutonInscription">Étudiant d'un jour</a>
+        <a href="https://www.cmaisonneuve.qc.ca/programme/integration-multimedia/#admission_programme" class="boutonInscription">Inscription au programme</a>
     </section>
 
     <?php /****** Liste de cours *******/ ?>
