@@ -559,12 +559,6 @@ body {
   min-height: 10vh;
   width: 100%;
 }
-.site_pied_page .sidebar {
-  border: 1px solid var(--test);
-  margin: 0.5rem;
-  min-height: 4vh;
-  min-width: 4vw;
-}
 
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
