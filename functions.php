@@ -4,30 +4,29 @@ function ajouter_styles()
 {
 
     wp_enqueue_style(
-        'style-principale',  
-        get_template_directory_uri() . '/style.css',  
-        array(), 
-        filemtime(get_template_directory() . '/style.css')  
+        'style-principale',
+        get_template_directory_uri() . '/style.css',
+        array(),
+        filemtime(get_template_directory() . '/style.css')
     );
 
     /* Intégration des polices de Google */
-wp_enqueue_style('style-goolefont', 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet', false);
-    
-
+    wp_enqueue_style('style-goolefont', 'https://fonts.googleapis.com/css2?family=DM+Sans:opsz@9..40&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet', false);
 }
-add_action('wp_enqueue_scripts', 'ajouter_styles' );
+add_action('wp_enqueue_scripts', 'ajouter_styles');
 
 
 /* ----------------------------------------------------------------------------- Enregistrement des menus */
 function enregistrement_nav_menu()
 {
     register_nav_menus(array(
-        'principal' => 'Menu principal',
-       /* 'footer'  => 'Menu pied de page',
-        'aside'  => 'Menu secondaire',*/
+        'entete' => 'Menu entete',
+        'evt' => 'Menu évènement',
+        'projets' => 'Menu projets',
  ));
 }
-add_action('after_setup_theme', 'enregistrement_nav_menu', 0); 
+/* add_action('after_setup_theme', 'enregistrement_nav_menu', 0);  */
+add_action('init', 'enregistrement_nav_menu', 0); 
 
 
 /*------------------------------------------------------------------------------ add_theme_support() */
@@ -43,43 +42,42 @@ add_theme_support('post-thumbnails');
 add_theme_support('custom-background');
 
 
-/*----------------------------------------------------------------------------- Enregistrer le sidebar */
-
-/* À utiliser dans : footer.php) */
-function enregistrer_sidebar() {
-
-    register_sidebar( array(
-        'name' => __( 'Footer 1', '5W5-E2' ),
+/*------------------------------------------------------------------------------ Enregistrer le sidebar */
+/****** 
+ À utiliser dans : footer.php) 
+ **********************************/
+function enregistrer_sidebar()
+{    register_sidebar(array(
+        'name' => __('Footer 1', '5W5-E2'),
         'id' => 'footer_1',
-        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '5W5-E2' ),
+        'description' => __('Une zone pour afficher des widgets dans le footer.', '5W5-E2'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
-    ) );
+    ));
 
-    register_sidebar( array(
-        'name' => __( 'Footer 2', '5W5-E2' ),
+    register_sidebar(array(
+        'name' => __('Footer 2', '5W5-E2'),
         'id' => 'footer_2',
-        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '5W5-E2' ),
+        'description' => __('Une zone pour afficher des widgets dans le footer.', '5W5-E2'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
-    ) );
+    ));
 
-    register_sidebar( array(
-        'name' => __( 'Footer 3', '5W5-E2' ),
+    register_sidebar(array(
+        'name' => __('Footer 3', '5W5-E2'),
         'id' => 'footer_3',
-        'description' => __( 'Une zone pour afficher des widgets dans le footer.', '5W5-E2' ),
+        'description' => __('Une zone pour afficher des widgets dans le footer.', '5W5-E2'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
-    ) );
-
+    ));
 }
-add_action( 'widgets_init', 'enregistrer_sidebar' );
+add_action('widgets_init', 'enregistrer_sidebar');
 
 
 
@@ -97,7 +95,7 @@ function e2_modifie_requete_principal($query) //s'exécute à chaque page
     }
 }
 
-add_action('pre_get_posts', 'e2_modifie_requete_principal'); 
+add_action('pre_get_posts', 'e2_modifie_requete_principal');
 
 /*----------------------------------------------------------------------------- Masquer nom de catégorie */
 
@@ -108,25 +106,29 @@ add_action('pre_get_posts', 'e2_modifie_requete_principal');
 
 /**---------------------------------------------------------------------------- Ajouter le script.js a la page programme */
 
-function enqueue_custom_script() {
+function enqueue_custom_script()
+{
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/JS/script.js', array('jquery'), '1.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
 /**---------------------------------------------------------------------------- Ajouter url ajax */
-function add_ajax_url() {
+function add_ajax_url()
+{
     echo '<script type="text/javascript">
         var ajaxurl = "' . admin_url('admin-ajax.php') . '";
     </script>';
 }
 /**---------------------------------------------------------------------------- Ajouter url ajax au head */
 add_action('wp_head', 'add_ajax_url');
-function enqueue_jquery() {
+function enqueue_jquery()
+{
     wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'enqueue_jquery');
 /**---------------------------------------------------------------------------- filtrer les posts programme */
-function filter_posts() {
+function filter_posts()
+{
     $session = sanitize_text_field($_POST['session']);
 
     $args = array(
@@ -206,11 +208,12 @@ function filter_posts() {
 add_action('wp_ajax_filter_posts', 'filter_posts');
 add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
 /**---------------------------------------------------------------------------- Afficher le contenu des articles */
-function get_article_content() {
+function get_article_content()
+{
     $article_id = intval($_POST['article_id']);
     $article_content = get_post_field('post_content', $article_id);
     $article_title = get_post_field('post_title', $article_id);
-    
+
     echo $article_title;
     echo $article_content;
     die();
@@ -218,6 +221,3 @@ function get_article_content() {
 
 add_action('wp_ajax_get_article_content', 'get_article_content');
 add_action('wp_ajax_nopriv_get_article_content', 'get_article_content');
-
-
-

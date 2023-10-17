@@ -1,3 +1,9 @@
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
 */
+
+.recherche__bouton {
+  background: transparent;
+  border: none;
+  transform: translateY(0.2rem);
+}

@@ -439,7 +439,7 @@ figcaption {
 }
 
 a {
-  color: var(--noir);
+  color: var(--blanc);
   text-decoration: none;
 }
 a:visited {
@@ -447,6 +447,14 @@ a:visited {
 }
 a:hover, a:focus, a:active {
   color: var(--primaire);
+}
+
+.menu-projets {
+  background-color: var(--simili-noir);
+}
+
+.menu-evenements {
+  background-color: var(--simili-noir);
 }
 
 /* 
@@ -552,16 +560,17 @@ body {
   min-height: 10vh;
   width: 100%;
 }
-.site_pied_page .sidebar {
-  border: 1px solid var(--test);
-  margin: 0.5rem;
-  min-height: 4vh;
-  min-width: 4vw;
-}
 
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
 */
+.recherche__bouton {
+  background: transparent;
+  border: none;
+  transform: translateY(0.2rem);
+}
+
+/* Pour front-page.php */
 /* Pour front-page.php */
 .media_vedette {
   height: 100%;
