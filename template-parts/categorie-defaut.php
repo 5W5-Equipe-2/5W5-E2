@@ -4,7 +4,7 @@
  */
     $titre = get_the_title();
   ?>
-<article class="">
+<article class="categorie__article">
   <?php  if(has_post_thumbnail()) {
     the_post_thumbnail('thumbnail');
   } 

@@ -7,7 +7,7 @@ $titre = get_the_title();
 ?>
 
 <!-- Affichage dans WordPress ----------------------------------------------------->
-<article class="">
+<article class="categorie__article">
     <!--  Un div qui inclus l'image, le titre et la date de l'évènement -->
     <div class="">
         <!--  Afficher l'image et en faire un lien clicable -->

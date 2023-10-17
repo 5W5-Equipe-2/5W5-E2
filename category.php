@@ -38,7 +38,12 @@ if (empty($categorie_modele)) {
     $categorie_modele = locate_template('template-parts/categorie-defaut.php');
 }
 
-// Utiliser le modèle pour Porjets si c'est aussi la catégorie des cours
+// Utiliser le modèle pour projets si c'est aussi la catégorie des cours
+if (has_term(array('cours'), 'category')) {
+    $categorie_modele = locate_template('template-parts/categorie-projets.php');
+}
+
+// Utiliser le modèle pour projets si c'est aussi un enfant de catégorie des cours
 if (has_term(array('projets', 'cours'), 'category')) {
     $categorie_modele = locate_template('template-parts/categorie-projets.php');
 }
@@ -57,7 +62,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
 
 <main class="site_main">
 
-    <section class="">
+    <section class="categorie__section">
         <?php
         if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post();
