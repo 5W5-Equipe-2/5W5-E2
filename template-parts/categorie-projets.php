@@ -5,7 +5,7 @@
 $titre = get_the_title();
 ?>
 
-<?php if (has_term(array('projets', 'evenements'), 'category')) : ?>
+<?php if (has_post_thumbnail()) { ?> 
     <article class="categorie__article">
         <?php the_post_thumbnail('thumbnail'); ?>
         <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>
@@ -13,4 +13,6 @@ $titre = get_the_title();
         <?php $lire = "<span><a href='" . $lien . "'>... &#187;</a></span>" ?>
         <p> <?= wp_trim_words(get_the_excerpt(), 10, $lire) ?> </p>
     </article>
-<?php endif; ?>
+<?php } ?> 
+
+

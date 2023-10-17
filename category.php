@@ -33,19 +33,19 @@ if (empty($categorie_modele)) {
     }
 }
 
+// Utiliser le modèle pour projets si c'est aussi dans la catégorie des cours
+if (has_term('projets', 'category') && has_term('cours', 'category')) {
+    $categorie_modele = locate_template('template-parts/categorie-projets.php');
+}
+
+/* // Utiliser le modèle pour projets si c'est aussi la catégorie des cours
+if (has_term(array('cours'), 'category')) {
+    $categorie_modele = locate_template('template-parts/categorie-projets.php');
+} */
+
 // Utiliser le modèle par défaut si aucun modèle personnalisé n'est pas trouvé
 if (empty($categorie_modele)) {
     $categorie_modele = locate_template('template-parts/categorie-defaut.php');
-}
-
-// Utiliser le modèle pour projets si c'est aussi la catégorie des cours
-if (has_term(array('cours'), 'category')) {
-    $categorie_modele = locate_template('template-parts/categorie-projets.php');
-}
-
-// Utiliser le modèle pour projets si c'est aussi un enfant de catégorie des cours
-if (has_term(array('projets', 'cours'), 'category')) {
-    $categorie_modele = locate_template('template-parts/categorie-projets.php');
 }
 ?>
 <!---------------------  Affichage dans WordPress********************************* -->
