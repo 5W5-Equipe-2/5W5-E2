@@ -1,6 +1,12 @@
-# Branche de développement du Sprint 02
+# Branche de développement du Sprint 01
 
-## Le Sprint 02 est dédié à la programmation PHP et JS du thème. 
+## Le Sprint 01 sert à développer un prototype simple du thème. Le prototype comprend :
+1.	Un début de site WP implémentée sur un serveur distant 
+2.	Début du nouveau thème
+3.	Une navigation organisée selon l'organigramme prévue à l’étape d’analyse
+4.	Un prototype de page d'accueil
+5.	Début d’une structure de fichier Sass  personnalisé
+6.	Modification des fichiers modèles: header.php, footer.php, front-page.php, single.php, 404.php, search.php, category.php, functions.php, template-parts
 
 - Déploiement du projet sur le serveur (ramnode) :
   - https://5w5.ndasilva.ca/
@@ -38,5 +44,7 @@
   - Un moteur de recherche
   - Des extensions créées en JavaScript ES6
   
+
+
 
 

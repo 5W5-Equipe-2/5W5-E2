@@ -26,7 +26,7 @@ $imagePath = "wp-content/themes/5W5-E2/images/media_vedette_test.jpg";
 
  
   <section class="accueil_evenements">
-  <h4>Évènements</h4>
+  <h4>Évènements récents</h4>
   <?php
     if (have_posts()) :
       while (have_posts()) : the_post();

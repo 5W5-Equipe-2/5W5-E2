@@ -1,41 +1,75 @@
 <?php
 
 /**
- * Modèle category par défaut
+ * Modèle category.php 
  * 
  */
 ?>
+<?php
+/****Requêtes SQL de WP*********************************************************/
+$categorie = get_queried_object();
+$args = array(
+    'category_name' => $categorie->slug,
+    'orderby' => 'title',
+    'order' => 'ASC'
+);
+$query = new WP_Query($args);
+$cat_slug =  $categorie->slug;
+?>
+
+<?php
+// Rechercher un modèle de catégorie en fonction du slug
+$categorie_modele = locate_template('template-parts/categorie-' . $cat_slug . '.php');
+
+// Si un modèle n'est pas trouvé pour la catégorie actuelle, recherchez le modèle du parent
+if (empty($categorie_modele)) {
+    $parent_cat = get_term_by('id',  $categorie->parent, 'category'); // Récupérer la catégorie parente
+
+    // Tant qu'il y a une catégorie parente et que le modèle n'a pas été trouvé
+    while ($parent_cat && empty($categorie_modele)) {
+        $parent_slug = $parent_cat->slug;
+        $categorie_modele = locate_template('template-parts/categorie-' . $parent_slug . '.php');
+        $parent_cat = get_term_by('id', $parent_cat->parent, 'category'); // Récupérer la catégorie parente suivante
+    }
+}
+
+// Utiliser le modèle pour projets si c'est aussi dans la catégorie des cours
+if (has_term('projets', 'category') && has_term('cours', 'category')) {
+    $categorie_modele = locate_template('template-parts/categorie-projets.php');
+}
+
+/* // Utiliser le modèle pour projets si c'est aussi la catégorie des cours
+if (has_term(array('cours'), 'category')) {
+    $categorie_modele = locate_template('template-parts/categorie-projets.php');
+} */
+
+// Utiliser le modèle par défaut si aucun modèle personnalisé n'est pas trouvé
+if (empty($categorie_modele)) {
+    $categorie_modele = locate_template('template-parts/categorie-defaut.php');
+}
+?>
+<!---------------------  Affichage dans WordPress********************************* -->
+
+<!-- Entête    *** -->
 <?php get_header(); ?>
 
+<!-- Aside    ***  -->
+<?php //Si c'est les catégories projets et evenements
+if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'), 'category'))) {
+    get_template_part("template-parts/aside");
+}
+?>
+
 <main class="site_main">
-    <?php
-     /****Requêtes SQL de WP****************************************************/
-    $categorie = get_queried_object();
-    $args = array(
-        'category_name' => $categorie->slug,
-        'orderby' => 'title',
-        'order' => 'ASC'
-    );
-    $query = new WP_Query($args);
 
-    /****Localiser et assigner un template-part*********************************/
-    //Assigner le modèle de template-part personnalisé 
-    $categorie_modele = locate_template('template-parts/categorie-' . $categorie->slug . '.php');
-    
-    // Utiliser le modèle par défaut si un modèle personnalisé n'existe pas
-    if (empty($categorie_modele)) {
-        $categorie_modele = locate_template('template-parts/categorie-defaut.php');
-    }
-    ?>
-
-    <!-- Affichage dans WordPress --------------------------------------------------->
-    <h2 class=""><?php echo $categorie->name ?></h2>
-    <section class="">
+    <section class="categorie__section">
         <?php
         if ($query->have_posts()) :
             while ($query->have_posts()) : $query->the_post();
-                // Inclure le modèle personnalisé ou le modèle par défaut
-                include $categorie_modele;
+                // Charger le modèle pour la catégorie
+                if (!empty($categorie_modele)) {
+                    include($categorie_modele);
+                }
             endwhile;
         endif;
         wp_reset_postdata();

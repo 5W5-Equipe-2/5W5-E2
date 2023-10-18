@@ -10,26 +10,25 @@
 </head>
 
 <body>
-     <header class="site_entete">
-     <h1><a href="<?= bloginfo('url') ?>"><?= bloginfo('name') ?></a></h1>
-      <h2><?= bloginfo('description') ?></h2>
-      
-      <input type="checkbox" id="chkMenu" value="">
-      <section class="site__header__barre">
-        <label class="burger" for="chkMenu">
-          <span class="iconebgr">menu</span>
-        </label>
-      </section>
-      <!-- Navigation principale (div) -->
-      <?php wp_nav_menu(array(
-          "menu" => "entete",
-          "container" => "nav"
-        )) ?>
+  <header class="site_entete">
+    <h1><a href="<?= bloginfo('url') ?>"><?= bloginfo('name') ?></a></h1>
+    <h2><?= bloginfo('description') ?></h2>
 
-        
-        <div class="">
-          <?php get_search_form(); ?>
-        </div>
+    <input type="checkbox" id="chkMenu" value="">
+    <section class="site__header__barre">
+      <label class="burger" for="chkMenu">
+        <span class="iconebgr">menu</span>
+      </label>
+    </section>
 
-    </header>
- 
+    <!-- Navigation principale (nav) -->
+    <?php wp_nav_menu(array(
+      "theme_location" => "entete",
+      "container" => "nav"
+    )) ?>
+
+    <div class="">
+      <?php get_search_form(); ?>
+    </div>
+
+  </header>
