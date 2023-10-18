@@ -154,28 +154,28 @@ function filter_posts() {
     );
 
     $query = new WP_Query($args);
-
+    
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
             // Récupérez les données de l'article
             $article_id = get_the_ID();
             $article_title = get_the_title();
             $article_content = get_the_content();
+            $article_category = get_the_category(); // Récupérez la catégorie de l'article en tableau
 
             // Générez un bouton pour chaque article
             echo '<button class="article-button" data-article-id="' . $article_id . '">' . $article_title . '</button>';
 
             // Générez un conteneur pour le contenu de l'article
             echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . $article_content;
-
             // Récupérez les articles ayant la même catégorie que le slug du titre de l'article actuel
             $related_articles_args = array(
                 'post_type' => 'post',
                 'posts_per_page' => 3,
-                'category_name' => $article_title, // Utilisez la catégorie pour correspondre
+                'category_name' => $article_category[0]->slug, // Utilisez la catégorie pour correspondre
                 'post__not_in' => array($article_id), // Excluez l'article actuel
             );
-
+            
             $related_articles_query = new WP_Query($related_articles_args);
 
             if ($related_articles_query->have_posts()) :
@@ -191,6 +191,9 @@ function filter_posts() {
                 endwhile;
                 echo '</div>';
             endif;
+            // Générez un lien vers la catégorie
+            $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
+            echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
 
             echo '</div>'; // Fermez le conteneur du contenu de l'article
         endwhile;
