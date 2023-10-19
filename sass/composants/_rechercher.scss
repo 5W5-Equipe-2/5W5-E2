@@ -5,16 +5,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid var(--blanc);
+  border: 2px solid var(--simili-noir);
+  background-color: var(--blanc);
   
 
   input.recherche__input {
     font-family: var(--police-titre);
-    height: 3em;
-    width: 30vw;
-    background-color: transparent;
+    font-size: 18px;
+    //height: 3em;
+    width: 70vw;
+    background-color: var(--blanc);
     border: none;
-    color: var(--blanc);
+    color: var(--noir);
     padding-left: 0.4rem;
   }
 
@@ -28,6 +30,7 @@
 
  .recherche__bouton {
     border: none;
+    margin-right: 0.8em;
 
     /* Google material symbol search */
     .material-symbols-outlined {
@@ -38,6 +41,5 @@
     }
 
     padding: 0;
-    background-color: transparent;
   }
 }

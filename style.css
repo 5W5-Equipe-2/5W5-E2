@@ -438,7 +438,7 @@ figcaption {
 }
 
 a {
-  color: var(--test);
+  color: var(--blanc);
   text-decoration: none;
 }
 a:visited {
@@ -465,15 +465,26 @@ body {
 */
 .site_entete {
   background-color: var(--noir);
-  min-height: 6vh;
+  min-height: 5vh;
   width: 100%;
   display: flex;
 }
 
+.logo-TIM {
+  display: flex;
+  justify-content: center;
+  width: 10vw;
+}
+
+.titre-header {
+  display: none;
+}
+
 .main-navigation {
-  width: 100%;
+  width: 80vw;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
   /* -----------------------------------------------------------------------------
   Barre de recherche
   ------------------------------------------------------------------------------*/
@@ -491,21 +502,31 @@ body {
 }
 .main-navigation ul li {
   font-family: var(--police-titre);
+  font-size: 21px;
 }
 .main-navigation a {
   display: block;
   text-decoration: none;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 2px solid var(--blanc);
 }
 .main-navigation .site__header__recherche {
   display: none;
+}
+.main-navigation .site__header__recherche .recherche > label {
+  width: 80vw;
+  height: 5vh;
 }
 @media screen and (min-width: 992px) {
   .main-navigation .site__header__recherche {
     display: flex;
     position: absolute;
     right: 1vw;
+  }
+  .main-navigation .site__header__recherche .recherche > label {
+    width: 30vw;
+    height: 3vh;
   }
 }
 
@@ -515,11 +536,14 @@ Bouton burger
 .boutton {
   display: flex;
   justify-content: flex-end;
-  margin-right: 2vw;
+  align-items: center;
+  margin-top: 3%;
 }
 
 .menu-toggle {
   display: block;
+  background-color: transparent;
+  border: none;
 }
 
 .main-navigation.toggled {
@@ -543,7 +567,7 @@ menu tablet
 ------------------------------------------------------------------------------ */
 @media screen and (min-width: 992px) {
   .site_entete {
-    height: 8vh;
+    height: 6vh;
   }
   .main-navigation {
     display: flex;
@@ -553,11 +577,15 @@ menu tablet
     margin-right: 2vw;
   }
   .main-navigation .menu {
-    padding-right: 34vw;
+    padding-right: 22vw;
+  }
+  .main-navigation ul li {
+    font-size: 18px;
   }
   .main-navigation a {
     padding-left: 1.5rem;
     padding-bottom: 1.5rem;
+    border-bottom: none;
   }
   .menu-toggle {
     display: none;
@@ -624,15 +652,16 @@ menu tablet
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid var(--blanc);
+  border: 2px solid var(--simili-noir);
+  background-color: var(--blanc);
 }
 .recherche > label input.recherche__input {
   font-family: var(--police-titre);
-  height: 3em;
-  width: 30vw;
-  background-color: transparent;
+  font-size: 18px;
+  width: 70vw;
+  background-color: var(--blanc);
   border: none;
-  color: var(--blanc);
+  color: var(--noir);
   padding-left: 0.4rem;
 }
 .recherche > label input.recherche__input:focus {
@@ -643,9 +672,9 @@ menu tablet
 }
 .recherche > label .recherche__bouton {
   border: none;
+  margin-right: 0.8em;
   /* Google material symbol search */
   padding: 0;
-  background-color: transparent;
 }
 .recherche > label .recherche__bouton .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
