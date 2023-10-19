@@ -7,25 +7,25 @@
 ?>
 <footer class="site_pied_page">
 
-
-  <section class="sidebar">
-    <p>Sidebar 1</p>
+  <section>
+    <?php the_custom_logo(); ?>
+  </section>
+  
+  <section>
     <?php dynamic_sidebar('footer_1'); ?>
   </section>
 
-  <section class="sidebar">
-    <p>Sidebar 2</p>
+  <section>
     <?php dynamic_sidebar('footer_2'); ?>
   </section>
 
-
-  <section class="sidebar">
-    <p>Sidebar 3</p>
+  <section>
     <?php dynamic_sidebar('footer_3'); ?>
   </section>
 
-  <p>© <?= date("Y") ?> Collège de Maisonneuve. Tous droits réservés. </p>
-
+  <section>
+    <p>© <?= date("Y") ?> Collège de Maisonneuve. Tous droits réservés. </p>
+  </section>
 
 </footer>
 <?php wp_footer(); ?>

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
      <header class="site_entete">
      <h1 class="titre-header"><a href="<?= bloginfo('url') ?>"><?= bloginfo('name') ?></a></h1>
      <div class="logo-TIM">
@@ -42,7 +43,6 @@
       <!-- Navigation principale (div) -->
 
 
-      
+       
 
-    </header>
- 
+  </header>

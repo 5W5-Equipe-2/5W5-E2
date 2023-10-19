@@ -85,7 +85,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -448,6 +449,14 @@ a:hover, a:focus, a:active {
   color: var(--primaire);
 }
 
+.menu-projets {
+  background-color: var(--simili-noir);
+}
+
+.menu-evenements {
+  background-color: var(--simili-noir);
+}
+
 /* 
 ** Tout ce qui concerne la balise body
 ** 
@@ -638,16 +647,11 @@ menu tablet
   min-height: 10vh;
   width: 100%;
 }
-.site_pied_page .sidebar {
-  border: 1px solid var(--test);
-  margin: 0.5rem;
-  min-height: 4vh;
-  min-width: 4vw;
-}
 
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
 */
+
 .recherche > label {
   display: flex;
   align-items: center;
@@ -682,6 +686,15 @@ menu tablet
   cursor: pointer;
   padding-right: 0.4rem;
 }
+
+
+.recherche__bouton {
+  background: transparent;
+  border: none;
+  transform: translateY(0.2rem);
+}
+
+/* Pour front-page.php */
 
 /* Pour front-page.php */
 .media_vedette {
@@ -723,7 +736,8 @@ https://cssduotone.com/
   height: 100%;
   max-width: 100%;
   mix-blend-mode: var(--ar-blend);
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   opacity: var(--opacite);
   position: relative;
   width: 100%;
@@ -763,4 +777,23 @@ https://cssduotone.com/
   background-color: var(--complementaire);
   min-height: 50vh;
   width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+button {
+  margin: 10px;
 }/*# sourceMappingURL=style.css.map */
