@@ -474,62 +474,149 @@ body {
 */
 .site_entete {
   background-color: var(--noir);
-  min-height: 10vh;
+  min-height: 5vh;
   width: 100%;
+  display: flex;
 }
 
-/* ------------------------------------------ Bouton burger */
-.burger {
+.logo-TIM {
   display: flex;
   justify-content: center;
-  align-items: center;
-  width: 25px;
-}
-@media screen and (min-width: 992px) {
-  .burger {
-    display: none;
-  }
+  width: 10vw;
 }
 
-#chkMenu {
+.titre-header {
   display: none;
 }
 
-/* ------------------------------------------ Burger */
-#chkMenu:checked ~ .menu-entete-container {
-  transform: translateX(0);
+.main-navigation {
+  width: 80vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  /* -----------------------------------------------------------------------------
+  Barre de recherche
+  ------------------------------------------------------------------------------*/
+}
+.main-navigation ul {
+  display: none;
+  /*position : absolute;*/
+  width: 100%;
+  padding-top: 2vh;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  text-align: left;
+  z-index: 99999;
+}
+.main-navigation ul li {
+  font-family: var(--police-titre);
+  font-size: 21px;
+}
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 2px solid var(--blanc);
+}
+.main-navigation .site__header__recherche {
+  display: none;
+}
+.main-navigation .site__header__recherche .recherche > label {
+  width: 80vw;
+  height: 5vh;
+}
+@media screen and (min-width: 992px) {
+  .main-navigation .site__header__recherche {
+    display: flex;
+    position: absolute;
+    right: 1vw;
+  }
+  .main-navigation .site__header__recherche .recherche > label {
+    width: 30vw;
+    height: 3vh;
+  }
 }
 
-.menu-entete-container {
-  transform: translateX(300px);
-  transition: transform 0.5s;
-}
-@media screen and (min-width: 992px) {
-  .menu-entete-container {
-    transform: translateX(0);
-  }
-}
-.menu-entete-container .menu {
+/* -----------------------------------------------------------------------------
+Bouton burger 
+------------------------------------------------------------------------------*/
+.boutton {
   display: flex;
-  flex-direction: column;
-  list-style-type: none;
-  align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 3%;
 }
+
+.menu-toggle {
+  display: block;
+  background-color: transparent;
+  border: none;
+}
+
+.main-navigation.toggled {
+  height: 100vh;
+  justify-content: space-around;
+  display: block;
+}
+.main-navigation.toggled .site__header__recherche {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5vh;
+}
+
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+}
+
+/* ---------------------------------------------------------------------------
+menu tablet
+------------------------------------------------------------------------------ */
 @media screen and (min-width: 992px) {
-  .menu-entete-container .menu {
-    flex-direction: row;
-    align-items: center;
+  .site_entete {
+    height: 6vh;
+  }
+  .main-navigation {
+    display: flex;
     justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    margin-right: 2vw;
+  }
+  .main-navigation .menu {
+    padding-right: 22vw;
+  }
+  .main-navigation ul li {
+    font-size: 18px;
+  }
+  .main-navigation a {
+    padding-left: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: none;
+  }
+  .menu-toggle {
+    display: none;
+  }
+  .main-navigation.toggled ul,
+.main-navigation ul {
+    display: flex;
+    padding-top: 0;
+    justify-content: flex-end;
+    padding-right: 5%;
+  }
+  .main-navigation.toggled ul a[href="#"]::after,
+.main-navigation ul a[href="#"]::after {
+    display: none;
+  }
+  .main-navigation.toggled ul ul,
+.main-navigation ul ul {
+    display: none;
   }
 }
-.menu-entete-container .menu .menu-item {
-  color: rgb(0, 42, 85);
-}
-.menu-entete-container .menu .menu-item a {
-  display: block;
-  padding: 5px 20px;
-  white-space: nowrap;
+.menu-toggle.menu-toggled {
+  opacity: 1;
 }
 
 /* 
@@ -564,6 +651,43 @@ body {
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
 */
+
+.recherche > label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--simili-noir);
+  background-color: var(--blanc);
+}
+.recherche > label input.recherche__input {
+  font-family: var(--police-titre);
+  font-size: 18px;
+  width: 70vw;
+  background-color: var(--blanc);
+  border: none;
+  color: var(--noir);
+  padding-left: 0.4rem;
+}
+.recherche > label input.recherche__input:focus {
+  outline: none;
+}
+.recherche > label input.recherche__input::placeholder {
+  color: var(--blanc);
+}
+.recherche > label .recherche__bouton {
+  border: none;
+  margin-right: 0.8em;
+  /* Google material symbol search */
+  padding: 0;
+}
+.recherche > label .recherche__bouton .material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+  color: var(--blanc);
+  cursor: pointer;
+  padding-right: 0.4rem;
+}
+
+
 .recherche__bouton {
   background: transparent;
   border: none;
@@ -571,6 +695,7 @@ body {
 }
 
 /* Pour front-page.php */
+
 /* Pour front-page.php */
 .media_vedette {
   height: 100%;

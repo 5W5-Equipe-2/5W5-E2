@@ -1,5 +1,11 @@
 <?php
 /* ----------------------------------------------------------------------------- Lier les styles */
+
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.0' );
+}
+
 function ajouter_styles()
 {
 
@@ -34,8 +40,8 @@ add_theme_support('title-tag');
 add_theme_support(
     'custom-logo',
     array(
-        'height' => 150,
-        'width'  => 150,
+        'height' => 50,
+        'width'  => 50,
     )
 );
 add_theme_support('post-thumbnails');
@@ -97,7 +103,15 @@ function e2_modifie_requete_principal($query) //s'exécute à chaque page
 
 add_action('pre_get_posts', 'e2_modifie_requete_principal');
 
-/*----------------------------------------------------------------------------- Masquer nom de catégorie */
+/*-----------------------------------------------------------------------------ajouter le script pour la navugation header */
+
+
+function theme5w5_scripts() {
+
+    wp_enqueue_script( 'theme454-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+}
+add_action( 'wp_enqueue_scripts', 'theme5w5_scripts' );
 
 
 
@@ -224,3 +238,4 @@ function get_article_content()
 
 add_action('wp_ajax_get_article_content', 'get_article_content');
 add_action('wp_ajax_nopriv_get_article_content', 'get_article_content');
+
