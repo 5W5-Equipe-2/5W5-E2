@@ -12,7 +12,7 @@ $args = array(
   /* 'category_name' => 'projets,cours', */
   'orderby' => 'rand', // Ordre aléatoire
   'post_type' => 'post',
-  'posts_per_page' => 6,  // Afficher 6 articles 
+  'posts_per_page' => -1, 
 );
 $query = new WP_Query($args);
 ?>

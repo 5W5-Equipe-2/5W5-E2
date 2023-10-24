@@ -62,11 +62,11 @@ if (empty($categorie_modele)) {
 ?>
 <!---------------------  Affichage dans WordPress********************************* -->
 
-<!-- Entête    *** -->
+<!-- Entête    ************************ -->
 <?php get_header(); ?>
 
-<!-- Aside    ***  -->
-<?php //Si c'est les catégories projets et evenements
+<!-- Aside    *************************  -->
+<?php //Si c'est les catégories evenements et projets
 if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'), 'category'))) {
     get_template_part("template-parts/aside");
 }
