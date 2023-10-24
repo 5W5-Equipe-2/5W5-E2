@@ -4,18 +4,15 @@
  * Template name: projet
  * 
  */
-?>
-<?php get_header(); ?>
-<?php
+
 /****Requêtes SQL de WP*********************************************************/
 $categorie = get_queried_object();
 $args = array(
   'category_name' => 'projets',
   /* 'category_name' => 'projets,cours', */
   'orderby' => 'rand', // Ordre aléatoire
-  'order' => 'ASC',
   'post_type' => 'post',
-  'posts_per_page' => -1
+  'posts_per_page' => 6,  // Afficher 6 articles 
 );
 $query = new WP_Query($args);
 ?>
@@ -26,23 +23,24 @@ $query = new WP_Query($args);
 <?php get_header(); ?>
 
 <!-- Aside    ***  -->
-<?php //Si c'est les catégories projets et evenements
+<?php 
 if (!is_front_page() && (!is_admin())) {
   get_template_part("template-parts/aside");
 }
 ?>
 
 <main class="site_main">
-  <!--    On affiche ce qui est mis dans WordPress -->
+<section>
+  <!--    On affiche ce qui est mis dans WordPress par l'utilisateur -->
   <?php the_content()?>
-
+</section>
+  <!--    Affichage des projets -->
   <section class="categorie__section">
     <?php
     if ($query->have_posts()) :
       while ($query->have_posts()) :
         $query->the_post(); 
-        
-        
+    
     //<!--  Aller chercher champs AFC (clicable) -->
              $auteur = get_field('auteur');
                if (has_post_thumbnail() && !empty($auteur)) : ?>
@@ -67,5 +65,6 @@ if (!is_front_page() && (!is_admin())) {
     endif;
         ?>      
   </section>
+
 </main>
 <?php get_footer(); ?>

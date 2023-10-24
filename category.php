@@ -17,6 +17,18 @@ $query = new WP_Query($args);
 $cat_slug =  $categorie->slug;
 ?>
 
+
+<?php
+/****Récupérer le nom de la catégorie à partir de l'url *********************************************************/
+// Récupérez l'URL actuelle
+$url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+// Extrait le dernier segment de l'URL
+$segments = explode('/', rtrim($url, '/'));
+$categorie_slug = end($segments);
+?>
+
+
 <?php
 // Rechercher un modèle de catégorie en fonction du slug
 $categorie_modele = locate_template('template-parts/categorie-' . $cat_slug . '.php');
@@ -61,6 +73,13 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
 ?>
 
 <main class="site_main">
+
+<?php //Si c'est la catégorie Projets, on affiche le nom de la catégorie 
+
+if (has_term(array('projets'), 'category')) {
+    echo '<h2>' . $categorie->name . '</h2>';
+}
+?>
 
     <section class="categorie__section">
         <?php
