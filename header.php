@@ -17,7 +17,7 @@
       <a href="<?php bloginfo('url') ?>"> <?php the_custom_logo() ?></a>
     </div>
       
-        <nav id="site-navigation" class="main-navigation">
+        <div id="site-navigation" class="main-navigation">
 			
         <div class="boutton">
             <!-- button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><img src="https://s2.svgbox.net/illlustrations.svg?ic=burger&color=000" width="32" height="32"></button -->
@@ -29,20 +29,13 @@
           <?php get_search_form(); ?>
         </div> 
 
-			<?php wp_nav_menu(array(
-          "menu" => "entete",
-          "container" => "nav"
-        ))
-         ?>
+   <!-- Navigation principale (nav) -->
+   <?php wp_nav_menu(array(
+      "theme_location" => "entete",
+      "container" => "nav"
+    )) ?>
 
-
-		</nav><!-- #site-navigation -->
-
-    
-      </section>
-      <!-- Navigation principale (div) -->
-
-
-       
+		</div><!-- #site-navigation -->
+  </section>
 
   </header>
