@@ -1,5 +1,11 @@
 <?php
 /* ----------------------------------------------------------------------------- Lier les styles */
+
+if ( ! defined( '_S_VERSION' ) ) {
+	// Replace the version number of the theme on each release.
+	define( '_S_VERSION', '1.0.0' );
+}
+
 function ajouter_styles()
 {
 
@@ -34,8 +40,8 @@ add_theme_support('title-tag');
 add_theme_support(
     'custom-logo',
     array(
-        'height' => 150,
-        'width'  => 150,
+        'height' => 50,
+        'width'  => 50,
     )
 );
 add_theme_support('post-thumbnails');
@@ -97,7 +103,15 @@ function e2_modifie_requete_principal($query) //s'exécute à chaque page
 
 add_action('pre_get_posts', 'e2_modifie_requete_principal');
 
-/*----------------------------------------------------------------------------- Masquer nom de catégorie */
+/*-----------------------------------------------------------------------------ajouter le script pour la navugation header */
+
+
+function theme5w5_scripts() {
+
+    wp_enqueue_script( 'theme454-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
+}
+add_action( 'wp_enqueue_scripts', 'theme5w5_scripts' );
 
 
 
@@ -156,28 +170,28 @@ function filter_posts()
     );
 
     $query = new WP_Query($args);
-
+    
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
             // Récupérez les données de l'article
             $article_id = get_the_ID();
             $article_title = get_the_title();
             $article_content = get_the_content();
+            $article_category = get_the_category(); // Récupérez la catégorie de l'article en tableau
 
             // Générez un bouton pour chaque article
             echo '<button class="article-button" data-article-id="' . $article_id . '">' . $article_title . '</button>';
 
             // Générez un conteneur pour le contenu de l'article
             echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . $article_content;
-
             // Récupérez les articles ayant la même catégorie que le slug du titre de l'article actuel
             $related_articles_args = array(
                 'post_type' => 'post',
                 'posts_per_page' => 3,
-                'category_name' => $article_title, // Utilisez la catégorie pour correspondre
+                'category_name' => $article_category[0]->slug, // Utilisez la catégorie pour correspondre
                 'post__not_in' => array($article_id), // Excluez l'article actuel
             );
-
+            
             $related_articles_query = new WP_Query($related_articles_args);
 
             if ($related_articles_query->have_posts()) :
@@ -193,6 +207,9 @@ function filter_posts()
                 endwhile;
                 echo '</div>';
             endif;
+            // Générez un lien vers la catégorie
+            $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
+            echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
 
             echo '</div>'; // Fermez le conteneur du contenu de l'article
         endwhile;
@@ -221,3 +238,4 @@ function get_article_content()
 
 add_action('wp_ajax_get_article_content', 'get_article_content');
 add_action('wp_ajax_nopriv_get_article_content', 'get_article_content');
+

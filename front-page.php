@@ -8,7 +8,9 @@
 
 <?php
 // Image temporaire Sprint 02 / Chemin de l'image
-$imagePath = "wp-content/themes/5W5-E2/images/media_vedette_test.jpg";
+// $imagePath = "wp-content/themes/5W5-E2/images/media_vedette_test.jpg";
+
+$imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
 ?>
 
 <?php get_header(); ?>
