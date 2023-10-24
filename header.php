@@ -29,20 +29,15 @@
           <?php get_search_form(); ?>
         </div> 
 
-			<?php wp_nav_menu(array(
-          "menu" => "entete",
-          "container" => "nav"
-        ))
-         ?>
-
+   <!-- Navigation principale (nav) -->
+   <?php wp_nav_menu(array(
+      "theme_location" => "entete",
+      "container" => "nav"
+    )) ?>
 
 		</nav><!-- #site-navigation -->
 
-    
-      </section>
+  </section>
       <!-- Navigation principale (div) -->
-
-
-       
 
   </header>
