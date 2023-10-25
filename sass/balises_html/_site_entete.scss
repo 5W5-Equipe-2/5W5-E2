@@ -54,6 +54,17 @@
       padding-top: 2.5rem;
       padding-bottom: 2.5rem;
       border-bottom: 2px solid var(--blanc);
+
+      color: var(--blanc);
+      text-decoration: none;
+      &:visited {
+      color: var(--complementaire);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--primaire);
+      }
     }
 
   

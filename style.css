@@ -85,8 +85,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -439,7 +438,7 @@ figcaption {
 }
 
 a {
-  color: var(--blanc);
+  color: var(--noir);
   text-decoration: none;
 }
 a:visited {
@@ -447,6 +446,10 @@ a:visited {
 }
 a:hover, a:focus, a:active {
   color: var(--primaire);
+}
+
+.inscription_programme .grille_cours a {
+  color: var(--noir);
 }
 
 .menu-projets {
@@ -519,6 +522,14 @@ body {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   border-bottom: 2px solid var(--blanc);
+  color: var(--blanc);
+  text-decoration: none;
+}
+.main-navigation a:visited {
+  color: var(--complementaire);
+}
+.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+  color: var(--primaire);
 }
 .main-navigation .site__header__recherche {
   display: none;
@@ -639,19 +650,53 @@ menu tablet
 ** Tout ce qui concerne la balise footer
 */
 .site_pied_page {
-  align-items: center;
   background-color: var(--noir);
   color: var(--blanc);
-  display: flex;
-  justify-content: space-evenly;
   min-height: 10vh;
   width: 100%;
 }
+.site_pied_page .contenu_footer {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2em;
+}
+.site_pied_page .section_footer {
+  padding-top: 1.3em;
+}
+.site_pied_page .section_footer_logo a {
+  border-bottom: solid 2px var(--blanc);
+}
+.site_pied_page a {
+  color: var(--blanc);
+  text-decoration: none;
+}
+.site_pied_page a:visited {
+  color: var(--complementaire);
+}
+.site_pied_page a:hover, .site_pied_page a:focus, .site_pied_page a:active {
+  color: var(--primaire);
+}
 
+/* ---------------------------------------------------------------------------
+menu tablet
+------------------------------------------------------------------------------ */
+@media screen and (min-width: 992px) {
+  .site_pied_page .contenu_footer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .site_pied_page .contenu_footer .section_footer {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
 */
-
 .recherche > label {
   display: flex;
   align-items: center;
@@ -687,15 +732,7 @@ menu tablet
   padding-right: 0.4rem;
 }
 
-
-.recherche__bouton {
-  background: transparent;
-  border: none;
-  transform: translateY(0.2rem);
-}
-
 /* Pour front-page.php */
-
 /* Pour front-page.php */
 .media_vedette {
   height: 100%;
@@ -736,8 +773,7 @@ https://cssduotone.com/
   height: 100%;
   max-width: 100%;
   mix-blend-mode: var(--ar-blend);
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   opacity: var(--opacite);
   position: relative;
   width: 100%;

@@ -1,5 +1,5 @@
 a {
-  color: var(--blanc);
+  color: var(--noir);
   text-decoration: none;
   &:visited {
     color: var(--complementaire);
@@ -8,6 +8,12 @@ a {
   &:focus,
   &:active {
     color: var(--primaire);
+  }
+}
+
+.inscription_programme .grille_cours{
+  a{
+    color: var(--noir);
   }
 }
 
