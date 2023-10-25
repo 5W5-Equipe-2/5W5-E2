@@ -13,9 +13,56 @@
 
 .accueil_evenements {
   background-color: var(--primaire);
-  min-height: 72vh; 
+  min-height: 55vh; 
   width: 100%;
   position: relative;
+
+  h4{
+    margin-top: 4vh;
+    padding-bottom: 2vh;
+    text-align: center;
+  }
+  /* Boite d'évènement récent */
+  .categorie__article{ 
+    background-color: var(--simili-noir);
+    border-radius: 5%; // arrondir les coins
+    color: var(--blanc); // couleur texte blanc
+    left: 0; // Centrer horizontalement
+    margin: 0 auto; // Centrer horizontalement
+    overflow: hidden;
+    position: absolute;
+    right: 0; // Centrer horizontalement
+    text-align: center; // Center le texte
+    width: 90vw;
+
+    // Les informations necessaires/importants -titre -image -Date
+    div:first-child{
+      background-color: var(--simili-noir);
+      
+      a img{
+        margin: 0;
+        width: 100%;
+      }
+      h3{
+        margin-top: 1.5vh;
+      }
+      div{
+        margin-top: 0.5vh;
+        padding-bottom: 1.5vh;
+        display: flex;
+        font-weight: bold;
+        gap: 2px;
+        justify-content: center;
+        
+      }
+    }
+    // Les informations secondaires -Descriptions -additionnels -information de l'articles
+    div:nth-child(2){
+      display: none;
+      background-color: var(--simili-noir);
+    
+    }
+  }
 }
 
 .accueil_programme {
@@ -23,39 +70,51 @@
   min-height: 50vh; 
   width: 100%;
 }
-/* Boite d'évènement */
-.categorie__article{ 
-  position: absolute;
-  border-radius: 5%;
-  color: var(--blanc);
-  margin: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  overflow: hidden;
-  width: 90vw;
- 
-  background-color: var(--simili-noir);
-  
-  // Les informations necessaires -titre -image -Date
-  div:first-child{
-    background-color: var(--simili-noir);
-    a img{
-      border-radius: 5%;
-      margin: 0;
-      width: 100%;
-      
-    }
-    div{
+
+
+@media screen and (min-width:$largeur__bureau){
+  .accueil_evenements {
+    background-color: none;
+    min-height: 90vh; 
+
+  /* Boite d'évènement récent */
+    .categorie__article{ 
+      border: 1px solid red;
       display: flex;
-      font-weight: bold;
-      gap: 2px;
-      justify-content: center;
+      justify-content: space-between;
+      background-color: var(--primaire); // reste a voir
+      border-radius: 0; // arrondir les coins
+      color: var(--blanc); // couleur texte blanc
+      width: 80vw;
+
+      // Les informations necessaires/importants -titre -image -Date
+      div:first-child{
+        background-color: var(--simili-noir);
+        overflow: hidden;
+        border-radius: 5%;
+        width: 35vw;
+      
+        a img{
+          margin: 0;
+          width: 100%;
+        }
+        div{
+          margin-top: 0.5vh;
+          padding-bottom: 1.5vh;
+          display: flex;
+          font-weight: bold;
+          gap: 2px;
+         justify-content: center;
+        }
+    }
+    // Les informations secondaires -Descriptions -additionnels -information de l'articles
+    div:nth-child(2){
+      display: block;
+      overflow: hidden;
+        border-radius: 5%;
+        width: 44vw;
+    
     }
   }
-  // Les informations secondaires -Descriptions -additionnels -information de l'articles
-  div:nth-child(2){
-  background-color: var(--simili-noir);
-  display: none;
-  }
-}
+  } 
+}  

@@ -758,9 +758,49 @@ https://cssduotone.com/
 
 .accueil_evenements {
   background-color: var(--primaire);
-  min-height: 72vh;
+  min-height: 55vh;
   width: 100%;
   position: relative;
+  /* Boite d'évènement récent */
+}
+.accueil_evenements h4 {
+  margin-top: 4vh;
+  padding-bottom: 2vh;
+  text-align: center;
+}
+.accueil_evenements .categorie__article {
+  background-color: var(--simili-noir);
+  border-radius: 5%;
+  color: var(--blanc);
+  left: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 90vw;
+}
+.accueil_evenements .categorie__article div:first-child {
+  background-color: var(--simili-noir);
+}
+.accueil_evenements .categorie__article div:first-child a img {
+  margin: 0;
+  width: 100%;
+}
+.accueil_evenements .categorie__article div:first-child h3 {
+  margin-top: 1.5vh;
+}
+.accueil_evenements .categorie__article div:first-child div {
+  margin-top: 0.5vh;
+  padding-bottom: 1.5vh;
+  display: flex;
+  font-weight: bold;
+  gap: 2px;
+  justify-content: center;
+}
+.accueil_evenements .categorie__article div:nth-child(2) {
+  display: none;
+  background-color: var(--simili-noir);
 }
 
 .accueil_programme {
@@ -769,38 +809,46 @@ https://cssduotone.com/
   width: 100%;
 }
 
-/* Boite d'évènement */
-.categorie__article {
-  position: absolute;
-  border-radius: 5%;
-  color: var(--blanc);
-  margin: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-  overflow: hidden;
-  width: 90vw;
-  background-color: var(--simili-noir);
+@media screen and (min-width: 992px) {
+  .accueil_evenements {
+    background-color: none;
+    min-height: 90vh;
+    /* Boite d'évènement récent */
+  }
+  .accueil_evenements .categorie__article {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--primaire);
+    border-radius: 0;
+    color: var(--blanc);
+    width: 80vw;
+  }
+  .accueil_evenements .categorie__article div:first-child {
+    background-color: var(--simili-noir);
+    overflow: hidden;
+    border-radius: 5%;
+    width: 35vw;
+  }
+  .accueil_evenements .categorie__article div:first-child a img {
+    margin: 0;
+    width: 100%;
+  }
+  .accueil_evenements .categorie__article div:first-child div {
+    margin-top: 0.5vh;
+    padding-bottom: 1.5vh;
+    display: flex;
+    font-weight: bold;
+    gap: 2px;
+    justify-content: center;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) {
+    display: block;
+    overflow: hidden;
+    border-radius: 5%;
+    width: 44vw;
+  }
 }
-.categorie__article div:first-child {
-  background-color: var(--simili-noir);
-}
-.categorie__article div:first-child a img {
-  border-radius: 5%;
-  margin: 0;
-  width: 100%;
-}
-.categorie__article div:first-child div {
-  display: flex;
-  font-weight: bold;
-  gap: 2px;
-  justify-content: center;
-}
-.categorie__article div:nth-child(2) {
-  background-color: var(--simili-noir);
-  display: none;
-}
-
 table {
   border-collapse: collapse;
   width: 100%;
