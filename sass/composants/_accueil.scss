@@ -13,12 +13,49 @@
 
 .accueil_evenements {
   background-color: var(--primaire);
-  min-height: 50vh; 
+  min-height: 72vh; 
   width: 100%;
+  position: relative;
 }
 
 .accueil_programme {
   background-color: var(--complementaire);
   min-height: 50vh; 
   width: 100%;
+}
+/* Boite d'évènement */
+.categorie__article{ 
+  position: absolute;
+  border-radius: 5%;
+  color: var(--blanc);
+  margin: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  overflow: hidden;
+  width: 90vw;
+ 
+  background-color: var(--simili-noir);
+  
+  // Les informations necessaires -titre -image -Date
+  div:first-child{
+    background-color: var(--simili-noir);
+    a img{
+      border-radius: 5%;
+      margin: 0;
+      width: 100%;
+      
+    }
+    div{
+      display: flex;
+      font-weight: bold;
+      gap: 2px;
+      justify-content: center;
+    }
+  }
+  // Les informations secondaires -Descriptions -additionnels -information de l'articles
+  div:nth-child(2){
+  background-color: var(--simili-noir);
+  display: none;
+  }
 }
