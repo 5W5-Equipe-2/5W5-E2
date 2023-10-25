@@ -847,6 +847,24 @@ https://cssduotone.com/
     overflow: hidden;
     border-radius: 5%;
     width: 44vw;
+    text-align: left;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) p, .accueil_evenements .categorie__article div:nth-child(2) h5, .accueil_evenements .categorie__article div:nth-child(2) div {
+    width: 35vw;
+    margin: 0 auto;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) p:first-child {
+    margin-top: 4vh;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) h5 {
+    margin-top: 2vh;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) div {
+    display: flex;
+    justify-content: left;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) div:first-of-type {
+    margin-top: 2vh;
   }
 }
 table {

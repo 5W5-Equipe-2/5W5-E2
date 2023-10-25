@@ -111,9 +111,26 @@
     div:nth-child(2){
       display: block;
       overflow: hidden;
-        border-radius: 5%;
-        width: 44vw;
-    
+      border-radius: 5%;
+      width: 44vw;
+      text-align: left;
+      p,h5,div{
+        width: 35vw;
+        margin: 0 auto;
+      }
+      p:first-child{ // Description
+        margin-top: 4vh;
+      }
+      h5{
+        margin-top: 2vh;
+      } 
+      div{
+        display: flex;
+        justify-content: left;
+      }
+      div:first-of-type{
+        margin-top: 2vh;
+      }
     }
   }
   } 
