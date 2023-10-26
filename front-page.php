@@ -29,16 +29,18 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
 
   <section class="accueil_evenements">
     <h4>Évènements récents</h4>
-    <?php
-    if (have_posts()) :
-      while (have_posts()) : the_post();
-        if (in_category('evenements')) {
-          $la_categorie = 'evenements';
-        }
-        get_template_part('template-parts/categorie', $la_categorie);
-      endwhile;
-    endif;
-    ?>
+    <div class="evenements_recents">
+      <?php
+      if (have_posts()) :
+        while (have_posts()) : the_post();
+          if (in_category('evenements')) {
+            $la_categorie = 'evenements';
+          }
+          get_template_part('template-parts/categorie', $la_categorie);
+        endwhile;
+      endif;
+      ?>
+    </div>
   </section>
 
   <section class="accueil_programme">

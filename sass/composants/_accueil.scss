@@ -13,25 +13,28 @@
 
 .accueil_evenements {
   background-color: var(--primaire);
-  min-height: 55vh; 
+  padding-bottom: 4vh;
+  padding-top: 4vh;
   width: 100%;
-  position: relative;
 
   h4{
-    margin-top: 4vh;
     padding-bottom: 2vh;
     text-align: center;
+  }
+
+  .evenements_recents{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 1vh;
   }
   /* Boite d'évènement récent */
   .categorie__article{ 
     background-color: var(--simili-noir);
     border-radius: 5%; // arrondir les coins
     color: var(--blanc); // couleur texte blanc
-    left: 0; // Centrer horizontalement
     margin: 0 auto; // Centrer horizontalement
-    overflow: hidden;
-    position: absolute;
-    right: 0; // Centrer horizontalement
+    overflow: hidden; // pour que les coin du haut reste courber
     text-align: center; // Center le texte
     width: 90vw;
 

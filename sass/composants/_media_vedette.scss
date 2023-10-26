@@ -19,40 +19,39 @@
     font-family: var(--police-titre);
     font-size: clamp(3rem, 10vw, 0rem);
     margin: 0;
+    opacity: 0;
     padding: 0;
     position: absolute;
     top: 60%;
-    opacity: 0;
     transform-origin: center;
     text-align: center;
     width: 10vw;
   }
   span:first-of-type{ // Lettre T
-    left: 42%;
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-    animation-name: test;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    animation-duration: 2s; // Durée de l'animation
+    animation-fill-mode: forwards; // Pour qu'il reste au dernier frame
+    animation-name: test; // Nom de l'animation
+    left: 40vw; // Un peu plus a gauche que le i
+    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir); // outline
   }
   span:nth-of-type(2){ // Lettre I
-    left: 45vw;
-    color: var(--primaire);
-    font-weight: bold;
-    z-index: 3;
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-    animation-name: test;
-    animation-duration: 2s;
     animation-delay: 0.3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
+    animation-name: test;
+    color: var(--primaire);
+    left: 43vw; // Au centre
+    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+    z-index: 2; // Plus avancé que les autre lettre
   }
   span:last-of-type{ // Lettre M
-    left: 48.5%;
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-    animation-name: test;
-    animation-duration: 2s;
     animation-delay: 0.5s;
-    animation-timing-function: ease-in-out;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
+    animation-name: test;
+    animation-timing-function: ease-in-out;
+    left: 47vw;
+    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
   }
   @keyframes test {
     0%{top: -10%; opacity: 0;}

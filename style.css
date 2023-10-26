@@ -702,40 +702,39 @@ menu tablet
   font-family: var(--police-titre);
   font-size: clamp(3rem, 10vw, 0rem);
   margin: 0;
+  opacity: 0;
   padding: 0;
   position: absolute;
   top: 60%;
-  opacity: 0;
   transform-origin: center;
   text-align: center;
   width: 10vw;
 }
 .media_vedette span:first-of-type {
-  left: 42%;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-  animation-name: test;
   animation-duration: 2s;
   animation-fill-mode: forwards;
+  animation-name: test;
+  left: 40vw;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
 }
 .media_vedette span:nth-of-type(2) {
-  left: 45vw;
-  color: var(--primaire);
-  font-weight: bold;
-  z-index: 3;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-  animation-name: test;
-  animation-duration: 2s;
   animation-delay: 0.3s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
+  animation-name: test;
+  color: var(--primaire);
+  left: 43vw;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+  z-index: 2;
 }
 .media_vedette span:last-of-type {
-  left: 48.5%;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-  animation-name: test;
-  animation-duration: 2s;
   animation-delay: 0.5s;
-  animation-timing-function: ease-in-out;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
+  animation-name: test;
+  animation-timing-function: ease-in-out;
+  left: 47vw;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
 }
 @keyframes test {
   0% {
@@ -816,25 +815,27 @@ https://cssduotone.com/
 
 .accueil_evenements {
   background-color: var(--primaire);
-  min-height: 55vh;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
   width: 100%;
-  position: relative;
   /* Boite d'évènement récent */
 }
 .accueil_evenements h4 {
-  margin-top: 4vh;
   padding-bottom: 2vh;
   text-align: center;
+}
+.accueil_evenements .evenements_recents {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 1vh;
 }
 .accueil_evenements .categorie__article {
   background-color: var(--simili-noir);
   border-radius: 5%;
   color: var(--blanc);
-  left: 0;
   margin: 0 auto;
   overflow: hidden;
-  position: absolute;
-  right: 0;
   text-align: center;
   width: 90vw;
 }
