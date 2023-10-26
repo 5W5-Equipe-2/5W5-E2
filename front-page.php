@@ -22,7 +22,7 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
       <img src="<?php echo $imagePath; ?>" alt="Image vedette">
     </div>
     <span>T</span>
-    <span>I</span>
+    <span>i</span>
     <span>M</span>
   </section>
 

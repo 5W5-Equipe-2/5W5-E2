@@ -698,21 +698,62 @@ menu tablet
   width: 100%;
 }
 .media_vedette span {
-  position: absolute;
   color: var(--blanc);
-  top: 50%;
-  left: 50%;
   font-family: var(--police-titre);
-  font-size: clamp(1rem, 10vw, 2rem);
-  border: 4px solid red;
-  width: clamp(1rem, 10vw, 2rem);
+  font-size: clamp(3rem, 10vw, 0rem);
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 60%;
+  opacity: 0;
+  transform-origin: center;
   text-align: center;
+  width: 10vw;
 }
 .media_vedette span:first-of-type {
-  left: 46%;
+  left: 42%;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+  animation-name: test;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.media_vedette span:nth-of-type(2) {
+  left: 45vw;
+  color: var(--primaire);
+  font-weight: bold;
+  z-index: 3;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+  animation-name: test;
+  animation-duration: 2s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
 }
 .media_vedette span:last-of-type {
-  left: 54%;
+  left: 48.5%;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+  animation-name: test;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+@keyframes test {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  50% {
+    top: 60%;
+    opacity: 1;
+  }
+  75% {
+    top: 55%;
+    opacity: 0.8;
+  }
+  100% {
+    top: 60%;
+    opacity: 1;
+  }
 }
 
 /*
