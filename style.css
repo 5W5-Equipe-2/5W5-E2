@@ -697,6 +697,23 @@ menu tablet
 .media_vedette img {
   width: 100%;
 }
+.media_vedette span {
+  position: absolute;
+  color: var(--blanc);
+  top: 50%;
+  left: 50%;
+  font-family: var(--police-titre);
+  font-size: clamp(1rem, 10vw, 2rem);
+  border: 4px solid red;
+  width: clamp(1rem, 10vw, 2rem);
+  text-align: center;
+}
+.media_vedette span:first-of-type {
+  left: 46%;
+}
+.media_vedette span:last-of-type {
+  left: 54%;
+}
 
 /*
 Code basé sur le CSS Duotone Generator
@@ -809,7 +826,7 @@ https://cssduotone.com/
   width: 100%;
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 800px) {
   .accueil_evenements {
     background-color: none;
     min-height: 90vh;
@@ -854,7 +871,7 @@ https://cssduotone.com/
     margin: 0 auto;
   }
   .accueil_evenements .categorie__article div:nth-child(2) p:first-child {
-    margin-top: 4vh;
+    margin-top: 2vh;
   }
   .accueil_evenements .categorie__article div:nth-child(2) h5 {
     margin-top: 2vh;
@@ -865,6 +882,9 @@ https://cssduotone.com/
   }
   .accueil_evenements .categorie__article div:nth-child(2) div:first-of-type {
     margin-top: 2vh;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) div:last-of-type {
+    padding-bottom: 2vh;
   }
 }
 table {

@@ -72,7 +72,7 @@
 }
 
 
-@media screen and (min-width:$largeur__bureau){
+@media screen and (min-width:$largeur__tablette){
   .accueil_evenements {
     background-color: none;
     min-height: 90vh; 
@@ -119,7 +119,7 @@
         margin: 0 auto;
       }
       p:first-child{ // Description
-        margin-top: 4vh;
+        margin-top: 2vh;
       }
       h5{
         margin-top: 2vh;
@@ -130,6 +130,9 @@
       }
       div:first-of-type{
         margin-top: 2vh;
+      }
+      div:last-of-type{
+        padding-bottom: 2vh;
       }
     }
   }
