@@ -26,6 +26,9 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
     <span>i</span>
     <span>M</span>
   </section>
+  <section class="accueil_description">
+    <?php dynamic_sidebar('description_punch'); ?>
+  </section>
 
 
   <section class="accueil_evenements">

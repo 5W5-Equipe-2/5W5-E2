@@ -841,8 +841,22 @@ https://cssduotone.com/
 */
 .accueil_description {
   background-color: var(--blanc);
-  min-height: 50vh;
+  padding-bottom: 5vh;
   width: 100%;
+}
+.accueil_description div {
+  margin-top: 2vh;
+}
+.accueil_description p, .accueil_description h2 {
+  width: 80vw;
+  margin: 0 auto;
+}
+.accueil_description hr {
+  width: 15%;
+  margin: 0 auto;
+  margin-top: 5vh;
+  height: 0.1vh;
+  background-color: black;
 }
 
 .accueil_evenements {
