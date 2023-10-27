@@ -1,9 +1,9 @@
 <?php
 /* ----------------------------------------------------------------------------- Lier les styles */
 
-if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+if (!defined('_S_VERSION')) {
+    // Replace the version number of the theme on each release.
+    define('_S_VERSION', '1.0.0');
 }
 
 function ajouter_styles()
@@ -29,10 +29,10 @@ function enregistrement_nav_menu()
         'entete' => 'Menu entete',
         'evt' => 'Menu évènement',
         'projets' => 'Menu projets',
- ));
+    ));
 }
 /* add_action('after_setup_theme', 'enregistrement_nav_menu', 0);  */
-add_action('init', 'enregistrement_nav_menu', 0); 
+add_action('init', 'enregistrement_nav_menu', 0);
 
 
 /*------------------------------------------------------------------------------ add_theme_support() */
@@ -53,7 +53,17 @@ add_theme_support('custom-background');
  À utiliser dans : footer.php) 
  **********************************/
 function enregistrer_sidebar()
-{    register_sidebar(array(
+{
+    register_sidebar(array(
+        'name' => __('Accueil', '5W5-E2'),
+        'id' => 'mv_reseau_sociaux',
+        'description' => __('Une zone pour afficher des widgets dans le media vedette.', '5W5-E2'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
         'name' => __('Footer 1', '5W5-E2'),
         'id' => 'footer_1',
         'description' => __('Une zone pour afficher des widgets dans le footer.', '5W5-E2'),
@@ -106,12 +116,12 @@ add_action('pre_get_posts', 'e2_modifie_requete_principal');
 /*-----------------------------------------------------------------------------ajouter le script pour la navugation header */
 
 
-function theme5w5_scripts() {
+function theme5w5_scripts()
+{
 
-    wp_enqueue_script( 'theme454-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
-
+    wp_enqueue_script('theme454-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 }
-add_action( 'wp_enqueue_scripts', 'theme5w5_scripts' );
+add_action('wp_enqueue_scripts', 'theme5w5_scripts');
 
 
 
@@ -170,7 +180,7 @@ function filter_posts()
     );
 
     $query = new WP_Query($args);
-    
+
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
             // Récupérez les données de l'article
@@ -191,7 +201,7 @@ function filter_posts()
                 'category_name' => $article_category[0]->slug, // Utilisez la catégorie pour correspondre
                 'post__not_in' => array($article_id), // Excluez l'article actuel
             );
-            
+
             $related_articles_query = new WP_Query($related_articles_args);
 
             if ($related_articles_query->have_posts()) :
@@ -238,4 +248,3 @@ function get_article_content()
 
 add_action('wp_ajax_get_article_content', 'get_article_content');
 add_action('wp_ajax_nopriv_get_article_content', 'get_article_content');
-

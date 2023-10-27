@@ -21,6 +21,7 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
       <!-- Image temporaire Sprint 02 -->
       <img src="<?php echo $imagePath; ?>" alt="Image vedette">
     </div>
+    <div class="reseaux_sociaux"><?php dynamic_sidebar('mv_reseau_sociaux'); ?></div>
     <span>T</span>
     <span>i</span>
     <span>M</span>
