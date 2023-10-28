@@ -545,7 +545,7 @@ body {
     right: 1vw;
   }
   .main-navigation .site__header__recherche .recherche > label {
-    width: 30vw;
+    width: 20vw;
     height: 3vh;
   }
 }
@@ -597,7 +597,7 @@ menu tablet
     margin-right: 2vw;
   }
   .main-navigation .menu {
-    padding-right: 22vw;
+    padding-right: 15vw;
   }
   .main-navigation ul li {
     font-size: 18px;
