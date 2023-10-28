@@ -48,7 +48,7 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
   </section>
 
   <section class="accueil_programme">
-    <h4>Inscription et étudiant d'un jour</h4>
+    <?php dynamic_sidebar('inscription_accueil'); ?>
   </section>
 </main>
 

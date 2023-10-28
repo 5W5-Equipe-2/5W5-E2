@@ -848,15 +848,15 @@ https://cssduotone.com/
   margin-top: 2vh;
 }
 .accueil_description p, .accueil_description h2 {
-  width: 80vw;
   margin: 0 auto;
+  width: 80vw;
 }
 .accueil_description hr {
-  width: 15%;
+  background-color: black;
+  height: 0.1vh;
   margin: 0 auto;
   margin-top: 5vh;
-  height: 0.1vh;
-  background-color: black;
+  width: 15%;
 }
 
 .accueil_evenements {
@@ -872,9 +872,9 @@ https://cssduotone.com/
 }
 .accueil_evenements .evenements_recents {
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   gap: 1vh;
+  justify-content: space-around;
 }
 .accueil_evenements .categorie__article {
   background-color: var(--simili-noir);
@@ -909,19 +909,42 @@ https://cssduotone.com/
 }
 
 .accueil_programme {
-  background-color: var(--complementaire);
-  min-height: 50vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.accueil_programme .widget_block {
+  min-height: 30vh;
+  border: 1px solid black;
+  position: relative;
+  padding-top: 50%;
+  padding-bottom: 5%;
+}
+.accueil_programme .widget_block .widget-title {
+  margin: 0 auto;
+  width: 90%;
+}
+.accueil_programme .widget_block .wp-widget-group__inner-blocks {
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 90%;
+}
+.accueil_programme .widget_block:first-of-type {
+  background-color: var(--complementaire);
+  padding-top: 5%;
+}
+.accueil_programme .widget_block:first-of-type .wp-block-buttons {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
 }
 
 @media screen and (min-width: 800px) {
   .accueil_evenements {
-    background-color: none;
     min-height: 90vh;
     /* Boite d'évènement récent */
   }
   .accueil_evenements .categorie__article {
-    border: 1px solid red;
     display: flex;
     justify-content: space-between;
     background-color: var(--primaire);
@@ -973,6 +996,21 @@ https://cssduotone.com/
   }
   .accueil_evenements .categorie__article div:nth-child(2) div:last-of-type {
     padding-bottom: 2vh;
+  }
+  .accueil_programme {
+    flex-direction: row;
+  }
+  .accueil_programme .widget_block {
+    width: inherit;
+    padding-top: 5%;
+    padding-bottom: 0;
+    margin: auto auto;
+  }
+  .accueil_programme .widget_block .widget-title {
+    margin-top: 20%;
+  }
+  .accueil_programme .widget_block:first-of-type .widget-title {
+    margin-top: 5%;
   }
 }
 table {
