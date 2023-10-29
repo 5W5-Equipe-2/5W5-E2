@@ -438,7 +438,7 @@ figcaption {
 }
 
 a {
-  color: var(--blanc);
+  color: var(--noir);
   text-decoration: none;
 }
 a:visited {
@@ -446,6 +446,10 @@ a:visited {
 }
 a:hover, a:focus, a:active {
   color: var(--primaire);
+}
+
+.inscription_programme .grille_cours a {
+  color: var(--noir);
 }
 
 .menu-projets {
@@ -518,6 +522,14 @@ body {
   padding-top: 2.5rem;
   padding-bottom: 2.5rem;
   border-bottom: 2px solid var(--blanc);
+  color: var(--blanc);
+  text-decoration: none;
+}
+.main-navigation a:visited {
+  color: var(--complementaire);
+}
+.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+  color: var(--primaire);
 }
 .main-navigation .site__header__recherche {
   display: none;
@@ -533,7 +545,7 @@ body {
     right: 1vw;
   }
   .main-navigation .site__header__recherche .recherche > label {
-    width: 30vw;
+    width: 20vw;
     height: 3vh;
   }
 }
@@ -585,7 +597,7 @@ menu tablet
     margin-right: 2vw;
   }
   .main-navigation .menu {
-    padding-right: 22vw;
+    padding-right: 15vw;
   }
   .main-navigation ul li {
     font-size: 18px;
@@ -599,18 +611,18 @@ menu tablet
     display: none;
   }
   .main-navigation.toggled ul,
-.main-navigation ul {
+  .main-navigation ul {
     display: flex;
     padding-top: 0;
     justify-content: flex-end;
     padding-right: 5%;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-.main-navigation ul a[href="#"]::after {
+  .main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-.main-navigation ul ul {
+  .main-navigation ul ul {
     display: none;
   }
 }
@@ -638,15 +650,50 @@ menu tablet
 ** Tout ce qui concerne la balise footer
 */
 .site_pied_page {
-  align-items: center;
   background-color: var(--noir);
   color: var(--blanc);
-  display: flex;
-  justify-content: space-evenly;
   min-height: 10vh;
   width: 100%;
 }
+.site_pied_page .contenu_footer {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 2em;
+}
+.site_pied_page .section_footer {
+  padding-top: 1.3em;
+}
+.site_pied_page .section_footer_logo a {
+  border-bottom: solid 2px var(--blanc);
+}
+.site_pied_page a {
+  color: var(--blanc);
+  text-decoration: none;
+}
+.site_pied_page a:visited {
+  color: var(--complementaire);
+}
+.site_pied_page a:hover, .site_pied_page a:focus, .site_pied_page a:active {
+  color: var(--primaire);
+}
 
+/* ---------------------------------------------------------------------------
+menu tablet
+------------------------------------------------------------------------------ */
+@media screen and (min-width: 992px) {
+  .site_pied_page .contenu_footer {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .site_pied_page .contenu_footer .section_footer {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+}
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
 */

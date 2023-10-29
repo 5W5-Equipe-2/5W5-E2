@@ -54,6 +54,17 @@
       padding-top: 2.5rem;
       padding-bottom: 2.5rem;
       border-bottom: 2px solid var(--blanc);
+
+      color: var(--blanc);
+      text-decoration: none;
+      &:visited {
+      color: var(--complementaire);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--primaire);
+      }
     }
 
   
@@ -74,7 +85,7 @@
       right: 1vw;
 
       .recherche > label{
-        width: 30vw;
+        width: 20vw;
         height: 3vh;
       }
     }
@@ -134,7 +145,7 @@
       margin-right: 2vw;
 
       .menu{ 
-        padding-right: 22vw;
+        padding-right: 15vw;
       }
 
       ul{
