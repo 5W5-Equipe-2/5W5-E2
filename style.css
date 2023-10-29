@@ -662,18 +662,18 @@ menu tablet
     display: none;
   }
   .main-navigation.toggled ul,
-.main-navigation ul {
+  .main-navigation ul {
     display: flex;
     padding-top: 0;
     justify-content: flex-end;
     padding-right: 5%;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-.main-navigation ul a[href="#"]::after {
+  .main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-.main-navigation ul ul {
+  .main-navigation ul ul {
     display: none;
   }
 }
