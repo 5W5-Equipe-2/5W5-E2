@@ -941,6 +941,11 @@ https://cssduotone.com/
   bottom: 10%;
   left: 5%;
 }
+.accueil_programme .widget_block:first-of-type .wp-block-buttons a {
+  background-color: var(--complementaire);
+  border: 1px solid var(--simili-noir);
+  color: var(--simili-noir);
+}
 
 @media screen and (min-width: 800px) {
   .accueil_evenements {

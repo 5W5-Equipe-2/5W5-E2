@@ -107,6 +107,12 @@
       position: absolute;
       bottom: 10%;
       left: 5%;
+
+      a{ // style du bouton
+         background-color: var(--complementaire);
+         border: 1px solid var(--simili-noir);
+         color: var(--simili-noir);
+      }
     }
   }
 }
