@@ -16,41 +16,48 @@ body {
 
 .categorie__section{
   display: grid;
-  gap: 5vw;
+  gap: 3em;
   grid-template-columns: repeat(1, 1fr);
+  padding: 3em;
+
+  .categorie__article{
+    background-color: var(--simili-noir);
+    border: 1px solid var(--noir);
+    border-radius: 5%; // arrondir les coins
+    color: var(--blanc); // couleur texte blanc
+    margin: 0 auto; // Centrer horizontalement
+    overflow: hidden; // pour que les coin du haut reste courber
+    text-align: center; // Center le texte
+    width: 25em;
+    height: 20em;
+
+    figure{
+      background-color: var(--simili-noir);
+      a img{
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    h3{
+      font-size: 18px;
+    }
+  }
 }
 
-/* .categorie__article{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  //justify-content: center;
-  text-align: center;
-} */
+
 
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
 
-@media screen and (min-width : 600px){
+@media screen and (min-width : $largeur__bureau){
   .categorie__section{
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (min-width : 900px){
-  .categorie__section{
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media screen and (min-width : 1200px){
-  .categorie__section{
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
 @media screen and (min-width : 1500px){
   .categorie__section{
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
