@@ -896,12 +896,12 @@ https://cssduotone.com/
   margin-top: 1.5vh;
 }
 .accueil_evenements .categorie__article div:first-child div {
-  margin-top: 0.5vh;
-  padding-bottom: 1.5vh;
   display: flex;
   font-weight: bold;
   gap: 2px;
   justify-content: center;
+  margin-top: 0.5vh;
+  padding-bottom: 1.5vh;
 }
 .accueil_evenements .categorie__article div:nth-child(2) {
   display: none;
@@ -909,16 +909,16 @@ https://cssduotone.com/
 }
 
 .accueil_programme {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 .accueil_programme .widget_block {
-  min-height: 30vh;
   border: 1px solid black;
-  position: relative;
-  padding-top: 50%;
+  min-height: 30vh;
   padding-bottom: 5%;
+  padding-top: 20vh;
+  position: relative;
 }
 .accueil_programme .widget_block .widget-title {
   margin: 0 auto;
@@ -933,6 +933,9 @@ https://cssduotone.com/
   background-color: var(--complementaire);
   padding-top: 5%;
 }
+.accueil_programme .widget_block:first-of-type .wp-widget-group__inner-blocks {
+  padding-bottom: 5%;
+}
 .accueil_programme .widget_block:first-of-type .wp-block-buttons {
   position: absolute;
   bottom: 10%;
@@ -945,17 +948,17 @@ https://cssduotone.com/
     /* Boite d'évènement récent */
   }
   .accueil_evenements .categorie__article {
-    display: flex;
-    justify-content: space-between;
     background-color: var(--primaire);
     border-radius: 0;
     color: var(--blanc);
+    display: flex;
+    justify-content: space-between;
     width: 80vw;
   }
   .accueil_evenements .categorie__article div:first-child {
     background-color: var(--simili-noir);
-    overflow: hidden;
     border-radius: 5%;
+    overflow: hidden;
     width: 35vw;
   }
   .accueil_evenements .categorie__article div:first-child a img {
@@ -963,23 +966,23 @@ https://cssduotone.com/
     width: 100%;
   }
   .accueil_evenements .categorie__article div:first-child div {
-    margin-top: 0.5vh;
-    padding-bottom: 1.5vh;
     display: flex;
     font-weight: bold;
     gap: 2px;
     justify-content: center;
+    margin-top: 0.5vh;
+    padding-bottom: 1.5vh;
   }
   .accueil_evenements .categorie__article div:nth-child(2) {
+    border-radius: 5%;
     display: block;
     overflow: hidden;
-    border-radius: 5%;
-    width: 44vw;
     text-align: left;
+    width: 44vw;
   }
   .accueil_evenements .categorie__article div:nth-child(2) p, .accueil_evenements .categorie__article div:nth-child(2) h5, .accueil_evenements .categorie__article div:nth-child(2) div {
-    width: 35vw;
     margin: 0 auto;
+    width: 35vw;
   }
   .accueil_evenements .categorie__article div:nth-child(2) p:first-child {
     margin-top: 2vh;
@@ -1001,16 +1004,11 @@ https://cssduotone.com/
     flex-direction: row;
   }
   .accueil_programme .widget_block {
-    width: inherit;
     padding-top: 5%;
-    padding-bottom: 0;
-    margin: auto auto;
+    width: inherit;
   }
-  .accueil_programme .widget_block .widget-title {
-    margin-top: 20%;
-  }
-  .accueil_programme .widget_block:first-of-type .widget-title {
-    margin-top: 5%;
+  .accueil_programme .widget_block:first-of-type {
+    padding-top: 5%;
   }
 }
 table {

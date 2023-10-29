@@ -2,7 +2,7 @@
 ** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
  ---> les balises section, article, les div
 */
-.accueil_description {
+.accueil_description { // La section qui contient la phrase punch de la page d'accueil
   background-color: var(--blanc);
   padding-bottom: 5vh;
   width: 100%;
@@ -22,7 +22,7 @@
   }
 }
 
-.accueil_evenements { // la section
+.accueil_evenements { // la section qui contient les évènement récents
   background-color: var(--primaire);
   padding-bottom: 4vh;
   padding-top: 4vh;
@@ -60,12 +60,12 @@
         margin-top: 1.5vh;
       }
       div{
-        margin-top: 0.5vh;
-        padding-bottom: 1.5vh;
         display: flex;
         font-weight: bold;
         gap: 2px;
         justify-content: center;
+        margin-top: 0.5vh;
+        padding-bottom: 1.5vh;
       }
     }
     // Les informations secondaires -Descriptions -additionnels -information de l'articles
@@ -76,31 +76,33 @@
   }
 }
 .accueil_programme { // section de inscription
-  width: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   .widget_block{
-    min-height: 30vh; 
     border: 1px solid black;
-    position: relative;
-    padding-top: 50%;
+    min-height: 30vh; 
     padding-bottom: 5%;
-    
+    padding-top: 20vh;
+    position: relative;
+
     .widget-title{
       margin: 0 auto; // Centrer horizontalement
       width: 90%;
     }
     .wp-widget-group__inner-blocks{
-      
       margin: 0 auto; // Centrer horizontalement
       margin-top: 2%;
       width: 90%;
     }
   }
-  .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre
+  .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
     background-color: var(--complementaire);
     padding-top: 5%;
+    .wp-widget-group__inner-blocks{
+      padding-bottom: 5%;
+    }
     .wp-block-buttons{ // le bouton plus de détails
       position: absolute;
       bottom: 10%;
@@ -115,18 +117,18 @@
     min-height: 90vh; 
     /* Boite d'évènement récent */
     .categorie__article{ 
-      display: flex;
-      justify-content: space-between;
       background-color: var(--primaire); // reste a voir
       border-radius: 0; // arrondir les coins
       color: var(--blanc); // couleur texte blanc
+      display: flex;
+      justify-content: space-between;
       width: 80vw;
 
       // Les informations necessaires/importants -titre -image -Date
       div:first-child{
         background-color: var(--simili-noir);
-        overflow: hidden;
         border-radius: 5%;
+        overflow: hidden;
         width: 35vw;
         
         a img{
@@ -134,24 +136,24 @@
           width: 100%;
         }
         div{
-          margin-top: 0.5vh;
-          padding-bottom: 1.5vh;
           display: flex;
           font-weight: bold;
           gap: 2px;
-         justify-content: center;
+          justify-content: center;
+          margin-top: 0.5vh;
+          padding-bottom: 1.5vh;
         }
       }
       // Les informations secondaires -Descriptions -additionnels -information de l'articles
       div:nth-child(2){
+        border-radius: 5%;
         display: block;
         overflow: hidden;
-        border-radius: 5%;
-        width: 44vw;
         text-align: left;
+        width: 44vw;
         p,h5,div{
-          width: 35vw;
           margin: 0 auto;
+          width: 35vw;
         }
         p:first-child{ // Description
           margin-top: 2vh;
@@ -173,25 +175,13 @@
     }
   } 
   .accueil_programme { // section de inscription
-  flex-direction: row;
+  flex-direction: row; // changement de l'affichement en ligne
     .widget_block{
-      width: inherit;
       padding-top: 5%;
-      padding-bottom: 0;
-      margin: auto auto;
-      
-      .widget-title{
-        margin-top: 20%;
-      }
-      .wp-widget-group__inner-blocks{
-        
-
-      }
+      width: inherit; // prennent tout la taille de la section
     }
-    .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre
-      .widget-title{
-        margin-top: 5%;
-      }
+    .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
+      padding-top: 5%;
     }
   }
 }
