@@ -11,3 +11,83 @@ body {
   max-width: 100%;
   width: 100vw;
 }
+
+/*---------------------------page projet et évènement-------------------------*/
+
+.categorie__section{
+  display: grid;
+  gap: 5vw;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* .categorie__article{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  text-align: center;
+} */
+
+/*-----------------------adaptivité de la page projet et évènement---------------------*/
+
+@media screen and (min-width : 600px){
+  .categorie__section{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width : 900px){
+  .categorie__section{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width : 1200px){
+  .categorie__section{
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (min-width : 1500px){
+  .categorie__section{
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/*-----------------------------single projet------------------------------------*/
+
+.single-titre{grid-area: titre;}
+.wp-block-image{grid-area: image;}
+.information_single{grid-area: information;}
+
+.section_single{
+  //border-bottom: 2px solid var(--noir);
+  display: grid;
+  gap: 3em;
+  grid-template-areas: 
+  'titre'
+  'image'
+  'information';
+  padding: 1em;
+}
+
+/*-----------------------------single projet bureau------------------------------------*/
+
+@media screen and (min-width : $largeur__bureau){
+  .section_single{
+    grid-template-areas: 
+  'titre titre'
+  'image information';
+  padding: 3em;
+  padding-left: 5em;
+  padding-right: 5em;
+
+  .wp-block-image{
+    width: 60vw;
+  }
+  }
+}
+
+/*-----------------------------fin single projet------------------------------------*/
+
+/*-----------------------------fin page projet et évènement----------------------*/
