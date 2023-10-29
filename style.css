@@ -735,7 +735,7 @@ menu tablet
 /* Pour front-page.php */
 /* Pour front-page.php */
 .media_vedette {
-  height: 100%;
+  height: 90vh;
   min-height: 100%;
   opacity: 0.8;
   position: relative;
@@ -743,6 +743,95 @@ menu tablet
 }
 .media_vedette img {
   width: 100%;
+}
+.media_vedette .reseaux_sociaux {
+  position: absolute;
+  right: 0;
+  bottom: 5vh;
+  margin: 0;
+  padding: 0;
+}
+.media_vedette .reseaux_sociaux div {
+  width: 50%;
+  height: 10%;
+}
+.media_vedette .reseaux_sociaux div figure {
+  padding: 1% 0;
+}
+.media_vedette .reseaux_sociaux div figure img {
+  display: block;
+  margin: auto;
+}
+@media screen and (min-width: 800px) {
+  .media_vedette .reseaux_sociaux div {
+    width: 70%;
+  }
+}
+.media_vedette span {
+  color: var(--blanc);
+  font-family: var(--police-titre);
+  font-size: clamp(8rem, 10vw, 0rem);
+  margin: 0;
+  opacity: 0;
+  padding: 0;
+  position: absolute;
+  transform-origin: center;
+  text-align: center;
+  width: 10vw;
+}
+.media_vedette span:first-of-type {
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: test;
+  left: 28vw;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+}
+@media screen and (min-width: 800px) {
+  .media_vedette span:first-of-type {
+    left: 37vw;
+  }
+}
+.media_vedette span:nth-of-type(2) {
+  animation-delay: 0.3s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: test;
+  color: var(--primaire);
+  left: 40vw;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+  z-index: 2;
+}
+.media_vedette span:last-of-type {
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-name: test;
+  animation-timing-function: ease-in-out;
+  left: 45vw;
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+}
+@media screen and (min-width: 800px) {
+  .media_vedette span:last-of-type {
+    left: 45vw;
+  }
+}
+@keyframes test {
+  0% {
+    top: -10%;
+    opacity: 0;
+  }
+  50% {
+    top: 50%;
+    opacity: 1;
+  }
+  75% {
+    top: 45%;
+    opacity: 0.8;
+  }
+  100% {
+    top: 50%;
+    opacity: 1;
+  }
 }
 
 /*
@@ -799,22 +888,181 @@ https://cssduotone.com/
 */
 .accueil_description {
   background-color: var(--blanc);
-  min-height: 50vh;
+  padding-bottom: 5vh;
   width: 100%;
+}
+.accueil_description div {
+  margin-top: 2vh;
+}
+.accueil_description p, .accueil_description h2 {
+  margin: 0 auto;
+  width: 80vw;
+}
+.accueil_description hr {
+  background-color: black;
+  height: 0.1vh;
+  margin: 0 auto;
+  margin-top: 5vh;
+  width: 15%;
 }
 
 .accueil_evenements {
   background-color: var(--primaire);
-  min-height: 50vh;
+  padding-bottom: 4vh;
+  padding-top: 4vh;
   width: 100%;
+  /* Boite d'évènement récent */
+}
+.accueil_evenements h4 {
+  padding-bottom: 2vh;
+  text-align: center;
+}
+.accueil_evenements .evenements_recents {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  justify-content: space-around;
+}
+.accueil_evenements .categorie__article {
+  background-color: var(--simili-noir);
+  border-radius: 5%;
+  color: var(--blanc);
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  width: 90vw;
+}
+.accueil_evenements .categorie__article div:first-child {
+  background-color: var(--simili-noir);
+}
+.accueil_evenements .categorie__article div:first-child a img {
+  margin: 0;
+  width: 100%;
+}
+.accueil_evenements .categorie__article div:first-child h3 {
+  margin-top: 1.5vh;
+}
+.accueil_evenements .categorie__article div:first-child div {
+  display: flex;
+  font-weight: bold;
+  gap: 2px;
+  justify-content: center;
+  margin-top: 0.5vh;
+  padding-bottom: 1.5vh;
+}
+.accueil_evenements .categorie__article div:nth-child(2) {
+  display: none;
+  background-color: var(--simili-noir);
 }
 
 .accueil_programme {
-  background-color: var(--complementaire);
-  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
   width: 100%;
 }
+.accueil_programme .widget_block {
+  border: 1px solid black;
+  min-height: 30vh;
+  padding-bottom: 5%;
+  padding-top: 20vh;
+  position: relative;
+}
+.accueil_programme .widget_block .widget-title {
+  margin: 0 auto;
+  width: 90%;
+}
+.accueil_programme .widget_block .wp-widget-group__inner-blocks {
+  margin: 0 auto;
+  margin-top: 2%;
+  width: 90%;
+}
+.accueil_programme .widget_block:first-of-type {
+  background-color: var(--complementaire);
+  padding-top: 5%;
+}
+.accueil_programme .widget_block:first-of-type .wp-widget-group__inner-blocks {
+  padding-bottom: 5%;
+}
+.accueil_programme .widget_block:first-of-type .wp-block-buttons {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+}
+.accueil_programme .widget_block:first-of-type .wp-block-buttons a {
+  background-color: var(--complementaire);
+  border: 1px solid var(--simili-noir);
+  color: var(--simili-noir);
+}
 
+@media screen and (min-width: 800px) {
+  .accueil_evenements {
+    min-height: 90vh;
+    /* Boite d'évènement récent */
+  }
+  .accueil_evenements .categorie__article {
+    background-color: var(--primaire);
+    border-radius: 0;
+    color: var(--blanc);
+    display: flex;
+    justify-content: space-between;
+    width: 80vw;
+  }
+  .accueil_evenements .categorie__article div:first-child {
+    background-color: var(--simili-noir);
+    border-radius: 5%;
+    overflow: hidden;
+    width: 35vw;
+  }
+  .accueil_evenements .categorie__article div:first-child a img {
+    margin: 0;
+    width: 100%;
+  }
+  .accueil_evenements .categorie__article div:first-child div {
+    display: flex;
+    font-weight: bold;
+    gap: 2px;
+    justify-content: center;
+    margin-top: 0.5vh;
+    padding-bottom: 1.5vh;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) {
+    border-radius: 5%;
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    width: 44vw;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) p, .accueil_evenements .categorie__article div:nth-child(2) h5, .accueil_evenements .categorie__article div:nth-child(2) div {
+    margin: 0 auto;
+    width: 35vw;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) p:first-child {
+    margin-top: 2vh;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) h5 {
+    margin-top: 2vh;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) div {
+    display: flex;
+    justify-content: left;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) div:first-of-type {
+    margin-top: 2vh;
+  }
+  .accueil_evenements .categorie__article div:nth-child(2) div:last-of-type {
+    padding-bottom: 2vh;
+  }
+  .accueil_programme {
+    flex-direction: row;
+  }
+  .accueil_programme .widget_block {
+    padding-top: 5%;
+    width: inherit;
+  }
+  .accueil_programme .widget_block:first-of-type {
+    padding-top: 5%;
+  }
+}
 table {
   border-collapse: collapse;
   width: 100%;

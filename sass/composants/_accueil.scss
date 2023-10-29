@@ -2,23 +2,193 @@
 ** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
  ---> les balises section, article, les div
 */
-
-
-
-.accueil_description {
+.accueil_description { // La section qui contient la phrase punch de la page d'accueil
   background-color: var(--blanc);
-  min-height: 50vh; 
+  padding-bottom: 5vh;
   width: 100%;
+  div{
+    margin-top: 2vh;
+  }
+  p,h2{
+    margin: 0 auto;
+    width: 80vw;
+  }
+  hr{
+    background-color: black;
+    height: 0.1vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+    width: 15%;  
+  }
 }
 
-.accueil_evenements {
+.accueil_evenements { // la section qui contient les évènement récents
   background-color: var(--primaire);
-  min-height: 50vh; 
+  padding-bottom: 4vh;
+  padding-top: 4vh;
   width: 100%;
+
+  h4{ // le titre
+    padding-bottom: 2vh;
+    text-align: center;
+  }
+
+  .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    justify-content: space-around;
+  }
+  /* Boite d'évènement récent */
+  .categorie__article{ 
+    background-color: var(--simili-noir);
+    border-radius: 5%; // arrondir les coins
+    color: var(--blanc); // couleur texte blanc
+    margin: 0 auto; // Centrer horizontalement
+    overflow: hidden; // pour que les coin du haut reste courber
+    text-align: center; // Center le texte
+    width: 90vw;
+
+    // Les informations necessaires/importants -titre -image -Date
+    div:first-child{
+      background-color: var(--simili-noir);
+      a img{
+        margin: 0;
+        width: 100%;
+      }
+      h3{
+        margin-top: 1.5vh;
+      }
+      div{
+        display: flex;
+        font-weight: bold;
+        gap: 2px;
+        justify-content: center;
+        margin-top: 0.5vh;
+        padding-bottom: 1.5vh;
+      }
+    }
+    // Les informations secondaires -Descriptions -additionnels -information de l'articles
+    div:nth-child(2){
+      display: none;
+      background-color: var(--simili-noir);
+    }
+  }
+}
+.accueil_programme { // section de inscription
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .widget_block{
+    border: 1px solid black;
+    min-height: 30vh; 
+    padding-bottom: 5%;
+    padding-top: 20vh;
+    position: relative;
+
+    .widget-title{
+      margin: 0 auto; // Centrer horizontalement
+      width: 90%;
+    }
+    .wp-widget-group__inner-blocks{
+      margin: 0 auto; // Centrer horizontalement
+      margin-top: 2%;
+      width: 90%;
+    }
+  }
+  .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
+    background-color: var(--complementaire);
+    padding-top: 5%;
+    .wp-widget-group__inner-blocks{
+      padding-bottom: 5%;
+    }
+    .wp-block-buttons{ // le bouton plus de détails
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+
+      a{ // style du bouton
+         background-color: var(--complementaire);
+         border: 1px solid var(--simili-noir);
+         color: var(--simili-noir);
+      }
+    }
+  }
 }
 
-.accueil_programme {
-  background-color: var(--complementaire);
-  min-height: 50vh; 
-  width: 100%;
+
+@media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
+  .accueil_evenements {
+    min-height: 90vh; 
+    /* Boite d'évènement récent */
+    .categorie__article{ 
+      background-color: var(--primaire); // reste a voir
+      border-radius: 0; // arrondir les coins
+      color: var(--blanc); // couleur texte blanc
+      display: flex;
+      justify-content: space-between;
+      width: 80vw;
+
+      // Les informations necessaires/importants -titre -image -Date
+      div:first-child{
+        background-color: var(--simili-noir);
+        border-radius: 5%;
+        overflow: hidden;
+        width: 35vw;
+        
+        a img{
+          margin: 0;
+          width: 100%;
+        }
+        div{
+          display: flex;
+          font-weight: bold;
+          gap: 2px;
+          justify-content: center;
+          margin-top: 0.5vh;
+          padding-bottom: 1.5vh;
+        }
+      }
+      // Les informations secondaires -Descriptions -additionnels -information de l'articles
+      div:nth-child(2){
+        border-radius: 5%;
+        display: block;
+        overflow: hidden;
+        text-align: left;
+        width: 44vw;
+        p,h5,div{
+          margin: 0 auto;
+          width: 35vw;
+        }
+        p:first-child{ // Description
+          margin-top: 2vh;
+        }
+        h5{
+          margin-top: 2vh;
+        } 
+        div{
+          display: flex;
+          justify-content: left;
+        }
+        div:first-of-type{
+          margin-top: 2vh;
+        }
+        div:last-of-type{
+          padding-bottom: 2vh;
+        }
+      }
+    }
+  } 
+  .accueil_programme { // section de inscription
+  flex-direction: row; // changement de l'affichement en ligne
+    .widget_block{
+      padding-top: 5%;
+      width: inherit; // prennent tout la taille de la section
+    }
+    .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
+      padding-top: 5%;
+    }
+  }
 }
+ // Fin requête média Tablette
