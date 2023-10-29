@@ -46,7 +46,7 @@ if (empty($categorie_modele)) {
 }
 
 // Utiliser le modèle pour projets si c'est aussi dans la catégorie des cours
-if (has_term(array('projets','cours'), 'category'))  {
+if (has_term('projets', 'category') && has_term('cours', 'category')) {
     $categorie_modele = locate_template('template-parts/categorie-projets.php');
 }
 
