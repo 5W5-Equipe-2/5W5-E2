@@ -472,6 +472,75 @@ body {
   width: 100vw;
 }
 
+/*---------------------------page projet et évènement-------------------------*/
+.categorie__section {
+  display: grid;
+  gap: 5vw;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+/* .categorie__article{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  //justify-content: center;
+  text-align: center;
+} */
+/*-----------------------adaptivité de la page projet et évènement---------------------*/
+@media screen and (min-width: 600px) {
+  .categorie__section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 900px) {
+  .categorie__section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .categorie__section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 1500px) {
+  .categorie__section {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+/*-----------------------------single projet------------------------------------*/
+.single-titre {
+  grid-area: titre;
+}
+
+.wp-block-image {
+  grid-area: image;
+}
+
+.information_single {
+  grid-area: information;
+}
+
+.section_single {
+  display: grid;
+  gap: 3em;
+  grid-template-areas: "titre" "image" "information";
+  padding: 1em;
+}
+
+/*-----------------------------single projet bureau------------------------------------*/
+@media screen and (min-width: 992px) {
+  .section_single {
+    grid-template-areas: "titre titre" "image information";
+    padding: 3em;
+    padding-left: 5em;
+    padding-right: 5em;
+  }
+  .section_single .wp-block-image {
+    width: 60vw;
+  }
+}
+/*-----------------------------fin single projet------------------------------------*/
+/*-----------------------------fin page projet et évènement----------------------*/
 /* 
 ** Tout ce qui concerne la balise header
 */
@@ -530,24 +599,6 @@ body {
 }
 .main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
   color: var(--primaire);
-}
-.main-navigation .site__header__recherche {
-  display: none;
-}
-.main-navigation .site__header__recherche .recherche > label {
-  width: 80vw;
-  height: 5vh;
-}
-@media screen and (min-width: 992px) {
-  .main-navigation .site__header__recherche {
-    display: flex;
-    position: absolute;
-    right: 1vw;
-  }
-  .main-navigation .site__header__recherche .recherche > label {
-    width: 20vw;
-    height: 3vh;
-  }
 }
 
 /* -----------------------------------------------------------------------------
@@ -611,18 +662,18 @@ menu tablet
     display: none;
   }
   .main-navigation.toggled ul,
-  .main-navigation ul {
+.main-navigation ul {
     display: flex;
     padding-top: 0;
     justify-content: flex-end;
     padding-right: 5%;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-  .main-navigation ul a[href="#"]::after {
+.main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-  .main-navigation ul ul {
+.main-navigation ul ul {
     display: none;
   }
 }
@@ -730,6 +781,33 @@ menu tablet
   color: var(--blanc);
   cursor: pointer;
   padding-right: 0.4rem;
+}
+.recherche > label .recherche__bouton {
+  background-color: transparent;
+  border: none;
+}
+
+/*-----------------------------------barre de recherche----------------------*/
+.site__header__recherche {
+  display: none;
+}
+.site__header__recherche .recherche > label {
+  width: 80vw;
+  height: 5vh;
+}
+@media screen and (min-width: 992px) {
+  .site__header__recherche {
+    display: flex;
+    position: absolute;
+    right: 1vw;
+  }
+  .site__header__recherche .recherche > label {
+    width: 20vw;
+    height: 3vh;
+  }
+  .site__header__recherche .recherche > label input.recherche__input {
+    width: 16vw;
+  }
 }
 
 /* Pour front-page.php */
