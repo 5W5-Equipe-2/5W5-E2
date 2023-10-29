@@ -71,25 +71,7 @@
   /* -----------------------------------------------------------------------------
   Barre de recherche
   ------------------------------------------------------------------------------*/
-  .site__header__recherche{
-    display: none;
-    
-    .recherche > label{
-      width: 80vw;
-      height: 5vh;
-    }
-
-    @media screen and (min-width : 992px){
-      display: flex;
-      position: absolute;
-      right: 1vw;
-
-      .recherche > label{
-        width: 20vw;
-        height: 3vh;
-      }
-    }
-  }
+  
   
   }
   /* -----------------------------------------------------------------------------

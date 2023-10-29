@@ -19,7 +19,7 @@
 <?php get_header(); ?>
 
 <main class="site_main">
-  <article class="">
+  <article class="section_single">
     <?php
 
     /****Modèle si c'est la catégorie projets *************************************************/
@@ -28,6 +28,7 @@
         while (have_posts()) : the_post();
           the_title('<h2 class="single-titre">', '</h2>');
           the_content(); ?>
+          <div class="information_single">
           <!-- Afficher les informations des champs AFC -->
           <h3>Auteur : <?php the_field('auteur'); ?></h3>
 
@@ -49,6 +50,7 @@
                       <?php echo substr($categories->name, 4); ?>
                     </a>
                   </h4>
+     
           <?php
                 }
                 break; // Arrêtez la boucle
@@ -86,6 +88,7 @@
             <?php
             }
             ?>
+            </div>
       <?php
         endwhile;
       endif;
