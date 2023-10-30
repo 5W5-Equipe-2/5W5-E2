@@ -150,7 +150,7 @@ function filter_posts()
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
-                'terms' => 'session-' . $session,
+                'terms' => 'session' . $session,
             ),
         ),
     );
