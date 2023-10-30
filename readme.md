@@ -1,6 +1,6 @@
 # Branche de développement du Sprint 02
 
-## Sprint 02 : début de l'intégration de la maquette
+## Sprint 02 : début de l'intégration de la maquette et de l'extension carrousel
 
 - Déploiement du projet sur le serveur (ramnode) :
   - https://5w5.ndasilva.ca/
