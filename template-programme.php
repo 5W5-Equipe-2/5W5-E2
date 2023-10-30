@@ -43,20 +43,20 @@
         <button class="filter-button" data-session="5">Session 5</button>
         <button class="filter-button" data-session="6">Session 6</button>
 
-        <div id="content" >
+        <div id="content">
 
         </div>
 
         <div class="grille_cours">
             <a href="#">Grille de cours</a>
         </div>
-        
+
     </section>
 
     <?php /****** Carrousel profs *******/ ?>
     <section class="Profs">
         <h2>Professeurs du TIM</h2>
-        <div></div><?php /****** Carrousel ext *******/ ?>
+        <?php echo do_shortcode('[5w5e2carrousel categories="cours,1j1" operator="ET" exclude_categories="-projet" exclude_operator="ET"]'); ?>
     </section>
 
 </main>
