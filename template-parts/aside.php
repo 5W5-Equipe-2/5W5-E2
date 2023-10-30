@@ -8,7 +8,7 @@
 <aside class="site__aside">
   <?php
   $ma_categorie = "projets";
-  if (in_category('projets') || is_page_template('template-projet.php')) {
+  if (in_category('projets') || is_page_template('template-projet.php') || is_page_template('template-tous-projets.php')) {
     $ma_categorie = "projets";
   ?>
     <!-- Bouton pour filtres de la catégorie Projets / menu burger ************************  -->

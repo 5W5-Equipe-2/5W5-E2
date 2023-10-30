@@ -7,10 +7,12 @@ $titre = get_the_title();
 $auteur = get_field('auteur');
 ?>
 
+<!-- Affichage dans WordPress -->
 <?php
 if (has_post_thumbnail() && !empty($auteur)) : ?>
     <article class="categorie__article">
-        <h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"></a></h3>
+        <h2>COURS</h2>
+        <h3><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"></h3> </a>
         <!--  Afficher l'image et en faire un lien clicable -->
         <figure>
             <a href="<?php the_permalink(); ?>">
