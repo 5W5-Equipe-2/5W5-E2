@@ -186,7 +186,7 @@ function filter_posts()
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
-                'terms' => 'projet',
+                'terms' => 'projets',
                 'operator' => 'NOT IN',
             ),
             array(
