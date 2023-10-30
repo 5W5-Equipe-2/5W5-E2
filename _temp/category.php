@@ -17,13 +17,19 @@ $query = new WP_Query($args);
 $cat_slug =  $categorie->slug;
 ?>
 
+
 <?php
-/****Récupérer le nom de la catégorie à partir de l'url ************************/
+/****Récupérer le nom de la catégorie à partir de l'url *********************************************************/
+// Récupérez l'URL actuelle
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
 // Extrait le dernier segment de l'URL
 $segments = explode('/', rtrim($url, '/'));
-$cat_url = end($segments);
+$categorie_slug = end($segments);
+?>
 
+
+<?php
 // Rechercher un modèle de catégorie en fonction du slug
 $categorie_modele = locate_template('template-parts/categorie-' . $cat_slug . '.php');
 
@@ -38,10 +44,16 @@ if (empty($categorie_modele)) {
         $parent_cat = get_term_by('id', $parent_cat->parent, 'category'); // Récupérer la catégorie parente suivante
     }
 }
-// Si c'est une catégorie de session, la catégorie modèle est le template de projets
-if (str_starts_with($cat_url, 'session') ) {
-  $categorie_modele = locate_template('template-parts/categorie-projets.php');
+
+// Utiliser le modèle pour projets si c'est aussi dans la catégorie des cours
+if (has_term(array('projets','cours'), 'category'))  {
+    $categorie_modele = locate_template('template-parts/categorie-projets.php');
 }
+
+/* // Utiliser le modèle pour projets si c'est aussi la catégorie des cours
+if (has_term(array('cours'), 'category')) {
+    $categorie_modele = locate_template('template-parts/categorie-projets.php');
+} */
 
 // Utiliser le modèle par défaut si aucun modèle personnalisé n'est pas trouvé
 if (empty($categorie_modele)) {
@@ -61,13 +73,14 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
 ?>
 
 <main class="site_main">
-<?php //Si c'est la catégorie Cours, on affiche en h2 "Tous les projets"
-if (str_starts_with($cat_url, 'cours')) {
-    echo '<h2>Tous les projets</h2>';
-} else { // Sinon on affiche le nom de la catégorie
+
+<?php //Si c'est la catégorie Projets, on affiche le nom de la catégorie 
+
+if (has_term(array('projets'), 'category')) {
     echo '<h2>' . $categorie->name . '</h2>';
 }
 ?>
+
     <section class="categorie__section">
         <?php
         if ($query->have_posts()) :

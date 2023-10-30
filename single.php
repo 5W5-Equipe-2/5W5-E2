@@ -22,7 +22,7 @@ $query = new WP_Query($args);
   <article class="section_single">
     <?php
 
-    if (has_term(array('projets', 'evenements'), 'category')) {
+    if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'), 'category'))) {
       if (have_posts()) :
         while (have_posts()) : the_post();
           the_title('<h2 class="single-titre">', '</h2>');
