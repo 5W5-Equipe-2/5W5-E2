@@ -531,6 +531,20 @@ body {
   grid-template-areas: "titre" "image" "information";
   padding: 1em;
 }
+.section_single .information_single {
+  display: flex;
+  flex-direction: column;
+}
+.section_single .information_single div:first-child {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+.section_single .information_single div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+}
 
 /*-----------------------------single projet bureau------------------------------------*/
 @media screen and (min-width: 992px) {
@@ -541,7 +555,7 @@ body {
     padding-right: 5em;
   }
   .section_single .wp-block-image {
-    width: 60vw;
+    width: 50vw;
   }
 }
 /*-----------------------------fin single projet------------------------------------*/

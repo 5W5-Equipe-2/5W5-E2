@@ -76,6 +76,23 @@ body {
   'image'
   'information';
   padding: 1em;
+
+  .information_single{
+    display: flex;
+    flex-direction: column;
+
+    div:first-child{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2em;
+    }
+
+    div:nth-child(2){
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 2em;
+    }
+  }
 }
 
 /*-----------------------------single projet bureau------------------------------------*/
@@ -90,7 +107,7 @@ body {
   padding-right: 5em;
 
   .wp-block-image{
-    width: 60vw;
+    width: 50vw;
   }
   }
 }
