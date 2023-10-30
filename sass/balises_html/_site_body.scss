@@ -11,3 +11,107 @@ body {
   max-width: 100%;
   width: 100vw;
 }
+
+/*---------------------------page projet et évènement-------------------------*/
+
+.categorie__section{
+  display: grid;
+  gap: 3em;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 3em;
+
+  .categorie__article{
+    background-color: var(--simili-noir);
+    border: 1px solid var(--noir);
+    border-radius: 5%; // arrondir les coins
+    color: var(--blanc); // couleur texte blanc
+    margin: 0 auto; // Centrer horizontalement
+    overflow: hidden; // pour que les coin du haut reste courber
+    text-align: center; // Center le texte
+    width: 25em;
+    height: 20em;
+
+    figure{
+      background-color: var(--simili-noir);
+      a img{
+        margin: 0;
+        width: 100%;
+      }
+    }
+
+    h3{
+      font-size: 18px;
+    }
+  }
+}
+
+
+
+/*-----------------------adaptivité de la page projet et évènement---------------------*/
+
+@media screen and (min-width : $largeur__bureau){
+  .categorie__section{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width : 1500px){
+  .categorie__section{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/*-----------------------------single projet------------------------------------*/
+
+.single-titre{grid-area: titre;}
+.wp-block-image{grid-area: image;}
+.information_single{grid-area: information;}
+
+.section_single{
+  //border-bottom: 2px solid var(--noir);
+  display: grid;
+  gap: 3em;
+  grid-template-areas: 
+  'titre'
+  'image'
+  'information';
+  padding: 1em;
+
+  .information_single{
+    display: flex;
+    flex-direction: column;
+
+    div:first-child{
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2em;
+    }
+
+    div:nth-child(2){
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 2em;
+    }
+  }
+}
+
+/*-----------------------------single projet bureau------------------------------------*/
+
+@media screen and (min-width : $largeur__bureau){
+  .section_single{
+    grid-template-areas: 
+  'titre titre'
+  'image information';
+  padding: 3em;
+  padding-left: 5em;
+  padding-right: 5em;
+
+  .wp-block-image{
+    width: 50vw;
+  }
+  }
+}
+
+/*-----------------------------fin single projet------------------------------------*/
+
+/*-----------------------------fin page projet et évènement----------------------*/

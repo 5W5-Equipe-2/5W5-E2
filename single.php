@@ -19,7 +19,7 @@
 <?php get_header(); ?>
 
 <main class="site_main">
-  <article class="">
+  <article class="section_single">
     <?php
 
     /****Modèle si c'est la catégorie projets *************************************************/
@@ -28,8 +28,9 @@
         while (have_posts()) : the_post();
           the_title('<h2 class="single-titre">', '</h2>');
           the_content(); ?>
+          <div class="information_single">
           <!-- Afficher les informations des champs AFC -->
-          <h3>Auteur : <?php the_field('auteur'); ?></h3>
+          <div><h3>Auteur : <?php the_field('auteur'); ?></h3>
 
           <!-- Obtenir les termes (catégories) associés à l'article -->
           <?php
@@ -44,11 +45,14 @@
                 $categorie_lien = get_term_link($categories); // Obtenir l'URL de la catégorie
                 if (!is_wp_error($categorie_lien)) {
           ?>
+                  
                   <h4>Réalisé dans :
                     <a href="<?php echo esc_url($categorie_lien); ?>">
                       <?php echo substr($categories->name, 4); ?>
                     </a>
                   </h4>
+                  </div>
+     
           <?php
                 }
                 break; // Arrêtez la boucle
@@ -56,7 +60,6 @@
             }
           }
           ?>
-          <div>
             <!-- Afficher l'icône, la saison et l'année-->
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" width="21.289" height="21.289" viewBox="0 0 21.289 21.289">
