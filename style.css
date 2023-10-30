@@ -475,36 +475,41 @@ body {
 /*---------------------------page projet et évènement-------------------------*/
 .categorie__section {
   display: grid;
-  gap: 5vw;
+  gap: 3em;
   grid-template-columns: repeat(1, 1fr);
+  padding: 3em;
+}
+.categorie__section .categorie__article {
+  background-color: var(--simili-noir);
+  border: 1px solid var(--noir);
+  border-radius: 5%;
+  color: var(--blanc);
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  width: 25em;
+  height: 20em;
+}
+.categorie__section .categorie__article figure {
+  background-color: var(--simili-noir);
+}
+.categorie__section .categorie__article figure a img {
+  margin: 0;
+  width: 100%;
+}
+.categorie__section .categorie__article h3 {
+  font-size: 18px;
 }
 
-/* .categorie__article{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  //justify-content: center;
-  text-align: center;
-} */
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 992px) {
   .categorie__section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media screen and (min-width: 900px) {
-  .categorie__section {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-@media screen and (min-width: 1200px) {
-  .categorie__section {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 @media screen and (min-width: 1500px) {
   .categorie__section {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 /*-----------------------------single projet------------------------------------*/
@@ -526,6 +531,20 @@ body {
   grid-template-areas: "titre" "image" "information";
   padding: 1em;
 }
+.section_single .information_single {
+  display: flex;
+  flex-direction: column;
+}
+.section_single .information_single div:first-child {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+}
+.section_single .information_single div:nth-child(2) {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 2em;
+}
 
 /*-----------------------------single projet bureau------------------------------------*/
 @media screen and (min-width: 992px) {
@@ -536,7 +555,7 @@ body {
     padding-right: 5em;
   }
   .section_single .wp-block-image {
-    width: 60vw;
+    width: 50vw;
   }
 }
 /*-----------------------------fin single projet------------------------------------*/
@@ -662,18 +681,18 @@ menu tablet
     display: none;
   }
   .main-navigation.toggled ul,
-  .main-navigation ul {
+.main-navigation ul {
     display: flex;
     padding-top: 0;
     justify-content: flex-end;
     padding-right: 5%;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-  .main-navigation ul a[href="#"]::after {
+.main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-  .main-navigation ul ul {
+.main-navigation ul ul {
     display: none;
   }
 }
