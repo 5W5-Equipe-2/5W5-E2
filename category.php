@@ -38,9 +38,10 @@ if (empty($categorie_modele)) {
         $parent_cat = get_term_by('id', $parent_cat->parent, 'category'); // Récupérer la catégorie parente suivante
     }
 }
+
 // Si c'est une catégorie de session, la catégorie modèle est le template de projets
 if (str_starts_with($cat_url, 'session') ) {
-  $categorie_modele = locate_template('template-parts/categorie-projets.php');
+    $categorie_modele = locate_template('template-parts/categorie-projets.php');
 }
 
 // Utiliser le modèle par défaut si aucun modèle personnalisé n'est pas trouvé
