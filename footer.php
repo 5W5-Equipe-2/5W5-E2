@@ -6,26 +6,29 @@
  */
 ?>
 <footer class="site_pied_page">
+  <div class="contenu_footer">
 
-
-  <section class="sidebar">
-    <p>Sidebar 1</p>
+  <section class="section_footer_logo">
+    <?php the_custom_logo(); ?>
+  </section>
+  
+  <section class="section_footer">
     <?php dynamic_sidebar('footer_1'); ?>
   </section>
 
-  <section class="sidebar">
-    <p>Sidebar 2</p>
+  <section class="section_footer">
     <?php dynamic_sidebar('footer_2'); ?>
   </section>
 
-
-  <section class="sidebar">
-    <p>Sidebar 3</p>
+  <section class="section_footer">
     <?php dynamic_sidebar('footer_3'); ?>
   </section>
 
-  <p>© <?= date("Y") ?> Collège de Maisonneuve. Tous droits réservés. </p>
+  <section class="section_footer">
+    <p>© <?= date("Y") ?> Collège de Maisonneuve. Tous droits réservés. </p>
+  </section>
 
+  </div>
 
 </footer>
 <?php wp_footer(); ?>

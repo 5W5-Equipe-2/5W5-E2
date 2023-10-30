@@ -4,19 +4,64 @@
 
 
 .site_pied_page {
-  align-items: center;
+ 
   background-color: var(--noir);
   color: var(--blanc);
-  display: flex;
-  justify-content: space-evenly;
   min-height: 10vh;
   width: 100%;
 
-
-  .sidebar {
-    border: 1px solid var(--test);
-    margin: 0.5rem;
-    min-height: 4vh;
-    min-width: 4vw;
+  .contenu_footer{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2em;
   }
+
+  .section_footer{
+    padding-top: 1.3em;
+  }
+
+  .section_footer_logo{
+    a{
+      border-bottom: solid 2px var(--blanc);
+    }
+  }
+
+  a{
+    color: var(--blanc);
+  text-decoration: none;
+  &:visited {
+    color: var(--complementaire);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--primaire);
+  }
+  }
+
 }
+
+  /* ---------------------------------------------------------------------------
+  menu tablet
+  ------------------------------------------------------------------------------ */
+  @media screen and (min-width : 992px) {
+
+    .site_pied_page{
+      
+      .contenu_footer{
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      .section_footer{
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+      }
+    }
+
+    
+  } 
