@@ -150,7 +150,7 @@ add_action('wp_enqueue_scripts', 'theme5w5_scripts');
 
 function enqueue_custom_script()
 {
-    wp_enqueue_script('custom-script', get_template_directory_uri() . '/JS/script.js', array('jquery'), '1.0', true);
+    wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
@@ -186,13 +186,13 @@ function filter_posts()
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
-                'terms' => 'projet',
+                'terms' => 'projets',
                 'operator' => 'NOT IN',
             ),
             array(
                 'taxonomy' => 'category',
                 'field' => 'slug',
-                'terms' => 'session-' . $session,
+                'terms' => 'session' . $session,
             ),
         ),
     );
