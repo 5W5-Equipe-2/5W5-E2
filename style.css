@@ -473,6 +473,10 @@ body {
 }
 
 /*---------------------------page projet et évènement-------------------------*/
+.site__aside a {
+  color: var(--blanc);
+}
+
 .categorie__section {
   display: grid;
   gap: 3em;
@@ -500,6 +504,9 @@ body {
 .categorie__section .categorie__article h3 {
   font-size: 18px;
 }
+.categorie__section .categorie__article a {
+  color: var(--blanc);
+}
 
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
 @media screen and (min-width: 992px) {
@@ -510,6 +517,11 @@ body {
 @media screen and (min-width: 1500px) {
   .categorie__section {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 1900px) {
+  .categorie__section {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 /*-----------------------------single projet------------------------------------*/

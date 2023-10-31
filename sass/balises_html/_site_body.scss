@@ -14,6 +14,12 @@ body {
 
 /*---------------------------page projet et évènement-------------------------*/
 
+.site__aside{
+  a{
+    color: var(--blanc);
+  }
+}
+
 .categorie__section{
   display: grid;
   gap: 3em;
@@ -42,6 +48,10 @@ body {
     h3{
       font-size: 18px;
     }
+
+    a{
+      color: var(--blanc);
+    }
   }
 }
 
@@ -58,6 +68,12 @@ body {
 @media screen and (min-width : 1500px){
   .categorie__section{
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width : 1900px){
+  .categorie__section{
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
