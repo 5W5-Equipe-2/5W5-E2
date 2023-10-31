@@ -34,16 +34,7 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
   <section class="accueil_evenements">
     <h4>Évènements récents</h4>
     <div class="evenements_recents">
-      <?php
-      if (have_posts()) :
-        while (have_posts()) : the_post();
-          if (in_category('evenements')) {
-            $la_categorie = 'evenements';
-          }
-          get_template_part('template-parts/categorie', $la_categorie);
-        endwhile;
-      endif;
-      ?>
+      <?php echo do_shortcode('[5w5e2carrousel categories="accueil,evenements" operator="ET" exclude_categories="-projet" exclude_operator="ET" max_posts="5"]'); ?>
     </div>
   </section>
 
