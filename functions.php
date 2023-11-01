@@ -240,7 +240,8 @@ function filter_posts()
                 echo '</div>';
             endif;
             // Générez un lien vers la catégorie
-            $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
+         //   $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
+            $category_url = '/category/' . $article_category[0]->slug;
             echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
 
             echo '</div>'; // Fermez le conteneur du contenu de l'article
