@@ -832,6 +832,7 @@ menu tablet
 /* Pour front-page.php */
 .media_vedette {
   height: 72vh;
+  opacity: 0.85;
   position: relative;
   width: 100%;
 }
