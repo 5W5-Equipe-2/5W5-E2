@@ -21,7 +21,7 @@
   </section>
 
 
-  <div class="accueil_evenements">
+  <section class="accueil_evenements">
     <h4>Évènements récents</h4>
     <div class="evenements_recents">
       <?php
@@ -34,7 +34,7 @@
       endif;
       ?>
     </div>
-  </div>
+  </section>
 
   <section class="accueil_programme">
     <?php dynamic_sidebar('inscription_accueil'); ?>
