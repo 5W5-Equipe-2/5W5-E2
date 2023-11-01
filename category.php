@@ -56,7 +56,7 @@ if (empty($categorie_modele)) {
 
 <!-- Aside    *************************  -->
 <?php //Si c'est les catégories evenements et projets
-if (!is_front_page() && (!is_admin()) && (in_category(array('projets', 'evenements'), 'category'))) {
+if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'), 'category'))) {
     get_template_part("template-parts/aside");
 }
 ?>
@@ -125,7 +125,7 @@ if (!is_front_page() && (!is_admin()) && (in_category(array('projets', 'evenemen
     </section>
 <!------------ // Pour toutes les catégories, saufe les "sessions" ------------------------------->
     <section class="<categorie__section">
-        <?php 
+    <?php if (!(str_starts_with($cat_url, 'session'))) {
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post();
                     // Charger le modèle pour la catégorie
@@ -135,6 +135,7 @@ if (!is_front_page() && (!is_admin()) && (in_category(array('projets', 'evenemen
                 endwhile;
             endif;
             wp_reset_postdata();
+        }
         ?>
     </section>
 </main>
