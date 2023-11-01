@@ -10,8 +10,8 @@
 $categorie = get_queried_object();
 $args = array(
     'category_name' => $categorie->slug,
-    'orderby' => 'title',
-    'order' => 'ASC'
+    'order' => ($categorie->slug === 'media') ? 'rand' : 'ASC', //Si c'est media, c'est ordre au hasard
+    'orderby' => 'title'
 );
 $query = new WP_Query($args);
 $cat_slug =  $categorie->slug;
@@ -56,7 +56,7 @@ if (empty($categorie_modele)) {
 
 <!-- Aside    *************************  -->
 <?php //Si c'est les catégories evenements et projets
-if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'), 'category'))) {
+if (!is_front_page() && (!is_admin()) && (in_category(array('projets', 'evenements'), 'category'))) {
     get_template_part("template-parts/aside");
 }
 ?>
@@ -124,8 +124,8 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
         } ?>
     </section>
 <!------------ // Pour toutes les catégories, saufe les "sessions" ------------------------------->
-    <section class="categorie__section">
-        <?php if (!(str_starts_with($cat_url, 'session'))) {
+    <section class="<categorie__section">
+        <?php 
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post();
                     // Charger le modèle pour la catégorie
@@ -135,7 +135,6 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
                 endwhile;
             endif;
             wp_reset_postdata();
-        }
         ?>
     </section>
 </main>
