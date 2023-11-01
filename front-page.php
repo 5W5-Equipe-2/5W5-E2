@@ -7,10 +7,12 @@
 ?>
 <?php get_header(); ?>
 <main class="site_main site_main_accueil">
-  <section class="media_vedette img-wrapper">
+  <section class="media_vedette">
+    <div class="img-wrapper">
     <?php
     get_template_part('template-parts/categorie-media');
     ?>
+    </div>
     <div class="reseaux_sociaux"><?php dynamic_sidebar('mv_reseau_sociaux'); ?></div>
     <span>T</span>
     <span>i</span>

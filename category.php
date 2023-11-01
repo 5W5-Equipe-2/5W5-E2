@@ -123,9 +123,9 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             }
         } ?>
     </section>
-<!------------ // Pour toutes les catégories, saufe les "sessions" ------------------------------->
+<!------------ // Pour toutes les catégories, saufe les "sessions" et "media"------------------------------->
     <section class="<categorie__section">
-    <?php if (!(str_starts_with($cat_url, 'session'))) {
+    <?php if (!(str_starts_with($cat_url, 'session')) && !(has_term(array('media'), 'category'))) {
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post();
                     // Charger le modèle pour la catégorie
@@ -138,6 +138,20 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
         }
         ?>
     </section>
+
+    <!------------ // Pour la catégorie "media", qui a sa propre boucle d'affichage"------------------------------->
+    <section class="<categorie__section">
+    <?php if ((has_term(array('media'), 'category'))) :
+          
+                    if (!empty($categorie_modele)) {
+                        include($categorie_modele);
+                    }
+            endif;
+            wp_reset_postdata();
+        
+        ?>
+    </section>
+
 </main>
 
 <?php get_footer(); ?>
