@@ -116,20 +116,24 @@ add_action('widgets_init', 'enregistrer_sidebar');
 
 
 /*----------------------------------------------------------------------------- Modifier la requête principale */
-function e2_modifie_requete_principal($query) //s'exécute à chaque page
-{
+function e2_modifie_requete_principal($query) {
     if (
-        $query->is_home()
-        && $query->is_main_query() //ce n'est pas une requête secondaire
-        && !is_admin() // c'est pas le tableau de bord (car il y a là aussi une requête principale)
+        $query->is_home() && // Sur la page d'accueil
+        $query->is_main_query() && // Ce n'est pas une requête secondaire
+        !is_admin() // Pas dans le tableau de bord
     ) {
-        $query->set('category_name', 'Accueil'); //On affiche accueil sur la page principale
+        // Slugs des catégories à afficher sur la page d'accueil (séparés par des virgules)
+        $category_slugs_to_show = 'accueil, media';
+
+        $query->set('category_name', $category_slugs_to_show);
         $query->set('orderby', 'title');
         $query->set('order', 'ASC');
     }
 }
 
 add_action('pre_get_posts', 'e2_modifie_requete_principal');
+
+
 
 /*-----------------------------------------------------------------------------ajouter le script pour la navugation header */
 
@@ -236,7 +240,8 @@ function filter_posts()
                 echo '</div>';
             endif;
             // Générez un lien vers la catégorie
-            $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
+         //   $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
+            $category_url = '/category/' . $article_category[0]->slug;
             echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
 
             echo '</div>'; // Fermez le conteneur du contenu de l'article

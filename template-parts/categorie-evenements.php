@@ -96,7 +96,7 @@ $titre = get_the_title();
     Si c'est la page d'accueil seulement
 ----------------------------------------------------------------------------------->
     <!--  Un div qui inclus les informations de l'évènement -->
-    <div class="">
+    <div>
         <?php if (is_front_page()) {
             $lien = get_permalink();
             $lire = "<span><a href='" . $lien . "'>... &#187;</a></span>" ?>
