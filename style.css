@@ -473,6 +473,11 @@ body {
 }
 
 /*---------------------------page projet et évènement-------------------------*/
+.test {
+  display: flex;
+  justify-content: center;
+}
+
 .site__aside a {
   color: var(--blanc);
 }
@@ -529,7 +534,7 @@ body {
   grid-area: titre;
 }
 
-.wp-block-image {
+.section_single figure {
   grid-area: image;
 }
 
@@ -537,10 +542,14 @@ body {
   grid-area: information;
 }
 
+p {
+  grid-area: information_texte;
+}
+
 .section_single {
   display: grid;
   gap: 3em;
-  grid-template-areas: "titre" "image" "information";
+  grid-template-areas: "titre" "image" "information_texte" "information";
   padding: 1em;
 }
 .section_single .information_single {
@@ -558,10 +567,22 @@ body {
   margin-bottom: 2em;
 }
 
+/*-----------------------------single evenement------------------------------------*/
+/* .article_info{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  //height: 8em;
+  justify-content:space-evenly ;
+} */
+/* .article_titre, .article_date{
+  display: flex
+} */
+/*-----------------------------single evenement fin------------------------------------*/
 /*-----------------------------single projet bureau------------------------------------*/
 @media screen and (min-width: 992px) {
   .section_single {
-    grid-template-areas: "titre titre" "image information";
+    grid-template-areas: "titre titre" "image information" "image information_texte";
     padding: 3em;
     padding-left: 5em;
     padding-right: 5em;
@@ -570,7 +591,7 @@ body {
     width: 50vw;
   }
 }
-/*-----------------------------fin single projet------------------------------------*/
+/*-----------------------------fin single projet---------------------------------*/
 /*-----------------------------fin page projet et évènement----------------------*/
 /* 
 ** Tout ce qui concerne la balise header
@@ -693,18 +714,18 @@ menu tablet
     display: none;
   }
   .main-navigation.toggled ul,
-  .main-navigation ul {
+.main-navigation ul {
     display: flex;
     padding-top: 0;
     justify-content: flex-end;
     padding-right: 5%;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-  .main-navigation ul a[href="#"]::after {
+.main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-  .main-navigation ul ul {
+.main-navigation ul ul {
     display: none;
   }
 }

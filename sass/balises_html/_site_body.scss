@@ -14,6 +14,11 @@ body {
 
 /*---------------------------page projet et évènement-------------------------*/
 
+.test{
+  display: flex;
+  justify-content: center;
+}
+
 .site__aside{
   a{
     color: var(--blanc);
@@ -80,8 +85,9 @@ body {
 /*-----------------------------single projet------------------------------------*/
 
 .single-titre{grid-area: titre;}
-.wp-block-image{grid-area: image;}
+.section_single{figure{grid-area: image;}}
 .information_single{grid-area: information;}
+p{grid-area: information_texte;}
 
 .section_single{
   //border-bottom: 2px solid var(--noir);
@@ -90,6 +96,7 @@ body {
   grid-template-areas: 
   'titre'
   'image'
+  'information_texte'
   'information';
   padding: 1em;
 
@@ -111,13 +118,30 @@ body {
   }
 }
 
+/*-----------------------------single evenement------------------------------------*/
+
+/* .article_info{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  //height: 8em;
+  justify-content:space-evenly ;
+} */
+
+/* .article_titre, .article_date{
+  display: flex
+} */
+
+/*-----------------------------single evenement fin------------------------------------*/
+
 /*-----------------------------single projet bureau------------------------------------*/
 
 @media screen and (min-width : $largeur__bureau){
   .section_single{
     grid-template-areas: 
   'titre titre'
-  'image information';
+  'image information'
+  'image information_texte';
   padding: 3em;
   padding-left: 5em;
   padding-right: 5em;
@@ -128,6 +152,6 @@ body {
   }
 }
 
-/*-----------------------------fin single projet------------------------------------*/
+/*-----------------------------fin single projet---------------------------------*/
 
 /*-----------------------------fin page projet et évènement----------------------*/
