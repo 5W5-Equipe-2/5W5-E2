@@ -681,18 +681,18 @@ menu tablet
     display: none;
   }
   .main-navigation.toggled ul,
-  .main-navigation ul {
+.main-navigation ul {
     display: flex;
     padding-top: 0;
     justify-content: flex-end;
     padding-right: 5%;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-  .main-navigation ul a[href="#"]::after {
+.main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-  .main-navigation ul ul {
+.main-navigation ul ul {
     display: none;
   }
 }
@@ -832,7 +832,7 @@ menu tablet
 /* Pour front-page.php */
 /* Pour front-page.php */
 .media_vedette {
-  height: 90vh;
+  height: 75vh;
   min-height: 100%;
   opacity: 0.8;
   position: relative;
@@ -842,15 +842,18 @@ menu tablet
   width: 100%;
 }
 .media_vedette .reseaux_sociaux {
+  background-color: black;
   position: absolute;
   right: 0;
   bottom: 5vh;
   margin: 0;
   padding: 0;
+  padding-bottom: 0.5vh;
 }
 .media_vedette .reseaux_sociaux div {
   width: 50%;
   height: 10%;
+  margin: 0 auto;
 }
 .media_vedette .reseaux_sociaux div figure {
   padding: 1% 0;
@@ -864,69 +867,71 @@ menu tablet
     width: 70%;
   }
 }
-.media_vedette span {
-  color: var(--blanc);
-  font-family: var(--police-titre);
-  font-size: clamp(8rem, 10vw, 0rem);
-  margin: 0;
-  opacity: 0;
-  padding: 0;
+.media_vedette .logo_tim {
+  display: flex;
+  left: 0;
+  margin: 0 auto;
   position: absolute;
-  transform-origin: center;
-  text-align: center;
-  width: 10vw;
+  right: 0;
+  top: 50%;
+  width: fit-content;
 }
-.media_vedette span:first-of-type {
+.media_vedette .logo_tim span {
+  opacity: 0;
+}
+.media_vedette .logo_tim span img {
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+.media_vedette .logo_tim span:first-of-type {
+  transform: translateY(0vh);
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  animation-name: test;
-  left: 28vw;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+  animation-name: animation-apparition;
 }
-@media screen and (min-width: 800px) {
-  .media_vedette span:first-of-type {
-    left: 37vw;
-  }
-}
-.media_vedette span:nth-of-type(2) {
-  animation-delay: 0.3s;
+.media_vedette .logo_tim span:last-of-type {
+  animation-delay: 0.1s;
   animation-duration: 2s;
   animation-fill-mode: forwards;
-  animation-name: test;
-  color: var(--primaire);
-  left: 40vw;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-  z-index: 2;
-}
-.media_vedette span:last-of-type {
-  animation-delay: 0.5s;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-name: test;
+  animation-name: animation-idle;
   animation-timing-function: ease-in-out;
-  left: 45vw;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+  left: 26%;
 }
-@media screen and (min-width: 800px) {
-  .media_vedette span:last-of-type {
-    left: 45vw;
-  }
-}
-@keyframes test {
+@keyframes animation-apparition {
   0% {
-    top: -10%;
+    transform: translateY(-50vh);
     opacity: 0;
   }
   50% {
-    top: 50%;
+    transform: translateY(0vh);
     opacity: 1;
   }
   75% {
-    top: 45%;
+    transform: translateY(-5vh);
     opacity: 0.8;
   }
   100% {
-    top: 50%;
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+@keyframes animation-idle {
+  0% {
+    transform: translateY(0vh);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-5vh);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0vh);
     opacity: 1;
   }
 }

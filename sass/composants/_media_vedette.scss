@@ -3,7 +3,7 @@
 
 .media_vedette {
  
-  height: 90vh; // A changer
+  height: 75vh; // A changer
   min-height: 100%; 
   opacity: 0.8;
   position: relative;
@@ -13,14 +13,17 @@
     width: 100%;
   }
   .reseaux_sociaux{
+    background-color: black;
     position: absolute;
     right: 0;
     bottom: 5vh;
     margin: 0;
     padding: 0;
+    padding-bottom: 0.5vh;
     div{
       width: 50%;
       height: 10%;
+      margin: 0 auto;
       figure{
         // Petit espacement
         padding: 1% 0;
@@ -35,58 +38,51 @@
     }
     }
   }
-  span{
-    // border: 3px solid red;
-    color: var(--blanc); // couleur texte blanc
-    font-family: var(--police-titre);
-    font-size: clamp(8rem, 10vw, 0rem);
-    margin: 0;
-    opacity: 0;
-    padding: 0;
-    position: absolute;
-    transform-origin: center;
-    text-align: center;
-    width: 10vw;
-  }
-  span:first-of-type{ // Lettre T
-    animation-duration: 2s; // Durée de l'animation
-    animation-fill-mode: forwards; // Pour qu'il reste au dernier frame
-    animation-name: test; // Nom de l'animation
-    left: calc(28vw - 0vw);
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir); // outline
-    @media screen and (min-width:$largeur__tablette){
-      left: calc(40vw - 3vw); // Un peu plus a gauche que le i
+  .logo_tim{
+    display: flex; // pour enlever le gap
+    left: 0; // centrer les logo
+    margin:  0 auto; // centrer les logo
+    position: absolute; // pour le mettre par dessus le média-vedette
+    right: 0; // centrer les logo
+    top: 50%; // aligner au axe vertical
+    width: fit-content; // centrer les logo
+    
+    span{
+      opacity: 0;
+      img{
+        height: 10vh; // tablette 15, bureau 20
+        margin: 0;
+        padding: 0;
+        width: auto;  
+      }
+    }
+    span:first-of-type{ // Lettre T
+      transform: translateY(0vh);
+      animation-duration: 2s; // Durée de l'animation
+      animation-fill-mode: forwards; // Pour qu'il reste au dernier frame
+      animation-name: animation-apparition; // Nom de l'animation
+    }
+    span:last-of-type{ // Lettre M
+      animation-delay: 0.1s;
+      animation-duration: 2s;
+      animation-fill-mode: forwards;
+      animation-name: animation-idle;
+      animation-timing-function: ease-in-out;
+      left: 26%;
+    }
+    @keyframes animation-apparition {
+      0%{transform: translateY(-50vh); opacity: 0;}
+      50%{transform: translateY(0vh); opacity: 1;}
+      75%{transform: translateY(-5vh); opacity: 0.8;}
+      100%{transform: translateY(0vh);opacity: 1;}
+    }
+    @keyframes animation-idle {
+      0%{transform: translateY(0vh); opacity: 0;}
+      50%{transform: translateY(0vh); opacity: 1;}
+      75%{transform: translateY(-5vh); opacity: 0.8;}
+      100%{transform: translateY(0vh);opacity: 1;}
     }
   }
-  span:nth-of-type(2){ // Lettre I
-    animation-delay: 0.3s;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-name: test;
-    color: var(--primaire);
-    left: 40vw; // Au centre
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-    z-index: 2; // Plus avancé que les autre lettre
-  }
-  span:last-of-type{ // Lettre M
-    animation-delay: 0.5s;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-name: test;
-    animation-timing-function: ease-in-out;
-    left: 45vw;
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-     @media screen and (min-width:$largeur__tablette){
-      left: calc(45vw - 0vw); // Un peu plus a gauche que le i
-    }
-  }
-  @keyframes test {
-    0%{top: -10%; opacity: 0;}
-    50%{top: 50%; opacity: 1;}
-    75%{top: 45%; opacity: 0.8;}
-    100%{top: 50%;opacity: 1;}
-  }
-  
 }
 
 /*

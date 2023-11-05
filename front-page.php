@@ -11,6 +11,8 @@
 // $imagePath = "wp-content/themes/5W5-E2/images/media_vedette_test.jpg";
 
 $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
+$imagePathT =  get_template_directory_uri() . '/images/logo_t.png';
+$imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
 ?>
 
 <?php get_header(); ?>
@@ -22,9 +24,10 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
       <img src="<?php echo $imagePath; ?>" alt="Image vedette">
     </div>
     <div class="reseaux_sociaux"><?php dynamic_sidebar('mv_reseau_sociaux'); ?></div>
-    <span>T</span>
-    <span>i</span>
-    <span>M</span>
+    <div class="logo_tim">
+      <span><img src="<?php echo $imagePathT; ?>" alt="Ti"></span>
+      <span><img src="<?php echo $imagePathM; ?>" alt="M"></span>
+    </div>
   </section>
   <section class="accueil_description">
     <?php dynamic_sidebar('description_punch'); ?>
