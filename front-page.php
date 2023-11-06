@@ -5,21 +5,13 @@
  * 
  */
 ?>
-
-<?php
-// Image temporaire Sprint 02 / Chemin de l'image
-// $imagePath = "wp-content/themes/5W5-E2/images/media_vedette_test.jpg";
-
-$imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
-?>
-
 <?php get_header(); ?>
 <main class="site_main site_main_accueil">
-
   <section class="media_vedette">
     <div class="img-wrapper">
-      <!-- Image temporaire Sprint 02 -->
-      <img src="<?php echo $imagePath; ?>" alt="Image vedette">
+    <?php
+    get_template_part('template-parts/categorie-media');
+    ?>
     </div>
     <div class="reseaux_sociaux"><?php dynamic_sidebar('mv_reseau_sociaux'); ?></div>
     <span>T</span>
@@ -34,7 +26,7 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
   <section class="accueil_evenements">
     <h4>Évènements récents</h4>
     <div class="evenements_recents">
-      <?php echo do_shortcode('[5w5e2carrousel categories="evenements" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="5"]'); ?>
+    <?php echo do_shortcode('[5w5e2carrousel categories="evenements" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="5"]'); ?>
     </div>
   </section>
 

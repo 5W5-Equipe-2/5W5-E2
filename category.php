@@ -10,26 +10,20 @@
 $categorie = get_queried_object();
 $args = array(
     'category_name' => $categorie->slug,
-    'orderby' => 'title',
-    'order' => 'ASC'
+    'order' => ($categorie->slug === 'media') ? 'rand' : 'ASC', //Si c'est media, c'est ordre au hasard
+    'orderby' => 'title'
 );
 $query = new WP_Query($args);
 $cat_slug =  $categorie->slug;
 ?>
 
-
 <?php
-/****Récupérer le nom de la catégorie à partir de l'url *********************************************************/
-// Récupérez l'URL actuelle
+/****Récupérer le nom de la catégorie à partir de l'url ************************/
 $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
 // Extrait le dernier segment de l'URL
 $segments = explode('/', rtrim($url, '/'));
-$categorie_slug = end($segments);
-?>
+$cat_url = end($segments);
 
-
-<?php
 // Rechercher un modèle de catégorie en fonction du slug
 $categorie_modele = locate_template('template-parts/categorie-' . $cat_slug . '.php');
 
@@ -45,15 +39,10 @@ if (empty($categorie_modele)) {
     }
 }
 
-// Utiliser le modèle pour projets si c'est aussi dans la catégorie des cours
-if (has_term('projets', 'category') && has_term('cours', 'category')) {
+// Si c'est une catégorie de session, la catégorie modèle est le template de projets
+if (str_starts_with($cat_url, 'session')) {
     $categorie_modele = locate_template('template-parts/categorie-projets.php');
 }
-
-/* // Utiliser le modèle pour projets si c'est aussi la catégorie des cours
-if (has_term(array('cours'), 'category')) {
-    $categorie_modele = locate_template('template-parts/categorie-projets.php');
-} */
 
 // Utiliser le modèle par défaut si aucun modèle personnalisé n'est pas trouvé
 if (empty($categorie_modele)) {
@@ -73,27 +62,96 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
 ?>
 
 <main class="site_main">
-
-<?php //Si c'est la catégorie Projets, on affiche le nom de la catégorie 
-
-if (has_term(array('projets'), 'category')) {
-    echo '<h2>' . $categorie->name . '</h2>';
-}
-?>
+  <!--   On affiche le titre de la catégorie -->
+    <?php echo '<h2>' . $categorie->name . '</h2>'; ?> 
 
     <section class="categorie__section">
-        <?php
-        if ($query->have_posts()) :
-            while ($query->have_posts()) : $query->the_post();
-                // Charger le modèle pour la catégorie
-                if (!empty($categorie_modele)) {
-                    include($categorie_modele);
+<!------------ //Si c'est l'une des catégories de session ------------------------------->
+        <?php if ((str_starts_with($cat_url, 'session'))) {
+            //Aller chercher les catégories enfants (les cours)
+            $cours_categories = get_term_children($categorie->term_id, 'category');
+
+            if (!empty($cours_categories)) {
+                foreach ($cours_categories as $cours_categorie_id) {
+                    $cours_categorie = get_term($cours_categorie_id, 'category');
+
+                    // Récupérer le slug de la catégorie de cours
+                    $cours_categorie_slug = $cours_categorie->slug;
+
+                    // Vérifier si au moins un article de la catégorie a une image à la une
+                    $args = array(
+                        'category_name' => $cours_categorie_slug,
+                        'post_type' => 'post',
+                        'posts_per_page' => 1, // pour vérifier au moins un article
+                        'meta_query' => array(
+                            array(
+                                'key' => '_thumbnail_id',
+                                'compare' => 'EXISTS',
+                            ),
+                        ),
+                    );
+                    $a_thumbnail_image = new WP_Query($args);
+
+                    if ($a_thumbnail_image->have_posts()) {
+                        // Afficher le titre du cours si les articles ont une image
+                        echo '<h3>' . substr($cours_categorie->name, 4) . '</h3';
+
+                        // Réinitialiser la requête pour la boucle principale
+                        wp_reset_postdata();
+
+                        // Exécuter la requête pour afficher les articles
+                        $args = array(
+                            'category_name' => $cours_categorie_slug,
+                            'post_type' => 'post',
+                            'posts_per_page' => -1, // pour afficher tous les articles
+                        );
+                        $cours_articles = new WP_Query($args);
+
+                        if ($cours_articles->have_posts()) {
+                            while ($cours_articles->have_posts()) {
+                                $cours_articles->the_post();
+
+                                // Charger le modèle pour la catégorie
+                                if (!empty($categorie_modele)) {
+                                    include($categorie_modele);
+                                }
+                            }
+                            wp_reset_postdata(); // Réinitialiser la requête
+                        }
+                    }
                 }
-            endwhile;
-        endif;
-        wp_reset_postdata();
+            }
+        } ?>
+    </section>
+<!------------ // Pour toutes les catégories, saufe les "sessions" et "media"------------------------------->
+    <section class="<categorie__section">
+    <?php if (!(str_starts_with($cat_url, 'session')) && !(has_term(array('media'), 'category'))) {
+            if ($query->have_posts()) :
+                while ($query->have_posts()) : $query->the_post();
+                    // Charger le modèle pour la catégorie
+                    if (!empty($categorie_modele)) {
+                        include($categorie_modele);
+                    }
+                endwhile;
+            endif;
+            wp_reset_postdata();
+        }
         ?>
     </section>
+
+    <!------------ // Pour la catégorie "media", qui a sa propre boucle d'affichage"------------------------------->
+    <section class="<categorie__section">
+    <?php if ((has_term(array('media'), 'category'))) :
+          
+                    if (!empty($categorie_modele)) {
+                        include($categorie_modele);
+                    }
+            endif;
+            wp_reset_postdata();
+        
+        ?>
+    </section>
+
 </main>
 
 <?php get_footer(); ?>
