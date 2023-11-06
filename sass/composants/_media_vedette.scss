@@ -16,10 +16,9 @@
     background-color: var(--noir);
     position: absolute;
     right: 0;
-    bottom: 5vh;
+    bottom: 10vh;
     margin: 0;
-    padding: 0;
-    padding-bottom: 0.5vh;
+    padding: 0.5vh 0;
     div{
       width: 50%;
       height: 10%;
@@ -34,7 +33,7 @@
         }
       }
       @media screen and (min-width:$largeur__tablette){
-      width: 70%;
+      width: 80%;
     }
     }
   }
@@ -82,6 +81,13 @@
       100%{transform: translateY(0vh);opacity: 1;}
     }
   }
+  .logo_tim::after{
+    content: "";
+    position: absolute;
+    bottom: -5%;
+    width: 100%;
+    border-bottom: 0.5vh solid rgb(255, 255, 255);
+  }
   .sous_titre{
     height: 100%;
     left: 0;
@@ -96,15 +102,34 @@
       left: 10%;
       top: 10%;
     }
-    div:last-of-type{
-      width: max-content;
+    div:first-of-type{ // nom de la technique
+      top: 5vh;
+      left: 5vw;
+    }
+    div:nth-of-type(2){
+      top: 5vh;
+      left: 5vw;
+    }
+    div:last-of-type{ // Collège de maisonneuve
+      bottom: 10%; // aligner au axe vertical
       left: 0; // centrer les logo
       margin:  0 auto; // centrer les logo
       position: absolute; // pour le mettre par dessus le média-vedette
       right: 0; // centrer les logo
-      bottom: 10%; // aligner au axe vertical
-      text-align: left;
+      // text-align: left;
+      width: max-content;
     }
+  }
+  .fleche{
+    bottom: 5%; // aligner au axe vertical
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid var(--blanc);
+    left: 0; // centrer les logo
+    margin:  0 auto; // centrer les logo
+    position: absolute; // pour le mettre par dessus le média-vedette
+    right: 0; // centrer les logo
+    width: max-content;
   }
 }
 

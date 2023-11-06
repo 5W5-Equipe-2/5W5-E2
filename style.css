@@ -845,10 +845,9 @@ menu tablet
   background-color: var(--noir);
   position: absolute;
   right: 0;
-  bottom: 5vh;
+  bottom: 10vh;
   margin: 0;
-  padding: 0;
-  padding-bottom: 0.5vh;
+  padding: 0.5vh 0;
 }
 .media_vedette .reseaux_sociaux div {
   width: 50%;
@@ -864,7 +863,7 @@ menu tablet
 }
 @media screen and (min-width: 800px) {
   .media_vedette .reseaux_sociaux div {
-    width: 70%;
+    width: 80%;
   }
 }
 .media_vedette .logo_tim {
@@ -934,6 +933,13 @@ menu tablet
     opacity: 1;
   }
 }
+.media_vedette .logo_tim::after {
+  content: "";
+  position: absolute;
+  bottom: -5%;
+  width: 100%;
+  border-bottom: 0.5vh solid rgb(255, 255, 255);
+}
 .media_vedette .sous_titre {
   height: 100%;
   left: 0;
@@ -949,14 +955,32 @@ menu tablet
   left: 10%;
   top: 10%;
 }
+.media_vedette .sous_titre div:first-of-type {
+  top: 5vh;
+  left: 5vw;
+}
+.media_vedette .sous_titre div:nth-of-type(2) {
+  top: 5vh;
+  left: 5vw;
+}
 .media_vedette .sous_titre div:last-of-type {
-  width: max-content;
+  bottom: 10%;
   left: 0;
   margin: 0 auto;
   position: absolute;
   right: 0;
-  bottom: 10%;
-  text-align: left;
+  width: max-content;
+}
+.media_vedette .fleche {
+  bottom: 5%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--blanc);
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: max-content;
 }
 
 /*
