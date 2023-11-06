@@ -28,6 +28,8 @@ $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
       <span><img src="<?php echo $imagePathT; ?>" alt="Ti"></span>
       <span><img src="<?php echo $imagePathM; ?>" alt="M"></span>
     </div>
+    <div class="sous_titre"><?php dynamic_sidebar('mv_nom_techniques'); ?></div>
+    <div class="fleche"></div>
   </section>
   <section class="accueil_description">
     <?php dynamic_sidebar('description_punch'); ?>

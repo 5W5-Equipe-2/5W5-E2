@@ -13,7 +13,7 @@
     width: 100%;
   }
   .reseaux_sociaux{
-    background-color: black;
+    background-color: var(--noir);
     position: absolute;
     right: 0;
     bottom: 5vh;
@@ -57,7 +57,6 @@
       }
     }
     span:first-of-type{ // Lettre T
-      transform: translateY(0vh);
       animation-duration: 2s; // Durée de l'animation
       animation-fill-mode: forwards; // Pour qu'il reste au dernier frame
       animation-name: animation-apparition; // Nom de l'animation
@@ -70,17 +69,41 @@
       animation-timing-function: ease-in-out;
       left: 26%;
     }
-    @keyframes animation-apparition {
+    @keyframes animation-apparition { // une animation d'apparition'
       0%{transform: translateY(-50vh); opacity: 0;}
       50%{transform: translateY(0vh); opacity: 1;}
       75%{transform: translateY(-5vh); opacity: 0.8;}
       100%{transform: translateY(0vh);opacity: 1;}
     }
-    @keyframes animation-idle {
+    @keyframes animation-idle { // une animation d'idle
       0%{transform: translateY(0vh); opacity: 0;}
       50%{transform: translateY(0vh); opacity: 1;}
       75%{transform: translateY(-5vh); opacity: 0.8;}
       100%{transform: translateY(0vh);opacity: 1;}
+    }
+  }
+  .sous_titre{
+    height: 100%;
+    left: 0;
+    position: absolute; // pour le mettre par dessus le média-vedette
+    top: 0;
+    width: 100%;
+    color: var(--blanc);
+    div{
+      position: absolute;
+    }
+    div:first-of-type{
+      left: 10%;
+      top: 10%;
+    }
+    div:last-of-type{
+      width: max-content;
+      left: 0; // centrer les logo
+      margin:  0 auto; // centrer les logo
+      position: absolute; // pour le mettre par dessus le média-vedette
+      right: 0; // centrer les logo
+      bottom: 10%; // aligner au axe vertical
+      text-align: left;
     }
   }
 }

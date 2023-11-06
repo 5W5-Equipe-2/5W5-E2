@@ -842,7 +842,7 @@ menu tablet
   width: 100%;
 }
 .media_vedette .reseaux_sociaux {
-  background-color: black;
+  background-color: var(--noir);
   position: absolute;
   right: 0;
   bottom: 5vh;
@@ -886,7 +886,6 @@ menu tablet
   width: auto;
 }
 .media_vedette .logo_tim span:first-of-type {
-  transform: translateY(0vh);
   animation-duration: 2s;
   animation-fill-mode: forwards;
   animation-name: animation-apparition;
@@ -934,6 +933,30 @@ menu tablet
     transform: translateY(0vh);
     opacity: 1;
   }
+}
+.media_vedette .sous_titre {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: var(--blanc);
+}
+.media_vedette .sous_titre div {
+  position: absolute;
+}
+.media_vedette .sous_titre div:first-of-type {
+  left: 10%;
+  top: 10%;
+}
+.media_vedette .sous_titre div:last-of-type {
+  width: max-content;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  bottom: 10%;
+  text-align: left;
 }
 
 /*
