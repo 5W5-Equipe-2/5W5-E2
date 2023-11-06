@@ -4,20 +4,21 @@
 */
 .accueil_description { // La section qui contient la phrase punch de la page d'accueil
   background-color: var(--blanc);
-  padding-bottom: 5vh;
+  padding-top: 3vh;
+  padding-bottom: 6vh;
   width: 100%;
   div{
     margin-top: 2vh;
   }
   p,h2{
     margin: 0 auto;
-    width: 80vw;
+    width: 75vw;
   }
   hr{
     background-color: black;
     height: 0.1vh;
     margin: 0 auto;
-    margin-top: 5vh;
+    margin-top: 6vh;
     width: 15%;  
   }
 }
@@ -28,7 +29,7 @@
   padding-top: 4vh;
   width: 100%;
 
-  h4{ // le titre
+  h2{ // le titre
     padding-bottom: 2vh;
     text-align: center;
   }
@@ -183,11 +184,15 @@
   .accueil_programme { // section de inscription
   flex-direction: row; // changement de l'affichement en ligne
     .widget_block{
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
       padding-top: 5%;
       width: inherit; // prennent tout la taille de la section
     }
     .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
       padding-top: 5%;
+      justify-content: flex-start;
     }
   }
 }

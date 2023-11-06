@@ -372,7 +372,7 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.2rem, -0.3125rem + 2.8vw, 2.2rem);
+  font-size: clamp(1.375rem, 1.3194rem + 0.2963vw, 1.875rem);
 }
 
 h3 {
@@ -394,7 +394,7 @@ h6 {
 p,
 ul,
 li {
-  font-size: clamp(0.8rem, 0.6rem + 1.16vw, 1rem);
+  font-size: clamp(1rem, 0.9653rem + 0.1852vw, 1.3125rem);
   font-family: var(--police-texte);
   line-height: 150%;
 }
@@ -1037,7 +1037,8 @@ https://cssduotone.com/
 */
 .accueil_description {
   background-color: var(--blanc);
-  padding-bottom: 5vh;
+  padding-top: 3vh;
+  padding-bottom: 6vh;
   width: 100%;
 }
 .accueil_description div {
@@ -1045,13 +1046,13 @@ https://cssduotone.com/
 }
 .accueil_description p, .accueil_description h2 {
   margin: 0 auto;
-  width: 80vw;
+  width: 75vw;
 }
 .accueil_description hr {
   background-color: black;
   height: 0.1vh;
   margin: 0 auto;
-  margin-top: 5vh;
+  margin-top: 6vh;
   width: 15%;
 }
 
@@ -1062,7 +1063,7 @@ https://cssduotone.com/
   width: 100%;
   /* Boite d'évènement récent */
 }
-.accueil_evenements h4 {
+.accueil_evenements h2 {
   padding-bottom: 2vh;
   text-align: center;
 }
@@ -1205,11 +1206,15 @@ https://cssduotone.com/
     flex-direction: row;
   }
   .accueil_programme .widget_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
     padding-top: 5%;
     width: inherit;
   }
   .accueil_programme .widget_block:first-of-type {
     padding-top: 5%;
+    justify-content: flex-start;
   }
 }
 table {

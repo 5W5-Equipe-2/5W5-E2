@@ -37,7 +37,7 @@ $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
 
 
   <section class="accueil_evenements">
-    <h4>Évènements récents</h4>
+    <h2>Évènements récents</h2>
     <div class="evenements_recents">
       <?php
       if (have_posts()) :
