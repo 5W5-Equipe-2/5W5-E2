@@ -34,7 +34,7 @@ $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
   <section class="accueil_evenements">
     <h4>Évènements récents</h4>
     <div class="evenements_recents">
-      <?php echo do_shortcode('[5w5e2carrousel categories="accueil,evenements" operator="ET" exclude_categories="-projet" exclude_operator="ET" max_posts="5"]'); ?>
+      <?php echo do_shortcode('[5w5e2carrousel categories="evenements" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="5"]'); ?>
     </div>
   </section>
 
