@@ -1208,8 +1208,9 @@ https://cssduotone.com/
   .accueil_programme .widget_block {
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    padding-top: 5%;
+    padding-bottom: 0;
+    padding: 0;
+    padding-top: 16vh;
     width: inherit;
   }
   .accueil_programme .widget_block:first-of-type {

@@ -186,8 +186,9 @@
     .widget_block{
       display: flex;
       flex-direction: column;
-      justify-content: end;
-      padding-top: 5%;
+      padding-bottom: 0;
+      padding: 0;
+      padding-top: 16vh;
       width: inherit; // prennent tout la taille de la section
     }
     .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
