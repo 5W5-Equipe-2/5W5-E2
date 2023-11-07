@@ -864,13 +864,14 @@ menu tablet
 
 /* Pour front-page.php */
 .media_vedette {
-
   height: 75vh;
   min-height: 100%;
   opacity: 0.8;
   position: relative;
   width: 100%;
-  
+}
+.media_vedette img {
+  width: 100%;
 }
 .media_vedette .reseaux_sociaux {
   background-color: var(--noir);
@@ -881,7 +882,7 @@ menu tablet
   padding: 0.5vh 0;
 }
 .media_vedette .reseaux_sociaux div {
-  width: 50%;
+  width: 55%;
   height: 10%;
   margin: 0 auto;
 }
@@ -894,7 +895,7 @@ menu tablet
 }
 @media screen and (min-width: 800px) {
   .media_vedette .reseaux_sociaux div {
-    width: 80%;
+    width: 75%;
   }
 }
 .media_vedette .logo_tim {
