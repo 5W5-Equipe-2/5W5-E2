@@ -1,8 +1,7 @@
 /* Pour front-page.php */
-/* Pour front-page.php */
 
 .media_vedette {
- 
+  
   height: 75vh; // A changer
   min-height: 100%; 
   opacity: 0.8;
@@ -26,9 +25,9 @@
       figure{
         // Petit espacement
         padding: 1% 0;
-        img{
+        img {
           // Centrer les images
-          display: block; 
+          display: block;
           margin: auto;
         }
       }
@@ -122,56 +121,99 @@
     position: absolute; // pour le mettre par dessus le média-vedette
     right: 0; // centrer les logo
     width: max-content;
+=======
+      @media screen and (min-width: $largeur__tablette) {
+        width: 70%;
+      }
+    }
+  }
+  span {
+    // border: 3px solid red;
+    color: var(--blanc); // couleur texte blanc
+    font-family: var(--police-titre);
+    font-size: clamp(8rem, 10vw, 0rem);
+    margin: 0;
+    opacity: 0;
+    padding: 0;
+    position: absolute;
+    transform-origin: center;
+    text-align: center;
+    width: 10vw;
+  }
+  span:first-of-type {
+    // Lettre T
+    animation-duration: 2s; // Durée de l'animation
+    animation-fill-mode: forwards; // Pour qu'il reste au dernier frame
+    animation-name: test; // Nom de l'animation
+    left: calc(28vw - 0vw);
+    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir),
+      -1px 1px 0 var(--noir), 1px 1px 0 var(--noir); // outline
+    @media screen and (min-width: $largeur__tablette) {
+      left: calc(40vw - 3vw); // Un peu plus a gauche que le i
+    }
+  }
+  span:nth-of-type(2) {
+    // Lettre I
+    animation-delay: 0.3s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-name: test;
+    color: var(--primaire);
+    left: 40vw; // Au centre
+    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir),
+      -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+    z-index: 2; // Plus avancé que les autre lettre
+  }
+  span:last-of-type {
+    // Lettre M
+    animation-delay: 0.5s;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-name: test;
+    animation-timing-function: ease-in-out;
+    left: 45vw;
+    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir),
+      -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+    @media screen and (min-width: $largeur__tablette) {
+      left: calc(45vw - 0vw); // Un peu plus a gauche que le i
+    }
+  }
+  @keyframes test {
+    0% {
+      top: -10%;
+      opacity: 0;
+    }
+    50% {
+      top: 50%;
+      opacity: 1;
+    }
+    75% {
+      top: 45%;
+      opacity: 0.8;
+    }
+    100% {
+      top: 50%;
+      opacity: 1;
+    }
   }
 }
 
-/*
-Code basé sur le CSS Duotone Generator
-https://cssduotone.com/
-*/
+.diaporama {
+  display: flex;
+  flex: 1 1 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
 
-
-:root {
---base:              #000000;
---ar-blend:          screen;
---blur:              0px;
---av-blend:          exclusion;
---avant-plan:        #1d1d37;
---opacite:           0.7;
-}
-
-.img-wrapper {
-background-color:    var(--base);
-display:             flex;
-flex:                1 1 100%;
-height:              100%;
-overflow:            hidden;
-position:            relative;
+  img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    padding: 0;
+    position: absolute;
+    margin: 0;
+    width: 100%;
+  }
 }
 
 
-.img-wrapper img {
-filter:              grayscale(100%) contrast(1) blur(var(--blur));
-flex:                1 0 100%;
-height:              100%;
-max-width:           100%;
-mix-blend-mode:      var(--ar-blend);
-object-fit:          cover;
-opacity:             var(--opacite);
-position:            relative;
-width:               100%;
-}
-
-.img-wrapper::before {
-background-color:    var(--avant-plan);
-bottom:              0;
-content:             '';
-height:              100%;
-left:                0;
-mix-blend-mode:      var(--av-blend);
-position:            absolute;
-right:               0;
-top:                 0;
-width:               100%;
-z-index:             1
-}

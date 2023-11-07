@@ -17,11 +17,11 @@ $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
 
 <?php get_header(); ?>
 <main class="site_main site_main_accueil">
-
   <section class="media_vedette">
-    <div class="img-wrapper">
-      <!-- Image temporaire Sprint 02 -->
-      <img src="<?php echo $imagePath; ?>" alt="Image vedette">
+    <div class="diaporama">
+    <?php
+    get_template_part('template-parts/categorie-media');
+    ?>
     </div>
     <div class="reseaux_sociaux"><?php dynamic_sidebar('mv_reseau_sociaux'); ?></div>
     <div class="logo_tim">
@@ -39,16 +39,7 @@ $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
   <section class="accueil_evenements">
     <h2>Évènements récents</h2>
     <div class="evenements_recents">
-      <?php
-      if (have_posts()) :
-        while (have_posts()) : the_post();
-          if (in_category('evenements')) {
-            $la_categorie = 'evenements';
-          }
-          get_template_part('template-parts/categorie', $la_categorie);
-        endwhile;
-      endif;
-      ?>
+    <?php echo do_shortcode('[5w5e2carrousel categories="evenements" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="5"]'); ?>
     </div>
   </section>
 

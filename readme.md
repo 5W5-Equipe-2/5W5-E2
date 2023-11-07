@@ -1,6 +1,6 @@
-# Branche de développement du Sprint 02
+# Branche de développement du Sprint 03
 
-## Sprint 02 : début de l'intégration de la maquette et de l'extension carrousel
+## Sprint 03 : finaliser la mise en page de l'interface utilisateur du site Web et de mettre en œuvre l'interactivité, y compris les animations de l'interface utilisateur. 
 
 - Déploiement du projet sur le serveur (ramnode) :
   - https://5w5.ndasilva.ca/
@@ -8,7 +8,10 @@
 - Dépôt de l'extension 5W5-E2-carrousel
   - https://github.com/5W5-Equipe-2/5W5-E2-carrousel
 
-### Développé dans ce sprint:
+- Gestion de projet avec GitHub Projects
+  - https://github.com/orgs/5W5-Equipe-2/projects/1
+
+<!-- ### Développé dans ce sprint:
 - Page d'accueil réactive, widget, css des évènements
 - Menu et menu burger
 - Stylisation de la barre de recherche
@@ -16,7 +19,7 @@
 - Style d'un article de projet, intégration AFC
 - JS sur la page Programme, début de l'intégration du carrousel
 - Style de la page d'évènements, intégration AFC
-- Style et contenu du pied de page
+- Style et contenu du pied de page -->
 
 🔷 🔶 🔷
 # Développement d'un thème WordPress 

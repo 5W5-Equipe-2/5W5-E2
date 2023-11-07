@@ -473,6 +473,15 @@ body {
 }
 
 /*---------------------------page projet et évènement-------------------------*/
+.test {
+  display: flex;
+  justify-content: center;
+}
+
+.site__aside a {
+  color: var(--blanc);
+}
+
 .categorie__section {
   display: grid;
   gap: 3em;
@@ -500,6 +509,9 @@ body {
 .categorie__section .categorie__article h3 {
   font-size: 18px;
 }
+.categorie__section .categorie__article a {
+  color: var(--blanc);
+}
 
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
 @media screen and (min-width: 992px) {
@@ -512,12 +524,17 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+@media screen and (min-width: 1900px) {
+  .categorie__section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 /*-----------------------------single projet------------------------------------*/
 .single-titre {
   grid-area: titre;
 }
 
-.wp-block-image {
+.section_single figure {
   grid-area: image;
 }
 
@@ -525,10 +542,14 @@ body {
   grid-area: information;
 }
 
+p {
+  grid-area: information_texte;
+}
+
 .section_single {
   display: grid;
   gap: 3em;
-  grid-template-areas: "titre" "image" "information";
+  grid-template-areas: "titre" "image" "information_texte" "information";
   padding: 1em;
 }
 .section_single .information_single {
@@ -546,10 +567,22 @@ body {
   margin-bottom: 2em;
 }
 
+/*-----------------------------single evenement------------------------------------*/
+/* .article_info{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  //height: 8em;
+  justify-content:space-evenly ;
+} */
+/* .article_titre, .article_date{
+  display: flex
+} */
+/*-----------------------------single evenement fin------------------------------------*/
 /*-----------------------------single projet bureau------------------------------------*/
 @media screen and (min-width: 992px) {
   .section_single {
-    grid-template-areas: "titre titre" "image information";
+    grid-template-areas: "titre titre" "image information" "image information_texte";
     padding: 3em;
     padding-left: 5em;
     padding-right: 5em;
@@ -558,7 +591,7 @@ body {
     width: 50vw;
   }
 }
-/*-----------------------------fin single projet------------------------------------*/
+/*-----------------------------fin single projet---------------------------------*/
 /*-----------------------------fin page projet et évènement----------------------*/
 /* 
 ** Tout ce qui concerne la balise header
@@ -830,16 +863,14 @@ menu tablet
 }
 
 /* Pour front-page.php */
-/* Pour front-page.php */
 .media_vedette {
+
   height: 75vh;
   min-height: 100%;
   opacity: 0.8;
   position: relative;
   width: 100%;
-}
-.media_vedette img {
-  width: 100%;
+  
 }
 .media_vedette .reseaux_sociaux {
   background-color: var(--noir);
@@ -969,52 +1000,21 @@ menu tablet
   width: max-content;
 }
 
-/*
-Code basé sur le CSS Duotone Generator
-https://cssduotone.com/
-*/
-:root {
-  --base: #000000;
-  --ar-blend: screen;
-  --blur: 0px;
-  --av-blend: exclusion;
-  --avant-plan: #1d1d37;
-  --opacite: 0.7;
-}
-
-.img-wrapper {
-  background-color: var(--base);
+.diaporama {
   display: flex;
   flex: 1 1 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-
-.img-wrapper img {
-  filter: grayscale(100%) contrast(1) blur(var(--blur));
-  flex: 1 0 100%;
+.diaporama img {
   height: 100%;
   max-width: 100%;
-  mix-blend-mode: var(--ar-blend);
   object-fit: cover;
-  opacity: var(--opacite);
-  position: relative;
-  width: 100%;
-}
-
-.img-wrapper::before {
-  background-color: var(--avant-plan);
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  mix-blend-mode: var(--av-blend);
+  padding: 0;
   position: absolute;
-  right: 0;
-  top: 0;
+  margin: 0;
   width: 100%;
-  z-index: 1;
 }
 
 /* 
