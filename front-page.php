@@ -26,15 +26,7 @@
   <section class="accueil_evenements">
     <h4>Évènements récents</h4>
     <div class="evenements_recents">
-      <?php
-      if (have_posts()) :
-        while (have_posts()) : the_post();
-          if (in_category(array('accueil', 'evenements'))) {
-            get_template_part('template-parts/categorie-evenements');
-          }
-        endwhile;
-      endif;
-      ?>
+    <?php echo do_shortcode('[5w5e2carrousel categories="evenements" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="5"]'); ?>
     </div>
   </section>
 
