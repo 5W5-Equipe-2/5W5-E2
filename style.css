@@ -85,8 +85,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -715,18 +714,18 @@ menu tablet
     display: none;
   }
   .main-navigation.toggled ul,
-.main-navigation ul {
+  .main-navigation ul {
     display: flex;
     padding-top: 0;
     justify-content: flex-end;
     padding-right: 5%;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-.main-navigation ul a[href="#"]::after {
+  .main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-.main-navigation ul ul {
+  .main-navigation ul ul {
     display: none;
   }
 }
@@ -819,9 +818,6 @@ menu tablet
 }
 .recherche > label input.recherche__input:focus {
   outline: none;
-}
-.recherche > label input.recherche__input::-moz-placeholder {
-  color: var(--blanc);
 }
 .recherche > label input.recherche__input::placeholder {
   color: var(--blanc);
@@ -963,55 +959,21 @@ menu tablet
   }
 }
 
-/*
-Code basé sur le CSS Duotone Generator
-https://cssduotone.com/
-*/
-:root {
-  --base: #000000;
-  --ar-blend: screen;
-  --blur: 0px;
-  --av-blend: exclusion;
-  --avant-plan: #1d1d37;
-  --opacite: 0.7;
-}
-
-.img-wrapper {
-  background-color: var(--base);
+.diaporama {
   display: flex;
   flex: 1 1 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-
-.img-wrapper img {
-  filter: grayscale(100%) contrast(1) blur(var(--blur));
-  flex: 1 0 100%;
+.diaporama img {
   height: 100%;
   max-width: 100%;
-  mix-blend-mode: var(--ar-blend);
-  -o-object-fit: cover;
-     object-fit: cover;
-  opacity: var(--opacite);
+  object-fit: cover;
   padding: 0;
-  position: relative;
+  position: absolute;
   margin: 0;
   width: 100%;
-}
-
-.img-wrapper::before {
-  background-color: var(--avant-plan);
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  mix-blend-mode: var(--av-blend);
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1;
 }
 
 /* 

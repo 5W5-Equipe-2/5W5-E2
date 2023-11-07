@@ -8,7 +8,7 @@
 <?php get_header(); ?>
 <main class="site_main site_main_accueil">
   <section class="media_vedette">
-    <div class="img-wrapper">
+    <div class="diaporama">
     <?php
     get_template_part('template-parts/categorie-media');
     ?>
