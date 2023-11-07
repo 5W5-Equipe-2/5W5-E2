@@ -1,21 +1,28 @@
 /* Pour front-page.php */
 
 .media_vedette {
-  height: 72vh; 
-  opacity: 0.85;
+  
+  height: 75vh; // A changer
+  min-height: 100%; 
+  opacity: 0.8;
   position: relative;
   width: 100%;
 
-  .reseaux_sociaux {
+  img {
+    width: 100%;
+  }
+  .reseaux_sociaux{
+    background-color: var(--noir);
     position: absolute;
     right: 0;
-    bottom: 5vh;
+    bottom: 10vh;
     margin: 0;
-    padding: 0;
-    div {
+    padding: 0.5vh 0;
+    div{
       width: 50%;
       height: 10%;
-      figure {
+      margin: 0 auto;
+      figure{
         // Petit espacement
         padding: 1% 0;
         img {
@@ -24,6 +31,97 @@
           margin: auto;
         }
       }
+      @media screen and (min-width:$largeur__tablette){
+      width: 80%;
+    }
+    }
+  }
+  .logo_tim{
+    display: flex; // pour enlever le gap
+    left: 0; // centrer les logo
+    margin:  0 auto; // centrer les logo
+    position: absolute; // pour le mettre par dessus le média-vedette
+    right: 0; // centrer les logo
+    top: 50%; // aligner au axe vertical
+    width: fit-content; // centrer les logo
+    
+    span{
+      opacity: 0;
+      img{
+        height: 10vh; // tablette 15, bureau 20
+        margin: 0;
+        padding: 0;
+        width: auto;  
+      }
+    }
+    span:first-of-type{ // Lettre T
+      animation: animation-apparition-lettre 2s ease-in-out forwards;
+    }
+    span:last-of-type{ // Lettre M
+      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
+      left: 26%;
+    }
+    @keyframes animation-apparition-lettre { // une animation d'apparition'
+     0%{transform: translateY(0vh); opacity: 0;}
+      50%{transform: translateY(0vh); opacity: 1;}
+      75%{transform: translateY(-5vh); opacity: 0.8;}
+      100%{transform: translateY(0vh);opacity: 1;}
+    }
+    @keyframes animation-apparition-surlignement { // une animation d'apparition'
+      0%{transform: translateY(0vh); opacity: 0;}
+      100%{transform: translateY(0vh);opacity: 1;}
+    }
+  }
+  .logo_tim::after{
+    content: "";
+    position: absolute;
+    bottom: -5%;
+    width: 100%;
+    border-bottom: 0.5vh solid rgb(255, 255, 255);
+  }
+  .sous_titre{
+    height: 100%;
+    left: 0;
+    position: absolute; // pour le mettre par dessus le média-vedette
+    top: 0;
+    width: 100%;
+    color: var(--blanc);
+    div{
+      position: absolute;
+    }
+    div:first-of-type{
+      left: 10%;
+      top: 10%;
+    }
+    div:first-of-type{ // nom de la technique
+      top: 5vh;
+      left: 5vw;
+    }
+    div:nth-of-type(2){
+      top: 5vh;
+      left: 5vw;
+    }
+    div:last-of-type{ // Collège de maisonneuve
+      bottom: 10%; // aligner au axe vertical
+      left: 0; // centrer les logo
+      margin:  0 auto; // centrer les logo
+      position: absolute; // pour le mettre par dessus le média-vedette
+      right: 0; // centrer les logo
+      // text-align: left;
+      width: max-content;
+    }
+  }
+  .fleche{
+    bottom: 5%; // aligner au axe vertical
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid var(--blanc);
+    left: 0; // centrer les logo
+    margin:  0 auto; // centrer les logo
+    position: absolute; // pour le mettre par dessus le média-vedette
+    right: 0; // centrer les logo
+    width: max-content;
+=======
       @media screen and (min-width: $largeur__tablette) {
         width: 70%;
       }
