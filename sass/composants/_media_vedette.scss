@@ -59,25 +59,16 @@
     }
     span:last-of-type{ // Lettre M
       animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
-      left: 26%;
-    }
-    @keyframes animation-apparition-lettre { // une animation d'apparition'
-     0%{transform: translateY(0vh); opacity: 0;}
-      50%{transform: translateY(0vh); opacity: 1;}
-      75%{transform: translateY(-5vh); opacity: 0.8;}
-      100%{transform: translateY(0vh);opacity: 1;}
-    }
-    @keyframes animation-apparition-surlignement { // une animation d'apparition'
-      0%{transform: translateY(0vh); opacity: 0;}
-      100%{transform: translateY(0vh);opacity: 1;}
     }
   }
-  .logo_tim::after{
+  .logo_tim::after{ //surlignement
+    animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards;
+    transform-origin: left;
+    border-bottom: 0.5vh solid rgb(255, 255, 255);
+    bottom: -5%;
     content: "";
     position: absolute;
-    bottom: -5%;
     width: 100%;
-    border-bottom: 0.5vh solid rgb(255, 255, 255);
   }
   .sous_titre{
     height: 100%;
@@ -89,17 +80,9 @@
     div{
       position: absolute;
     }
-    div:first-of-type{
-      left: 10%;
-      top: 10%;
-    }
-    div:first-of-type{ // nom de la technique
-      top: 5vh;
+    div:first-of-type,div:nth-of-type(2){ // nom de la technique et code
       left: 5vw;
-    }
-    div:nth-of-type(2){
       top: 5vh;
-      left: 5vw;
     }
     div:last-of-type{ // Collège de maisonneuve
       bottom: 10%; // aligner au axe vertical
@@ -141,4 +124,13 @@
   }
 }
 
-
+@keyframes animation-apparition-lettre { // une animation d'apparition'
+  0%{transform: translateY(0vh); opacity: 0;}
+  50%{transform: translateY(0vh); opacity: 1;}
+  75%{transform: translateY(-5vh); opacity: 0.8;}
+  100%{transform: translateY(0vh);opacity: 1;}
+}
+@keyframes animation-apparition-surlignement { // une animation d'apparition'
+  0%{transform: scaleX(0); opacity: 0;}
+  100%{transform: scaleX(1);opacity: 1;}
+}

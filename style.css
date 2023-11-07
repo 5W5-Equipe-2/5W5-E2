@@ -921,42 +921,15 @@ menu tablet
 }
 .media_vedette .logo_tim span:last-of-type {
   animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
-  left: 26%;
-}
-@keyframes animation-apparition-lettre {
-  0% {
-    transform: translateY(0vh);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0vh);
-    opacity: 1;
-  }
-  75% {
-    transform: translateY(-5vh);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0vh);
-    opacity: 1;
-  }
-}
-@keyframes animation-apparition-surlignement {
-  0% {
-    transform: translateY(0vh);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0vh);
-    opacity: 1;
-  }
 }
 .media_vedette .logo_tim::after {
+  animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards;
+  transform-origin: left;
+  border-bottom: 0.5vh solid rgb(255, 255, 255);
+  bottom: -5%;
   content: "";
   position: absolute;
-  bottom: -5%;
   width: 100%;
-  border-bottom: 0.5vh solid rgb(255, 255, 255);
 }
 .media_vedette .sous_titre {
   height: 100%;
@@ -969,17 +942,9 @@ menu tablet
 .media_vedette .sous_titre div {
   position: absolute;
 }
-.media_vedette .sous_titre div:first-of-type {
-  left: 10%;
-  top: 10%;
-}
-.media_vedette .sous_titre div:first-of-type {
-  top: 5vh;
+.media_vedette .sous_titre div:first-of-type, .media_vedette .sous_titre div:nth-of-type(2) {
   left: 5vw;
-}
-.media_vedette .sous_titre div:nth-of-type(2) {
   top: 5vh;
-  left: 5vw;
 }
 .media_vedette .sous_titre div:last-of-type {
   bottom: 10%;
@@ -1018,6 +983,34 @@ menu tablet
   width: 100%;
 }
 
+@keyframes animation-apparition-lettre {
+  0% {
+    transform: translateY(0vh);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-5vh);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+@keyframes animation-apparition-surlignement {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
 /* 
 ** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
  ---> les balises section, article, les div
