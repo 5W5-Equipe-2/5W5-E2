@@ -10,6 +10,7 @@
 <main class="site_main site_main_programme">
 
     <?php /****** Introduction au programme *******/ ?>
+    <div class="info_programme">
     <section class="description_programme">
         <h2>À quoi s'attendre dans le programme</h2>
         <p>
@@ -26,22 +27,30 @@
         </p>
     </section>
 
+    <hr>
+
     <?php /****** Les Inscriptions *******/ ?>
     <section class="inscription_programme">
         <h2>Veux t'inscrire?</h2>
         <a href="https://www.cmaisonneuve.qc.ca/accueil/etudiant-dun-jour/" class="boutonInscription">Étudiant d'un jour</a>
         <a href="https://www.cmaisonneuve.qc.ca/programme/integration-multimedia/#admission_programme" class="boutonInscription">Inscription au programme</a>
     </section>
+    </div>
+
+    <hr>
 
     <?php /****** Liste de cours *******/ ?>
     <section class="Liste_programme">
         <h2>Liste des cours</h2>
-        <button class="filter-button" data-session="1">Session 1</button>
-        <button class="filter-button" data-session="2">Session 2</button>
-        <button class="filter-button" data-session="3">Session 3</button>
-        <button class="filter-button" data-session="4">Session 4</button>
-        <button class="filter-button" data-session="5">Session 5</button>
-        <button class="filter-button" data-session="6">Session 6</button>
+        <h3>Sessions</h3>
+        <div class="cours_session">
+        <button class="filter-button" data-session="1">1</button>
+        <button class="filter-button" data-session="2">2</button>
+        <button class="filter-button" data-session="3">3</button>
+        <button class="filter-button" data-session="4">4</button>
+        <button class="filter-button" data-session="5">5</button>
+        <button class="filter-button" data-session="6">6</button>
+        </div>
 
         <div id="content">
 
@@ -52,6 +61,8 @@
         </div>
 
     </section>
+
+    <hr>
 
     <?php /****** Carrousel profs *******/ ?>
     <section class="Profs">

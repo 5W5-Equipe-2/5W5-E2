@@ -13,3 +13,191 @@
         button {
             margin: 10px;
         }
+
+        /*-----------------------description et inscription--------------------------*/
+
+        .description_programme{
+            h2{
+                padding-bottom: 2em;
+            }
+        }
+
+        .inscription_programme{
+            align-items: center;
+            background-color: var(--complementaire);
+            display: flex;
+            flex-direction: column;
+
+            h2{
+                margin: 1.5em;
+                text-align: center;
+            }
+
+            a{
+                background-color: var(--complementaire);
+                border: 1px solid var(--simili-noir);
+                border-radius: 50em;
+                color: var(--simili-noir);
+                font-family: var(--police-texte);
+                margin-bottom: 1.5em;
+                padding: 0.4em;
+                padding-left: 2em;
+                padding-right: 2em;
+                text-align: center;
+            }
+        }
+
+        .site_main_programme{
+            hr{
+                background-color: black;
+                height: 0.1vh;
+                margin: 0 auto;
+                margin-top: 5vh;
+                margin-bottom: 5vh;
+                width: 15%;  
+              }
+        }
+
+        /*-----------------------description et inscription fin--------------------------*/
+
+        /*-----------------------liste cours--------------------------*/
+
+        .Liste_programme{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h3{
+                margin-top: 1em;
+                margin-bottom: 0.5em;
+            }
+
+            .cours_session{
+                .filter-button{
+                    background-color: transparent;
+                    border: none;
+                    font-family: var(--police-texte);
+                }
+            }
+
+            #content{
+                border-radius: 2em;
+                background-color: var(--simili-noir);
+                display: flex;
+                flex-direction: column;
+                height: 40em;
+                justify-content: space-evenly;
+                position: relative;
+                width: 80%;
+
+                .article-button{
+                    background-color: transparent;
+                    border: none;
+                    //border-bottom: 2px solid var(--blanc);
+                    color: var(--blanc);
+                    font-family: var(--police-texte);
+                }
+    
+                .article-content{
+                    //border: 2px solid aqua;
+                    //border-radius: 5%;
+                    background-color: var(--simili-noir);
+                    color: var(--blanc);
+                    display: flex;
+                    flex-direction: column;
+                    font-family: var(--police-texte);
+                    position: absolute;
+
+                    top: 1em;
+                    left: 1em;
+                    right: 1em;
+                    bottom: 1em;
+
+                    /* top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;*/
+
+                    button{
+                        height: 5%;
+                        width: 20%;
+                    }
+
+                    p{  //description du cours
+                        border-bottom: 2px solid var(--blanc);
+                        //display: flex;
+                        //flex: 6;
+                        height: 65%;
+                        overflow: auto;
+                        padding: 1em;
+                        //scrollbar-color: var(--blanc);
+                    }
+
+                    .related-projets{
+                        display: flex;
+                        //flex: 2;
+                        flex-direction: row;
+                        height: 20%;
+                        justify-content: flex-start;
+                        position: absolute;
+                        width: 100%;
+
+                        bottom: 0;
+                        a{ //voir plus de projets réalisé
+                            color: var(--blanc);
+                            width: 30%;
+                        }
+
+                        .related-articles{ //projets
+                            display: flex;
+                            justify-content: flex-end;
+                            //flex: 2;
+                            width: 70%;
+                        }
+
+                    }
+                } 
+            }
+        }
+
+        @media screen and (min-width : $largeur__bureau){
+
+            .Liste_programme{
+                #content{
+                    align-items: flex-start;
+                    //flex: 1;
+
+                    .article-content{
+                        border: 1px solid aqua;
+                        left: 40%;
+                    }
+                }
+
+            }
+
+         
+
+            /* .article-content{
+                position: static;
+                display: block;
+            } */
+
+            .info_programme{
+                display: flex;
+
+                .description_programme{
+                    flex: 2;
+                    
+                }
+                .inscription_programme{
+                    border-radius: 5%;
+                    flex: 1;
+                    height: 50%;
+                }
+
+                hr{
+                    display: none;
+                }
+            }
+        }
+                /*-----------------------liste cours fin--------------------------*/

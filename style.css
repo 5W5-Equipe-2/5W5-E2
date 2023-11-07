@@ -473,11 +473,10 @@ body {
 }
 
 /*---------------------------page projet et évènement-------------------------*/
-.test {
+/* .test{
   display: flex;
   justify-content: center;
-}
-
+} */
 .site__aside a {
   color: var(--blanc);
 }
@@ -1207,4 +1206,147 @@ th {
 
 button {
   margin: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*-----------------------description et inscription--------------------------*/
+.description_programme h2 {
+  padding-bottom: 2em;
+}
+
+.inscription_programme {
+  align-items: center;
+  background-color: var(--complementaire);
+  display: flex;
+  flex-direction: column;
+}
+.inscription_programme h2 {
+  margin: 1.5em;
+  text-align: center;
+}
+.inscription_programme a {
+  background-color: var(--complementaire);
+  border: 1px solid var(--simili-noir);
+  border-radius: 50em;
+  color: var(--simili-noir);
+  font-family: var(--police-texte);
+  margin-bottom: 1.5em;
+  padding: 0.4em;
+  padding-left: 2em;
+  padding-right: 2em;
+  text-align: center;
+}
+
+.site_main_programme hr {
+  background-color: black;
+  height: 0.1vh;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 15%;
+}
+
+/*-----------------------description et inscription fin--------------------------*/
+/*-----------------------liste cours--------------------------*/
+.Liste_programme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Liste_programme h3 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+.Liste_programme .cours_session .filter-button {
+  background-color: transparent;
+  border: none;
+  font-family: var(--police-texte);
+}
+.Liste_programme #content {
+  border-radius: 2em;
+  background-color: var(--simili-noir);
+  display: flex;
+  flex-direction: column;
+  height: 40em;
+  justify-content: space-evenly;
+  position: relative;
+  width: 80%;
+}
+.Liste_programme #content .article-button {
+  background-color: transparent;
+  border: none;
+  color: var(--blanc);
+  font-family: var(--police-texte);
+}
+.Liste_programme #content .article-content {
+  background-color: var(--simili-noir);
+  color: var(--blanc);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--police-texte);
+  position: absolute;
+  top: 1em;
+  left: 1em;
+  right: 1em;
+  bottom: 1em;
+  /* top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;*/
+}
+.Liste_programme #content .article-content button {
+  height: 5%;
+  width: 20%;
+}
+.Liste_programme #content .article-content p {
+  border-bottom: 2px solid var(--blanc);
+  height: 65%;
+  overflow: auto;
+  padding: 1em;
+}
+.Liste_programme #content .article-content .related-projets {
+  display: flex;
+  flex-direction: row;
+  height: 20%;
+  justify-content: flex-start;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.Liste_programme #content .article-content .related-projets a {
+  color: var(--blanc);
+  width: 30%;
+}
+.Liste_programme #content .article-content .related-projets .related-articles {
+  display: flex;
+  justify-content: flex-end;
+  width: 70%;
+}
+
+@media screen and (min-width: 992px) {
+  .Liste_programme #content {
+    align-items: flex-start;
+  }
+  .Liste_programme #content .article-content {
+    border: 1px solid aqua;
+    left: 40%;
+  }
+  /* .article-content{
+      position: static;
+      display: block;
+  } */
+  .info_programme {
+    display: flex;
+  }
+  .info_programme .description_programme {
+    flex: 2;
+  }
+  .info_programme .inscription_programme {
+    border-radius: 5%;
+    flex: 1;
+    height: 50%;
+  }
+  .info_programme hr {
+    display: none;
+  }
+}
+/*-----------------------liste cours fin--------------------------*//*# sourceMappingURL=style.css.map */
