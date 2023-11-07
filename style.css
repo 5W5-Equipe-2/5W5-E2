@@ -885,21 +885,15 @@ menu tablet
   width: auto;
 }
 .media_vedette .logo_tim span:first-of-type {
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-name: animation-apparition;
+  animation: animation-apparition-lettre 2s ease-in-out forwards;
 }
 .media_vedette .logo_tim span:last-of-type {
-  animation-delay: 0.1s;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-name: animation-idle;
-  animation-timing-function: ease-in-out;
+  animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
   left: 26%;
 }
-@keyframes animation-apparition {
+@keyframes animation-apparition-lettre {
   0% {
-    transform: translateY(-50vh);
+    transform: translateY(0vh);
     opacity: 0;
   }
   50% {
@@ -915,18 +909,10 @@ menu tablet
     opacity: 1;
   }
 }
-@keyframes animation-idle {
+@keyframes animation-apparition-surlignement {
   0% {
     transform: translateY(0vh);
     opacity: 0;
-  }
-  50% {
-    transform: translateY(0vh);
-    opacity: 1;
-  }
-  75% {
-    transform: translateY(-5vh);
-    opacity: 0.8;
   }
   100% {
     transform: translateY(0vh);

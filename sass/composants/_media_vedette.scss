@@ -56,28 +56,20 @@
       }
     }
     span:first-of-type{ // Lettre T
-      animation-duration: 2s; // Durée de l'animation
-      animation-fill-mode: forwards; // Pour qu'il reste au dernier frame
-      animation-name: animation-apparition; // Nom de l'animation
+      animation: animation-apparition-lettre 2s ease-in-out forwards;
     }
     span:last-of-type{ // Lettre M
-      animation-delay: 0.1s;
-      animation-duration: 2s;
-      animation-fill-mode: forwards;
-      animation-name: animation-idle;
-      animation-timing-function: ease-in-out;
+      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
       left: 26%;
     }
-    @keyframes animation-apparition { // une animation d'apparition'
-      0%{transform: translateY(-50vh); opacity: 0;}
+    @keyframes animation-apparition-lettre { // une animation d'apparition'
+     0%{transform: translateY(0vh); opacity: 0;}
       50%{transform: translateY(0vh); opacity: 1;}
       75%{transform: translateY(-5vh); opacity: 0.8;}
       100%{transform: translateY(0vh);opacity: 1;}
     }
-    @keyframes animation-idle { // une animation d'idle
+    @keyframes animation-apparition-surlignement { // une animation d'apparition'
       0%{transform: translateY(0vh); opacity: 0;}
-      50%{transform: translateY(0vh); opacity: 1;}
-      75%{transform: translateY(-5vh); opacity: 0.8;}
       100%{transform: translateY(0vh);opacity: 1;}
     }
   }
