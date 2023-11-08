@@ -21,12 +21,10 @@ $titre = get_the_title();
         <!--  Afficher le titre l'article (clicable) -->
         <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>
 
-        <!--------------------------------------------------------------------------------- 
-    Si ce n'est pas la page d'accueil 
-    ------------------------------------------------------------------------------>
-        <!-- Récupérer les sous-catégories associées à l'article --->
-        <?php
+            <?php
         if (!is_front_page()) {
+           // Si ce n'est pas la page d'accueil 
+           //Récupérer les sous-catégories associées à l'article 
             $parent_categorie_slug = 'evenements';
 
             // Récupérer l'ID de la catégorie parent en fonction du slug
@@ -92,12 +90,11 @@ $titre = get_the_title();
             </p>
         </div>
     </div>
-    <!-------------------------------------------------------------------------------- 
-    Si c'est la page d'accueil seulement
------------------------------------------------------------------------------------>
-    <!--  Un div qui inclus les informations de l'évènement -->
+
     <div>
         <?php if (is_front_page()) {
+          //Si c'est la page d'accueil seulement
+         //Un div qui inclus les informations de l'évènement
             $lien = get_permalink();
             $lire = "<span><a href='" . $lien . "'>... &#187;</a></span>" ?>
             <!-- Afficher un extrait de l'article -->
@@ -125,7 +122,7 @@ $titre = get_the_title();
                     </g>
                 </svg>
 
-                <!-- Afficher la date et heure de la mise-à-jour'-->
+                <!-- Afficher la date et heure de la mise-à-jour-->
                 <p><?php the_modified_time('j F Y \à G:i'); ?></p>
             </div>
     </div>
