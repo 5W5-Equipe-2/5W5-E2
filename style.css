@@ -85,7 +85,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -818,6 +819,9 @@ menu tablet
 .recherche > label input.recherche__input:focus {
   outline: none;
 }
+.recherche > label input.recherche__input::-moz-placeholder {
+  color: var(--blanc);
+}
 .recherche > label input.recherche__input::placeholder {
   color: var(--blanc);
 }
@@ -986,7 +990,8 @@ https://cssduotone.com/
   height: 100%;
   max-width: 100%;
   mix-blend-mode: var(--ar-blend);
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   opacity: var(--opacite);
   padding: 0;
   position: relative;

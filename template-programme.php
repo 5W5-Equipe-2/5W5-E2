@@ -67,7 +67,7 @@
     <?php /****** Carrousel profs *******/ ?>
     <section class="Profs">
         <h2>Professeurs du TIM</h2>
-        <?php echo do_shortcode('[5w5e2carrousel categories="cours,1j1" operator="ET" exclude_categories="-projet" exclude_operator="ET"]'); ?>
+        <?php echo do_shortcode('[5w5e2carrousel categories="profs" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="100"]'); ?>
     </section>
 
 </main>
