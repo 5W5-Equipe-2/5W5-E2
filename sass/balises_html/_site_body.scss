@@ -14,11 +14,6 @@ body {
 
 /*---------------------------page projet et évènement-------------------------*/
 
-/* .test{
-  display: flex;
-  justify-content: center;
-} */
-
 .site__aside{
   a{
     color: var(--blanc);
@@ -26,21 +21,26 @@ body {
 }
 
 .categorie__section{
-  display: grid;
-  gap: 3em;
-  grid-template-columns: repeat(1, 1fr);
-  padding: 3em;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5%;
+
+  h3{
+    flex-basis: 100%;
+  }
 
   .categorie__article{
     background-color: var(--simili-noir);
     border: 1px solid var(--noir);
     border-radius: 5%; // arrondir les coins
     color: var(--blanc); // couleur texte blanc
-    margin: 0 auto; // Centrer horizontalement
+    margin: 5% auto; // Centrer horizontalement
     overflow: hidden; // pour que les coin du haut reste courber
+    //padding: 5%;
+    //line-height: 5%;
     text-align: center; // Center le texte
-    width: 25em;
-    height: 20em;
+    width: 80%;
+    height: auto;
 
     figure{
       background-color: var(--simili-noir);
@@ -66,39 +66,32 @@ body {
 
 @media screen and (min-width : $largeur__bureau){
   .categorie__section{
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+    justify-content: space-evenly;
 
-@media screen and (min-width : 1500px){
-  .categorie__section{
-    grid-template-columns: repeat(3, 1fr);
+    .categorie__article{
+      margin: 0;
+      width: 25em;
+      //height: 20em;
+    }
   }
-}
 
-@media screen and (min-width : 1900px){
-  .categorie__section{
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
 
+}
 /*-----------------------------single projet------------------------------------*/
 
-.single-titre{grid-area: titre;}
-.section_single{figure{grid-area: image;}}
-.information_single{grid-area: information;}
-p{grid-area: information_texte;}
 
 .section_single{
-  //border-bottom: 2px solid var(--noir);
-  display: grid;
-  gap: 3em;
-  grid-template-areas: 
-  'titre'
-  'image'
-  'information_texte'
-  'information';
-  padding: 1em;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 5%;
+
+  p{
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+  }
+
+  
 
   .information_single{
     display: flex;
@@ -111,6 +104,7 @@ p{grid-area: information_texte;}
     }
 
     div:nth-child(2){
+      align-items: center;
       display: flex;
       flex-direction: row;
       margin-bottom: 2em;
@@ -120,35 +114,44 @@ p{grid-area: information_texte;}
 
 /*-----------------------------single evenement------------------------------------*/
 
-/* .article_info{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  //height: 8em;
-  justify-content:space-evenly ;
-} */
 
-/* .article_titre, .article_date{
-  display: flex
-} */
+
 
 /*-----------------------------single evenement fin------------------------------------*/
 
 /*-----------------------------single projet bureau------------------------------------*/
 
 @media screen and (min-width : $largeur__bureau){
-  .section_single{
-    grid-template-areas: 
-  'titre titre'
-  'image information'
-  'image information_texte';
-  padding: 3em;
-  padding-left: 5em;
-  padding-right: 5em;
 
-  .wp-block-image{
-    width: 50vw;
+  .section_single > *{
+    height: 100%;
   }
+
+  .section_single{
+
+  /* display: flex;
+  flex-wrap: wrap; */
+  
+
+  h2{
+    flex-basis: 100%;
+  }
+
+    figure{
+      //flex-basis: 60%;
+      width: 60%;
+      flex: 1;
+    }
+
+    p{
+      //width: 40%;
+      flex-basis: 40%;
+      //flex: 1;
+    }
+
+    .information_single{
+      //flex: 1;
+    }
   }
 }
 

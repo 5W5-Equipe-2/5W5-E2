@@ -14,7 +14,8 @@
     font-size: 18px;
     //height: 3em;
     width: 70vw;
-    background-color: var(--blanc);
+    height: 100%;
+    background-color: transparent;
     border: none;
     color: var(--noir);
     padding-left: 0.4rem;
@@ -29,23 +30,20 @@
   }
 
  .recherche__bouton {
+    background-color: transparent;
     border: none;
+    height: 100%;
+    margin: 0 auto;
     margin-right: 0.8em;
+    padding: 0;
 
     /* Google material symbol search */
-    .material-symbols-outlined {
+    /* .material-symbols-outlined {
       font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
       color: var(--blanc);
       cursor: pointer;
       padding-right: 0.4rem;
-    }
-
-    padding: 0;
-  }
-
-  .recherche__bouton{
-    background-color: transparent;
-    border: none;
+    } */
   }
 }
 

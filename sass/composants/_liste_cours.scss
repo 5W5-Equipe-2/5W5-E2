@@ -1,203 +1,236 @@
-        table {
-            border-collapse: collapse;
-            width: 100%;
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+button {
+    //margin: 10px;
+}
+
+/*-----------------------description et inscription--------------------------*/
+
+.info_programme{
+
+    .description_programme{
+
+        margin: 0 auto;
+        margin-top: 2em;
+        width: 80%;
+        h2{
+            padding-bottom: 2em;
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        button {
-            margin: 10px;
+    }
+
+    .inscription_programme{
+        align-items: center;
+        background-color: var(--complementaire);
+        display: flex;
+        flex-direction: column;
+
+        h2{
+            margin: 1.5em;
+            text-align: center;
         }
 
-        /*-----------------------description et inscription--------------------------*/
-
-        .description_programme{
-            h2{
-                padding-bottom: 2em;
-            }
-        }
-
-        .inscription_programme{
-            align-items: center;
+        a{
             background-color: var(--complementaire);
+            border: 1px solid var(--simili-noir);
+            border-radius: 50em;
+            color: var(--simili-noir);
+            font-family: var(--police-texte);
+            margin-bottom: 1.5em;
+            padding: 0.4em;
+            padding-left: 2em;
+            padding-right: 2em;
+            text-align: center;
+        }
+    }
+
+}
+
+.site_main_programme{
+    hr{
+        background-color: black;
+        height: 0.1vh;
+        margin: 0 auto;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        width: 15%;  
+      }
+}
+
+/*-----------------------description et inscription fin--------------------------*/
+
+/*-----------------------liste cours--------------------------*/
+
+.Liste_programme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3{
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .cours_session{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        //margin: 0 auto;
+        //width: 50vw;
+        .filter-button{
+            background-color: transparent;
+            border: none;
+            font-family: var(--police-texte);
+            margin: 1em;
+        }
+    }
+
+    #content{
+        border-radius: 2em;
+        background-color: var(--simili-noir);
+        display: flex;
+        flex-direction: column;
+        height: 40em;
+        overflow: hidden;
+        position: relative;
+        width: 80%;
+
+        .article-button{
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid var(--blanc);
+            color: var(--blanc);
+            font-family: var(--police-texte);
+            flex: 1;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .article-button:last-of-type{
+            border: none;
+        }
+
+        .article-content{
+            background-color: var(--simili-noir);
+            color: var(--blanc);
             display: flex;
             flex-direction: column;
+            font-family: var(--police-texte);
+            padding: 5%;
+            position: absolute;
 
-            h2{
-                margin: 1.5em;
-                text-align: center;
-            }
+            /* top: 1em;
+            left: 1em;
+            right: 1em;
+            bottom: 1em; */
 
-            a{
-                background-color: var(--complementaire);
-                border: 1px solid var(--simili-noir);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            button{ //boutton retour
+                background-color: transparent;
+                border: 1px solid var(--blanc);
                 border-radius: 50em;
-                color: var(--simili-noir);
-                font-family: var(--police-texte);
-                margin-bottom: 1.5em;
-                padding: 0.4em;
-                padding-left: 2em;
-                padding-right: 2em;
-                text-align: center;
-            }
-        }
-
-        .site_main_programme{
-            hr{
-                background-color: black;
-                height: 0.1vh;
-                margin: 0 auto;
-                margin-top: 5vh;
-                margin-bottom: 5vh;
-                width: 15%;  
-              }
-        }
-
-        /*-----------------------description et inscription fin--------------------------*/
-
-        /*-----------------------liste cours--------------------------*/
-
-        .Liste_programme{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            h3{
-                margin-top: 1em;
-                margin-bottom: 0.5em;
+                color: var(--blanc);
+                height: 5%;
+                margin-bottom: 5%;
+                width: 20%;
             }
 
-            .cours_session{
-                .filter-button{
-                    background-color: transparent;
-                    border: none;
-                    font-family: var(--police-texte);
-                }
+            p{  //description du cours
+                border-bottom: 2px solid var(--blanc);
+                height: 65%;
+                //flex: 2;
+                overflow: auto;
+                //scrollbar-color: var(--blanc);
             }
 
-            #content{
-                border-radius: 2em;
-                background-color: var(--simili-noir);
+            .related-projets{
+                align-items: center;
                 display: flex;
-                flex-direction: column;
-                height: 40em;
-                justify-content: space-evenly;
-                position: relative;
-                width: 80%;
+                //flex: 1;
+                flex-direction: row;
+                height: 20%;
+                margin-top: 5%;
+                width: 100%;
+                //bottom: 0;
 
-                .article-button{
-                    background-color: transparent;
-                    border: none;
-                    //border-bottom: 2px solid var(--blanc);
+                a{ //voir plus de projets réalisé
                     color: var(--blanc);
-                    font-family: var(--police-texte);
+                    width: 40%;
                 }
-    
-                .article-content{
-                    //border: 2px solid aqua;
-                    //border-radius: 5%;
-                    background-color: var(--simili-noir);
-                    color: var(--blanc);
+
+                .related-articles{ //projets
                     display: flex;
-                    flex-direction: column;
-                    font-family: var(--police-texte);
-                    position: absolute;
-
-                    top: 1em;
-                    left: 1em;
-                    right: 1em;
-                    bottom: 1em;
-
-                    /* top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;*/
-
-                    button{
-                        height: 5%;
-                        width: 20%;
-                    }
-
-                    p{  //description du cours
-                        border-bottom: 2px solid var(--blanc);
-                        //display: flex;
-                        //flex: 6;
-                        height: 65%;
-                        overflow: auto;
-                        padding: 1em;
-                        //scrollbar-color: var(--blanc);
-                    }
-
-                    .related-projets{
-                        display: flex;
-                        //flex: 2;
-                        flex-direction: row;
-                        height: 20%;
-                        justify-content: flex-start;
-                        position: absolute;
-                        width: 100%;
-
-                        bottom: 0;
-                        a{ //voir plus de projets réalisé
-                            color: var(--blanc);
-                            width: 30%;
-                        }
-
-                        .related-articles{ //projets
-                            display: flex;
-                            justify-content: flex-end;
-                            //flex: 2;
-                            width: 70%;
-                        }
-
-                    }
-                } 
-            }
-        }
-
-        @media screen and (min-width : $largeur__bureau){
-
-            .Liste_programme{
-                #content{
-                    align-items: flex-start;
-                    //flex: 1;
-
-                    .article-content{
-                        border: 1px solid aqua;
-                        left: 40%;
-                    }
+                    justify-content: space-evenly;
+                    width: 60%;
                 }
 
             }
+        } 
+    }
+}
 
-         
+/*--------------------------------bureau------------------------*/
 
-            /* .article-content{
-                position: static;
-                display: block;
-            } */
+@media screen and (min-width : $largeur__bureau){
 
-            .info_programme{
-                display: flex;
+    .Liste_programme{
+        #content{
+            align-items: flex-start;
 
-                .description_programme{
-                    flex: 2;
-                    
-                }
-                .inscription_programme{
-                    border-radius: 5%;
-                    flex: 1;
-                    height: 50%;
-                }
+            .article-button{
+                width: 30%;
+                text-align: left;
+            }
 
-                hr{
+            .article-content{
+                //border: 1px solid aqua;
+                left: 40%;
+
+                button{
                     display: none;
                 }
+
+                p{
+                    height: 70%;
+                }
             }
         }
-                /*-----------------------liste cours fin--------------------------*/
+
+    }
+}
+/*---------------------------inscription bureau------------------*/
+@media screen and (min-width : 1400px){ //inscription pour bureau
+    .info_programme{
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        width: 80%;
+
+        .description_programme{
+            flex: 2;
+            margin-right: 5%;
+        }
+        .inscription_programme{
+            border-radius: 2em;
+            flex: 1;
+        }
+
+        hr{
+            display: none;
+        }
+    }
+}
+/*-----------------------liste cours fin--------------------------*/
