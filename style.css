@@ -983,6 +983,10 @@ menu tablet
   width: 100%;
 }
 
+.masquer-image {
+  opacity: 0;
+}
+
 @keyframes animation-apparition-lettre {
   0% {
     transform: translateY(0vh);

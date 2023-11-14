@@ -7,9 +7,6 @@
 ?>
 
 <?php
-// Image temporaire Sprint 02 / Chemin de l'image
-// $imagePath = "wp-content/themes/5W5-E2/images/media_vedette_test.jpg";
-
 $imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
 $imagePathT =  get_template_directory_uri() . '/images/logo_t.png';
 $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
@@ -19,13 +16,12 @@ $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
 <main class="site_main site_main_accueil">
   <section class="media_vedette">
 
-    <div class="diaporama">
+    <div class="diaporama masquer-image">
       <?php
-      /*Ajouter condition si extension active...*/
-      echo do_shortcode('[diaporama]'); // Charger le shortcode du diaporama
-      /*  if (function_exists('creation_diaporama_shortcode')) {
-          echo do_shortcode('[diaporama]'); // Charger le shortcode du diaporama
-        }*/
+   
+    /*Charger l'extension du Diaporama */
+      echo do_shortcode('[diaporama]');
+      /* Charger le modèle pour la catégorie média */
       get_template_part('template-parts/categorie-media');
       ?>
     </div>
