@@ -1042,49 +1042,60 @@ menu tablet
 
 .accueil_evenements {
   background-color: var(--primaire);
-  padding-bottom: 4vh;
-  padding-top: 4vh;
   width: 100%;
+  padding: 8vw 0;
+  padding-bottom: 6vw;
   /* Boite d'évènement récent */
 }
+.accueil_evenements a {
+  color: var(--blanc);
+}
 .accueil_evenements h2 {
-  padding-bottom: 2vh;
   text-align: center;
+  height: 5vw;
+  padding-bottom: 8vw;
 }
 .accueil_evenements .evenements_recents {
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-  justify-content: space-around;
+  height: 75vw;
 }
 .accueil_evenements .categorie__article {
-  background-color: var(--simili-noir);
-  border-radius: 5%;
+  border-radius: 2vh;
+  display: flex;
   color: var(--blanc);
-  margin: 0 auto;
   overflow: hidden;
   text-align: center;
-  width: 90vw;
+  width: 85vw;
+  height: 55vw;
 }
-.accueil_evenements .categorie__article div:first-child {
-  background-color: var(--simili-noir);
-}
-.accueil_evenements .categorie__article div:first-child a img {
-  margin: 0;
+.accueil_evenements .categorie__article div {
   width: 100%;
 }
-.accueil_evenements .categorie__article div:first-child h3 {
-  margin-top: 1.5vh;
+.accueil_evenements .categorie__article .image_titre_carrousel {
+  background-color: var(--simili-noir);
+  height: 100%;
 }
-.accueil_evenements .categorie__article div:first-child div {
+.accueil_evenements .categorie__article .image_titre_carrousel .contenant__image {
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  overflow: hidden;
+}
+.accueil_evenements .categorie__article .image_titre_carrousel .contenant__image a img {
+  margin: auto auto;
+  width: 100%;
+  height: auto;
+}
+.accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre {
+  height: 5.7vw;
   display: flex;
-  font-weight: bold;
-  gap: 2px;
   justify-content: center;
-  margin-top: 0.5vh;
-  padding-bottom: 1.5vh;
+  align-items: center;
 }
-.accueil_evenements .categorie__article div:nth-child(2) {
+.accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre h3 {
+  width: fit-content;
+  margin: auto;
+}
+.accueil_evenements .categorie__article .content {
   display: none;
   background-color: var(--simili-noir);
 }
@@ -1130,28 +1141,24 @@ menu tablet
 
 @media screen and (min-width: 800px) {
   .accueil_evenements {
-    min-height: 90vh;
     /* Boite d'évènement récent */
   }
+  .accueil_evenements .evenements_recents {
+    height: 45vw;
+  }
   .accueil_evenements .categorie__article {
-    background-color: var(--primaire);
-    border-radius: 0;
-    color: var(--blanc);
+    height: 35vw;
     display: flex;
     justify-content: space-between;
     width: 80vw;
   }
-  .accueil_evenements .categorie__article div:first-child {
+  .accueil_evenements .categorie__article .image_titre_carrousel {
     background-color: var(--simili-noir);
     border-radius: 5%;
     overflow: hidden;
     width: 35vw;
   }
-  .accueil_evenements .categorie__article div:first-child a img {
-    margin: 0;
-    width: 100%;
-  }
-  .accueil_evenements .categorie__article div:first-child div {
+  .accueil_evenements .categorie__article .image_titre_carrousel div {
     display: flex;
     font-weight: bold;
     gap: 2px;
