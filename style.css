@@ -1133,8 +1133,7 @@ menu tablet
 
 @media screen and (min-width: 800px) {
   .accueil_evenements {
-    padding-bottom: 2vw;
-    padding-top: 4vw;
+    padding: 4vw 0;
   }
   .accueil_evenements h2 {
     padding-bottom: 3vw;
@@ -1201,8 +1200,7 @@ menu tablet
 }
 @media screen and (min-width: 1800px) {
   .accueil_evenements {
-    padding-bottom: 1vw;
-    padding-top: 3vw;
+    padding: 3vw 0;
   }
   .accueil_evenements h2 {
     padding-bottom: 1vw;

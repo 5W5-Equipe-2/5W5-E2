@@ -130,8 +130,7 @@
 
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
   .accueil_evenements { 
-    padding-bottom: 2vw;
-    padding-top: 4vw;
+    padding: 4vw 0;
     h2{ // le titre
       padding-bottom: 3vw;
     }
@@ -200,8 +199,7 @@
 
 @media screen and (min-width:$largeur__bureau_large){ // Début requête média Bureau
   .accueil_evenements { 
-    padding-bottom: 1vw;
-    padding-top: 3vw;
+    padding: 3vw 0;
     h2{ // le titre
       padding-bottom: 1vw;
     }
