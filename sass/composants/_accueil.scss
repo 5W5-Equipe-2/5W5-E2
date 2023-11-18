@@ -38,9 +38,7 @@
   }
 
   .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
-    height: 75vw;
-    
-
+    height: 75vw; 
   }
   /* Boite d'évènement récent */
   .categorie__article{ 
@@ -133,63 +131,54 @@
 
 
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
- .accueil_evenements { 
-  .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
-    height: 45vw;
-  }
-    /* Boite d'évènement récent */
-    .categorie__article{ 
+  .accueil_evenements { 
+    padding: 5vw 0;
+    padding-bottom: 3vw;
+    h2{ // le titre
+      padding-bottom: 3vw;
+    }
+    .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
+      height: 40vw;
+      /* Boite d'évènement récent */
+      .categorie__article{ 
+        height: 30vw;
+        justify-content: space-between;
+        width: 82vw;
+        border-radius: 0;
 
-      height: 35vw;
-      display: flex;
-      justify-content: space-between;
-      width: 80vw;
-
-      // Les informations necessaires/importants -titre -image -Date
-      .image_titre_carrousel{
-        background-color: var(--simili-noir);
-        border-radius: 5%;
-        overflow: hidden;
-        width: 35vw;
-        div{
-          display: flex;
-          font-weight: bold;
-          gap: 2px;
-          justify-content: center;
-          margin-top: 0.5vh;
-          padding-bottom: 1.5vh;
-        }
-      }
-      // Les informations secondaires -Descriptions -additionnels -information de l'articles
-      div:nth-child(2){
-        border-radius: 5%;
-        display: block;
-        overflow: hidden;
-        text-align: left;
-        width: 44vw;
-        p,h5,div{
-          margin: 0 auto;
+        // Les informations necessaires/importants -titre -image -Date
+        .image_titre_carrousel{
+          border-radius: 7%;
+          overflow: hidden;
           width: 35vw;
         }
-        p:first-child{ // Description
-          margin-top: 2vh;
-        }
-        h5{
-          margin-top: 2vh;
-        } 
-        div{
-          display: flex;
-          justify-content: left;
-        }
-        div:first-of-type{
-          margin-top: 2vh;
-        }
-        div:last-of-type{
-          padding-bottom: 2vh;
+        // Les informations secondaires -Descriptions -additionnels -information de l'articles
+        .content{
+          border-radius: 7%;
+          display: block;
+          // overflow: hidden;
+          text-align: left;
+          width: 46vw;
+          .contenant_contenu{
+            padding-top: clamp(0.9375rem, 0.5804rem + 0.7143vw, 1.25rem);
+            display: block;
+            margin: auto;
+            width: fit-content;
+            height: fit-content;
+              p,h5,div{
+              margin: 0 auto;
+              width: 38vw;
+              }
+              div{
+              width: 35vw;
+              display: flex;
+              justify-content: left;
+            }
+          }
         }
       }
     }
-  } 
+  }
   
   .accueil_programme { // section de inscription
   flex-direction: row; // changement de l'affichement en ligne
