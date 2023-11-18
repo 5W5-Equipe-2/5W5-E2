@@ -1070,20 +1070,20 @@ menu tablet
   height: 100%;
 }
 .accueil_evenements .categorie__article .image_titre_carrousel .contenant__image {
-  height: fit-content;
+  height: 80%;
   margin: 0;
   overflow: hidden;
   padding: 0;
 }
 .accueil_evenements .categorie__article .image_titre_carrousel .contenant__image a img {
-  height: auto;
+  height: 110%;
   margin: auto auto;
-  width: 100%;
+  width: 110%;
 }
 .accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre {
   align-items: center;
   display: flex;
-  height: 5.7vw;
+  height: 11vw;
   justify-content: center;
 }
 .accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre h3 {
@@ -1155,7 +1155,7 @@ menu tablet
     width: 35vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel .contenant__titre {
-    height: 9.5vw;
+    height: 6vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content {
     border-radius: 7%;
@@ -1219,7 +1219,7 @@ menu tablet
     width: 30vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel .contenant__titre {
-    height: 5.7vw;
+    height: 4.5vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content {
     width: 44vw;

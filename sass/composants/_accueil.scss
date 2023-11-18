@@ -58,20 +58,20 @@
       background-color: var(--simili-noir);
       height: 100%;
       .contenant__image {
-        height: fit-content;
+        height: 80%;
         margin: 0;
         overflow: hidden;
         padding: 0;
         a img{
-          height: auto;
+          height: 110%;
           margin: auto auto;
-          width: 100%;
+          width: 110%;
         }
       }
      .contenant__titre{
         align-items: center;
         display: flex;
-        height: 5.7vw; // le full height - l'hauteur de l'image
+        height: 11vw; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
         justify-content: center;
         h3{
           margin: auto;
@@ -150,7 +150,7 @@
           overflow: hidden; // pour garder les coins arrondis
           width: 35vw;
           .contenant__titre{
-          height: 9.5vw; // le full height - l'hauteur de l'image
+          height: 6vw; // le full height - l'hauteur de l'image
           }
         }
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
@@ -198,7 +198,7 @@
   }
 }// Fin requête média Tablette
 
-@media screen and (min-width:$largeur__bureau_large){ // Début requête média Tablette
+@media screen and (min-width:$largeur__bureau_large){ // Début requête média Bureau
   .accueil_evenements { 
     padding-bottom: 1vw;
     padding-top: 3vw;
@@ -215,7 +215,7 @@
         .image_titre_carrousel{
           width: 30vw;
           .contenant__titre{
-          height: 5.7vw; // le full height - l'hauteur de l'image
+          height: 4.5vw; // le full height - l'hauteur de l'image
           }
         }
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
