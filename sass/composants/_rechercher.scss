@@ -56,10 +56,10 @@
     height: 5vh;
   }
 
-  @media screen and (min-width : 992px){
+  @media screen and (min-width : $largeur__bureau){
     display: flex;
-    position: absolute;
-    right: 1vw;
+    /* position: absolute;
+    right: 1vw; */
 
     .recherche > label{
       width: 20vw;

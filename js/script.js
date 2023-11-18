@@ -39,18 +39,25 @@ jQuery(document).ready(function($) {
 
 /* ---------------boutton retour pour la liste de cours-----------*/
 
-    const description_cours = document.getElementsByClassName('article-content');
+    /* const description_cours = document.getElementsByClassName('article-content');
     const siteNavigation = document.getElementById( 'site-navigation' );
 
     let hide_decription_cours = function(){
         description_cours.style.display = 'none';
-    }
+    } */
 
     /* function boutton_retour(){
+        
         let description_cours = document.getElementsByClassName( 'article-content' );
-
-        //let displaySetting = myClock.style.display;
-
         let boutton_retour = document.getElementById('boutton_retour');
     } */
+
+    
+    function hide_decription_cours(){
+        let hide_decription_cours = document.querySelectorAll('.article-content');
+
+        for (let description_cours of hide_decription_cours){
+            description_cours.style.display = "none";
+        }        
+    }
 

@@ -104,7 +104,7 @@ button {
         position: relative;
         width: 80%;
 
-        .article-button{
+        .article-button{ //boutton pour les cours
             background-color: transparent;
             border: none;
             border-bottom: 2px solid var(--blanc);
@@ -125,7 +125,7 @@ button {
             display: flex;
             flex-direction: column;
             font-family: var(--police-texte);
-            padding: 5%;
+            padding: 1em;
             position: absolute;
 
             /* top: 1em;
@@ -144,7 +144,7 @@ button {
                 border-radius: 50em;
                 color: var(--blanc);
                 height: 5%;
-                margin-bottom: 5%;
+                margin-bottom: 1em;
                 width: 20%;
             }
 
@@ -156,13 +156,13 @@ button {
                 //scrollbar-color: var(--blanc);
             }
 
-            .related-projets{
+            .related-projets{ //en dessous de la description d'un cours
                 align-items: center;
                 display: flex;
                 //flex: 1;
                 flex-direction: row;
                 height: 20%;
-                margin-top: 5%;
+                margin-top: 2em;
                 width: 100%;
                 //bottom: 0;
 
@@ -172,9 +172,20 @@ button {
                 }
 
                 .related-articles{ //projets
+                    //align-items: stretch;
                     display: flex;
                     justify-content: space-evenly;
                     width: 60%;
+                    //height: 100%;
+
+                    a{
+                        //float: right;
+                        img{
+                            //max-height: 100%;
+                            height: auto;
+                            margin: 0 auto;
+                        }
+                    }
                 }
 
             }
@@ -191,20 +202,22 @@ button {
             align-items: flex-start;
 
             .article-button{
-                width: 30%;
+                width: 90%;
                 text-align: left;
             }
 
             .article-content{
+                padding: 2em;
                 //border: 1px solid aqua;
-                left: 40%;
+                //left: 40%;
 
                 button{
-                    display: none;
+                    margin-bottom: 2em;
+                    //display: none;
                 }
 
                 p{
-                    height: 70%;
+                    //height: 70%;
                 }
             }
         }

@@ -473,13 +473,45 @@ body {
 }
 
 /*---------------------------page projet et évènement-------------------------*/
-.site__aside a {
+/*-------------------navigation----------------*/
+.site__aside .sub-menu {
+  display: none;
+}
+.site__aside li:hover .sub-menu {
+  display: block;
+}
+.site__aside .menu-projets {
+  display: none;
+}
+.site__aside .menu-projets a {
   color: var(--blanc);
 }
+.site__aside .menu-projets a ul {
+  display: none;
+}
+@media screen and (min-width: 992px) {
+  .site__aside {
+    /* .navigation-projet{
+      display: none;
+    } */
+  }
+  .site__aside .boutton-projet {
+    display: none;
+  }
+  .site__aside .menu-projets {
+    display: flex;
+    /* ul{
+      display: flex;
+      flex-direction: row;
+    } */
+  }
+}
 
+/*----------------fin navigation-------------*/
 .categorie__section {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 5%;
 }
 .categorie__section h3 {
@@ -488,9 +520,9 @@ body {
 .categorie__section .categorie__article {
   background-color: var(--simili-noir);
   border: 1px solid var(--noir);
-  border-radius: 5%;
+  border-radius: 1em;
   color: var(--blanc);
-  margin: 5% auto;
+  margin: 5%;
   overflow: hidden;
   text-align: center;
   width: 80%;
@@ -510,26 +542,62 @@ body {
   color: var(--blanc);
 }
 
+/*----------------------navigation page projet/évènements------------------------*/
+/* .site__aside{
+  .menu{
+    display: none;
+  }
+}
+
+@media screen and (min-width : $largeur__bureau){
+  .site__aside{
+    .menu{
+      display: flex;
+      min-height: 5vh;
+
+      .sub-menu{
+        display: flex;
+      }
+    }
+
+    .boutton_projet{
+      display: none;
+    }
+  }
+} */
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
 @media screen and (min-width: 992px) {
   .categorie__section {
-    justify-content: space-evenly;
+    justify-content: flex-start;
   }
   .categorie__section .categorie__article {
-    margin: 0;
-    width: 25em;
+    width: 40%;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .categorie__section .categorie__article {
+    margin: 3%;
+    width: 27.33%;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .categorie__section .categorie__article {
+    margin: 2%;
+    width: 21%;
   }
 }
 /*-----------------------------single projet------------------------------------*/
 .section_single {
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
   padding: 5%;
 }
-.section_single p {
-  padding-top: 2.5%;
-  padding-bottom: 2.5%;
+.section_single .wp-block-group {
+  /* padding-top: 2.5%;
+  padding-bottom: 2.5%; */
+}
+.section_single .wp-block-group p {
+  padding-bottom: 1em;
 }
 .section_single .information_single {
   display: flex;
@@ -538,22 +606,25 @@ body {
 .section_single .information_single div:first-child {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 .section_single .information_single div:nth-child(2) {
   align-items: center;
   display: flex;
   flex-direction: row;
-  margin-bottom: 2em;
+}
+.section_single .information_single div:nth-child(2) > * {
+  margin-right: 0.5em;
 }
 
 /*-----------------------------single evenement------------------------------------*/
 /*-----------------------------single evenement fin------------------------------------*/
 /*-----------------------------single projet bureau------------------------------------*/
 @media screen and (min-width: 992px) {
-  .section_single > * {
+  /* .section_single > *{
     height: 100%;
-  }
+  } */
   .section_single {
     /* display: flex;
     flex-wrap: wrap; */
@@ -562,11 +633,16 @@ body {
     flex-basis: 100%;
   }
   .section_single figure {
-    width: 60%;
-    flex: 1;
+    flex-basis: 60%;
   }
-  .section_single p {
+  .section_single .wp-block-group {
     flex-basis: 40%;
+  }
+  .section_single .wp-block-group p {
+    padding-left: 1em;
+  }
+  .section_single .information_single {
+    flex: 2;
   }
 }
 /*-----------------------------fin single projet---------------------------------*/
@@ -581,30 +657,29 @@ body {
   display: flex;
 }
 
-.logo-TIM {
-  display: flex;
-  justify-content: center;
-  width: 10vw;
-}
-
-.titre-header {
-  display: none;
-}
-
 .main-navigation {
   width: 80vw;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  margin: 0 auto;
   /* -----------------------------------------------------------------------------
   Barre de recherche
   ------------------------------------------------------------------------------*/
+}
+.main-navigation .titre_boutton {
+  display: flex;
+}
+.main-navigation .titre_boutton .logo-TIM {
+  flex-basis: 50%;
+}
+.main-navigation .titre_boutton .titre-header {
+  display: none;
 }
 .main-navigation ul {
   display: none;
   /*position : absolute;*/
   width: 100%;
-  padding-top: 2vh;
   list-style: none;
   margin: 0;
   padding-left: 0;
@@ -615,19 +690,21 @@ body {
   font-family: var(--police-titre);
   font-size: 21px;
 }
-.main-navigation a {
-  display: block;
+.main-navigation .menu-menu-principal-container {
+  /* a{
+    display: block;
   text-decoration: none;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  //padding-top: 2.5rem;
+  //padding-bottom: 2.5rem;
   border-bottom: 2px solid var(--blanc);
+  } */
   color: var(--blanc);
   text-decoration: none;
 }
-.main-navigation a:visited {
+.main-navigation .menu-menu-principal-container:visited {
   color: var(--complementaire);
 }
-.main-navigation a:hover, .main-navigation a:focus, .main-navigation a:active {
+.main-navigation .menu-menu-principal-container:hover, .main-navigation .menu-menu-principal-container:focus, .main-navigation .menu-menu-principal-container:active {
   color: var(--primaire);
 }
 
@@ -636,9 +713,9 @@ Bouton burger
 ------------------------------------------------------------------------------*/
 .boutton {
   display: flex;
+  flex-basis: 50%;
   justify-content: flex-end;
   align-items: center;
-  margin-top: 3%;
 }
 
 .menu-toggle {
@@ -649,54 +726,78 @@ Bouton burger
 
 .main-navigation.toggled {
   height: 100vh;
-  justify-content: space-around;
   display: block;
 }
 .main-navigation.toggled .site__header__recherche {
+  align-items: center;
   display: flex;
+  height: 15vh;
   justify-content: flex-start;
-  margin-top: 5vh;
+}
+.main-navigation.toggled .menu-menu-principal-container {
+  display: flex;
+}
+.main-navigation.toggled .menu-menu-principal-container ul {
+  display: flex;
+  flex-direction: column;
+  height: 75vh;
+}
+.main-navigation.toggled .menu-menu-principal-container ul li {
+  align-items: center;
+  border-bottom: 2px solid var(--blanc);
+  display: flex;
+  flex: 1;
 }
 
-.menu-toggle,
+/* .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
-}
-
+} */
 /* ---------------------------------------------------------------------------
-menu tablet
+menu bureau
 ------------------------------------------------------------------------------ */
 @media screen and (min-width: 992px) {
-  .site_entete {
-    height: 6vh;
-  }
   .main-navigation {
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: row;
-    margin-right: 2vw;
+    width: 100%;
+    /* .menu{ 
+      padding-right: 15vw;
+    } */
+    /* a{
+      padding-left: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: none;
+    } */
   }
-  .main-navigation .menu {
-    padding-right: 15vw;
+  .main-navigation .titre_boutton {
+    position: absolute;
+    left: 5%;
+  }
+  .main-navigation .titre_boutton .logo-TIM {
+    flex-basis: 100%;
+  }
+  .main-navigation .titre_boutton .boutton {
+    flex-basis: 0%;
+  }
+  .main-navigation .site__header__recherche {
+    order: 3;
+    margin-right: 5%;
   }
   .main-navigation ul li {
     font-size: 18px;
+    margin-left: 0.8em;
+    margin-right: 0.8em;
   }
-  .main-navigation a {
-    padding-left: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: none;
-  }
-  .menu-toggle {
+  .boutton {
     display: none;
   }
   .main-navigation.toggled ul,
 .main-navigation ul {
     display: flex;
     padding-top: 0;
-    justify-content: flex-end;
-    padding-right: 5%;
   }
   .main-navigation.toggled ul a[href="#"]::after,
 .main-navigation ul a[href="#"]::after {
@@ -828,8 +929,8 @@ menu tablet
 @media screen and (min-width: 992px) {
   .site__header__recherche {
     display: flex;
-    position: absolute;
-    right: 1vw;
+    /* position: absolute;
+    right: 1vw; */
   }
   .site__header__recherche .recherche > label {
     width: 20vw;
@@ -1275,7 +1376,7 @@ th {
   display: flex;
   flex-direction: column;
   font-family: var(--police-texte);
-  padding: 5%;
+  padding: 1em;
   position: absolute;
   /* top: 1em;
   left: 1em;
@@ -1292,7 +1393,7 @@ th {
   border-radius: 50em;
   color: var(--blanc);
   height: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 1em;
   width: 20%;
 }
 .Liste_programme #content .article-content p {
@@ -1305,7 +1406,7 @@ th {
   display: flex;
   flex-direction: row;
   height: 20%;
-  margin-top: 5%;
+  margin-top: 2em;
   width: 100%;
 }
 .Liste_programme #content .article-content .related-projets a {
@@ -1317,6 +1418,10 @@ th {
   justify-content: space-evenly;
   width: 60%;
 }
+.Liste_programme #content .article-content .related-projets .related-articles a img {
+  height: auto;
+  margin: 0 auto;
+}
 
 /*--------------------------------bureau------------------------*/
 @media screen and (min-width: 992px) {
@@ -1324,17 +1429,14 @@ th {
     align-items: flex-start;
   }
   .Liste_programme #content .article-button {
-    width: 30%;
+    width: 90%;
     text-align: left;
   }
   .Liste_programme #content .article-content {
-    left: 40%;
+    padding: 2em;
   }
   .Liste_programme #content .article-content button {
-    display: none;
-  }
-  .Liste_programme #content .article-content p {
-    height: 70%;
+    margin-bottom: 2em;
   }
 }
 /*---------------------------inscription bureau------------------*/

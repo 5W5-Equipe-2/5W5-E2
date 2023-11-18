@@ -14,15 +14,53 @@ body {
 
 /*---------------------------page projet et évènement-------------------------*/
 
+/*-------------------navigation----------------*/
+
 .site__aside{
-  a{
-    color: var(--blanc);
+
+  .sub-menu{
+    display: none;
+  }
+
+  li:hover .sub-menu{
+    display: block;
+  }
+
+  .menu-projets{
+    display: none;
+
+    a{
+      color: var(--blanc);
+      ul{
+        display: none;
+      }
+    }
+  }
+
+  @media screen and (min-width : $largeur__bureau){
+    .boutton-projet{
+      display: none;
+    }
+    /* .navigation-projet{
+      display: none;
+    } */
+    .menu-projets{
+      display: flex;
+      /* ul{
+        display: flex;
+        flex-direction: row;
+      } */
+    }
   }
 }
+
+
+/*----------------fin navigation-------------*/
 
 .categorie__section{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 5%;
 
   h3{
@@ -32,11 +70,12 @@ body {
   .categorie__article{
     background-color: var(--simili-noir);
     border: 1px solid var(--noir);
-    border-radius: 5%; // arrondir les coins
+    border-radius: 1em; // arrondir les coins
     color: var(--blanc); // couleur texte blanc
-    margin: 5% auto; // Centrer horizontalement
+    //margin: 2em auto; // Centrer horizontalement
+    margin: 5%;
     overflow: hidden; // pour que les coin du haut reste courber
-    //padding: 5%;
+    //padding: 2em;
     //line-height: 5%;
     text-align: center; // Center le texte
     width: 80%;
@@ -60,35 +99,95 @@ body {
   }
 }
 
+/*----------------------navigation page projet/évènements------------------------*/
+
+/* .site__aside{
+  .menu{
+    display: none;
+  }
+}
+
+@media screen and (min-width : $largeur__bureau){
+  .site__aside{
+    .menu{
+      display: flex;
+      min-height: 5vh;
+
+      .sub-menu{
+        display: flex;
+      }
+    }
+
+    .boutton_projet{
+      display: none;
+    }
+  }
+} */
+
 
 
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
 
 @media screen and (min-width : $largeur__bureau){
   .categorie__section{
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    //align-items: flex-start;
 
     .categorie__article{
-      margin: 0;
-      width: 25em;
+      //margin: 0;
+      //width: 25em;
+      width: 40%;
+      //flex-basis: 40%;
       //height: 20em;
     }
   }
 
 
 }
+
+@media screen and (min-width : 1400px){
+  .categorie__section{
+
+    .categorie__article{
+      margin: 3%;
+      width: 27.33%;
+    }
+  }
+
+
+}
+
+@media screen and (min-width : $largeur__bureau_large){
+  .categorie__section{
+
+    .categorie__article{
+      margin: 2%;
+      width: 21%;
+
+    }
+  }
+
+
+}
+
 /*-----------------------------single projet------------------------------------*/
 
 
 .section_single{
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  //flex-direction: column;
   padding: 5%;
 
-  p{
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
+  .wp-block-group{
+    /* padding-top: 2.5%;
+    padding-bottom: 2.5%; */
+    p{
+      padding-bottom: 1em;
+      
+    }
+
+
   }
 
   
@@ -100,14 +199,19 @@ body {
     div:first-child{
       display: flex;
       flex-direction: column;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
+      margin-top: 1em;
     }
 
     div:nth-child(2){
       align-items: center;
       display: flex;
       flex-direction: row;
-      margin-bottom: 2em;
+      //margin-bottom: 2em;
+    }
+
+    div:nth-child(2) > *{
+      margin-right: 0.5em;
     }
   }
 }
@@ -123,9 +227,9 @@ body {
 
 @media screen and (min-width : $largeur__bureau){
 
-  .section_single > *{
+  /* .section_single > *{
     height: 100%;
-  }
+  } */
 
   .section_single{
 
@@ -135,22 +239,28 @@ body {
 
   h2{
     flex-basis: 100%;
+    //flex: 2;
   }
 
     figure{
-      //flex-basis: 60%;
-      width: 60%;
-      flex: 1;
+      flex-basis: 60%;
+      //width: 60%;
+      //flex: 1;
     }
 
-    p{
-      //width: 40%;
+    .wp-block-group{
+      //display: inline-block;
       flex-basis: 40%;
       //flex: 1;
+      //width: 40%;
+
+      p{
+        padding-left: 1em;
+      }
     }
 
     .information_single{
-      //flex: 1;
+      flex: 2;
     }
   }
 }

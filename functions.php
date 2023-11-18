@@ -215,7 +215,7 @@ function filter_posts()
             echo '<button class="article-button" data-article-id="' . $article_id . '">' . $article_title . '</button>';
 
             // Générez un conteneur pour le contenu de l'article
-            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . '<button type="button" onclick="hide_decription_cours">Retour</button>' . '<p>' . $article_content . '</p>';
+            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . '<button type="button" onclick="hide_decription_cours()" class="boutton_retour">Retour</button>' . '<p>' . $article_content . '</p>';
             // Récupérez les articles ayant la même catégorie que le slug du titre de l'article actuel
             $related_articles_args = array(
                 'post_type' => 'post',
