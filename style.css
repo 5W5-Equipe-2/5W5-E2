@@ -1105,7 +1105,6 @@ menu tablet
   min-height: 30vh;
   padding-bottom: 5%;
   padding-top: 20vh;
-  position: relative;
 }
 .accueil_programme .widget_block .widget-title {
   margin: 0 auto;
@@ -1124,9 +1123,7 @@ menu tablet
   padding-bottom: 5%;
 }
 .accueil_programme .widget_block:first-of-type .wp-block-buttons {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
+  padding-top: 10%;
 }
 .accueil_programme .widget_block:first-of-type .wp-block-buttons a {
   background-color: var(--complementaire);

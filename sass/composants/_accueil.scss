@@ -96,7 +96,7 @@
     min-height: 30vh; 
     padding-bottom: 5%;
     padding-top: 20vh;
-    position: relative;
+    
 
     .widget-title{
       margin: 0 auto; // Centrer horizontalement
@@ -115,10 +115,9 @@
       padding-bottom: 5%;
     }
     .wp-block-buttons{ // le bouton plus de détails
-      position: absolute;
-      bottom: 10%;
-      left: 5%;
-
+      // position: absolute;
+      padding-top: 10%;
+      
       a{ // style du bouton
          background-color: var(--complementaire);
          border: 1px solid var(--simili-noir);
