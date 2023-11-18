@@ -25,33 +25,30 @@
 
 .accueil_evenements { // la section qui contient les évènement récents
   background-color: var(--primaire);
-  width: 100%;
-  padding: 8vw 0;
-  padding-bottom: 6vw;
+  padding-top: 8vw; // espacement haut
+  padding-bottom: 6vw; // espacement bas
+  width: 100%; // largeur
   a{
     color: var(--blanc); //a retirer
   }
   h2{ // le titre
     text-align: center;
-    height: 5vw;
     padding-bottom: 8vw;
   }
 
   .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
-    height: 75vw;
-    
-
+    height: 75vw; 
   }
   /* Boite d'évènement récent */
   .categorie__article{ 
     // background-color: var(--simili-noir);
     border-radius: 2vh; // arrondir les coins
-    display: flex;
     color: var(--blanc); // couleur texte blanc
+    display: flex;
+    height: 55vw;
     overflow: hidden; // pour que les coin du haut reste courber
     text-align: center; // Center le texte
     width: 85vw;
-    height: 55vw;
 
     div{
       width: 100%;
@@ -61,31 +58,31 @@
       background-color: var(--simili-noir);
       height: 100%;
       .contenant__image {
-        margin: 0;
-        padding: 0;
         height: fit-content;
+        margin: 0;
         overflow: hidden;
+        padding: 0;
         a img{
+          height: auto;
           margin: auto auto;
           width: 100%;
-          height: auto;
         }
       }
      .contenant__titre{
-      height: 5.7vw; // le full height - l'hauteur de l'image
-      display: flex;
-      justify-content: center;
-      align-items: center;
+        align-items: center;
+        display: flex;
+        height: 5.7vw; // le full height - l'hauteur de l'image
+        justify-content: center;
         h3{
-          width: fit-content;
           margin: auto;
+          width: fit-content;
         }
       }
     }
     // Les informations secondaires -Descriptions -additionnels -information de l'articles
     .content{
-      display: none;
       background-color: var(--simili-noir);
+      display: none;
     }
   }
 }
@@ -99,7 +96,7 @@
     min-height: 30vh; 
     padding-bottom: 5%;
     padding-top: 20vh;
-    position: relative;
+    
 
     .widget-title{
       margin: 0 auto; // Centrer horizontalement
@@ -118,10 +115,9 @@
       padding-bottom: 5%;
     }
     .wp-block-buttons{ // le bouton plus de détails
-      position: absolute;
-      bottom: 10%;
-      left: 5%;
-
+      // position: absolute;
+      padding-top: 10%;
+      
       a{ // style du bouton
          background-color: var(--complementaire);
          border: 1px solid var(--simili-noir);
@@ -133,78 +129,100 @@
 
 
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
- .accueil_evenements { 
-  .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
-    height: 45vw;
-  }
-    /* Boite d'évènement récent */
-    .categorie__article{ 
+  .accueil_evenements { 
+    padding-bottom: 2vw;
+    padding-top: 4vw;
+    h2{ // le titre
+      padding-bottom: 3vw;
+    }
+    .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
+      height: 40vw;
+      /* Boite d'évènement récent */
+      .categorie__article{ 
+        border-radius: 0; // on enleve l'arrondissement et on met au enfant
+        height: 30vw; // ajustement de l'hauteur
+        justify-content: space-between; // met un à cote de l'autre
+        width: 82vw; // ajustement de largeur
 
-      height: 35vw;
-      display: flex;
-      justify-content: space-between;
-      width: 80vw;
-
-      // Les informations necessaires/importants -titre -image -Date
-      .image_titre_carrousel{
-        background-color: var(--simili-noir);
-        border-radius: 5%;
-        overflow: hidden;
-        width: 35vw;
-        div{
-          display: flex;
-          font-weight: bold;
-          gap: 2px;
-          justify-content: center;
-          margin-top: 0.5vh;
-          padding-bottom: 1.5vh;
-        }
-      }
-      // Les informations secondaires -Descriptions -additionnels -information de l'articles
-      div:nth-child(2){
-        border-radius: 5%;
-        display: block;
-        overflow: hidden;
-        text-align: left;
-        width: 44vw;
-        p,h5,div{
-          margin: 0 auto;
+        // Les informations necessaires/importants -titre -image -Date
+        .image_titre_carrousel{
+          border-radius: 7%; // arrondis
+          overflow: hidden; // pour garder les coins arrondis
           width: 35vw;
+          .contenant__titre{
+          height: 9.5vw; // le full height - l'hauteur de l'image
+          }
         }
-        p:first-child{ // Description
-          margin-top: 2vh;
-        }
-        h5{
-          margin-top: 2vh;
-        } 
-        div{
-          display: flex;
-          justify-content: left;
-        }
-        div:first-of-type{
-          margin-top: 2vh;
-        }
-        div:last-of-type{
-          padding-bottom: 2vh;
+        // Les informations secondaires -Descriptions -additionnels -information de l'articles
+        .content{ // contenant qui contient toutes les informations secondaires
+          border-radius: 7%; // avoir des sommets rond
+          display: block; // afficher le contenu
+          position: relative; // necessaire pour centre le contenu
+          text-align: left; // pour que le texte s'affiche vers la gauche
+          width: 46vw; // grosseur
+          .contenant_contenu{  // contenu
+            position: absolute; // necessaire pour centre le contenu
+            top: 50%; // necessaire pour centre le contenu
+            left: 50%; // necessaire pour centre le contenu
+            transform: translate(-50%, -50%); // necessaire pour centre le contenu
+            margin: auto; // necessaire pour centre le contenu
+            p,h5,div{
+              margin: 0 auto; // centrer horizontal
+              width: 38vw; // largeur
+            }
+            div{ // pour mettre les icone et les information a cote
+              display: flex;
+              justify-content: left;
+              width: 38vw;
+            }
+          }
+          .contenant_contenu > p:last-of-type, .contenant_contenu > p:first-of-type{  padding-bottom: 1.5vw;}
         }
       }
     }
-  } 
-  
+  }
   .accueil_programme { // section de inscription
   flex-direction: row; // changement de l'affichement en ligne
     .widget_block{
       display: flex;
       flex-direction: column;
-      padding-bottom: 0;
       padding: 0;
+      padding-bottom: 0;
       padding-top: 16vh;
       width: inherit; // prennent tout la taille de la section
     }
     .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
-      padding-top: 5%;
       justify-content: flex-start;
+      padding-top: 5%;
+    }
+  }
+}// Fin requête média Tablette
+
+@media screen and (min-width:$largeur__bureau_large){ // Début requête média Tablette
+  .accueil_evenements { 
+    padding-bottom: 1vw;
+    padding-top: 3vw;
+    h2{ // le titre
+      padding-bottom: 1vw;
+    }
+    .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
+      height: 30vw;
+      /* Boite d'évènement récent */
+      .categorie__article{ 
+        height: 23vw;
+        width: 75vw;
+        // Les informations necessaires/importants -titre -image -Date
+        .image_titre_carrousel{
+          width: 30vw;
+          .contenant__titre{
+          height: 5.7vw; // le full height - l'hauteur de l'image
+          }
+        }
+        // Les informations secondaires -Descriptions -additionnels -information de l'articles
+        .content{
+          width: 44vw;
+        }
+      }
     }
   }
 }
- // Fin requête média Tablette
