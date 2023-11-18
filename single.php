@@ -18,6 +18,13 @@
 <!-- /****Affichage dans WordPress****************************************************/ -->
 <?php get_header(); ?>
 
+<!-- Aside    *************************  -->
+<?php //Si c'est un article de la catégorie projets
+if (!is_front_page() && (!is_admin()) && (has_term(array('projets'), 'category'))) {
+    get_template_part("template-parts/aside");
+}
+?>
+
 <main class="site_main">
   <article class="section_single">
     <?php

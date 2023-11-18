@@ -124,6 +124,10 @@
   }
 }
 
+.masquer-image {
+  opacity: 0;
+}
+
 @keyframes animation-apparition-lettre { // une animation d'apparition'
   0%{transform: translateY(0vh); opacity: 0;}
   50%{transform: translateY(0vh); opacity: 1;}
