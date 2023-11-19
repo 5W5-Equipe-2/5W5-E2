@@ -436,9 +436,9 @@ figcaption {
 a {
   color: var(--noir);
   text-decoration: none;
-}
-a:visited {
-  color: var(--complementaire);
+  /* &:visited {
+    color: var(--complementaire);
+  } */
 }
 a:hover, a:focus, a:active {
   color: var(--primaire);
@@ -452,10 +452,9 @@ a:hover, a:focus, a:active {
   background-color: var(--simili-noir);
 }
 
-.menu-evenements {
+/* .menu-evenements {
   background-color: var(--simili-noir);
-}
-
+} */
 /* 
 ** Tout ce qui concerne la balise body
 ** 
@@ -471,7 +470,45 @@ body {
 /*---------------------------page projet et évènement-------------------------*/
 /*-------------------navigation----------------*/
 .site__aside {
-  padding: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+}
+.site__aside .menu-evenements {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0 auto;
+  width: 80%;
+}
+.site__aside .menu-evenements .menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.site__aside .menu-evenements .menu li {
+  font-family: var(--police-titre);
+  font-size: 21px;
+  margin-left: 0.8em;
+  margin-right: 0.8em;
+  text-align: center;
+}
+.site__aside .menu-evenements .menu li:last-of-type {
+  position: relative;
+  width: auto;
+}
+.site__aside .menu-evenements .menu li:hover .sub-menu {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+}
+.site__aside .menu-evenements .menu li:hover .sub-menu li {
+  font-size: 18px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  width: auto;
 }
 .site__aside .menu_toggle_projet {
   background-color: transparent;
@@ -495,7 +532,11 @@ body {
   display: none;
 }
 
+/*----------------------bureau------------------------------*/
 @media screen and (min-width: 992px) {
+  .projet_titre {
+    padding-top: 1em;
+  }
   .site__aside {
     align-items: center;
     display: flex;
@@ -525,6 +566,9 @@ body {
     margin-left: 0.8em;
     margin-right: 0.8em;
     text-align: center;
+  }
+  .site__aside .menu-projets .menu li a, .site__aside .menu-evenements .menu li a {
+    color: var(--blanc);
   }
   .site__aside .menu-projets .menu li:last-of-type, .site__aside .menu-evenements .menu li:last-of-type {
     position: relative;
@@ -585,6 +629,10 @@ body {
 }
 
 /*----------------projet/évènement-------------*/
+.projet_titre {
+  text-align: center;
+}
+
 .categorie__section {
   display: flex;
   flex-wrap: wrap;
@@ -673,6 +721,8 @@ body {
   margin-right: 0.5em;
 }
 
+/*-----------------------------single evenement------------------------------------*/
+/*-----------------------------single evenement fin------------------------------------*/
 /*-----------------------------single projet bureau------------------------------------*/
 @media screen and (min-width: 992px) {
   /* .section_single > *{
@@ -748,14 +798,19 @@ body {
   //padding-bottom: 2.5rem;
   border-bottom: 2px solid var(--blanc);
   } */
-  color: var(--blanc);
+  /* color: var(--blanc);
   text-decoration: none;
-}
-.main-navigation .menu-menu-principal-container:visited {
+  &:visited {
   color: var(--complementaire);
+  }
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--primaire);
+  } */
 }
-.main-navigation .menu-menu-principal-container:hover, .main-navigation .menu-menu-principal-container:focus, .main-navigation .menu-menu-principal-container:active {
-  color: var(--primaire);
+.main-navigation .menu-menu-principal-container a {
+  color: var(--blanc);
 }
 
 /* -----------------------------------------------------------------------------
@@ -1105,13 +1160,7 @@ menu tablet
 .diaporama img {
   height: 100%;
   max-width: 100%;
-
   object-fit: cover;
-
-  mix-blend-mode: var(--ar-blend);
-  object-fit: cover;
-  opacity: var(--opacite);
-
   padding: 0;
   position: absolute;
   margin: 0;

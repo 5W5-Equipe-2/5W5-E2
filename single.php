@@ -103,13 +103,13 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             <?php if (has_term(array('evenements'), 'category')) { ?>
               <!-- /****Modèle si c'est la catégorie evenements *************************************************/ -->
               <!-- Afficher les informations des champs AFC -->
-              <div class="">
+              <div class="information_single">
                 <p>Information (et inscription)</p>
                 <p>Qui : <?php the_field('qui'); ?></p>
                 <p>Quoi : <?php the_field('quoi'); ?></p>
                 <p>Lieu : <?php the_field('lieu'); ?></p>
                 <p>Quand : <?php the_field('date_et_heure'); ?></p>
-              </div>
+              
 
               <!-- Afficher les informations quant à l'heure et la date de la publication-->
               <div class="">
@@ -141,6 +141,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
                 </svg>
                 <!-- Afficher la date et heure de la mise-à-jour'-->
                 <p>Heure de mise à jour : <?php the_modified_time('j F Y \à G:i'); ?></p>
+              </div>
               </div>
             <?php } ?>
           </div>

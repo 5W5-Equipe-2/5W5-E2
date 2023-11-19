@@ -17,7 +17,53 @@ body {
 /*-------------------navigation----------------*/
 
 .site__aside{
-  padding: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+
+  .menu-evenements{
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 80%;
+    .menu{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      li{
+        font-family: var(--police-titre);
+        font-size: 21px;
+        margin-left: 0.8em;
+        margin-right: 0.8em;
+        text-align: center;
+        //width: 10vw;
+      }
+
+      li:last-of-type{
+        //height: auto;
+        position: relative;
+        width: auto;
+    }
+
+      li:hover .sub-menu{
+        display: flex;
+        flex-direction: row;
+        //margin-left: 0.8em;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 100%;
+
+        li{
+          font-size: 18px;
+          margin-left: 0.5em;
+          margin-right: 0.5em;
+          width: auto;
+        }
+      }
+    }
+  }
 
   .menu_toggle_projet{
     background-color: transparent;
@@ -47,7 +93,13 @@ body {
   }
 }
 
+/*----------------------bureau------------------------------*/
+
   @media screen and (min-width : $largeur__bureau){
+
+    .projet_titre{
+      padding-top: 1em;
+    }
 
     .site__aside{
       align-items: center;
@@ -79,6 +131,10 @@ body {
           margin-right: 0.8em;
           text-align: center;
           //width: 10vw;
+
+          a{
+            color: var(--blanc);
+          }
         }
 
         li:last-of-type{
@@ -159,6 +215,10 @@ body {
   }
 }
 /*----------------projet/évènement-------------*/
+
+.projet_titre{
+  text-align: center;
+}
 
 .categorie__section{
   display: flex;
@@ -262,7 +322,11 @@ body {
       padding-bottom: 1em;
       
     }
+
+
   }
+
+  
 
   .information_single{
     display: flex;
@@ -288,6 +352,13 @@ body {
     }
   }
 }
+
+/*-----------------------------single evenement------------------------------------*/
+
+
+
+
+/*-----------------------------single evenement fin------------------------------------*/
 
 /*-----------------------------single projet bureau------------------------------------*/
 
@@ -326,7 +397,6 @@ body {
     }
 
     .information_single{
-      
     }
   }
 }
