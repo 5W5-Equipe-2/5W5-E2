@@ -1253,30 +1253,34 @@ menu tablet
 .accueil_evenements .categorie__article div {
   width: 100%;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel {
+.accueil_evenements .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel .contenant__image {
-  height: 80%;
+.accueil_evenements .categorie__article .image_titre_date .contenant__image {
+  height: 78%;
   margin: 0;
   overflow: hidden;
   padding: 0;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel .contenant__image a img {
+.accueil_evenements .categorie__article .image_titre_date .contenant__image a img {
   height: 110%;
   margin: auto auto;
   width: 110%;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre {
+.accueil_evenements .categorie__article .image_titre_date .contenant__titre {
   align-items: center;
   display: flex;
-  height: 11vw;
+  flex-direction: column;
+  height: 12vw;
   justify-content: center;
-}
-.accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre h3 {
   margin: auto;
-  width: fit-content;
+}
+.accueil_evenements .categorie__article .image_titre_date .contenant__titre .conteneur_date {
+  display: flex;
+  gap: 0.3vw;
+  align-items: center;
+  justify-content: center;
 }
 .accueil_evenements .categorie__article .content {
   background-color: var(--simili-noir);
@@ -1293,6 +1297,7 @@ menu tablet
   min-height: 30vh;
   padding-bottom: 5%;
   padding-top: 20vh;
+  position: relative;
 }
 .accueil_programme .widget_block .widget-title {
   margin: 0 auto;
@@ -1318,11 +1323,25 @@ menu tablet
   border: 1px solid var(--simili-noir);
   color: var(--simili-noir);
 }
+.accueil_programme .widget_block:nth-of-type(2) {
+  margin: 0;
+}
+.accueil_programme .widget_block:nth-of-type(2) p {
+  color: white;
+  z-index: 4;
+}
+.accueil_programme .widget_block:last-of-type {
+  margin: 0;
+  background-color: rgb(186, 186, 206);
+}
+.accueil_programme .widget_block:last-of-type p {
+  color: white;
+  z-index: 4;
+}
 
 @media screen and (min-width: 800px) {
   .accueil_evenements {
-    padding-bottom: 2vw;
-    padding-top: 4vw;
+    padding: 4vw 0;
   }
   .accueil_evenements h2 {
     padding-bottom: 3vw;
@@ -1337,13 +1356,13 @@ menu tablet
     justify-content: space-between;
     width: 82vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel {
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_date {
     border-radius: 7%;
     overflow: hidden;
     width: 35vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel .contenant__titre {
-    height: 6vw;
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_date .contenant__titre {
+    height: 6.5vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content {
     border-radius: 7%;
@@ -1366,7 +1385,9 @@ menu tablet
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
     display: flex;
     justify-content: left;
+    align-items: center;
     width: 38vw;
+    gap: 0.3vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
@@ -1389,8 +1410,7 @@ menu tablet
 }
 @media screen and (min-width: 1800px) {
   .accueil_evenements {
-    padding-bottom: 1vw;
-    padding-top: 3vw;
+    padding: 3vw 0;
   }
   .accueil_evenements h2 {
     padding-bottom: 1vw;
@@ -1403,11 +1423,11 @@ menu tablet
     height: 23vw;
     width: 75vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel {
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_date {
     width: 30vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel .contenant__titre {
-    height: 4.5vw;
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_date .contenant__titre {
+    height: 5vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content {
     width: 44vw;
