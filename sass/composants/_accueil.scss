@@ -54,7 +54,7 @@
       width: 100%;
     }
     // Les informations necessaires/importants -titre -image -Date
-    .image_titre_carrousel{
+    .image_titre_date{
       background-color: var(--simili-noir);
       height: 100%;
       .contenant__image {
@@ -130,24 +130,20 @@
     }
   }
   .widget_block:nth-of-type(2){
-    position: relative;
     margin: 0;
     p{
       color: white;
+      z-index: 4;
     }
-    .wp-block-image{
-       margin: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      min-height: 30vh;
-      img{
-        margin: 0;
-        height: 30vh;
-        opacity: 0.5;
-      }
+  }
+  .widget_block:last-of-type{
+    margin: 0;
+    background-color: rgb(186, 186, 206);
+    p{
+      color: white;
+      z-index: 4;
     }
+
   }
 }
 
@@ -169,7 +165,7 @@
         width: 82vw; // ajustement de largeur
 
         // Les informations necessaires/importants -titre -image -Date
-        .image_titre_carrousel{
+        .image_titre_date{
           border-radius: 7%; // arrondis
           overflow: hidden; // pour garder les coins arrondis
           width: 35vw;
@@ -237,7 +233,7 @@
         height: 23vw;
         width: 75vw;
         // Les informations necessaires/importants -titre -image -Date
-        .image_titre_carrousel{
+        .image_titre_date{
           width: 30vw;
           .contenant__titre{
           height: 5vw; // le full height - l'hauteur de l'image

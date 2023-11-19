@@ -1065,22 +1065,22 @@ menu tablet
 .accueil_evenements .categorie__article div {
   width: 100%;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel {
+.accueil_evenements .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel .contenant__image {
+.accueil_evenements .categorie__article .image_titre_date .contenant__image {
   height: 78%;
   margin: 0;
   overflow: hidden;
   padding: 0;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel .contenant__image a img {
+.accueil_evenements .categorie__article .image_titre_date .contenant__image a img {
   height: 110%;
   margin: auto auto;
   width: 110%;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre {
+.accueil_evenements .categorie__article .image_titre_date .contenant__titre {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -1088,7 +1088,7 @@ menu tablet
   justify-content: center;
   margin: auto;
 }
-.accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre .conteneur_date {
+.accueil_evenements .categorie__article .image_titre_date .contenant__titre .conteneur_date {
   display: flex;
   gap: 0.3vw;
   align-items: center;
@@ -1136,24 +1136,19 @@ menu tablet
   color: var(--simili-noir);
 }
 .accueil_programme .widget_block:nth-of-type(2) {
-  position: relative;
   margin: 0;
 }
 .accueil_programme .widget_block:nth-of-type(2) p {
   color: white;
+  z-index: 4;
 }
-.accueil_programme .widget_block:nth-of-type(2) .wp-block-image {
+.accueil_programme .widget_block:last-of-type {
   margin: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 30vh;
+  background-color: rgb(186, 186, 206);
 }
-.accueil_programme .widget_block:nth-of-type(2) .wp-block-image img {
-  margin: 0;
-  height: 30vh;
-  opacity: 0.5;
+.accueil_programme .widget_block:last-of-type p {
+  color: white;
+  z-index: 4;
 }
 
 @media screen and (min-width: 800px) {
@@ -1173,12 +1168,12 @@ menu tablet
     justify-content: space-between;
     width: 82vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel {
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_date {
     border-radius: 7%;
     overflow: hidden;
     width: 35vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel .contenant__titre {
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_date .contenant__titre {
     height: 6.5vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content {
@@ -1240,10 +1235,10 @@ menu tablet
     height: 23vw;
     width: 75vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel {
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_date {
     width: 30vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel .contenant__titre {
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_date .contenant__titre {
     height: 5vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content {
