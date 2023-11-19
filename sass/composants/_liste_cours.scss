@@ -1,15 +1,267 @@
-        table {
-            border-collapse: collapse;
-            width: 100%;
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+button {
+    //margin: 10px;
+}
+
+/*-----------------------description et inscription--------------------------*/
+
+.info_programme{
+
+    .description_programme{
+
+        margin: 0 auto;
+        margin-top: 2em;
+        width: 80%;
+        h2{
+            padding-bottom: 2em;
         }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
+    }
+
+    .inscription_programme{
+        align-items: center;
+        background-color: var(--complementaire);
+        display: flex;
+        flex-direction: column;
+
+        h2{
+            margin: 1.5em;
+            text-align: center;
         }
-        th {
-            background-color: #f2f2f2;
+
+        a{
+            background-color: var(--complementaire);
+            border: 1px solid var(--simili-noir);
+            border-radius: 50em;
+            color: var(--simili-noir);
+            font-family: var(--police-texte);
+            margin-bottom: 1.5em;
+            padding: 0.4em;
+            padding-left: 2em;
+            padding-right: 2em;
+            text-align: center;
         }
-        button {
-            margin: 10px;
+    }
+
+}
+
+.site_main_programme{
+    hr{
+        background-color: black;
+        height: 0.1vh;
+        margin: 0 auto;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        width: 15%;  
+      }
+}
+
+/*-----------------------description et inscription fin--------------------------*/
+
+/*-----------------------liste cours--------------------------*/
+
+.Liste_programme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3{
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .cours_session{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        //margin: 0 auto;
+        //width: 50vw;
+        .filter-button{
+            background-color: transparent;
+            border: none;
+            font-family: var(--police-texte);
+            margin: 1em;
         }
+    }
+
+    #content{
+        border-radius: 2em;
+        background-color: var(--simili-noir);
+        display: flex;
+        flex-direction: column;
+        height: 40em;
+        overflow: hidden;
+        position: relative;
+        width: 80%;
+
+        .article-button{ //boutton pour les cours
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid var(--blanc);
+            color: var(--blanc);
+            font-family: var(--police-texte);
+            flex: 1;
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .article-button:last-of-type{
+            border: none;
+        }
+
+        .article-content{
+            background-color: var(--simili-noir);
+            color: var(--blanc);
+            display: flex;
+            flex-direction: column;
+            font-family: var(--police-texte);
+            padding: 1em;
+            position: absolute;
+
+            /* top: 1em;
+            left: 1em;
+            right: 1em;
+            bottom: 1em; */
+
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+
+            .boutton_retour{ //boutton retour
+                background-color: transparent;
+                border: 1px solid var(--blanc);
+                border-radius: 50em;
+                color: var(--blanc);
+                height: 5%;
+                margin-bottom: 1em;
+                width: 6em;
+            }
+
+            p{  //description du cours
+                border-bottom: 2px solid var(--blanc);
+                height: 65%;
+                //flex: 2;
+                overflow: auto;
+                //scrollbar-color: var(--blanc);
+            }
+
+            .related-projets{ //en dessous de la description d'un cours
+                align-items: center;
+                display: flex;
+                //flex: 1;
+                flex-direction: row;
+                height: 20%;
+                margin-top: 2em;
+                width: 100%;
+                //bottom: 0;
+
+                a{ //voir plus de projets réalisé
+                    color: var(--blanc);
+                    flex-basis: 40%;
+                }
+
+                .related-articles{ //projets
+                    align-items: center;
+                    //align-content: space-between;
+                    display: flex;
+                    justify-content: space-around;
+                    //flex-direction: column;
+                    flex-wrap: wrap;
+                    //margin: 0 auto;
+                    //height: 100%;
+                    flex-basis: 60%;
+                    //height: 100%;
+                    //max-height: 100%;
+
+                    a{
+                        //display: flex;
+                        //align-content: stretch;
+                        //flex-basis: auto;
+                        margin: 5%;
+                        //float: right;
+                        img{
+                            //max-height: 100%;
+                            border-radius: 10%;
+                            //height: auto;
+                            //width: 100%;
+                        }
+                    }
+                }
+
+            }
+        } 
+    }
+}
+
+/*--------------------------------bureau------------------------*/
+
+@media screen and (min-width : $largeur__bureau){
+
+    .Liste_programme{
+        #content{
+            align-items: flex-start;
+
+            .article-button{
+                width: 90%;
+                text-align: left;
+            }
+
+            .article-content{
+                padding: 2em;
+                //border: 1px solid aqua;
+                //left: 40%;
+
+                button{
+                    margin-bottom: 2em;
+                    //display: none;
+                }
+
+                p{
+                    //height: 70%;
+                }
+
+                .related-projets{
+                    .related-articles{
+                        flex-wrap: nowrap;
+                        flex-direction: row;
+                    }
+                }
+            }
+        }
+
+    }
+}
+/*---------------------------inscription bureau------------------*/
+@media screen and (min-width : 1400px){ //inscription pour bureau
+    .info_programme{
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        width: 80%;
+
+        .description_programme{
+            flex: 2;
+            margin-right: 5%;
+        }
+        .inscription_programme{
+            border-radius: 2em;
+            flex: 1;
+        }
+
+        hr{
+            display: none;
+        }
+    }
+}
+/*-----------------------liste cours fin--------------------------*/
