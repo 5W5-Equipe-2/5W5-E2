@@ -1,139 +1,140 @@
 /* Pour front-page.php */
 
 .media_vedette {
- 
-  height: 72vh; // A changer
-  opacity: 0.85;
+  
+  height: 75vh; // A changer
+  min-height: 100%; 
+  opacity: 0.8;
   position: relative;
   width: 100%;
 
-
+  img {
+    width: 100%;
+  }
   .reseaux_sociaux{
+    background-color: var(--noir);
     position: absolute;
     right: 0;
-    bottom: 5vh;
+    bottom: 10vh;
     margin: 0;
-    padding: 0;
+    padding: 0.5vh 0;
     div{
-      width: 50%;
+      width: 55%;
       height: 10%;
+      margin: 0 auto;
       figure{
         // Petit espacement
         padding: 1% 0;
-        img{
+        img {
           // Centrer les images
-          display: block; 
+          display: block;
           margin: auto;
         }
       }
       @media screen and (min-width:$largeur__tablette){
-      width: 70%;
+      width: 75%;
     }
     }
   }
-  span{
-    // border: 3px solid red;
-    color: var(--blanc); // couleur texte blanc
-    font-family: var(--police-titre);
-    font-size: clamp(8rem, 10vw, 0rem);
-    margin: 0;
-    opacity: 0;
+  .logo_tim{
+    display: flex; // pour enlever le gap
+    left: 0; // centrer les logo
+    margin:  0 auto; // centrer les logo
+    position: absolute; // pour le mettre par dessus le média-vedette
+    right: 0; // centrer les logo
+    top: 50%; // aligner au axe vertical
+    width: fit-content; // centrer les logo
+    
+    span{
+      opacity: 0;
+      img{
+        height: 10vh; // tablette 15, bureau 20
+        margin: 0;
+        padding: 0;
+        width: auto;  
+      }
+    }
+    span:first-of-type{ // Lettre T
+      animation: animation-apparition-lettre 2s ease-in-out forwards;
+    }
+    span:last-of-type{ // Lettre M
+      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
+    }
+  }
+  .logo_tim::after{ //surlignement
+    animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards;
+    transform-origin: left;
+    border-bottom: 0.5vh solid rgb(255, 255, 255);
+    bottom: -5%;
+    content: "";
+    position: absolute;
+    width: 100%;
+  }
+  .sous_titre{
+    height: 100%;
+    left: 0;
+    position: absolute; // pour le mettre par dessus le média-vedette
+    top: 0;
+    width: 100%;
+    color: var(--blanc);
+    div{
+      position: absolute;
+    }
+    div:first-of-type,div:nth-of-type(2){ // nom de la technique et code
+      left: 5vw;
+      top: 5vh;
+    }
+    div:last-of-type{ // Collège de maisonneuve
+      bottom: 10%; // aligner au axe vertical
+      left: 0; // centrer les logo
+      margin:  0 auto; // centrer les logo
+      position: absolute; // pour le mettre par dessus le média-vedette
+      right: 0; // centrer les logo
+      // text-align: left;
+      width: max-content;
+    }
+  }
+  .fleche{
+    bottom: 5%; // aligner au axe vertical
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid var(--blanc);
+    left: 0; // centrer les logo
+    margin:  0 auto; // centrer les logo
+    position: absolute; // pour le mettre par dessus le média-vedette
+    right: 0; // centrer les logo
+    width: max-content;
+  }
+}
+.diaporama {
+  display: flex;
+  flex: 1 1 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
     padding: 0;
     position: absolute;
-    transform-origin: center;
-    text-align: center;
-    width: 10vw;
+    margin: 0;
+    width: 100%;
   }
-  span:first-of-type{ // Lettre T
-    animation-duration: 2s; // Durée de l'animation
-    animation-fill-mode: forwards; // Pour qu'il reste au dernier frame
-    animation-name: test; // Nom de l'animation
-    left: calc(28vw - 0vw);
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir); // outline
-    @media screen and (min-width:$largeur__tablette){
-      left: calc(40vw - 3vw); // Un peu plus a gauche que le i
-    }
-  }
-  span:nth-of-type(2){ // Lettre I
-    animation-delay: 0.3s;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-name: test;
-    color: var(--primaire);
-    left: 40vw; // Au centre
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-    z-index: 2; // Plus avancé que les autre lettre
-  }
-  span:last-of-type{ // Lettre M
-    animation-delay: 0.5s;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    animation-name: test;
-    animation-timing-function: ease-in-out;
-    left: 45vw;
-    text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-     @media screen and (min-width:$largeur__tablette){
-      left: calc(45vw - 0vw); // Un peu plus a gauche que le i
-    }
-  }
-  @keyframes test {
-    0%{top: -10%; opacity: 0;}
-    50%{top: 50%; opacity: 1;}
-    75%{top: 45%; opacity: 0.8;}
-    100%{top: 50%;opacity: 1;}
-  }
-  
 }
 
-/*
-Code basé sur le CSS Duotone Generator
-https://cssduotone.com/
-*/
-
-
-:root {
---base:              #000000;
---ar-blend:          screen;
---blur:              0px;
---av-blend:          exclusion;
---avant-plan:        #1d1d37;
---opacite:           0.7;
+.masquer-image {
+  opacity: 0;
 }
 
-.img-wrapper {
-background-color:    var(--base);
-display:             flex;
-flex:                1 1 100%;
-height:              100%;
-overflow:            hidden;
-position:            relative;
+@keyframes animation-apparition-lettre { // une animation d'apparition'
+  0%{transform: translateY(0vh); opacity: 0;}
+  50%{transform: translateY(0vh); opacity: 1;}
+  75%{transform: translateY(-5vh); opacity: 0.8;}
+  100%{transform: translateY(0vh);opacity: 1;}
 }
-
-
-.img-wrapper img {
-filter:              grayscale(100%) contrast(1) blur(var(--blur));
-flex:                1 0 100%;
-height:              100%;
-max-width:           100%;
-mix-blend-mode:      var(--ar-blend);
-object-fit:          cover;
-opacity:             var(--opacite);
-padding: 0;
-position:            relative;
-margin: 0;
-width:               100%;
-}
-
-.img-wrapper::before {
-background-color:    var(--avant-plan);
-bottom:              0;
-content:             '';
-height:              100%;
-left:                0;
-mix-blend-mode:      var(--av-blend);
-position:            absolute;
-right:               0;
-top:                 0;
-width:               100%;
-z-index:             1
+@keyframes animation-apparition-surlignement { // une animation d'apparition'
+  0%{transform: scaleX(0); opacity: 0;}
+  100%{transform: scaleX(1);opacity: 1;}
 }

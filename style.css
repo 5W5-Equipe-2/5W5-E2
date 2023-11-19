@@ -372,19 +372,15 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.2rem, -0.3125rem + 2.8vw, 2.2rem);
+  font-size: clamp(1.375rem, 1.3194rem + 0.2963vw, 1.875rem);
 }
 
 h3 {
   font-size: clamp(1.1rem, 2.6vw, 1.6rem);
 }
 
-h4 {
+h4, h5 {
   font-size: clamp(1rem, -0.1875rem + 2.2vw, 1.5rem);
-}
-
-h5 {
-  font-size: clamp(0.9rem, 1.7vw, 1.4rem);
 }
 
 h6 {
@@ -394,7 +390,7 @@ h6 {
 p,
 ul,
 li {
-  font-size: clamp(0.8rem, 0.6rem + 1.16vw, 1rem);
+  font-size: clamp(1rem, 0.9653rem + 0.1852vw, 1.3125rem);
   font-family: var(--police-texte);
   line-height: 150%;
 }
@@ -997,21 +993,27 @@ menu tablet
 
 /* Pour front-page.php */
 .media_vedette {
-  height: 72vh;
-  opacity: 0.85;
+  height: 75vh;
+  min-height: 100%;
+  opacity: 0.8;
   position: relative;
   width: 100%;
 }
+.media_vedette img {
+  width: 100%;
+}
 .media_vedette .reseaux_sociaux {
+  background-color: var(--noir);
   position: absolute;
   right: 0;
-  bottom: 5vh;
+  bottom: 10vh;
   margin: 0;
-  padding: 0;
+  padding: 0.5vh 0;
 }
 .media_vedette .reseaux_sociaux div {
-  width: 50%;
+  width: 55%;
   height: 10%;
+  margin: 0 auto;
 }
 .media_vedette .reseaux_sociaux div figure {
   padding: 1% 0;
@@ -1022,133 +1024,140 @@ menu tablet
 }
 @media screen and (min-width: 800px) {
   .media_vedette .reseaux_sociaux div {
-    width: 70%;
+    width: 75%;
   }
 }
-.media_vedette span {
-  color: var(--blanc);
-  font-family: var(--police-titre);
-  font-size: clamp(8rem, 10vw, 0rem);
-  margin: 0;
-  opacity: 0;
-  padding: 0;
+.media_vedette .logo_tim {
+  display: flex;
+  left: 0;
+  margin: 0 auto;
   position: absolute;
-  transform-origin: center;
-  text-align: center;
-  width: 10vw;
+  right: 0;
+  top: 50%;
+  width: fit-content;
 }
-.media_vedette span:first-of-type {
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-name: test;
-  left: 28vw;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+.media_vedette .logo_tim span {
+  opacity: 0;
 }
-@media screen and (min-width: 800px) {
-  .media_vedette span:first-of-type {
-    left: 37vw;
-  }
+.media_vedette .logo_tim span img {
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+  width: auto;
 }
-.media_vedette span:nth-of-type(2) {
-  animation-delay: 0.3s;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-name: test;
-  color: var(--primaire);
-  left: 40vw;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
-  z-index: 2;
+.media_vedette .logo_tim span:first-of-type {
+  animation: animation-apparition-lettre 2s ease-in-out forwards;
 }
-.media_vedette span:last-of-type {
-  animation-delay: 0.5s;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-  animation-name: test;
-  animation-timing-function: ease-in-out;
-  left: 45vw;
-  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
+.media_vedette .logo_tim span:last-of-type {
+  animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
 }
-@media screen and (min-width: 800px) {
-  .media_vedette span:last-of-type {
-    left: 45vw;
-  }
+.media_vedette .logo_tim::after {
+  animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards;
+  transform-origin: left;
+  border-bottom: 0.5vh solid rgb(255, 255, 255);
+  bottom: -5%;
+  content: "";
+  position: absolute;
+  width: 100%;
 }
-@keyframes test {
-  0% {
-    top: -10%;
-    opacity: 0;
-  }
-  50% {
-    top: 50%;
-    opacity: 1;
-  }
-  75% {
-    top: 45%;
-    opacity: 0.8;
-  }
-  100% {
-    top: 50%;
-    opacity: 1;
-  }
+.media_vedette .sous_titre {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  color: var(--blanc);
 }
-
-/*
-Code basé sur le CSS Duotone Generator
-https://cssduotone.com/
-*/
-:root {
-  --base: #000000;
-  --ar-blend: screen;
-  --blur: 0px;
-  --av-blend: exclusion;
-  --avant-plan: #1d1d37;
-  --opacite: 0.7;
+.media_vedette .sous_titre div {
+  position: absolute;
+}
+.media_vedette .sous_titre div:first-of-type, .media_vedette .sous_titre div:nth-of-type(2) {
+  left: 5vw;
+  top: 5vh;
+}
+.media_vedette .sous_titre div:last-of-type {
+  bottom: 10%;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: max-content;
+}
+.media_vedette .fleche {
+  bottom: 5%;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid var(--blanc);
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  width: max-content;
 }
 
-.img-wrapper {
-  background-color: var(--base);
+.diaporama {
   display: flex;
   flex: 1 1 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
 }
-
-.img-wrapper img {
-  filter: grayscale(100%) contrast(1) blur(var(--blur));
-  flex: 1 0 100%;
+.diaporama img {
   height: 100%;
   max-width: 100%;
+
+  object-fit: cover;
+
   mix-blend-mode: var(--ar-blend);
   object-fit: cover;
   opacity: var(--opacite);
+
   padding: 0;
-  position: relative;
+  position: absolute;
   margin: 0;
   width: 100%;
 }
 
-.img-wrapper::before {
-  background-color: var(--avant-plan);
-  bottom: 0;
-  content: "";
-  height: 100%;
-  left: 0;
-  mix-blend-mode: var(--av-blend);
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
-  z-index: 1;
+.masquer-image {
+  opacity: 0;
 }
 
+@keyframes animation-apparition-lettre {
+  0% {
+    transform: translateY(0vh);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-5vh);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+@keyframes animation-apparition-surlignement {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
 /* 
 ** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
  ---> les balises section, article, les div
 */
 .accueil_description {
   background-color: var(--blanc);
-  padding-bottom: 5vh;
+  padding-top: 3vh;
+  padding-bottom: 6vh;
   width: 100%;
 }
 .accueil_description div {
@@ -1156,63 +1165,73 @@ https://cssduotone.com/
 }
 .accueil_description p, .accueil_description h2 {
   margin: 0 auto;
-  width: 80vw;
+  width: 75vw;
 }
 .accueil_description hr {
   background-color: black;
   height: 0.1vh;
   margin: 0 auto;
-  margin-top: 5vh;
+  margin-top: 6vh;
   width: 15%;
 }
 
 .accueil_evenements {
   background-color: var(--primaire);
-  padding-bottom: 4vh;
-  padding-top: 4vh;
+  padding-top: 8vw;
+  padding-bottom: 6vw;
   width: 100%;
   /* Boite d'évènement récent */
 }
-.accueil_evenements h4 {
-  padding-bottom: 2vh;
+.accueil_evenements a {
+  color: var(--blanc);
+}
+.accueil_evenements h2 {
   text-align: center;
+  padding-bottom: 8vw;
 }
 .accueil_evenements .evenements_recents {
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-  justify-content: space-around;
+  height: 75vw;
 }
 .accueil_evenements .categorie__article {
-  background-color: var(--simili-noir);
-  border-radius: 5%;
+  border-radius: 2vh;
   color: var(--blanc);
-  margin: 0 auto;
+  display: flex;
+  height: 55vw;
   overflow: hidden;
   text-align: center;
-  width: 90vw;
+  width: 85vw;
 }
-.accueil_evenements .categorie__article div:first-child {
-  background-color: var(--simili-noir);
-}
-.accueil_evenements .categorie__article div:first-child a img {
-  margin: 0;
+.accueil_evenements .categorie__article div {
   width: 100%;
 }
-.accueil_evenements .categorie__article div:first-child h3 {
-  margin-top: 1.5vh;
-}
-.accueil_evenements .categorie__article div:first-child div {
-  display: flex;
-  font-weight: bold;
-  gap: 2px;
-  justify-content: center;
-  margin-top: 0.5vh;
-  padding-bottom: 1.5vh;
-}
-.accueil_evenements .categorie__article div:nth-child(2) {
-  display: none;
+.accueil_evenements .categorie__article .image_titre_carrousel {
   background-color: var(--simili-noir);
+  height: 100%;
+}
+.accueil_evenements .categorie__article .image_titre_carrousel .contenant__image {
+  height: 80%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+}
+.accueil_evenements .categorie__article .image_titre_carrousel .contenant__image a img {
+  height: 110%;
+  margin: auto auto;
+  width: 110%;
+}
+.accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre {
+  align-items: center;
+  display: flex;
+  height: 11vw;
+  justify-content: center;
+}
+.accueil_evenements .categorie__article .image_titre_carrousel .contenant__titre h3 {
+  margin: auto;
+  width: fit-content;
+}
+.accueil_evenements .categorie__article .content {
+  background-color: var(--simili-noir);
+  display: none;
 }
 
 .accueil_programme {
@@ -1225,7 +1244,6 @@ https://cssduotone.com/
   min-height: 30vh;
   padding-bottom: 5%;
   padding-top: 20vh;
-  position: relative;
 }
 .accueil_programme .widget_block .widget-title {
   margin: 0 auto;
@@ -1244,9 +1262,7 @@ https://cssduotone.com/
   padding-bottom: 5%;
 }
 .accueil_programme .widget_block:first-of-type .wp-block-buttons {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
+  padding-top: 10%;
 }
 .accueil_programme .widget_block:first-of-type .wp-block-buttons a {
   background-color: var(--complementaire);
@@ -1256,71 +1272,96 @@ https://cssduotone.com/
 
 @media screen and (min-width: 800px) {
   .accueil_evenements {
-    min-height: 90vh;
+    padding-bottom: 2vw;
+    padding-top: 4vw;
+  }
+  .accueil_evenements h2 {
+    padding-bottom: 3vw;
+  }
+  .accueil_evenements .evenements_recents {
+    height: 40vw;
     /* Boite d'évènement récent */
   }
-  .accueil_evenements .categorie__article {
-    background-color: var(--primaire);
+  .accueil_evenements .evenements_recents .categorie__article {
     border-radius: 0;
-    color: var(--blanc);
-    display: flex;
+    height: 30vw;
     justify-content: space-between;
-    width: 80vw;
+    width: 82vw;
   }
-  .accueil_evenements .categorie__article div:first-child {
-    background-color: var(--simili-noir);
-    border-radius: 5%;
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel {
+    border-radius: 7%;
     overflow: hidden;
     width: 35vw;
   }
-  .accueil_evenements .categorie__article div:first-child a img {
-    margin: 0;
-    width: 100%;
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel .contenant__titre {
+    height: 6vw;
   }
-  .accueil_evenements .categorie__article div:first-child div {
-    display: flex;
-    font-weight: bold;
-    gap: 2px;
-    justify-content: center;
-    margin-top: 0.5vh;
-    padding-bottom: 1.5vh;
-  }
-  .accueil_evenements .categorie__article div:nth-child(2) {
-    border-radius: 5%;
+  .accueil_evenements .evenements_recents .categorie__article .content {
+    border-radius: 7%;
     display: block;
-    overflow: hidden;
+    position: relative;
     text-align: left;
-    width: 44vw;
+    width: 46vw;
   }
-  .accueil_evenements .categorie__article div:nth-child(2) p, .accueil_evenements .categorie__article div:nth-child(2) h5, .accueil_evenements .categorie__article div:nth-child(2) div {
+  .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+  }
+  .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu h5, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
     margin: 0 auto;
-    width: 35vw;
+    width: 38vw;
   }
-  .accueil_evenements .categorie__article div:nth-child(2) p:first-child {
-    margin-top: 2vh;
-  }
-  .accueil_evenements .categorie__article div:nth-child(2) h5 {
-    margin-top: 2vh;
-  }
-  .accueil_evenements .categorie__article div:nth-child(2) div {
+  .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
     display: flex;
     justify-content: left;
+    width: 38vw;
   }
-  .accueil_evenements .categorie__article div:nth-child(2) div:first-of-type {
-    margin-top: 2vh;
-  }
-  .accueil_evenements .categorie__article div:nth-child(2) div:last-of-type {
-    padding-bottom: 2vh;
+  .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
+    padding-bottom: 1.5vw;
   }
   .accueil_programme {
     flex-direction: row;
   }
   .accueil_programme .widget_block {
-    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    padding-bottom: 0;
+    padding-top: 16vh;
     width: inherit;
   }
   .accueil_programme .widget_block:first-of-type {
+    justify-content: flex-start;
     padding-top: 5%;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .accueil_evenements {
+    padding-bottom: 1vw;
+    padding-top: 3vw;
+  }
+  .accueil_evenements h2 {
+    padding-bottom: 1vw;
+  }
+  .accueil_evenements .evenements_recents {
+    height: 30vw;
+    /* Boite d'évènement récent */
+  }
+  .accueil_evenements .evenements_recents .categorie__article {
+    height: 23vw;
+    width: 75vw;
+  }
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel {
+    width: 30vw;
+  }
+  .accueil_evenements .evenements_recents .categorie__article .image_titre_carrousel .contenant__titre {
+    height: 4.5vw;
+  }
+  .accueil_evenements .evenements_recents .categorie__article .content {
+    width: 44vw;
   }
 }
 table {
