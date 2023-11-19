@@ -1,9 +1,9 @@
 a {
   color: var(--noir);
   text-decoration: none;
-  &:visited {
+  /* &:visited {
     color: var(--complementaire);
-  }
+  } */
   &:hover,
   &:focus,
   &:active {
@@ -21,6 +21,6 @@ a {
   background-color: var(--simili-noir);
 }
 
-.menu-evenements {
+/* .menu-evenements {
   background-color: var(--simili-noir);
-}
+} */

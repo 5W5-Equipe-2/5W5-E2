@@ -224,7 +224,7 @@ function filter_posts()
             echo '<button class="article-button" data-article-id="' . $article_id . '">' . $article_title . '</button>';
 
             // Générez un conteneur pour le contenu de l'article
-            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . $article_content;
+            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . '<button type="button" onclick="hide_decription_cours()" class="boutton_retour">Retour</button>' . '<p>' . $article_content . '</p>';
             // Récupérez les articles ayant la même catégorie que le slug du titre de l'article actuel
             $related_articles_args = array(
                 'post_type' => 'post',
@@ -234,6 +234,13 @@ function filter_posts()
             );
 
             $related_articles_query = new WP_Query($related_articles_args);
+
+            echo '<div class="related-projets">';
+
+            // Générez un lien vers la catégorie
+         //   $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
+         $category_url = '/category/' . $article_category[0]->slug;
+         echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
 
             if ($related_articles_query->have_posts()) :
                 echo '<div class="related-articles">';
@@ -248,10 +255,9 @@ function filter_posts()
                 endwhile;
                 echo '</div>';
             endif;
-            // Générez un lien vers la catégorie
-         //   $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
-            $category_url = '/category/' . $article_category[0]->slug;
-            echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
+
+            echo '</div>';
+
 
             echo '</div>'; // Fermez le conteneur du contenu de l'article
         endwhile;
