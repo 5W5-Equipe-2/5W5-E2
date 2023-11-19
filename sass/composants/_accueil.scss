@@ -58,7 +58,7 @@
       background-color: var(--simili-noir);
       height: 100%;
       .contenant__image {
-        height: 80%;
+        height: 78%;
         margin: 0;
         overflow: hidden;
         padding: 0;
@@ -71,11 +71,15 @@
      .contenant__titre{
         align-items: center;
         display: flex;
-        height: 11vw; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
+        flex-direction: column;
+        height: 12vw; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
         justify-content: center;
-        h3{
-          margin: auto;
-          width: fit-content;
+        margin: auto;
+        .conteneur_date{
+          display: flex;
+          gap: 0.3vw;
+          align-items: center;
+          justify-content: center;
         }
       }
     }
@@ -96,7 +100,7 @@
     min-height: 30vh; 
     padding-bottom: 5%;
     padding-top: 20vh;
-    
+    position: relative;
 
     .widget-title{
       margin: 0 auto; // Centrer horizontalement
@@ -125,7 +129,28 @@
       }
     }
   }
+  .widget_block:nth-of-type(2){
+    position: relative;
+    margin: 0;
+    p{
+      color: white;
+    }
+    .wp-block-image{
+       margin: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 30vh;
+      img{
+        margin: 0;
+        height: 30vh;
+        opacity: 0.5;
+      }
+    }
+  }
 }
+
 
 
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
@@ -149,7 +174,7 @@
           overflow: hidden; // pour garder les coins arrondis
           width: 35vw;
           .contenant__titre{
-          height: 6vw; // le full height - l'hauteur de l'image
+          height: 6.5vw; // le full height - l'hauteur de l'image
           }
         }
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
@@ -172,7 +197,9 @@
             div{ // pour mettre les icone et les information a cote
               display: flex;
               justify-content: left;
+              align-items: center;
               width: 38vw;
+              gap: 0.3vw;
             }
           }
           .contenant_contenu > p:last-of-type, .contenant_contenu > p:first-of-type{  padding-bottom: 1.5vw;}
@@ -213,7 +240,7 @@
         .image_titre_carrousel{
           width: 30vw;
           .contenant__titre{
-          height: 4.5vw; // le full height - l'hauteur de l'image
+          height: 5vw; // le full height - l'hauteur de l'image
           }
         }
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
