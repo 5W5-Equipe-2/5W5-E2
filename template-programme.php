@@ -46,9 +46,9 @@
 
         </div>
 
-        <div class="grille_cours">
+        <!-- <div class="grille_cours">
             <a href="#">Grille de cours</a>
-        </div>
+        </div> -->
 
     </section>
 
