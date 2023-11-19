@@ -17,13 +17,22 @@ body {
 /*-------------------navigation----------------*/
 
 .site__aside{
+  padding: 5%;
+
+  .menu_toggle_projet{
+    background-color: transparent;
+    border: none;
+  }
 
   .sub-menu{
     display: none;
   }
 
   li:hover .sub-menu{
-    display: block;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
   }
 
   .menu-projets{
@@ -36,26 +45,120 @@ body {
       }
     }
   }
+}
 
   @media screen and (min-width : $largeur__bureau){
+
+    .site__aside{
+      align-items: center;
+      display: flex;
+      padding: 0;
+      background-color: var(--simili-noir);
+      min-height: 5vh;
+
+
     .boutton-projet{
       display: none;
     }
     /* .navigation-projet{
       display: none;
     } */
-    .menu-projets{
+    .menu-projets, .menu-evenements{
       display: flex;
-      /* ul{
+      justify-content: flex-start;
+      margin: 0 auto;
+      width: 80%;
+      .menu{
         display: flex;
         flex-direction: row;
-      } */
+
+        li{
+          font-family: var(--police-titre);
+          font-size: 21px;
+          margin-left: 0.8em;
+          margin-right: 0.8em;
+          text-align: center;
+          //width: 10vw;
+        }
+
+        li:last-of-type{
+          //height: auto;
+          position: relative;
+          width: auto;
+      }
+
+        li:hover .sub-menu{
+          display: flex;
+          flex-direction: row;
+          //margin-left: 0.8em;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 100%;
+
+          li{
+            font-size: 18px;
+            margin-left: 0.5em;
+            margin-right: 0.5em;
+            width: auto;
+          }
+        }
+      }
+    }
+    }
+
+      
+  }
+
+
+/*----------------projet toggled-------------*/
+.site__aside.toggled{
+  background-color: var(--simili-noir);
+
+  .menu-projets{
+    display: block;
+    height: 90vh;
+
+    .menu{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      margin: 0 auto;
+      //width: 80%;
+
+      li{  //lien dans la navigation
+        align-items: center;
+        border-bottom: 2px solid var(--blanc);
+        display: flex;
+        //flex: 1;
+        flex-direction: column;
+        font-family: var(--police-titre);
+        font-size: 21px;
+        height: 8%;
+        justify-content: center;
+        width: 100%;
+      }
+
+      li:last-of-type{
+        border: none;
+        //height: auto;
+        position: relative;
+    }
+
+      .sub-menu{
+        position: absolute;
+        top: 100%;
+
+        li{
+          border: none;
+          font-size: 18px;
+        }
+      }
     }
   }
 }
-
-
-/*----------------fin navigation-------------*/
+/*----------------projet/évènement-------------*/
 
 .categorie__section{
   display: flex;
@@ -78,7 +181,7 @@ body {
     //padding: 2em;
     //line-height: 5%;
     text-align: center; // Center le texte
-    width: 80%;
+    width: 90%;
     height: auto;
 
     figure{
@@ -98,33 +201,6 @@ body {
     }
   }
 }
-
-/*----------------------navigation page projet/évènements------------------------*/
-
-/* .site__aside{
-  .menu{
-    display: none;
-  }
-}
-
-@media screen and (min-width : $largeur__bureau){
-  .site__aside{
-    .menu{
-      display: flex;
-      min-height: 5vh;
-
-      .sub-menu{
-        display: flex;
-      }
-    }
-
-    .boutton_projet{
-      display: none;
-    }
-  }
-} */
-
-
 
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
 
@@ -186,14 +262,11 @@ body {
       padding-bottom: 1em;
       
     }
-
-
   }
-
-  
 
   .information_single{
     display: flex;
+    flex-basis: 100%;
     flex-direction: column;
 
     div:first-child{
@@ -215,13 +288,6 @@ body {
     }
   }
 }
-
-/*-----------------------------single evenement------------------------------------*/
-
-
-
-
-/*-----------------------------single evenement fin------------------------------------*/
 
 /*-----------------------------single projet bureau------------------------------------*/
 
@@ -248,7 +314,7 @@ body {
       //flex: 1;
     }
 
-    .wp-block-group{
+    .wp-block-group, p{
       //display: inline-block;
       flex-basis: 40%;
       //flex: 1;
@@ -260,7 +326,7 @@ body {
     }
 
     .information_single{
-      flex: 2;
+      
     }
   }
 }
