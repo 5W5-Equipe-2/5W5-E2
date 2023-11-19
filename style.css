@@ -1631,4 +1631,20 @@ th {
     display: none;
   }
 }
-/*-----------------------liste cours fin--------------------------*//*# sourceMappingURL=style.css.map */
+/*-----------------------liste cours fin--------------------------*/
+.contenant_resultat_recherche {
+  width: 90%;
+  margin: auto;
+  margin-top: 3vh;
+}
+.contenant_resultat_recherche .resultat_recherche {
+  padding: 1vh 0;
+}
+.contenant_resultat_recherche .resultat_recherche h4 a {
+  color: var(--primaire);
+  padding: 0.5vh 0;
+}
+.contenant_resultat_recherche .resultat_recherche p {
+  font-family: var(--police-texte);
+  padding-bottom: 1.5vh;
+}/*# sourceMappingURL=style.css.map */
