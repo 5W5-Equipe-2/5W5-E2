@@ -1208,6 +1208,7 @@ menu tablet
   padding-top: 3vh;
   padding-bottom: 6vh;
   width: 100%;
+  z-index: -2;
 }
 .accueil_description div {
   margin-top: 2vh;
@@ -1229,6 +1230,7 @@ menu tablet
   padding-top: 8vw;
   padding-bottom: 6vw;
   width: 100%;
+  z-index: -2;
   /* Boite d'évènement récent */
 }
 .accueil_evenements a {
@@ -1327,17 +1329,21 @@ menu tablet
   margin: 0;
   background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-1_Tablette-1.png");
   background-size: cover;
+  z-index: -2;
 }
 .accueil_programme .widget_block:nth-of-type(2) h2, .accueil_programme .widget_block:nth-of-type(2) p {
   color: white;
+  z-index: 1;
 }
 .accueil_programme .widget_block:last-of-type {
   margin: 0;
   background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png");
   background-size: cover;
+  z-index: -2;
 }
 .accueil_programme .widget_block:last-of-type h2, .accueil_programme .widget_block:last-of-type p {
   color: white;
+  z-index: 1;
 }
 
 @media screen and (min-width: 800px) {
@@ -1648,4 +1654,10 @@ th {
 .contenant_resultat_recherche .resultat_recherche p {
   font-family: var(--police-texte);
   padding-bottom: 1.5vh;
+}
+
+@media screen and (min-width: 992px) {
+  .contenant_resultat_recherche {
+    width: 88%;
+  }
 }/*# sourceMappingURL=style.css.map */
