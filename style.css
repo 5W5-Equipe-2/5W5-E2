@@ -1325,18 +1325,19 @@ menu tablet
 }
 .accueil_programme .widget_block:nth-of-type(2) {
   margin: 0;
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-1_Tablette-1.png");
+  background-size: cover;
 }
-.accueil_programme .widget_block:nth-of-type(2) p {
+.accueil_programme .widget_block:nth-of-type(2) h2, .accueil_programme .widget_block:nth-of-type(2) p {
   color: white;
-  z-index: 4;
 }
 .accueil_programme .widget_block:last-of-type {
   margin: 0;
-  background-color: rgb(186, 186, 206);
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png");
+  background-size: cover;
 }
-.accueil_programme .widget_block:last-of-type p {
+.accueil_programme .widget_block:last-of-type h2, .accueil_programme .widget_block:last-of-type p {
   color: white;
-  z-index: 4;
 }
 
 @media screen and (min-width: 800px) {
@@ -1631,4 +1632,20 @@ th {
     display: none;
   }
 }
-/*-----------------------liste cours fin--------------------------*//*# sourceMappingURL=style.css.map */
+/*-----------------------liste cours fin--------------------------*/
+.contenant_resultat_recherche {
+  width: 90%;
+  margin: auto;
+  margin-top: 3vh;
+}
+.contenant_resultat_recherche .resultat_recherche {
+  padding: 1vh 0;
+}
+.contenant_resultat_recherche .resultat_recherche h4 a {
+  color: var(--primaire);
+  padding: 0.5vh 0;
+}
+.contenant_resultat_recherche .resultat_recherche p {
+  font-family: var(--police-texte);
+  padding-bottom: 1.5vh;
+}/*# sourceMappingURL=style.css.map */

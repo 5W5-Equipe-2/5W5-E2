@@ -1,0 +1,16 @@
+.contenant_resultat_recherche{
+    width: 90%;
+    margin: auto;
+    margin-top: 3vh;
+    .resultat_recherche{
+        padding: 1vh 0;
+        h4 a{
+            color: var(--primaire);
+            padding: 0.5vh 0;
+        }
+        p{
+            font-family: var(--police-texte);
+            padding-bottom: 1.5vh;
+        }
+    }
+}
