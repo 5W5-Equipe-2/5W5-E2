@@ -7,6 +7,7 @@
   padding-top: 3vh;
   padding-bottom: 6vh;
   width: 100%;
+  z-index: -2;
   div{
     margin-top: 2vh;
   }
@@ -28,6 +29,7 @@
   padding-top: 8vw; // espacement haut
   padding-bottom: 6vw; // espacement bas
   width: 100%; // largeur
+  z-index: -2;
   a{
     color: var(--blanc); //a retirer
   }
@@ -129,21 +131,25 @@
     }
   }
   .widget_block:nth-of-type(2){
-    h2,p{
-      color: white;
-    }
     margin: 0;
     background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-1_Tablette-1.png") ;
     background-size: cover;
+    z-index: -2;
+    h2,p{
+      color: white;
+      z-index: 1;
+    }
   }
   .widget_block:last-of-type{
-     h2,p{
-      color: white;
-    }
     margin: 0;
     // background-color: rgb(186, 186, 206);
     background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png") ;
     background-size: cover;
+    z-index: -2;
+     h2,p{
+      color: white;
+      z-index: 1;
+    }
   }
 }
 
