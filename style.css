@@ -1088,7 +1088,7 @@ menu tablet
   margin: 0 auto;
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 46%;
   width: fit-content;
 }
 .media_vedette .logo_tim span {
@@ -1109,6 +1109,7 @@ menu tablet
 .media_vedette .logo_tim::after {
   animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards;
   transform-origin: left;
+  border: 1px solid var(--noir);
   border-bottom: 0.5vh solid rgb(255, 255, 255);
   bottom: -5%;
   content: "";
@@ -1124,6 +1125,7 @@ menu tablet
   color: var(--blanc);
 }
 .media_vedette .sous_titre div {
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
   position: absolute;
 }
 .media_vedette .sous_titre div:first-of-type, .media_vedette .sous_titre div:nth-of-type(2) {
@@ -1634,6 +1636,9 @@ th {
 }
 /*-----------------------liste cours fin--------------------------*/
 .contenant_resultat_recherche {
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
   width: 90%;
   margin: auto;
   margin-top: 3vh;
