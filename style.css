@@ -1325,18 +1325,19 @@ menu tablet
 }
 .accueil_programme .widget_block:nth-of-type(2) {
   margin: 0;
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-1_Tablette-1.png");
+  background-size: cover;
 }
-.accueil_programme .widget_block:nth-of-type(2) p {
+.accueil_programme .widget_block:nth-of-type(2) h2, .accueil_programme .widget_block:nth-of-type(2) p {
   color: white;
-  z-index: 4;
 }
 .accueil_programme .widget_block:last-of-type {
   margin: 0;
-  background-color: rgb(186, 186, 206);
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png");
+  background-size: cover;
 }
-.accueil_programme .widget_block:last-of-type p {
+.accueil_programme .widget_block:last-of-type h2, .accueil_programme .widget_block:last-of-type p {
   color: white;
-  z-index: 4;
 }
 
 @media screen and (min-width: 800px) {

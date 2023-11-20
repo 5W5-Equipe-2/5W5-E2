@@ -101,7 +101,6 @@
     padding-bottom: 5%;
     padding-top: 20vh;
     position: relative;
-
     .widget-title{
       margin: 0 auto; // Centrer horizontalement
       width: 90%;
@@ -115,35 +114,36 @@
   .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
     background-color: var(--complementaire);
     padding-top: 5%;
+    
     .wp-widget-group__inner-blocks{
       padding-bottom: 5%;
     }
     .wp-block-buttons{ // le bouton plus de détails
       // position: absolute;
       padding-top: 10%;
-      
       a{ // style du bouton
-         background-color: var(--complementaire);
-         border: 1px solid var(--simili-noir);
-         color: var(--simili-noir);
+        background-color: var(--complementaire);
+        border: 1px solid var(--simili-noir);
+        color: var(--simili-noir);
       }
     }
   }
   .widget_block:nth-of-type(2){
-    margin: 0;
-    p{
+    h2,p{
       color: white;
-      z-index: 4;
     }
+    margin: 0;
+    background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-1_Tablette-1.png") ;
+    background-size: cover;
   }
   .widget_block:last-of-type{
-    margin: 0;
-    background-color: rgb(186, 186, 206);
-    p{
+     h2,p{
       color: white;
-      z-index: 4;
     }
-
+    margin: 0;
+    // background-color: rgb(186, 186, 206);
+    background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png") ;
+    background-size: cover;
   }
 }
 
