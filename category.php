@@ -11,10 +11,12 @@ $categorie = get_queried_object();
 $args = array(
     'category_name' => $categorie->slug,
     'order' => ($categorie->slug === 'media') ? 'rand' : 'ASC', //Si c'est media, c'est ordre au hasard
-    'orderby' => 'title'
+    'orderby' => 'title',
+    'posts_per_page' => -1, // Récupérer tous les articles, sans pagination
 );
 $query = new WP_Query($args);
 $cat_slug =  $categorie->slug;
+
 ?>
 
 <?php
@@ -124,7 +126,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             }
         } ?>
 
-        <?php if (!(str_starts_with($cat_url, 'session')) && !(has_term(array('media'), 'category'))) {
+        <?php if (!(str_starts_with($cat_url, 'session'))) {
             // Pour toutes les catégories, sauf les "sessions" et "media"------------------------------->
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post();
@@ -136,16 +138,6 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             endif;
             wp_reset_postdata();
         }
-        ?>
-
-        <?php if ((has_term(array('media'), 'category'))) :
-            // Pour la catégorie "media", qui a sa propre boucle d'affichage"------------------------------->
-            if (!empty($categorie_modele)) {
-                include($categorie_modele);
-            }
-        endif;
-        wp_reset_postdata();
-
         ?>
     </section>
 </main>
