@@ -55,14 +55,14 @@
       }
     }
     span:first-of-type{ // Lettre T
-      animation: animation-apparition-lettre 2s ease-in-out forwards;
+      animation: animation-apparition-lettre 2s ease-in-out forwards, animation-disparition 1.4s ease 3.6s forwards;
     }
     span:last-of-type{ // Lettre M
-      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
+      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
     }
   }
   .logo_tim::after{ //surlignement
-    animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards;
+    animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
     transform-origin: left;
     border: 1px solid var(--noir);
     border-bottom: 0.5vh solid rgb(255, 255, 255);
@@ -140,3 +140,8 @@
   0%{transform: scaleX(0); opacity: 0;}
   100%{transform: scaleX(1);opacity: 1;}
 }
+@keyframes animation-disparition { // une animation d'apparition'
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+

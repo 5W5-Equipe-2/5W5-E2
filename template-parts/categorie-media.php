@@ -6,24 +6,20 @@
 ?>
 
 <?php
-if (have_posts()) : while (have_posts()) : the_post();
-        if (in_category('media')) {
-            $photo = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'larger');
-            if ($photo) :
-            ?>
-            <img src="<?= $photo[0]; ?>" >
-    <?php 
-            endif;
-        }
-    endwhile;
-endif;
+// Initialiser le nombre d'images par article
+$nombreImagesParArticle = 0;
 
-// Si aucun article n'a été trouvé, affichez l'image de remplacement
-if ($photo == 0) {
-    $imagePath = get_template_directory_uri() . '/images/media_vedette_test.jpg';
+$photo = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'larger');
+if ($photo) {
+    // Incrémenter le nombre d'images pour cet article
+    $nombreImagesParArticle++;
+
+    // Obtenez l'ID de l'image en vedette
+    $image_id = get_post_thumbnail_id(get_the_ID());
+
+    // Afficher l'image avec l'attribut data-image-id
     ?>
-    <img src="<?php echo $imagePath; ?>" alt="Image vedette">
+    <img src="<?= $photo[0]; ?>" data-image-id="<?= $image_id; ?>">
 <?php
 }
-
 ?>

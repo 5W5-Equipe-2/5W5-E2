@@ -900,16 +900,16 @@ menu bureau
     display: none;
   }
   .main-navigation.toggled ul,
-.main-navigation ul {
+  .main-navigation ul {
     display: flex;
     padding-top: 0;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-.main-navigation ul a[href="#"]::after {
+  .main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-.main-navigation ul ul {
+  .main-navigation ul ul {
     display: none;
   }
 }
@@ -1101,13 +1101,13 @@ menu tablet
   width: auto;
 }
 .media_vedette .logo_tim span:first-of-type {
-  animation: animation-apparition-lettre 2s ease-in-out forwards;
+  animation: animation-apparition-lettre 2s ease-in-out forwards, animation-disparition 1.4s ease 3.6s forwards;
 }
 .media_vedette .logo_tim span:last-of-type {
-  animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
+  animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
 }
 .media_vedette .logo_tim::after {
-  animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards;
+  animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
   transform-origin: left;
   border: 1px solid var(--noir);
   border-bottom: 0.5vh solid rgb(255, 255, 255);
@@ -1199,6 +1199,14 @@ menu tablet
   100% {
     transform: scaleX(1);
     opacity: 1;
+  }
+}
+@keyframes animation-disparition {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /* 
