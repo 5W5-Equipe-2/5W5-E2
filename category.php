@@ -127,7 +127,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
         } ?>
 
         <?php if (!(str_starts_with($cat_url, 'session'))) {
-            // Pour toutes les catégories, sauf les "sessions" et "media"------------------------------->
+            // Pour toutes les catégories, sauf les "sessions" ------------------------------->
             if ($query->have_posts()) :
                 while ($query->have_posts()) : $query->the_post();
                     // Charger le modèle pour la catégorie
