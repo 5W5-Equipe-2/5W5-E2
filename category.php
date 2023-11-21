@@ -65,7 +65,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
 
 <main class="site_main">
     <!--   On affiche le titre de la catégorie -->
-    <?php echo '<h2>' . $categorie->name . '</h2>'; ?>
+    <?php echo '<h2 class="projet_titre">' . $categorie->name . '</h2>'; ?>
 
     <section class="categorie__section">
         <?php if ((str_starts_with($cat_url, 'session'))) {

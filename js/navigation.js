@@ -99,3 +99,26 @@
 		}
 	}
 }() );
+
+
+/* --------------------page projet---------------------------- */
+
+( function (){
+		const NavigationProjet = document.getElementById( 'navigation-projet' );
+
+		if ( ! NavigationProjet ) {
+			return;
+		}
+
+		const button_projet = NavigationProjet.getElementsByTagName( 'button' )[ 0 ];
+
+		button_projet.addEventListener( 'click', function() {
+			NavigationProjet.classList.toggle( 'toggled' );
+	
+			if ( button_projet.getAttribute( 'aria-expanded' ) === 'true' ) {
+				button_projet.setAttribute( 'aria-expanded', 'false' );
+			} else {
+				button_projet.setAttribute( 'aria-expanded', 'true' );
+			}
+		} );
+}() );
