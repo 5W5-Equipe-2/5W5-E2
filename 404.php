@@ -5,17 +5,25 @@
  */
 ?>
 <?php get_header(); ?>
-<main class="site_main">
+<main class="site_main erreur">
 <section>
-<h2>Oups !</h2>
-<p>La page que vous recherchez semble introuvable.</p>
-<p>code d'erreur : 404</p>
-<p>Voici quelques liens à la place :</p>
-<!-- // Afficher la navigation principale à la place -->
-<?php wp_nav_menu(array('theme_location' => 'entete')); ?>
-<div>
-<a href="<?php echo esc_url(home_url('/')); ?>">Retour à la page d'accueil</a>
-</div>
+    <h2>Oups !</h2>
+    <div class="contenant_infos">
+        <div class="description">
+            <h3>La page que vous recherchez semble introuvable.</h3>
+            <p>code d'erreur : 404</p>
+        </div>
+        <div class="liens">
+            <h3>Voici quelques liens à la place :</h3>
+            <!-- // Afficher la navigation principale à la place -->
+            <?php wp_nav_menu(array('theme_location' => 'entete')); ?>
+    </div>
+    </div>
+        <div class="bouton_retour">
+        <h4><a href="<?php echo esc_url(home_url('/')); ?>">Retour à la page d'accueil</a></h4>
+    </div>
+    
+    
 </section>
 </main>
 <?php get_footer(); ?>
