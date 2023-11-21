@@ -14,9 +14,12 @@ if ($photo) {
     // Incrémenter le nombre d'images pour cet article
     $nombreImagesParArticle++;
 
-    // Afficher l'image
+    // Obtenez l'ID de l'image en vedette
+    $image_id = get_post_thumbnail_id(get_the_ID());
+
+    // Afficher l'image avec l'attribut data-image-id
     ?>
-    <img src="<?= $photo[0]; ?>" class="diaporama-media" >
+    <img src="<?= $photo[0]; ?>" data-image-id="<?= $image_id; ?>">
 <?php
 }
 ?>
