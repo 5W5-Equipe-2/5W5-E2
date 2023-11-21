@@ -55,14 +55,14 @@
       }
     }
     span:first-of-type{ // Lettre T
-      animation: animation-apparition-lettre 2s ease-in-out forwards, animation-disparition 0.5s ease 3.6s forwards;
+      animation: animation-apparition-lettre 2s ease-in-out forwards, animation-disparition 1.4s ease 3.6s forwards;
     }
     span:last-of-type{ // Lettre M
-      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards, animation-disparition 0.5s ease 3.6s forwards;
+      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
     }
   }
   .logo_tim::after{ //surlignement
-    animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 0.5s ease 3.6s forwards;
+    animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
     transform-origin: left;
     border-bottom: 0.5vh solid rgb(255, 255, 255);
     bottom: -5%;
