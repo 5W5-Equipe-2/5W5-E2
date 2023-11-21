@@ -42,7 +42,7 @@
     margin:  0 auto; // centrer les logo
     position: absolute; // pour le mettre par dessus le média-vedette
     right: 0; // centrer les logo
-    top: 50%; // aligner au axe vertical
+    top: 46%; // aligner au axe vertical
     width: fit-content; // centrer les logo
     
     span{
@@ -64,6 +64,7 @@
   .logo_tim::after{ //surlignement
     animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
     transform-origin: left;
+    border: 1px solid var(--noir);
     border-bottom: 0.5vh solid rgb(255, 255, 255);
     bottom: -5%;
     content: "";
@@ -78,6 +79,7 @@
     width: 100%;
     color: var(--blanc);
     div{
+      text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
       position: absolute;
     }
     div:first-of-type,div:nth-of-type(2){ // nom de la technique et code

@@ -5,7 +5,7 @@
  */
 ?>
 <?php get_header(); ?>
-<main class="site_main">
+<main class="site_main recherche">
 <article class="contenant_resultat_recherche">
   <h2 class="titre">Résultats de la recherche</h2>
   <hr>
@@ -24,8 +24,5 @@
       endif;
       ?>
     </article>
-    
 </main>
-
-
 <?php get_footer(); ?>

@@ -1088,7 +1088,7 @@ menu tablet
   margin: 0 auto;
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 46%;
   width: fit-content;
 }
 .media_vedette .logo_tim span {
@@ -1109,6 +1109,7 @@ menu tablet
 .media_vedette .logo_tim::after {
   animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
   transform-origin: left;
+  border: 1px solid var(--noir);
   border-bottom: 0.5vh solid rgb(255, 255, 255);
   bottom: -5%;
   content: "";
@@ -1124,6 +1125,7 @@ menu tablet
   color: var(--blanc);
 }
 .media_vedette .sous_titre div {
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
   position: absolute;
 }
 .media_vedette .sous_titre div:first-of-type, .media_vedette .sous_titre div:nth-of-type(2) {
@@ -1216,6 +1218,10 @@ menu tablet
   padding-top: 3vh;
   padding-bottom: 6vh;
   width: 100%;
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: right bottom;
 }
 .accueil_description div {
   margin-top: 2vh;
@@ -1641,25 +1647,31 @@ th {
   }
 }
 /*-----------------------liste cours fin--------------------------*/
-.contenant_resultat_recherche {
+.recherche {
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: right bottom;
+}
+.recherche .contenant_resultat_recherche {
   width: 90%;
   margin: auto;
   margin-top: 3vh;
 }
-.contenant_resultat_recherche .resultat_recherche {
+.recherche .contenant_resultat_recherche .resultat_recherche {
   padding: 1vh 0;
 }
-.contenant_resultat_recherche .resultat_recherche h4 a {
+.recherche .contenant_resultat_recherche .resultat_recherche h4 a {
   color: var(--primaire);
   padding: 0.5vh 0;
 }
-.contenant_resultat_recherche .resultat_recherche p {
+.recherche .contenant_resultat_recherche .resultat_recherche p {
   font-family: var(--police-texte);
   padding-bottom: 1.5vh;
 }
 
-@media screen and (min-width: 992px) {
-  .contenant_resultat_recherche {
+@media screen and (min-width: 800px) {
+  .recherche .contenant_resultat_recherche {
     width: 88%;
   }
 }/*# sourceMappingURL=style.css.map */
