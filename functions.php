@@ -136,11 +136,24 @@ function e2_modifie_requete_principal($query) {
 
         $query->set('category_name', $category_slugs_to_show);
         $query->set('orderby', 'title');
-        $query->set('order', 'ASC');
+
+        // Vérifier si la catégorie est "media" pour définir l'ordre sur rand (aléatoire)
+        if ( is_category('media') ) {
+            $query->set('order', 'RAND');
+        } else {
+            $query->set('order', 'ASC');
+        }
+
+        // Ajouter une condition pour ne pas affecter la requête sur la page front-page.php
+        if ( ! is_front_page() ) {
+            $query->set('posts_per_page', -1); // Récupérer tous les articles
+        }
     }
 }
 
 add_action('pre_get_posts', 'e2_modifie_requete_principal');
+
+
 
 
 
