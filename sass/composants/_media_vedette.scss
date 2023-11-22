@@ -12,13 +12,16 @@
     width: 100%;
   }
   .reseaux_sociaux{
-    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vh;
     background-color: var(--noir);
+    bottom: 12vh;
     position: absolute;
     right: 0;
-    bottom: 10vh;
     margin: 0;
     padding: 0.5vh 0;
+    z-index: 10;
     div{
       width: 55%;
       height: 10%;
@@ -56,14 +59,14 @@
       }
     }
     span:first-of-type{ // Lettre T
-      animation: animation-apparition-lettre 2s ease-in-out forwards, animation-disparition 1.4s ease 3.6s forwards;
+      animation: animation-apparition-lettre 2s ease-in-out forwards, animation-disparition 1.3s ease 3.4s forwards;
     }
     span:last-of-type{ // Lettre M
-      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
+      animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards, animation-disparition 1.3s ease 3.4s forwards;
     }
   }
   .logo_tim::after{ //surlignement
-    animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 1.4s ease 3.6s forwards;
+    animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 1.3s ease 3.6s forwards;
     transform-origin: left;
     border: 1px solid var(--noir);
     border-bottom: 0.5vh solid rgb(255, 255, 255);
@@ -98,6 +101,8 @@
     }
   }
   .fleche{
+    animation: animation-saut 1s ease-in-out infinite;
+    
     bottom: 5%; // aligner au axe vertical
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
@@ -130,19 +135,3 @@
 .masquer-image {
   opacity: 0;
 }
-
-@keyframes animation-apparition-lettre { // une animation d'apparition'
-  0%{transform: translateY(0vh); opacity: 0;}
-  50%{transform: translateY(0vh); opacity: 1;}
-  75%{transform: translateY(-5vh); opacity: 0.8;}
-  100%{transform: translateY(0vh);opacity: 1;}
-}
-@keyframes animation-apparition-surlignement { // une animation d'apparition'
-  0%{transform: scaleX(0); opacity: 0;}
-  100%{transform: scaleX(1);opacity: 1;}
-}
-@keyframes animation-disparition { // une animation d'apparition'
-  0%{opacity: 1;}
-  100%{opacity: 0;}
-}
-

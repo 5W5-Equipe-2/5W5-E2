@@ -60,9 +60,9 @@ get_header(); ?>
       <span><img src="<?php echo $imagePathM; ?>" alt="M"></span>
     </div>
     <div class="sous_titre"><?php dynamic_sidebar('mv_nom_techniques'); ?></div>
-    <div class="fleche"></div>
+    <a href="#accueil_description"><div class="fleche"></div></a>
   </section>
-  <section class="accueil_description">
+  <section id="accueil_description">
     <?php dynamic_sidebar('description_punch'); ?>
   </section>
 
