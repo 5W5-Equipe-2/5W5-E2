@@ -2,7 +2,7 @@
 ** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
  ---> les balises section, article, les div
 */
-.accueil_description { // La section qui contient la phrase punch de la page d'accueil
+#accueil_description { // La section qui contient la phrase punch de la page d'accueil
   background-color: var(--blanc);
   padding-top: 3vh;
   padding-bottom: 6vh;
@@ -125,13 +125,18 @@
     }
     .wp-block-buttons{ // le bouton plus de détails
       // position: absolute;
+      position: relative;
       z-index: 5;
       padding-top: 10%;
       a{ // style du bouton
-        background-color: var(--complementaire);
+        background-color: transparent;
         border: 1px solid var(--simili-noir);
         color: var(--simili-noir);
         z-index: 5;
+      }
+      a:hover{ // style du bouton
+        background-color: var(--simili-noir);
+        color: var(--blanc);
       }
     }
   }
@@ -141,8 +146,14 @@
     background-size: cover;
     // z-index: -2;
     h2,p,a{
+      background-color: var(--noir);
       color: white;
+      padding: 0.5vmin;
+      text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
       // z-index: 1;
+    }
+    a:hover{
+      color: var(--primaire);
     }
   }
   .widget_block:last-of-type{
@@ -151,9 +162,15 @@
     background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png") ;
     background-size: cover;
     // z-index: -2;
-     h2,p,a{
+    h2,p,a{
+      background-color: var(--noir);
       color: white;
+      padding: 0.5vmin;
+      text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
       // z-index: 1;
+    }
+    a:hover{
+      color: var(--primaire);
     }
   }
 }
