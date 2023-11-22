@@ -1570,7 +1570,6 @@ th {
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 20%;
   margin-top: 2em;
   width: 100%;
 }
@@ -1584,6 +1583,7 @@ th {
   justify-content: space-around;
   flex-wrap: wrap;
   flex-basis: 60%;
+  min-height: 20%;
 }
 .Liste_programme #content .article-content .related-projets .related-articles a {
   margin: 5%;
@@ -1608,7 +1608,6 @@ th {
     margin-bottom: 2em;
   }
   .Liste_programme #content .article-content .related-projets .related-articles {
-    flex-wrap: nowrap;
     flex-direction: row;
   }
 }
@@ -1630,6 +1629,12 @@ th {
   }
   .info_programme hr {
     display: none;
+  }
+}
+/*------------------------projet dans description cours--------------*/
+@media screen and (min-width: 500px) {
+  .Liste_programme #content .article-content .related-projets .related-articles {
+    flex-wrap: nowrap;
   }
 }
 /*-----------------------liste cours fin--------------------------*/
