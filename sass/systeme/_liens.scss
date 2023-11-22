@@ -10,10 +10,15 @@ a {
     color: var(--primaire);
   }
 }
-#site-navigation,.categorie__article{
+#site-navigation{
   a{
     color: white;
   }
+  a:hover {
+    color: var(--primaire);
+  }
+}
+.categorie__article{
   a:hover {
     color: var(--complementaire);
   }
