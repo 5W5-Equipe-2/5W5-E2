@@ -2,7 +2,7 @@
 ** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
  ---> les balises section, article, les div
 */
-#accueil_description { // La section qui contient la phrase punch de la page d'accueil
+.accueil_description { // La section qui contient la phrase punch de la page d'accueil
   background-color: var(--blanc);
   padding-top: 3vh;
   padding-bottom: 6vh;

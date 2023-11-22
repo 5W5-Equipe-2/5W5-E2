@@ -10,7 +10,14 @@ a {
     color: var(--primaire);
   }
 }
-
+#site-navigation,.categorie__article{
+  a{
+    color: white;
+  }
+  a:hover {
+    color: var(--complementaire);
+  }
+}
 .inscription_programme .grille_cours{
   a{
     color: var(--noir);
