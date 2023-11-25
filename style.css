@@ -1058,12 +1058,16 @@ menu tablet
   width: 100%;
 }
 .media_vedette .reseaux_sociaux {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vh;
   background-color: var(--noir);
+  bottom: 12vh;
   position: absolute;
   right: 0;
-  bottom: 10vh;
   margin: 0;
   padding: 0.5vh 0;
+  z-index: 10;
 }
 .media_vedette .reseaux_sociaux div {
   width: 55%;
@@ -1088,7 +1092,7 @@ menu tablet
   margin: 0 auto;
   position: absolute;
   right: 0;
-  top: 50%;
+  top: 46%;
   width: fit-content;
 }
 .media_vedette .logo_tim span {
@@ -1101,14 +1105,15 @@ menu tablet
   width: auto;
 }
 .media_vedette .logo_tim span:first-of-type {
-  animation: animation-apparition-lettre 2s ease-in-out forwards;
+  animation: animation-apparition-lettre 2s ease-in-out forwards, animation-disparition 1.3s ease 3.4s forwards;
 }
 .media_vedette .logo_tim span:last-of-type {
-  animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards;
+  animation: animation-apparition-lettre 2s ease-in-out 0.1s forwards, animation-disparition 1.3s ease 3.4s forwards;
 }
 .media_vedette .logo_tim::after {
-  animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards;
+  animation: animation-apparition-surlignement 1s ease-in-out 0.1s forwards, animation-disparition 1.3s ease 3.6s forwards;
   transform-origin: left;
+  border: 1px solid var(--noir);
   border-bottom: 0.5vh solid rgb(255, 255, 255);
   bottom: -5%;
   content: "";
@@ -1124,6 +1129,7 @@ menu tablet
   color: var(--blanc);
 }
 .media_vedette .sous_titre div {
+  text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
   position: absolute;
 }
 .media_vedette .sous_titre div:first-of-type, .media_vedette .sous_titre div:nth-of-type(2) {
@@ -1139,6 +1145,7 @@ menu tablet
   width: max-content;
 }
 .media_vedette .fleche {
+  animation: animation-saut 1s ease-in-out infinite;
   bottom: 5%;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
@@ -1171,52 +1178,28 @@ menu tablet
   opacity: 0;
 }
 
-@keyframes animation-apparition-lettre {
-  0% {
-    transform: translateY(0vh);
-    opacity: 0;
-  }
-  50% {
-    transform: translateY(0vh);
-    opacity: 1;
-  }
-  75% {
-    transform: translateY(-5vh);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0vh);
-    opacity: 1;
-  }
-}
-@keyframes animation-apparition-surlignement {
-  0% {
-    transform: scaleX(0);
-    opacity: 0;
-  }
-  100% {
-    transform: scaleX(1);
-    opacity: 1;
-  }
-}
 /* 
 ** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
  ---> les balises section, article, les div
 */
-.accueil_description {
+#accueil_description {
   background-color: var(--blanc);
   padding-top: 3vh;
   padding-bottom: 6vh;
   width: 100%;
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: right bottom;
 }
-.accueil_description div {
+#accueil_description div {
   margin-top: 2vh;
 }
-.accueil_description p, .accueil_description h2 {
+#accueil_description p, #accueil_description h2 {
   margin: 0 auto;
   width: 75vw;
 }
-.accueil_description hr {
+#accueil_description hr {
   background-color: black;
   height: 0.1vh;
   margin: 0 auto;
@@ -1311,33 +1294,53 @@ menu tablet
 .accueil_programme .widget_block:first-of-type {
   background-color: var(--complementaire);
   padding-top: 5%;
+  z-index: 5;
 }
 .accueil_programme .widget_block:first-of-type .wp-widget-group__inner-blocks {
   padding-bottom: 5%;
 }
 .accueil_programme .widget_block:first-of-type .wp-block-buttons {
+  position: relative;
+  z-index: 5;
   padding-top: 10%;
 }
 .accueil_programme .widget_block:first-of-type .wp-block-buttons a {
-  background-color: var(--complementaire);
+  background-color: transparent;
   border: 1px solid var(--simili-noir);
   color: var(--simili-noir);
+  z-index: 5;
+}
+.accueil_programme .widget_block:first-of-type .wp-block-buttons a:hover {
+  background-color: var(--simili-noir);
+  color: var(--blanc);
 }
 .accueil_programme .widget_block:nth-of-type(2) {
   margin: 0;
   background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-1_Tablette-1.png");
   background-size: cover;
 }
-.accueil_programme .widget_block:nth-of-type(2) h2, .accueil_programme .widget_block:nth-of-type(2) p {
+.accueil_programme .widget_block:nth-of-type(2) h2, .accueil_programme .widget_block:nth-of-type(2) p, .accueil_programme .widget_block:nth-of-type(2) a {
+  background-color: var(--noir);
   color: white;
+  padding: 0.5vmin;
+  text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
+}
+.accueil_programme .widget_block:nth-of-type(2) a:hover {
+  color: var(--primaire);
 }
 .accueil_programme .widget_block:last-of-type {
   margin: 0;
   background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png");
   background-size: cover;
 }
-.accueil_programme .widget_block:last-of-type h2, .accueil_programme .widget_block:last-of-type p {
+.accueil_programme .widget_block:last-of-type h2, .accueil_programme .widget_block:last-of-type p, .accueil_programme .widget_block:last-of-type a {
+  background-color: var(--noir);
   color: white;
+  padding: 0.5vmin;
+  text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
+}
+.accueil_programme .widget_block:last-of-type a:hover {
+  color: var(--primaire);
 }
 
 @media screen and (min-width: 800px) {
@@ -1638,25 +1641,172 @@ th {
   }
 }
 /*-----------------------liste cours fin--------------------------*/
-.contenant_resultat_recherche {
+.recherche {
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: right bottom;
+}
+.recherche .contenant_resultat_recherche {
   width: 90%;
   margin: auto;
   margin-top: 3vh;
 }
-.contenant_resultat_recherche .resultat_recherche {
+.recherche .contenant_resultat_recherche .resultat_recherche {
   padding: 1vh 0;
 }
-.contenant_resultat_recherche .resultat_recherche h4 a {
+.recherche .contenant_resultat_recherche .resultat_recherche h4 a {
   color: var(--primaire);
   padding: 0.5vh 0;
 }
-.contenant_resultat_recherche .resultat_recherche p {
+.recherche .contenant_resultat_recherche .resultat_recherche p {
   font-family: var(--police-texte);
   padding-bottom: 1.5vh;
 }
 
-@media screen and (min-width: 992px) {
-  .contenant_resultat_recherche {
+@media screen and (min-width: 800px) {
+  .recherche .contenant_resultat_recherche {
     width: 88%;
+  }
+}
+.erreur {
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond-1.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 80vh;
+  position: relative;
+}
+.erreur section > * {
+  margin: auto;
+  width: 70%;
+}
+.erreur section {
+  height: fit-content;
+  left: 50%;
+  position: absolute;
+  top: 47%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.erreur section h2 {
+  color: var(--primaire);
+  padding-bottom: 2vh;
+  text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
+}
+.erreur section .contenant_infos {
+  display: flex;
+  flex-direction: column;
+}
+.erreur section .contenant_infos .description {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  margin-top: 1vh;
+}
+.erreur section .contenant_infos .liens {
+  margin-top: 2vh;
+}
+.erreur section .contenant_infos .liens ul {
+  margin-top: 0.5vh;
+}
+.erreur section .bouton_retour {
+  margin: auto;
+  margin-top: 4vh;
+  width: fit-content;
+}
+.erreur section .bouton_retour a {
+  border: 1px solid var(--simili-noir);
+  border-radius: 50em;
+  padding: 0.3em 0.8em;
+}
+
+@media screen and (min-width: 800px) {
+  .erreur {
+    background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 120px;
+    min-height: 90vh;
+  }
+}
+@media screen and (min-width: 992px) {
+  .erreur {
+    background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond-Bureau.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100vw 80vh;
+    min-height: 80vh;
+    position: relative;
+  }
+  .erreur section > * {
+    margin: auto;
+    width: 60%;
+  }
+  .erreur h2 {
+    width: fit-content;
+  }
+  .erreur section > div:first-of-type {
+    flex-direction: row;
+    gap: 1.5vw;
+    justify-content: center;
+  }
+  .erreur section > div:first-of-type .liens {
+    margin-top: 1vh;
+  }
+}
+@keyframes animation-apparition-lettre {
+  0% {
+    transform: translateY(0vh);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-5vh);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0vh);
+    opacity: 1;
+  }
+}
+@keyframes animation-apparition-surlignement {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+@keyframes animation-disparition {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes animation-disparition {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes animation-saut {
+  0% {
+    bottom: 5%;
+  }
+  80% {
+    bottom: 6%;
+  }
+  100% {
+    bottom: 5%;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -1,21 +1,29 @@
-.contenant_resultat_recherche{
-    width: 90%;
-    margin: auto;
-    margin-top: 3vh;
-    .resultat_recherche{
-        padding: 1vh 0;
-        h4 a{
-            color: var(--primaire);
-            padding: 0.5vh 0;
-        }
-        p{
-            font-family: var(--police-texte);
-            padding-bottom: 1.5vh;
+.recherche{
+    background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: right bottom;
+    .contenant_resultat_recherche{
+        width: 90%;
+        margin: auto;
+        margin-top: 3vh;
+        .resultat_recherche{
+            padding: 1vh 0;
+            h4 a{
+                color: var(--primaire);
+                padding: 0.5vh 0;
+            }
+            p{
+                font-family: var(--police-texte);
+                padding-bottom: 1.5vh;
+            }
         }
     }
 }
-@media screen and (min-width:$largeur__bureau){ // Début requête média Tablette
-    .contenant_resultat_recherche{
-        width: 88%;
+@media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
+    .recherche{
+        .contenant_resultat_recherche{
+            width: 88%;
+        }
     }
 }
