@@ -459,6 +459,62 @@ a:hover, a:focus, a:active {
   color: var(--noir);
 }
 
+.menu-menu-principal-container a {
+  color: var(--blanc);
+}
+.menu-menu-principal-container a:hover, .menu-menu-principal-container a:focus, .menu-menu-principal-container a:active {
+  color: var(--primaire);
+}
+
+.site__aside .menu-projets a {
+  color: var(--blanc);
+}
+.site__aside .menu-projets a:hover, .site__aside .menu-projets a:focus, .site__aside .menu-projets a:active {
+  color: var(--primaire);
+}
+
+.categorie__section .categorie__article a {
+  color: var(--blanc);
+}
+.categorie__section .categorie__article a:hover, .categorie__section .categorie__article a:focus, .categorie__section .categorie__article a:active {
+  color: var(--primaire);
+}
+
+.site_pied_page a {
+  color: var(--blanc);
+  text-decoration: none;
+  /* &:visited {
+    color: var(--complementaire);
+  } */
+}
+.site_pied_page a:hover, .site_pied_page a:focus, .site_pied_page a:active {
+  color: var(--primaire);
+}
+
+.inscription_programme a {
+  color: var(--simili-noir);
+}
+.inscription_programme a:hover, .inscription_programme a:focus, .inscription_programme a:active {
+  background-color: var(--simili-noir);
+  color: var(--complementaire);
+}
+
+.Liste_programme #content .article-button {
+  color: var(--blanc);
+}
+.Liste_programme #content .article-button:hover, .Liste_programme #content .article-button:focus, .Liste_programme #content .article-button:active {
+  color: var(--primaire);
+}
+.Liste_programme #content .article-content .boutton_retour {
+  color: var(--blanc);
+  /* &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--blanc);
+    color: var(--simili-noir);
+  } */
+}
+
 .menu-projets {
   background-color: var(--simili-noir);
 }
@@ -536,9 +592,6 @@ body {
 .site__aside .menu-projets {
   display: none;
 }
-.site__aside .menu-projets a {
-  color: var(--blanc);
-}
 .site__aside .menu-projets a ul {
   display: none;
 }
@@ -577,9 +630,6 @@ body {
     margin-left: 0.8em;
     margin-right: 0.8em;
     text-align: center;
-  }
-  .site__aside .menu-projets .menu li a, .site__aside .menu-evenements .menu li a {
-    color: var(--blanc);
   }
   .site__aside .menu-projets .menu li:last-of-type, .site__aside .menu-evenements .menu li:last-of-type {
     position: relative;
@@ -657,12 +707,15 @@ body {
   background-color: var(--simili-noir);
   border: 1px solid var(--noir);
   border-radius: 1em;
-  color: var(--blanc);
+  /* color: var(--blanc); // couleur texte blanc */
   margin: 5%;
   overflow: hidden;
   text-align: center;
   width: 90%;
   height: auto;
+  /* a{
+    color: var(--blanc);
+  } */
 }
 .categorie__section .categorie__article figure {
   background-color: var(--simili-noir);
@@ -673,9 +726,6 @@ body {
 }
 .categorie__section .categorie__article h3 {
   font-size: 18px;
-}
-.categorie__section .categorie__article a {
-  color: var(--blanc);
 }
 
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
@@ -801,28 +851,6 @@ body {
   font-family: var(--police-titre);
   font-size: 21px;
 }
-.main-navigation .menu-menu-principal-container {
-  /* a{
-    display: block;
-  text-decoration: none;
-  //padding-top: 2.5rem;
-  //padding-bottom: 2.5rem;
-  border-bottom: 2px solid var(--blanc);
-  } */
-  /* color: var(--blanc);
-  text-decoration: none;
-  &:visited {
-  color: var(--complementaire);
-  }
-  &:hover,
-  &:focus,
-  &:active {
-    color: var(--primaire);
-  } */
-}
-.main-navigation .menu-menu-principal-container a {
-  color: var(--blanc);
-}
 
 /* -----------------------------------------------------------------------------
 Bouton burger 
@@ -865,10 +893,6 @@ Bouton burger
   flex: 1;
 }
 
-/* .menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-} */
 /* ---------------------------------------------------------------------------
 menu bureau
 ------------------------------------------------------------------------------ */
@@ -965,16 +989,6 @@ menu bureau
 }
 .site_pied_page .section_footer_logo a {
   border-bottom: solid 2px var(--blanc);
-}
-.site_pied_page a {
-  color: var(--blanc);
-  text-decoration: none;
-}
-.site_pied_page a:visited {
-  color: var(--complementaire);
-}
-.site_pied_page a:hover, .site_pied_page a:focus, .site_pied_page a:active {
-  color: var(--primaire);
 }
 
 /* ---------------------------------------------------------------------------
@@ -1483,10 +1497,8 @@ th {
   text-align: center;
 }
 .info_programme .inscription_programme a {
-  background-color: var(--complementaire);
   border: 1px solid var(--simili-noir);
   border-radius: 50em;
-  color: var(--simili-noir);
   font-family: var(--police-texte);
   margin-bottom: 1.5em;
   padding: 0.4em;
@@ -1540,7 +1552,6 @@ th {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid var(--blanc);
-  color: var(--blanc);
   font-family: var(--police-texte);
   flex: 1;
   margin-left: 5%;
@@ -1570,7 +1581,6 @@ th {
   background-color: transparent;
   border: 1px solid var(--blanc);
   border-radius: 50em;
-  color: var(--blanc);
   height: 5%;
   margin-bottom: 1em;
   width: 6em;
@@ -1584,7 +1594,6 @@ th {
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 20%;
   margin-top: 2em;
   width: 100%;
 }
@@ -1597,13 +1606,17 @@ th {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  flex-basis: 60%;
+  flex-grow: 1;
+  height: 100%;
+  width: 60%;
 }
 .Liste_programme #content .article-content .related-projets .related-articles a {
-  margin: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .Liste_programme #content .article-content .related-projets .related-articles a img {
   border-radius: 10%;
+  height: 100%;
 }
 
 /*--------------------------------bureau------------------------*/
@@ -1622,7 +1635,6 @@ th {
     margin-bottom: 2em;
   }
   .Liste_programme #content .article-content .related-projets .related-articles {
-    flex-wrap: nowrap;
     flex-direction: row;
   }
 }
@@ -1644,6 +1656,15 @@ th {
   }
   .info_programme hr {
     display: none;
+  }
+}
+/*------------------------projet dans description cours--------------*/
+@media screen and (min-width: 700px) {
+  .Liste_programme #content .article-content .related-projets {
+    height: 20%;
+  }
+  .Liste_programme #content .article-content .related-projets .related-articles {
+    flex-wrap: nowrap;
   }
 }
 /*-----------------------liste cours fin--------------------------*/
