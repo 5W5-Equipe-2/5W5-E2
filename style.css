@@ -1706,6 +1706,7 @@ th {
   width: 70%;
 }
 .erreur section {
+  z-index: 5;
   padding: 1vw;
   height: fit-content;
   left: 50%;
@@ -1719,6 +1720,9 @@ th {
   color: var(--primaire);
   padding-bottom: 2vh;
   text-shadow: -0.8px -0.8px 0 var(--noir), 0.8px -0.8px 0 var(--noir), -0.8px 0.8px 0 var(--noir), 0.8px 0.8px 0 var(--noir);
+}
+.erreur section a {
+  color: var(--noir);
 }
 .erreur section .contenant_infos {
   display: flex;
@@ -1755,7 +1759,7 @@ th {
   background-color: rgb(255, 255, 255);
   content: "";
   height: 100%;
-  opacity: 0.3;
+  opacity: 0.4;
   position: absolute;
   width: 100%;
   z-index: -1;
