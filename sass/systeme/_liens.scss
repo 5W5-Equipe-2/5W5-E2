@@ -17,6 +17,99 @@ a {
   }
 }
 
+.menu-menu-principal-container {
+  a{
+    color: var(--blanc);
+    &:hover,
+    &:focus,
+    &:active {
+    color: var(--primaire);
+  }
+  }
+}
+
+.site__aside{
+  .menu-projets{
+    a{
+      color: var(--blanc);
+      &:hover,
+    &:focus,
+    &:active {
+    color: var(--primaire);
+  }
+    }
+  }
+}
+
+.categorie__section{
+  .categorie__article{
+    a{
+      color: var(--blanc);
+    &:hover,
+    &:focus,
+    &:active {
+    color: var(--primaire);
+  }
+    }
+  }
+}
+
+.site_pied_page{
+  a{
+    color: var(--blanc);
+  text-decoration: none;
+  /* &:visited {
+    color: var(--complementaire);
+  } */
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--primaire);
+  }
+  }
+}
+
+.inscription_programme{
+  a{
+    color: var(--simili-noir);
+    &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--simili-noir);
+    color: var(--complementaire);
+  }
+  }
+}
+
+.boutton_retour{
+
+}
+
+.Liste_programme{
+  #content{
+    .article-button{
+      color: var(--blanc);
+      &:hover,
+  &:focus,
+  &:active {
+    color: var(--primaire);
+  }
+    }
+
+    .article-content{
+      .boutton_retour{
+        color: var(--blanc);
+        /* &:hover,
+  &:focus,
+  &:active {
+    background-color: var(--blanc);
+    color: var(--simili-noir);
+  } */
+      }
+    }
+  }
+}
+
 .menu-projets {
   background-color: var(--simili-noir);
 }
