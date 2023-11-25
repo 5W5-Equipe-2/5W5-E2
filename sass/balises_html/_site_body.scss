@@ -85,7 +85,6 @@ body {
     display: none;
 
     a{
-      color: var(--blanc);
       ul{
         display: none;
       }
@@ -131,10 +130,6 @@ body {
           margin-right: 0.8em;
           text-align: center;
           //width: 10vw;
-
-          a{
-            color: var(--blanc);
-          }
         }
 
         li:last-of-type{
@@ -234,7 +229,7 @@ body {
     background-color: var(--simili-noir);
     border: 1px solid var(--noir);
     border-radius: 1em; // arrondir les coins
-    color: var(--blanc); // couleur texte blanc
+    /* color: var(--blanc); // couleur texte blanc */
     //margin: 2em auto; // Centrer horizontalement
     margin: 5%;
     overflow: hidden; // pour que les coin du haut reste courber
@@ -256,9 +251,9 @@ body {
       font-size: 18px;
     }
 
-    a{
+    /* a{
       color: var(--blanc);
-    }
+    } */
   }
 }
 
