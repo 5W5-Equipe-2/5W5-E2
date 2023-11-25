@@ -1325,7 +1325,7 @@ menu tablet
   padding-bottom: 5%;
 }
 .accueil_programme .widget_block:first-of-type .wp-block-buttons {
-  position: relative;
+  font-family: var(--police-texte);
   z-index: 5;
   padding-top: 10%;
 }
@@ -1345,10 +1345,8 @@ menu tablet
   background-size: cover;
 }
 .accueil_programme .widget_block:nth-of-type(2) h2, .accueil_programme .widget_block:nth-of-type(2) p, .accueil_programme .widget_block:nth-of-type(2) a {
-  background-color: var(--noir);
   color: white;
   padding: 0.5vmin;
-  text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
 }
 .accueil_programme .widget_block:nth-of-type(2) a:hover {
   color: var(--complementaire);
@@ -1359,10 +1357,8 @@ menu tablet
   background-size: cover;
 }
 .accueil_programme .widget_block:last-of-type h2, .accueil_programme .widget_block:last-of-type p, .accueil_programme .widget_block:last-of-type a {
-  background-color: var(--noir);
   color: white;
   padding: 0.5vmin;
-  text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
 }
 .accueil_programme .widget_block:last-of-type a:hover {
   color: var(--complementaire);
@@ -1703,12 +1699,14 @@ th {
   background-size: cover;
   min-height: 80vh;
   position: relative;
+  z-index: 4;
 }
 .erreur section > * {
   margin: auto;
   width: 70%;
 }
 .erreur section {
+  padding: 1vw;
   height: fit-content;
   left: 50%;
   position: absolute;
@@ -1716,10 +1714,11 @@ th {
   transform: translate(-50%, -50%);
   width: 100%;
 }
-.erreur section h2 {
+.erreur section h1 {
+  font-size: clamp(2rem, -0.0385rem + 4vw, 3rem);
   color: var(--primaire);
   padding-bottom: 2vh;
-  text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
+  text-shadow: -0.8px -0.8px 0 var(--noir), 0.8px -0.8px 0 var(--noir), -0.8px 0.8px 0 var(--noir), 0.8px 0.8px 0 var(--noir);
 }
 .erreur section .contenant_infos {
   display: flex;
@@ -1747,6 +1746,20 @@ th {
   border-radius: 50em;
   padding: 0.3em 0.8em;
 }
+.erreur section .bouton_retour a:hover {
+  background-color: var(--simili-noir);
+  color: var(--blanc);
+}
+
+.erreur::after {
+  background-color: rgb(255, 255, 255);
+  content: "";
+  height: 100%;
+  opacity: 0.3;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
 
 @media screen and (min-width: 800px) {
   .erreur {
@@ -1770,7 +1783,7 @@ th {
     margin: auto;
     width: 60%;
   }
-  .erreur h2 {
+  .erreur h1 {
     width: fit-content;
   }
   .erreur section > div:first-of-type {
