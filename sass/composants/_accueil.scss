@@ -124,8 +124,7 @@
       padding-bottom: 5%;
     }
     .wp-block-buttons{ // le bouton plus de détails
-      // position: absolute;
-      position: relative;
+      font-family: var(--police-texte);
       z-index: 5;
       padding-top: 10%;
       a{ // style du bouton
@@ -146,10 +145,8 @@
     background-size: cover;
     // z-index: -2;
     h2,p,a{
-      background-color: var(--noir);
       color: white;
       padding: 0.5vmin;
-      text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
       // z-index: 1;
     }
     a:hover{
@@ -163,10 +160,9 @@
     background-size: cover;
     // z-index: -2;
     h2,p,a{
-      background-color: var(--noir);
       color: white;
       padding: 0.5vmin;
-      text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
+     
       // z-index: 1;
     }
     a:hover{

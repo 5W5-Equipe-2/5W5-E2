@@ -7,7 +7,7 @@
 <?php get_header(); ?>
 <main class="site_main erreur">
 <section>
-    <h2>Oups !</h2>
+    <h1>Oups !</h1>
     <div class="contenant_infos">
         <div class="description">
             <h3>La page que vous recherchez semble introuvable.</h3>
