@@ -40,8 +40,10 @@
             overflow: hidden;
             padding: 0;
             a img{
+                object-fit: cover;
+                object-position: center center;
               height: 110%;
-              width: 110%;
+              width: auto;
               margin: auto auto;
             }
           }

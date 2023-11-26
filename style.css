@@ -1920,8 +1920,12 @@ th {
   padding: 0;
 }
 .Profs .categorie__article .image_titre_date .contenant__image a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
   height: 110%;
-  width: 110%;
+  width: auto;
   margin: auto auto;
 }
 .Profs .categorie__article .image_titre_date .contenant__titre {
