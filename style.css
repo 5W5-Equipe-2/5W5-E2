@@ -1912,6 +1912,9 @@ th {
 .Profs .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
+  border-radius: 7%;
+  overflow: hidden;
+  width: 85vw;
 }
 .Profs .categorie__article .image_titre_date .contenant__image {
   height: 78%;
@@ -1924,7 +1927,7 @@ th {
      object-fit: cover;
   -o-object-position: center center;
      object-position: center center;
-  height: 110%;
+  height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);
   width: auto;
   margin: auto auto;
 }
@@ -1975,6 +1978,15 @@ th {
   }
   .Profs .Profs__article .categorie__article .image_titre_date .contenant__titre {
     height: 6.5vw;
+  }
+  .Profs .Profs__article .categorie__article .image_titre_date a img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+    height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);
+    width: auto;
+    margin: auto auto;
   }
   .Profs .Profs__article .categorie__article .content {
     border-radius: 7%;

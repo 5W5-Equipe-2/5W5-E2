@@ -34,6 +34,10 @@
         .image_titre_date{
           background-color: var(--simili-noir);
           height: 100%;
+          border-radius: 7%; // arrondis
+            overflow: hidden; // pour garder les coins arrondis
+            width: 85vw;
+
           .contenant__image {
             height: 78%;
             margin: 0;
@@ -42,7 +46,7 @@
             a img{
                 object-fit: cover;
                 object-position: center center;
-              height: 110%;
+              height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);//clamp(110%, calc(110% + (100dvw /)), 180%);
               width: auto;
               margin: auto auto;
             }
@@ -97,6 +101,13 @@
             width: 35vw;
             .contenant__titre{
             height: 6.5vw; // le full height - l'hauteur de l'image
+            }
+            a img{
+                object-fit: cover;
+                object-position: center center;
+              height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);//clamp(110%, calc(110% + (100dvw /)), 180%);
+              width: auto;
+              margin: auto auto;
             }
           }
           // Les informations secondaires -Descriptions -additionnels -information de l'articles
