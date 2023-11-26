@@ -813,13 +813,6 @@ body {
 /*-----------------------------single evenement fin------------------------------------*/
 /*-----------------------------single projet bureau------------------------------------*/
 @media screen and (min-width: 992px) {
-  /* .section_single > *{
-    height: 100%;
-  } */
-  .section_single {
-    /* display: flex;
-    flex-wrap: wrap; */
-  }
   .section_single h2 {
     flex-basis: 100%;
   }
