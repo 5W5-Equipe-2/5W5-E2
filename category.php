@@ -10,7 +10,7 @@
 $categorie = get_queried_object();
 $args = array(
     'category_name' => $categorie->slug,
-    'order' => ($categorie->slug === 'media') ? 'rand' : 'ASC', //Si c'est media, c'est ordre au hasard
+    'order' => ($categorie->slug === 'media') ? 'rand' : 'ASC', // Si c'est media, c'est ordre au hasard
     'orderby' => 'title',
     'posts_per_page' => -1, // Récupérer tous les articles, sans pagination
 );
@@ -26,24 +26,24 @@ $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $segments = explode('/', rtrim($url, '/'));
 $cat_url = end($segments);
 
-// Rechercher un modèle de catégorie en fonction du slug
-$categorie_modele = locate_template('template-parts/categorie-' . $cat_slug . '.php');
-
-// Si un modèle n'est pas trouvé pour la catégorie actuelle, recherchez le modèle du parent
-if (empty($categorie_modele)) {
-    $parent_cat = get_term_by('id',  $categorie->parent, 'category'); // Récupérer la catégorie parente
-
-    // Tant qu'il y a une catégorie parente et que le modèle n'a pas été trouvé
-    while ($parent_cat && empty($categorie_modele)) {
-        $parent_slug = $parent_cat->slug;
-        $categorie_modele = locate_template('template-parts/categorie-' . $parent_slug . '.php');
-        $parent_cat = get_term_by('id', $parent_cat->parent, 'category'); // Récupérer la catégorie parente suivante
-    }
-}
-
-// Si c'est une catégorie de session, la catégorie modèle est le template de projets
-if (str_starts_with($cat_url, 'session')) {
+// Si la catégorie est un sous-enfant de la catégorie "Cours", utilisez le modèle de la catégorie "Projets"
+if (is_category() && cat_is_ancestor_of(get_category_by_slug('cours')->term_id, $categorie->term_id)) {
     $categorie_modele = locate_template('template-parts/categorie-projets.php');
+} else {
+    // Rechercher un modèle de catégorie en fonction du slug
+    $categorie_modele = locate_template('template-parts/categorie-' . $cat_slug . '.php');
+
+    // Si un modèle n'est pas trouvé pour la catégorie actuelle, recherchez le modèle du parent
+    if (empty($categorie_modele)) {
+        $parent_cat = get_term_by('id',  $categorie->parent, 'category'); // Récupérer la catégorie parente
+
+        // Tant qu'il y a une catégorie parente et que le modèle n'a pas été trouvé
+        while ($parent_cat && empty($categorie_modele)) {
+            $parent_slug = $parent_cat->slug;
+            $categorie_modele = locate_template('template-parts/categorie-' . $parent_slug . '.php');
+            $parent_cat = get_term_by('id', $parent_cat->parent, 'category'); // Récupérer la catégorie parente suivante
+        }
+    }
 }
 
 // Utiliser le modèle par défaut si aucun modèle personnalisé n'est pas trouvé
@@ -51,6 +51,7 @@ if (empty($categorie_modele)) {
     $categorie_modele = locate_template('template-parts/categorie-defaut.php');
 }
 ?>
+
 <!---------------------  Affichage dans WordPress********************************* -->
 
 <!-- Entête    ************************ -->
