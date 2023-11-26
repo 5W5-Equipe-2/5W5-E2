@@ -86,6 +86,11 @@ a {
 }
 
 .Liste_programme{
+  .cours_session{
+    .filter-button{
+      color: var(--noir);
+    }
+  }
   #content{
     .article-button{
       color: var(--blanc);
