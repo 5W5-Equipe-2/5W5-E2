@@ -455,10 +455,10 @@ a:hover, a:focus, a:active {
   color: var(--primaire);
 }
 
-.site__aside .menu-projets a {
+.site__aside .menu-projets a, .site__aside .menu-evenements a {
   color: var(--blanc);
 }
-.site__aside .menu-projets a:hover, .site__aside .menu-projets a:focus, .site__aside .menu-projets a:active {
+.site__aside .menu-projets a:hover, .site__aside .menu-projets a:focus, .site__aside .menu-projets a:active, .site__aside .menu-evenements a:hover, .site__aside .menu-evenements a:focus, .site__aside .menu-evenements a:active {
   color: var(--primaire);
 }
 
@@ -595,7 +595,7 @@ body {
     display: flex;
     padding: 0;
     background-color: var(--simili-noir);
-    min-height: 5vh;
+    min-height: 4em;
     /* .navigation-projet{
       display: none;
     } */
@@ -694,17 +694,16 @@ body {
 }
 .categorie__section .categorie__article {
   background-color: var(--simili-noir);
-  border: 1px solid var(--noir);
   border-radius: 1em;
   /* color: var(--blanc); // couleur texte blanc */
+  /* display: flex;
+  align-items: flex-start;
+  flex-direction: column; */
   margin: 5%;
   overflow: hidden;
   text-align: center;
   width: 90%;
   height: auto;
-  /* a{
-    color: var(--blanc);
-  } */
 }
 .categorie__section .categorie__article figure {
   background-color: var(--simili-noir);
@@ -715,6 +714,16 @@ body {
 }
 .categorie__section .categorie__article h3 {
   font-size: 18px;
+}
+.categorie__section .categorie__article p {
+  color: var(--blanc);
+}
+.categorie__section .categorie__article .conteneur_date {
+  display: flex;
+  justify-content: center;
+}
+.categorie__section .categorie__article .conteneur_date svg {
+  margin-right: 0.5em;
 }
 
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
@@ -745,6 +754,14 @@ body {
   padding: 5%;
 }
 .section_single .wp-block-group {
+  background-color: var(--blanc);
+  border-radius: 1em;
+  flex-basis: 98%;
+  padding: 2%;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
   /* padding-top: 2.5%;
   padding-bottom: 2.5%; */
 }
@@ -755,6 +772,7 @@ body {
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
+  /*-----évènement------------*/
 }
 .section_single .information_single div:first-child {
   display: flex;
@@ -768,6 +786,12 @@ body {
   flex-direction: row;
 }
 .section_single .information_single div:nth-child(2) > * {
+  margin-right: 0.5em;
+}
+.section_single .information_single .info_heure_date {
+  display: flex;
+}
+.section_single .information_single .info_heure_date svg {
   margin-right: 0.5em;
 }
 
@@ -789,10 +813,9 @@ body {
     flex-basis: 60%;
   }
   .section_single .wp-block-group, .section_single p {
-    flex-basis: 40%;
-  }
-  .section_single .wp-block-group p, .section_single p p {
-    padding-left: 1em;
+    flex-basis: 38%;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 /*-----------------------------fin single projet---------------------------------*/
@@ -802,7 +825,7 @@ body {
 */
 .site_entete {
   background-color: var(--noir);
-  min-height: 5vh;
+  min-height: 4em;
   width: 100%;
   display: flex;
 }
@@ -993,6 +1016,9 @@ menu tablet
   .site_pied_page .contenu_footer .section_footer {
     padding-left: 2em;
     padding-right: 2em;
+  }
+  .site_pied_page .contenu_footer .section_footer h4 {
+    margin-bottom: 0.3em;
   }
 }
 /* Fichier pour le style de la barre de recherche
@@ -1475,6 +1501,11 @@ th {
 .info_programme .description_programme h2 {
   padding-bottom: 2em;
 }
+.info_programme .description_programme p {
+  background-color: var(--blanc);
+  border-radius: 2em;
+  padding: 1em;
+}
 .info_programme .inscription_programme {
   align-items: center;
   background-color: var(--complementaire);
@@ -1524,8 +1555,11 @@ th {
 .Liste_programme .cours_session .filter-button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
   font-family: var(--police-texte);
-  margin: 1em;
+  font-size: 18px;
+  width: 2em;
+  height: 2em;
 }
 .Liste_programme #content {
   border-radius: 2em;
@@ -1541,6 +1575,7 @@ th {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid var(--blanc);
+  cursor: pointer;
   font-family: var(--police-texte);
   flex: 1;
   margin-left: 5%;
@@ -1610,12 +1645,16 @@ th {
 
 /*--------------------------------bureau------------------------*/
 @media screen and (min-width: 992px) {
+  .Liste_programme .cours_session .filter-button {
+    font-size: 21px;
+  }
   .Liste_programme #content {
     align-items: flex-start;
   }
   .Liste_programme #content .article-button {
     width: 90%;
     text-align: left;
+    font-size: 18px;
   }
   .Liste_programme #content .article-content {
     padding: 2em;
