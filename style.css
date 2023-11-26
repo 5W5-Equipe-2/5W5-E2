@@ -444,6 +444,17 @@ a:hover, a:focus, a:active {
   color: var(--primaire);
 }
 
+#site-navigation a {
+  color: white;
+}
+#site-navigation a:hover {
+  color: var(--primaire);
+}
+
+.categorie__article a:hover {
+  color: var(--complementaire);
+}
+
 .inscription_programme .grille_cours a {
   color: var(--noir);
 }
@@ -1225,7 +1236,7 @@ menu tablet
 ** Tout ce qui concerne la page d'accueil (sauf balise main) - front-page.php
  ---> les balises section, article, les div
 */
-#accueil_description {
+.accueil_description {
   background-color: var(--blanc);
   padding-top: 3vh;
   padding-bottom: 6vh;
@@ -1235,14 +1246,14 @@ menu tablet
   background-size: 120px;
   background-position: right bottom;
 }
-#accueil_description div {
+.accueil_description div {
   margin-top: 2vh;
 }
-#accueil_description p, #accueil_description h2 {
+.accueil_description p, .accueil_description h2 {
   margin: 0 auto;
   width: 75vw;
 }
-#accueil_description hr {
+.accueil_description hr {
   background-color: black;
   height: 0.1vh;
   margin: 0 auto;
@@ -1369,7 +1380,7 @@ menu tablet
   text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
 }
 .accueil_programme .widget_block:nth-of-type(2) a:hover {
-  color: var(--primaire);
+  color: var(--complementaire);
 }
 .accueil_programme .widget_block:last-of-type {
   margin: 0;
@@ -1383,7 +1394,7 @@ menu tablet
   text-shadow: -0.5px -0.5px 0 var(--noir), 0.5px -0.5px 0 var(--noir), -0.5px 0.5px 0 var(--noir), 0.5px 0.5px 0 var(--noir);
 }
 .accueil_programme .widget_block:last-of-type a:hover {
-  color: var(--primaire);
+  color: var(--complementaire);
 }
 
 @media screen and (min-width: 800px) {
