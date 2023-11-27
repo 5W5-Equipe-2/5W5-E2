@@ -11,7 +11,7 @@
 - Dépôt de l'extension 5W5-E2-diaporama
   - https://github.com/5W5-Equipe-2/5W5-E2-diaporama
 
- - Dépôt de l'extension Confetti (Fonds animés)
+- Dépôt de l'extension Confetti (Fonds animés)
   - https://github.com/5W5-Equipe-2/Confetti
 
 - Gestion de projet avec GitHub Projects
