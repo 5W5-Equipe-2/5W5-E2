@@ -1,22 +1,37 @@
-# Branche de développement du Sprint 02
+# Branche de développement du Sprint 03
 
-## Sprint 02 : début de l'intégration de la maquette et de l'extension carrousel
+## Sprint 03 : finaliser la mise en page de l'interface utilisateur du site Web et de mettre en œuvre l'interactivité, y compris les animations de l'interface utilisateur, création de deux extensions (Fond ani,és et Diaporama) avec mode administrateur.
 
 - Déploiement du projet sur le serveur (ramnode) :
   - https://5w5.ndasilva.ca/
 
 - Dépôt de l'extension 5W5-E2-carrousel
   - https://github.com/5W5-Equipe-2/5W5-E2-carrousel
+  
+- Dépôt de l'extension 5W5-E2-diaporama
+  - https://github.com/5W5-Equipe-2/5W5-E2-diaporama
 
-### Développé dans ce sprint:
-- Page d'accueil réactive, widget, css des évènements
-- Menu et menu burger
-- Stylisation de la barre de recherche
-- Navigation et filtres de la page Projet, début du style
-- Style d'un article de projet, intégration AFC
-- JS sur la page Programme, début de l'intégration du carrousel
-- Style de la page d'évènements, intégration AFC
-- Style et contenu du pied de page
+- Dépôt de l'extension Confetti (Fonds animés)
+  - https://github.com/5W5-Equipe-2/Confetti
+
+- Gestion de projet avec GitHub Projects
+  - https://github.com/orgs/5W5-Equipe-2/projects/1
+
+ ### Développé dans ce sprint / Éléments à évaluer :
+- Stylisation de front-page.php, widget, réseaux sociaux, animation du TIM
+- Diaporama avec son mode administrateur
+- Fond de polygones avec effet parallaxe et mode administrateur
+- Stylisation de la page des résultats de recherche et de 404.php
+- Amélioration des requêtes SQL, des modèles et de categorye.php
+- Stylisation des pages Projets, Programme, Évènements
+- Stylisation de single.php
+- Stylisation du carrousel dans la page Programme
+- Les projets apparaissent avec le cours reliés
+- Carrousel avec bio des professeurs
+- Création et intégration des bios des professeurs
+- Création et intégration d'articles d'évènement
+- Ajout d'articles de projets (création et intégration)
+
 
 🔷 🔶 🔷
 # Développement d'un thème WordPress 

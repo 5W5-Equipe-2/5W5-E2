@@ -1,0 +1,23 @@
+@keyframes animation-apparition-lettre { // une animation d'apparition'
+  0%{transform: translateY(0vh); opacity: 0;}
+  50%{transform: translateY(0vh); opacity: 1;}
+  75%{transform: translateY(-5vh); opacity: 0.8;}
+  100%{transform: translateY(0vh);opacity: 1;}
+}
+@keyframes animation-apparition-surlignement { // une animation d'apparition'
+  0%{transform: scaleX(0); opacity: 0;}
+  100%{transform: scaleX(1);opacity: 1;}
+}
+@keyframes animation-disparition { // une animation de disparition
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+@keyframes animation-disparition { // une animation de disparition
+  0%{opacity: 1;}
+  100%{opacity: 0;}
+}
+@keyframes animation-saut { // une animation de disparition
+  0%{bottom: 5%;} // aligner au axe vertical}
+  80%{bottom: 6%;}
+  100%{bottom: 5%;}
+}

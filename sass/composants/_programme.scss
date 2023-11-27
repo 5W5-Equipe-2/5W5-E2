@@ -1,0 +1,179 @@
+.Profs{
+    background-color: var(--primaire);
+    padding-bottom: 3rem;
+    width: 100%; // largeur
+    .Profs__article{
+        .carousel-navigation {
+            padding-top: 3rem;
+        }
+    }
+    a{
+        color: var(--blanc); //a retirer
+      }
+      h2{ // le titre
+        text-align: center;
+        padding: 3rem;
+      }
+    .carousel-content{
+        height: 500px;
+        .carousel-item{
+            height: 500px;
+        }
+    }
+    .categorie__article{ 
+        // background-color: var(--simili-noir);
+        border-radius: 2vh; // arrondir les coins
+        color: var(--blanc); // couleur texte blanc
+        display: flex;
+        height: 55vw;
+        overflow: hidden; // pour que les coin du haut reste courber
+        text-align: center; // Center le texte
+        width: 85vw;
+    
+        // Les informations necessaires/importants -titre -image -Date
+        .image_titre_date{
+          background-color: var(--simili-noir);
+          height: 100%;
+          border-radius: 7%; // arrondis
+            overflow: hidden; // pour garder les coins arrondis
+            width: 85vw;
+
+          .contenant__image {
+            height: 78%;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            a img{
+                object-fit: cover;
+                object-position: center center;
+              height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);//clamp(110%, calc(110% + (100dvw /)), 180%);
+              width: auto;
+              margin: auto auto;
+            }
+          }
+         .contenant__titre{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 14vw; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
+            justify-content: center;
+            .conteneur_date{
+              display: flex;
+              gap: 0.3vw;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+        // Les informations secondaires -Descriptions -additionnels -information de l'articles
+        .content{
+          background-color: var(--simili-noir);
+          display: none;
+        }
+      }
+}
+
+ 
+  @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
+    .Profs { 
+      padding: 4vw 0;
+      h2{ // le titre
+        padding-top: 0;
+        padding-bottom: 3rem;
+      }
+      .carousel-content{
+        height: clamp(300px, 400px, 500px);
+        .carousel-item{
+            height: clamp(300px, 400px, 500px);
+        }
+    }
+      .Profs__article{ // le div qui contient tous les boîtes d'évènements récents
+        /* Boite d'évènement récent */
+        .categorie__article{ 
+          border-radius: 0; // on enleve l'arrondissement et on met au enfant
+          justify-content: space-between; // met un à cote de l'autre
+          width: 82vw; // ajustement de largeur
+  
+          // Les informations necessaires/importants -titre -image -Date
+          .image_titre_date{
+            border-radius: 7%; // arrondis
+            overflow: hidden; // pour garder les coins arrondis
+            width: 35vw;
+            .contenant__titre{
+            height: 6.5vw; // le full height - l'hauteur de l'image
+            }
+            a img{
+                object-fit: cover;
+                object-position: center center;
+              height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);//clamp(110%, calc(110% + (100dvw /)), 180%);
+              width: auto;
+              margin: auto auto;
+            }
+          }
+          // Les informations secondaires -Descriptions -additionnels -information de l'articles
+          .content{ // contenant qui contient toutes les informations secondaires
+            border-radius: 7%; // avoir des sommets rond
+            display: block; // afficher le contenu
+            width: 46vw; // grosseur
+            position: relative;
+            .contenant_contenu{  // contenu
+              position: absolute; // necessaire pour centre le contenu
+              top: 50%; // necessaire pour centre le contenu
+              left: 50%; // necessaire pour centre le contenu
+              transform: translate(-50%, -50%); // necessaire pour centre le contenu
+              margin: auto; // necessaire pour centre le contenu
+              .wp-block-group__inner-container{
+                flex-direction: column;
+              }
+              p,h5,div{
+                margin: 0 auto; // centrer horizontal
+                width: 38vw; // largeur
+              }
+              div{ // pour mettre les icone et les information a cote
+                display: flex;
+                justify-content: left;
+                align-items: center;
+                width: 38vw;
+                gap: 0.3vw;
+              }
+            }
+            .contenant_contenu > p:last-of-type, .contenant_contenu > p:first-of-type{  padding-bottom: 1.5vw;}
+          }
+        }
+      }
+    }
+  }// Fin requête média Tablette
+  
+  @media screen and (min-width:$largeur__bureau_large){ // Début requête média Bureau
+    .Profs { 
+      padding: 3vw 0;
+      .carousel-content{
+        height: 500px;
+        .carousel-item{
+            height: 500px;
+        }
+    }
+      .Profs__article{ // le div qui contient tous les boîtes d'évènements récents
+        height: 30vw;
+        /* Boite d'évènement récent */
+        .categorie__article{ 
+          height: 23vw;
+          width: 75vw;
+          // Les informations necessaires/importants -titre -image -Date
+          .image_titre_date{
+            width: 30vw;
+            .contenant__titre{
+            height: 5vw; // le full height - l'hauteur de l'image
+            }
+          }
+          .content{
+            width: 44vw;
+            margin-left: 1rem;
+        p{
+            margin-top: 2rem ;
+        }
+        }
+        }
+      }
+    }
+  }

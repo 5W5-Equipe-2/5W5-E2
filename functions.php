@@ -55,9 +55,18 @@ add_theme_support('custom-background');
 function enregistrer_sidebar()
 {
     register_sidebar(array(
-        'name' => __('Accueil', '5W5-E2'),
+        'name' => __('Reseau sociaux', '5W5-E2'),
         'id' => 'mv_reseau_sociaux',
         'description' => __('Une zone pour afficher des widgets dans le media vedette.', '5W5-E2'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
+    register_sidebar(array(
+        'name' => __('Sous-titre', '5W5-E2'),
+        'id' => 'mv_nom_techniques',
+        'description' => __('Une zone pour afficher les sous-titres dans le media vedette.', '5W5-E2'),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h2 class="widget-title">',
@@ -116,20 +125,37 @@ add_action('widgets_init', 'enregistrer_sidebar');
 
 
 /*----------------------------------------------------------------------------- Modifier la requête principale */
-function e2_modifie_requete_principal($query) //s'exécute à chaque page
-{
+function e2_modifie_requete_principal($query) {
     if (
-        $query->is_home()
-        && $query->is_main_query() //ce n'est pas une requête secondaire
-        && !is_admin() // c'est pas le tableau de bord (car il y a là aussi une requête principale)
+        $query->is_home() && // Sur la page d'accueil
+        $query->is_main_query() && // Ce n'est pas une requête secondaire
+        !is_admin() // Pas dans le tableau de bord
     ) {
-        $query->set('category_name', 'Accueil'); //On affiche accueil sur la page principale
+        // Slugs des catégories à afficher sur la page d'accueil (séparés par des virgules)
+        $category_slugs_to_show = 'accueil, media';
+
+        $query->set('category_name', $category_slugs_to_show);
         $query->set('orderby', 'title');
-        $query->set('order', 'ASC');
+
+        // Vérifier si la catégorie est "media" pour définir l'ordre sur rand (aléatoire)
+        if ( is_category('media') ) {
+            $query->set('order', 'RAND');
+        } else {
+            $query->set('order', 'ASC');
+        }
+
+        // Ajouter une condition pour ne pas affecter la requête sur la page front-page.php
+        if ( ! is_front_page() ) {
+            $query->set('posts_per_page', -1); // Récupérer tous les articles
+        }
     }
 }
 
 add_action('pre_get_posts', 'e2_modifie_requete_principal');
+
+
+
+
 
 /*-----------------------------------------------------------------------------ajouter le script pour la navugation header */
 
@@ -211,7 +237,7 @@ function filter_posts()
             echo '<button class="article-button" data-article-id="' . $article_id . '">' . $article_title . '</button>';
 
             // Générez un conteneur pour le contenu de l'article
-            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . $article_content;
+            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . '<button type="button" onclick="hide_decription_cours()" class="boutton_retour">Retour</button>' . '<p>' . $article_content . '</p>';
             // Récupérez les articles ayant la même catégorie que le slug du titre de l'article actuel
             $related_articles_args = array(
                 'post_type' => 'post',
@@ -221,6 +247,13 @@ function filter_posts()
             );
 
             $related_articles_query = new WP_Query($related_articles_args);
+
+            echo '<div class="related-projets">';
+
+            // Générez un lien vers la catégorie
+         //   $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
+         $category_url = '/category/' . $article_category[0]->slug;
+         echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
 
             if ($related_articles_query->have_posts()) :
                 echo '<div class="related-articles">';
@@ -235,9 +268,9 @@ function filter_posts()
                 endwhile;
                 echo '</div>';
             endif;
-            // Générez un lien vers la catégorie
-            $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
-            echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
+
+            echo '</div>';
+
 
             echo '</div>'; // Fermez le conteneur du contenu de l'article
         endwhile;

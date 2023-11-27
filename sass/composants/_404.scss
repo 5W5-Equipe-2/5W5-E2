@@ -1,0 +1,108 @@
+.erreur{
+    background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond-1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+    position: relative;
+    z-index: 4;
+    section > *{
+        margin: auto; // necessaire pour centre le contenu
+        width: 70%;
+    }
+    section{
+        z-index: 5;
+        padding: 1vw;
+        height: fit-content;
+        left: 50%; // necessaire pour centre le contenu
+        position: absolute; // necessaire pour centre le contenu
+        top: 47%; // necessaire pour centre le contenu
+        transform: translate(-50%, -50%); // necessaire pour centre le contenu
+        width: 100%;
+        h1{
+            font-size: clamp(2rem, -0.0385rem + 4vw, 3rem);
+            color: var(--primaire);
+            padding-bottom: 2vh;
+            text-shadow: -0.8px -0.8px 0 var(--noir), 0.8px -0.8px 0 var(--noir), -0.8px 0.8px 0 var(--noir), 0.8px 0.8px 0 var(--noir);
+        }
+        a{
+            color: var(--noir);
+        }
+        .contenant_infos{
+            display: flex;
+            flex-direction: column;
+            .description{ // description de l'erreur
+                display: flex;
+                flex-direction: column;
+                gap: 1vh;
+                margin-top: 1vh;
+            }
+            .liens{ // liens remplaceant
+                margin-top: 2vh;
+                ul{
+                    margin-top: 0.5vh;
+                }  
+            }
+        }
+        .bouton_retour{
+            margin: auto;
+            margin-top: 4vh;
+            width: fit-content;
+            
+            a{
+                border: 1px solid var(--simili-noir);
+                border-radius: 50em;
+                padding: 0.3em 0.8em;
+            }
+            a:hover{ // style du bouton
+                background-color: var(--simili-noir);
+                color: var(--blanc);
+            }
+
+        }  
+    }
+}
+.erreur::after{
+    background-color: rgb(255, 255, 255);
+    content: "";
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+@media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
+    .erreur{
+        background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: 120px;
+        min-height: 90vh;
+    }
+}
+@media screen and (min-width:$largeur__bureau){ // Début requête média Tablette
+    .erreur{
+        background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond-Bureau.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100vw 80vh;
+        min-height: 80vh;
+        position: relative;
+    section > *{
+        margin: auto;
+        width: 60%;
+    }
+    h1{
+        width: fit-content;
+    }
+    section > div:first-of-type{
+        flex-direction: row;
+        gap: 1.5vw;
+        justify-content: center;
+
+        .liens{ // liens remplaceant
+            margin-top: 1vh;            
+        }
+    }
+}
+}
