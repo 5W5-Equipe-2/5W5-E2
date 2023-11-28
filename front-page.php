@@ -6,7 +6,6 @@
  */
 
 /****Requêtes catégorie media *********************************************************/
-//pre_get_post limite à 10 post ? sans equête ici, on obtient que 10 articles de 'media'
 
 $args = array(
     'category_name' => 'media',
