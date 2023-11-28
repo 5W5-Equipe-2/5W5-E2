@@ -467,10 +467,10 @@ a:hover, a:focus, a:active {
   color: var(--primaire);
 }
 
-.site__aside .menu-projets a {
+.site__aside .menu-projets a, .site__aside .menu-evenements a {
   color: var(--blanc);
 }
-.site__aside .menu-projets a:hover, .site__aside .menu-projets a:focus, .site__aside .menu-projets a:active {
+.site__aside .menu-projets a:hover, .site__aside .menu-projets a:focus, .site__aside .menu-projets a:active, .site__aside .menu-evenements a:hover, .site__aside .menu-evenements a:focus, .site__aside .menu-evenements a:active {
   color: var(--primaire);
 }
 
@@ -500,6 +500,9 @@ a:hover, a:focus, a:active {
   color: var(--complementaire);
 }
 
+.Liste_programme .cours_session .filter-button {
+  color: var(--noir);
+}
 .Liste_programme #content .article-button {
   color: var(--blanc);
 }
@@ -607,7 +610,7 @@ body {
     display: flex;
     padding: 0;
     background-color: var(--simili-noir);
-    min-height: 5vh;
+    min-height: 4em;
     /* .navigation-projet{
       display: none;
     } */
@@ -706,17 +709,16 @@ body {
 }
 .categorie__section .categorie__article {
   background-color: var(--simili-noir);
-  border: 1px solid var(--noir);
   border-radius: 1em;
   /* color: var(--blanc); // couleur texte blanc */
+  /* display: flex;
+  align-items: flex-start;
+  flex-direction: column; */
   margin: 5%;
   overflow: hidden;
   text-align: center;
   width: 90%;
   height: auto;
-  /* a{
-    color: var(--blanc);
-  } */
 }
 .categorie__section .categorie__article figure {
   background-color: var(--simili-noir);
@@ -727,6 +729,16 @@ body {
 }
 .categorie__section .categorie__article h3 {
   font-size: 18px;
+}
+.categorie__section .categorie__article p {
+  color: var(--blanc);
+}
+.categorie__section .categorie__article .conteneur_date {
+  display: flex;
+  justify-content: center;
+}
+.categorie__section .categorie__article .conteneur_date svg {
+  margin-right: 0.5em;
 }
 
 /*-----------------------adaptivité de la page projet et évènement---------------------*/
@@ -757,6 +769,14 @@ body {
   padding: 5%;
 }
 .section_single .wp-block-group {
+  background-color: var(--blanc);
+  border-radius: 1em;
+  flex-basis: 98%;
+  padding: 2%;
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom: 1%;
   /* padding-top: 2.5%;
   padding-bottom: 2.5%; */
 }
@@ -767,6 +787,7 @@ body {
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
+  /*-----évènement------------*/
 }
 .section_single .information_single div:first-child {
   display: flex;
@@ -782,18 +803,17 @@ body {
 .section_single .information_single div:nth-child(2) > * {
   margin-right: 0.5em;
 }
+.section_single .information_single .info_heure_date {
+  display: flex;
+}
+.section_single .information_single .info_heure_date svg {
+  margin-right: 0.5em;
+}
 
 /*-----------------------------single evenement------------------------------------*/
 /*-----------------------------single evenement fin------------------------------------*/
 /*-----------------------------single projet bureau------------------------------------*/
 @media screen and (min-width: 992px) {
-  /* .section_single > *{
-    height: 100%;
-  } */
-  .section_single {
-    /* display: flex;
-    flex-wrap: wrap; */
-  }
   .section_single h2 {
     flex-basis: 100%;
   }
@@ -801,10 +821,9 @@ body {
     flex-basis: 60%;
   }
   .section_single .wp-block-group, .section_single p {
-    flex-basis: 40%;
-  }
-  .section_single .wp-block-group p, .section_single p p {
-    padding-left: 1em;
+    flex-basis: 38%;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 /*-----------------------------fin single projet---------------------------------*/
@@ -814,7 +833,7 @@ body {
 */
 .site_entete {
   background-color: var(--noir);
-  min-height: 5vh;
+  min-height: 4em;
   width: 100%;
   display: flex;
 }
@@ -1005,6 +1024,9 @@ menu tablet
   .site_pied_page .contenu_footer .section_footer {
     padding-left: 2em;
     padding-right: 2em;
+  }
+  .site_pied_page .contenu_footer .section_footer h4 {
+    margin-bottom: 0.3em;
   }
 }
 /* Fichier pour le style de la barre de recherche
@@ -1490,6 +1512,11 @@ th {
 .info_programme .description_programme h2 {
   padding-bottom: 2em;
 }
+.info_programme .description_programme p {
+  background-color: var(--blanc);
+  border-radius: 2em;
+  padding: 1em;
+}
 .info_programme .inscription_programme {
   align-items: center;
   background-color: var(--complementaire);
@@ -1539,8 +1566,11 @@ th {
 .Liste_programme .cours_session .filter-button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
   font-family: var(--police-texte);
-  margin: 1em;
+  font-size: 18px;
+  width: 2em;
+  height: 2em;
 }
 .Liste_programme #content {
   border-radius: 2em;
@@ -1556,6 +1586,7 @@ th {
   background-color: transparent;
   border: none;
   border-bottom: 2px solid var(--blanc);
+  cursor: pointer;
   font-family: var(--police-texte);
   flex: 1;
   margin-left: 5%;
@@ -1625,12 +1656,16 @@ th {
 
 /*--------------------------------bureau------------------------*/
 @media screen and (min-width: 992px) {
+  .Liste_programme .cours_session .filter-button {
+    font-size: 21px;
+  }
   .Liste_programme #content {
     align-items: flex-start;
   }
   .Liste_programme #content .article-button {
     width: 90%;
     text-align: left;
+    font-size: 18px;
   }
   .Liste_programme #content .article-content {
     padding: 2em;
@@ -1900,8 +1935,7 @@ th {
 .Profs .carousel-content .carousel-item {
   height: 500px;
 }
-
-.categorie__article {
+.Profs .categorie__article {
   border-radius: 2vh;
   color: var(--blanc);
   display: flex;
@@ -1910,40 +1944,42 @@ th {
   text-align: center;
   width: 85vw;
 }
-.categorie__article div {
-  width: 100%;
-}
-.categorie__article .image_titre_date {
+.Profs .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
   border-radius: 7%;
   overflow: hidden;
+  width: 85vw;
 }
-.categorie__article .image_titre_date .contenant__image {
+.Profs .categorie__article .image_titre_date .contenant__image {
   height: 78%;
   margin: 0;
   overflow: hidden;
   padding: 0;
 }
-.categorie__article .image_titre_date .contenant__image a img {
-  height: 110%;
+.Profs .categorie__article .image_titre_date .contenant__image a img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);
+  width: auto;
   margin: auto auto;
-  width: 110%;
 }
-.categorie__article .image_titre_date .contenant__titre {
+.Profs .categorie__article .image_titre_date .contenant__titre {
   align-items: center;
   display: flex;
   flex-direction: column;
   height: 14vw;
   justify-content: center;
 }
-.categorie__article .image_titre_date .contenant__titre .conteneur_date {
+.Profs .categorie__article .image_titre_date .contenant__titre .conteneur_date {
   display: flex;
   gap: 0.3vw;
   align-items: center;
   justify-content: center;
 }
-.categorie__article .content {
+.Profs .categorie__article .content {
   background-color: var(--simili-noir);
   display: none;
 }
@@ -1978,6 +2014,15 @@ th {
   .Profs .Profs__article .categorie__article .image_titre_date .contenant__titre {
     height: 6.5vw;
   }
+  .Profs .Profs__article .categorie__article .image_titre_date a img {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+    height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);
+    width: auto;
+    margin: auto auto;
+  }
   .Profs .Profs__article .categorie__article .content {
     border-radius: 7%;
     display: block;
@@ -1990,6 +2035,9 @@ th {
     left: 50%;
     transform: translate(-50%, -50%);
     margin: auto;
+  }
+  .Profs .Profs__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
+    flex-direction: column;
   }
   .Profs .Profs__article .categorie__article .content .contenant_contenu p, .Profs .Profs__article .categorie__article .content .contenant_contenu h5, .Profs .Profs__article .categorie__article .content .contenant_contenu div {
     margin: 0 auto;

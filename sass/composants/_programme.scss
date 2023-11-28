@@ -20,58 +20,59 @@
             height: 500px;
         }
     }
-    
-}
-.categorie__article{ 
-    // background-color: var(--simili-noir);
-    border-radius: 2vh; // arrondir les coins
-    color: var(--blanc); // couleur texte blanc
-    display: flex;
-    height: 55vw;
-    overflow: hidden; // pour que les coin du haut reste courber
-    text-align: center; // Center le texte
-    width: 85vw;
-
-    div{
-      width: 100%;
-    }
-    // Les informations necessaires/importants -titre -image -Date
-    .image_titre_date{
-      background-color: var(--simili-noir);
-      height: 100%;
-      border-radius: 7%;
-      overflow: hidden;
-      .contenant__image {
-        height: 78%;
-        margin: 0;
-        overflow: hidden;
-        padding: 0;
-        a img{
-          height: 110%;
-          margin: auto auto;
-          width: 110%;
-        }
-      }
-     .contenant__titre{
-        align-items: center;
+    .categorie__article{ 
+        // background-color: var(--simili-noir);
+        border-radius: 2vh; // arrondir les coins
+        color: var(--blanc); // couleur texte blanc
         display: flex;
-        flex-direction: column;
-        height: 14vw; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
-        justify-content: center;
-        .conteneur_date{
-          display: flex;
-          gap: 0.3vw;
-          align-items: center;
-          justify-content: center;
+        height: 55vw;
+        overflow: hidden; // pour que les coin du haut reste courber
+        text-align: center; // Center le texte
+        width: 85vw;
+    
+        // Les informations necessaires/importants -titre -image -Date
+        .image_titre_date{
+          background-color: var(--simili-noir);
+          height: 100%;
+          border-radius: 7%; // arrondis
+            overflow: hidden; // pour garder les coins arrondis
+            width: 85vw;
+
+          .contenant__image {
+            height: 78%;
+            margin: 0;
+            overflow: hidden;
+            padding: 0;
+            a img{
+                object-fit: cover;
+                object-position: center center;
+              height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);//clamp(110%, calc(110% + (100dvw /)), 180%);
+              width: auto;
+              margin: auto auto;
+            }
+          }
+         .contenant__titre{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 14vw; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
+            justify-content: center;
+            .conteneur_date{
+              display: flex;
+              gap: 0.3vw;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+        }
+        // Les informations secondaires -Descriptions -additionnels -information de l'articles
+        .content{
+          background-color: var(--simili-noir);
+          display: none;
         }
       }
-    }
-    // Les informations secondaires -Descriptions -additionnels -information de l'articles
-    .content{
-      background-color: var(--simili-noir);
-      display: none;
-    }
-  }
+}
+
  
   @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
     .Profs { 
@@ -101,6 +102,13 @@
             .contenant__titre{
             height: 6.5vw; // le full height - l'hauteur de l'image
             }
+            a img{
+                object-fit: cover;
+                object-position: center center;
+              height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);//clamp(110%, calc(110% + (100dvw /)), 180%);
+              width: auto;
+              margin: auto auto;
+            }
           }
           // Les informations secondaires -Descriptions -additionnels -information de l'articles
           .content{ // contenant qui contient toutes les informations secondaires
@@ -114,6 +122,9 @@
               left: 50%; // necessaire pour centre le contenu
               transform: translate(-50%, -50%); // necessaire pour centre le contenu
               margin: auto; // necessaire pour centre le contenu
+              .wp-block-group__inner-container{
+                flex-direction: column;
+              }
               p,h5,div{
                 margin: 0 auto; // centrer horizontal
                 width: 38vw; // largeur
