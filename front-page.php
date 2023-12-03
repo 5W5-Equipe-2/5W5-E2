@@ -5,8 +5,7 @@
  * 
  */
 
-/****Requêtes catégorie media *********************************************************/
-//pre_get_post limite à 10 post ? sans equête ici, on obtient que 10 articles de 'media'
+/****Requêtes pour la catégorie media (et extension Diaporama) *****************/
 
 $args = array(
     'category_name' => 'media',
@@ -17,12 +16,12 @@ $query = new WP_Query($args);
 // Récupérer les résultats de la requête
 $posts = $query->get_posts();
 
-// Mélanger l'ordre des articles
+// Mélanger l'ordre des articles pour avoir les images de mise en avant au hasard
 shuffle($posts);
 ?>
 
 <?php
-$imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg';
+$imagePath =  get_template_directory_uri() . '/images/media_vedette_test.jpg'; 
 $imagePathT =  get_template_directory_uri() . '/images/logo_t.png';
 $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
 
@@ -31,13 +30,13 @@ $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
 
 get_header(); ?>
 <main class="site_main site_main_accueil">
+  <!-- Section du média vedette / extendion Diaporama -->
   <section class="media_vedette">
-
     <div class="diaporama masquer-image">
     <?php
     // Vérifier s'il y a des articles après le shuffle
     if ($posts) :
-      // Utiliser la boucle pour afficher les articles dans l'ordre mélangé
+      // Utiliser la boucle pour afficher les articles dans l'ordre au hasard
       foreach ($posts as $post) :
         setup_postdata($post);
         get_template_part('template-parts/categorie-media'); //charger le modèle
@@ -53,27 +52,26 @@ get_header(); ?>
     echo do_shortcode('[diaporama]');
     ?>
     </div>
-
     <div class="reseaux_sociaux"><?php dynamic_sidebar('mv_reseau_sociaux'); ?></div>
     <div class="logo_tim">
       <span><img src="<?php echo $imagePathT; ?>" alt="Ti"></span>
       <span><img src="<?php echo $imagePathM; ?>" alt="M"></span>
     </div>
     <div class="sous_titre"><?php dynamic_sidebar('mv_nom_techniques'); ?></div>
-    <div class="fleche"></div>
+    <a href="#sous_titre"><div class="fleche"></div></a>
   </section>
-  <section class="accueil_description">
+<!-- Section du sous-titre / widget -->
+  <section id="sous_titre" class="accueil_description">
     <?php dynamic_sidebar('description_punch'); ?>
   </section>
-
-
+<!-- Section des évènements récents -->
   <section class="accueil_evenements">
     <h2>Évènements récents</h2>
     <div class="evenements_recents">
       <?php echo do_shortcode('[5w5e2carrousel categories="evenements" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="5"]'); ?>
     </div>
   </section>
-
+<!-- Section d'information / widget'-->
   <section class="accueil_programme">
     <?php dynamic_sidebar('inscription_accueil'); ?>
   </section>
