@@ -526,6 +526,14 @@ a:hover, a:focus, a:active {
   background-color: var(--simili-noir);
 } */
 /* 
+** Tout ce qui concerne la balise html
+** 
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* 
 ** Tout ce qui concerne la balise body
 ** 
 */
