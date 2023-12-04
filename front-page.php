@@ -6,7 +6,6 @@
  */
 
 /****Requêtes pour la catégorie media (et extension Diaporama) *****************/
-
 $args = array(
     'category_name' => 'media',
     'posts_per_page' => -1, 
@@ -58,10 +57,10 @@ get_header(); ?>
       <span><img src="<?php echo $imagePathM; ?>" alt="M"></span>
     </div>
     <div class="sous_titre"><?php dynamic_sidebar('mv_nom_techniques'); ?></div>
-    <a href="#" id="sous_titre"><div class="fleche"></div></a>
+    <div class="fleche"></div>
   </section>
 <!-- Section du sous-titre / widget -->
-  <section id="section_accueil_description" class="accueil_description">
+  <section class="accueil_description">
     <?php dynamic_sidebar('description_punch'); ?>
   </section>
 <!-- Section des évènements récents -->
@@ -77,24 +76,3 @@ get_header(); ?>
   </section>
 </main>
 <?php get_footer(); ?>
-
-<!-- 
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const arrowButton = document.getElementById('sous_titre');
-
-    if (arrowButton) {
-        arrowButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Empêche le comportement par défaut du lien (changer l'URL)
-            
-            const targetSection = document.getElementById('section_accueil_description');
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    }
-});
-
-</script>  -->
