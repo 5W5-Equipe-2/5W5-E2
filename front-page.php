@@ -58,10 +58,10 @@ get_header(); ?>
       <span><img src="<?php echo $imagePathM; ?>" alt="M"></span>
     </div>
     <div class="sous_titre"><?php dynamic_sidebar('mv_nom_techniques'); ?></div>
-    <a href="#sous_titre"><div class="fleche"></div></a>
+    <a href="#" id="sous_titre"><div class="fleche"></div></a>
   </section>
 <!-- Section du sous-titre / widget -->
-  <section id="sous_titre" class="accueil_description">
+  <section id="section_accueil_description" class="accueil_description">
     <?php dynamic_sidebar('description_punch'); ?>
   </section>
 <!-- Section des évènements récents -->
@@ -76,5 +76,25 @@ get_header(); ?>
     <?php dynamic_sidebar('inscription_accueil'); ?>
   </section>
 </main>
-
 <?php get_footer(); ?>
+
+<!-- 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const arrowButton = document.getElementById('sous_titre');
+
+    if (arrowButton) {
+        arrowButton.addEventListener('click', function(event) {
+            event.preventDefault(); // Empêche le comportement par défaut du lien (changer l'URL)
+            
+            const targetSection = document.getElementById('section_accueil_description');
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+});
+
+</script>  -->
