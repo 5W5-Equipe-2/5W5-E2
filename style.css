@@ -2078,4 +2078,7 @@ th {
   .Profs .Profs__article .categorie__article .content p {
     margin-top: 2rem;
   }
+}
+.temoignage__article {
+  min-height: 30vh;
 }/*# sourceMappingURL=style.css.map */
