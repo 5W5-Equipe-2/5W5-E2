@@ -97,26 +97,11 @@
 .accueil_programme { // section de inscription
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 75vw;
+  background-color: var(--complementaire);
 
-  .widget_block{
-    border: 1px solid black;
-    min-height: 30vh; 
-    padding-bottom: 5%;
-    padding-top: 20vh;
-    position: relative;
-    .widget-title{
-      margin: 0 auto; // Centrer horizontalement
-      width: 90%;
-    }
-    .wp-widget-group__inner-blocks{
-      margin: 0 auto; // Centrer horizontalement
-      margin-top: 2%;
-      width: 90%;
-    }
-  }
-  .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
-    background-color: var(--complementaire);
+  .widget_block{ // Le premier bloc : tu veux nous rejoindre4
+    
     padding-top: 5%;
             z-index: 5;
     
@@ -137,36 +122,6 @@
         background-color: var(--simili-noir);
         color: var(--blanc);
       }
-    }
-  }
-  .widget_block:nth-of-type(2){
-    margin: 0;
-    background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-1_Tablette-1.png") ;
-    background-size: cover;
-    // z-index: -2;
-    h2,p,a{
-      color: white;
-      padding: 0.5vmin;
-      // z-index: 1;
-    }
-    a:hover{
-      color: var(--complementaire);
-    }
-  }
-  .widget_block:last-of-type{
-    margin: 0;
-    // background-color: rgb(186, 186, 206);
-    background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png") ;
-    background-size: cover;
-    // z-index: -2;
-    h2,p,a{
-      color: white;
-      padding: 0.5vmin;
-     
-      // z-index: 1;
-    }
-    a:hover{
-      color: var(--complementaire);
     }
   }
 }
@@ -225,21 +180,6 @@
           .contenant_contenu > p:last-of-type, .contenant_contenu > p:first-of-type{  padding-bottom: 1.5vw;}
         }
       }
-    }
-  }
-  .accueil_programme { // section de inscription
-  flex-direction: row; // changement de l'affichement en ligne
-    .widget_block{
-      display: flex;
-      flex-direction: column;
-      padding: 0;
-      padding-bottom: 0;
-      padding-top: 16vh;
-      width: inherit; // prennent tout la taille de la section
-    }
-    .widget_block:first-of-type{ // Le premier bloc : tu veux nous rejoindre4
-      justify-content: flex-start;
-      padding-top: 5%;
     }
   }
 }// Fin requête média Tablette

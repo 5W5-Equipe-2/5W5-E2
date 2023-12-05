@@ -367,12 +367,16 @@ Fichier pour les variables du thème (couleurs, root, polices)
 /*
 CSS Clam font-size generator : https://clamp.font-size.app/
 */
+a {
+  font-size: clamp(1.25rem, 1.2137rem + 0.1453vw, 1.5625rem);
+}
+
 h1 {
   font-size: clamp(1.3rem, -0.0385rem + 3vw, 2rem);
 }
 
 h2 {
-  font-size: clamp(1.375rem, 1.3194rem + 0.2963vw, 1.875rem);
+  font-size: clamp(1.6875rem, 1.6657rem + 0.0872vw, 1.875rem);
 }
 
 h3 {
@@ -390,7 +394,7 @@ h6 {
 p,
 ul,
 li {
-  font-size: clamp(1rem, 0.9653rem + 0.1852vw, 1.3125rem);
+  font-size: clamp(1.3rem, 1.0887rem + 0.1453vw, 1.4375rem);
   font-family: var(--police-texte);
   line-height: 150%;
 }
@@ -962,16 +966,16 @@ menu bureau
     display: none;
   }
   .main-navigation.toggled ul,
-  .main-navigation ul {
+.main-navigation ul {
     display: flex;
     padding-top: 0;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-  .main-navigation ul a[href="#"]::after {
+.main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-  .main-navigation ul ul {
+.main-navigation ul ul {
     display: none;
   }
 }
@@ -1115,13 +1119,13 @@ menu tablet
 .media_vedette .reseaux_sociaux {
   display: flex;
   flex-direction: column;
-  gap: 0.3vh;
+  gap: 0.5vh;
   background-color: var(--noir);
-  bottom: 12vh;
+  bottom: 15vh;
   position: absolute;
   right: 0;
   margin: 0;
-  padding: 0.5vh 0;
+  padding: 0.8vh 0;
   z-index: 10;
 }
 .media_vedette .reseaux_sociaux div {
@@ -1183,28 +1187,27 @@ menu tablet
   width: 100%;
   color: var(--blanc);
 }
+.media_vedette .sous_titre h2 {
+  font-size: clamp(1.5625rem, 1.4881rem + 0.3175vw, 2.25rem);
+}
 .media_vedette .sous_titre div {
   text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
   position: absolute;
 }
-.media_vedette .sous_titre div:first-of-type, .media_vedette .sous_titre div:nth-of-type(2) {
-  left: 5vw;
+.media_vedette .sous_titre .widget_block:first-of-type {
+  left: 10%;
   top: 5vh;
 }
-.media_vedette .sous_titre div:last-of-type {
-  bottom: 10%;
-  left: 0;
-  margin: 0 auto;
-  position: absolute;
-  right: 0;
-  width: max-content;
+@media screen and (min-width: 992px) {
+  .media_vedette .sous_titre .widget_block:first-of-type {
+    left: 5%;
+  }
 }
-.media_vedette .fleche {
-  animation: animation-saut 1s ease-in-out infinite;
-  bottom: 5%;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 15px solid var(--blanc);
+.media_vedette .sous_titre .widget_block:first-of-type > h2 {
+  padding-bottom: 2vh;
+}
+.media_vedette .sous_titre .widget_block:last-of-type {
+  bottom: 10%;
   left: 0;
   margin: 0 auto;
   position: absolute;
@@ -1328,70 +1331,30 @@ menu tablet
 .accueil_programme {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 75vw;
+  background-color: var(--complementaire);
 }
 .accueil_programme .widget_block {
-  border: 1px solid black;
-  min-height: 30vh;
-  padding-bottom: 5%;
-  padding-top: 20vh;
-  position: relative;
-}
-.accueil_programme .widget_block .widget-title {
-  margin: 0 auto;
-  width: 90%;
-}
-.accueil_programme .widget_block .wp-widget-group__inner-blocks {
-  margin: 0 auto;
-  margin-top: 2%;
-  width: 90%;
-}
-.accueil_programme .widget_block:first-of-type {
-  background-color: var(--complementaire);
   padding-top: 5%;
   z-index: 5;
 }
-.accueil_programme .widget_block:first-of-type .wp-widget-group__inner-blocks {
+.accueil_programme .widget_block .wp-widget-group__inner-blocks {
   padding-bottom: 5%;
 }
-.accueil_programme .widget_block:first-of-type .wp-block-buttons {
+.accueil_programme .widget_block .wp-block-buttons {
   font-family: var(--police-texte);
   z-index: 5;
   padding-top: 10%;
 }
-.accueil_programme .widget_block:first-of-type .wp-block-buttons a {
+.accueil_programme .widget_block .wp-block-buttons a {
   background-color: transparent;
   border: 1px solid var(--simili-noir);
   color: var(--simili-noir);
   z-index: 5;
 }
-.accueil_programme .widget_block:first-of-type .wp-block-buttons a:hover {
+.accueil_programme .widget_block .wp-block-buttons a:hover {
   background-color: var(--simili-noir);
   color: var(--blanc);
-}
-.accueil_programme .widget_block:nth-of-type(2) {
-  margin: 0;
-  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-1_Tablette-1.png");
-  background-size: cover;
-}
-.accueil_programme .widget_block:nth-of-type(2) h2, .accueil_programme .widget_block:nth-of-type(2) p, .accueil_programme .widget_block:nth-of-type(2) a {
-  color: white;
-  padding: 0.5vmin;
-}
-.accueil_programme .widget_block:nth-of-type(2) a:hover {
-  color: var(--complementaire);
-}
-.accueil_programme .widget_block:last-of-type {
-  margin: 0;
-  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Accueil-2_Tablette-1.png");
-  background-size: cover;
-}
-.accueil_programme .widget_block:last-of-type h2, .accueil_programme .widget_block:last-of-type p, .accueil_programme .widget_block:last-of-type a {
-  color: white;
-  padding: 0.5vmin;
-}
-.accueil_programme .widget_block:last-of-type a:hover {
-  color: var(--complementaire);
 }
 
 @media screen and (min-width: 800px) {
@@ -1446,21 +1409,6 @@ menu tablet
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
-  }
-  .accueil_programme {
-    flex-direction: row;
-  }
-  .accueil_programme .widget_block {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    padding-bottom: 0;
-    padding-top: 16vh;
-    width: inherit;
-  }
-  .accueil_programme .widget_block:first-of-type {
-    justify-content: flex-start;
-    padding-top: 5%;
   }
 }
 @media screen and (min-width: 1800px) {
@@ -1568,7 +1516,6 @@ th {
   border: none;
   cursor: pointer;
   font-family: var(--police-texte);
-  font-size: 18px;
   width: 2em;
   height: 2em;
 }
@@ -1656,16 +1603,12 @@ th {
 
 /*--------------------------------bureau------------------------*/
 @media screen and (min-width: 992px) {
-  .Liste_programme .cours_session .filter-button {
-    font-size: 21px;
-  }
   .Liste_programme #content {
     align-items: flex-start;
   }
   .Liste_programme #content .article-button {
     width: 90%;
     text-align: left;
-    font-size: 18px;
   }
   .Liste_programme #content .article-content {
     padding: 2em;
@@ -1898,17 +1841,6 @@ th {
   }
   100% {
     opacity: 0;
-  }
-}
-@keyframes animation-saut {
-  0% {
-    bottom: 5%;
-  }
-  80% {
-    bottom: 6%;
-  }
-  100% {
-    bottom: 5%;
   }
 }
 .Profs {

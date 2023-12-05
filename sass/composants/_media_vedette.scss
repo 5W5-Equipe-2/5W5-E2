@@ -13,13 +13,13 @@
   .reseaux_sociaux{
     display: flex;
     flex-direction: column;
-    gap: 0.3vh;
+    gap: 0.5vh;
     background-color: var(--noir);
-    bottom: 12vh;
+    bottom: 15vh;
     position: absolute;
     right: 0;
     margin: 0;
-    padding: 0.5vh 0;
+    padding: 0.8vh 0;
     z-index: 10;
     div{
       width: 55%;
@@ -81,15 +81,25 @@
     top: 0;
     width: 100%;
     color: var(--blanc);
+    h2{
+      font-size: clamp(1.5625rem, 1.4881rem + 0.3175vw, 2.25rem);
+    }
     div{
       text-shadow: -1px -1px 0 var(--noir), 1px -1px 0 var(--noir), -1px 1px 0 var(--noir), 1px 1px 0 var(--noir);
       position: absolute;
     }
-    div:first-of-type,div:nth-of-type(2){ // nom de la technique et code
-      left: 5vw;
+    .widget_block:first-of-type{ // nom de la technique et code
+      left: 10%;
+      // 5
+      @media screen and (min-width:$largeur__bureau){
+      left: 5%;
+      }
       top: 5vh;
     }
-    div:last-of-type{ // Collège de maisonneuve
+    .widget_block:first-of-type > h2{
+       padding-bottom: 2vh;
+    }
+    .widget_block:last-of-type{ // Collège de maisonneuve
       bottom: 10%; // aligner au axe vertical
       left: 0; // centrer les logo
       margin:  0 auto; // centrer les logo
@@ -98,19 +108,6 @@
       // text-align: left;
       width: max-content;
     }
-  }
-  .fleche{
-    animation: animation-saut 1s ease-in-out infinite;
-    
-    bottom: 5%; // aligner au axe vertical
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid var(--blanc);
-    left: 0; // centrer les logo
-    margin:  0 auto; // centrer les logo
-    position: absolute; // pour le mettre par dessus le média-vedette
-    right: 0; // centrer les logo
-    width: max-content;
   }
 }
 .diaporama {
