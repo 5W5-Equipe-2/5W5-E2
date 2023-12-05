@@ -3,6 +3,7 @@
     padding-bottom: 3rem;
     width: 100%; // largeur
     .Profs__article{
+      height: 75vw;
         .carousel-navigation {
             padding-top: 3rem;
         }
@@ -89,10 +90,12 @@
     }
       .Profs__article{ // le div qui contient tous les boîtes d'évènements récents
         /* Boite d'évènement récent */
+        height: 40vw;
         .categorie__article{ 
           border-radius: 0; // on enleve l'arrondissement et on met au enfant
           justify-content: space-between; // met un à cote de l'autre
           width: 82vw; // ajustement de largeur
+          height: 30vw;
   
           // Les informations necessaires/importants -titre -image -Date
           .image_titre_date{
@@ -147,12 +150,6 @@
   @media screen and (min-width:$largeur__bureau_large){ // Début requête média Bureau
     .Profs { 
       padding: 3vw 0;
-      .carousel-content{
-        height: 500px;
-        .carousel-item{
-            height: 500px;
-        }
-    }
       .Profs__article{ // le div qui contient tous les boîtes d'évènements récents
         height: 30vw;
         /* Boite d'évènement récent */

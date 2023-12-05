@@ -1884,6 +1884,9 @@ th {
   padding-bottom: 3rem;
   width: 100%;
 }
+.Profs .Profs__article {
+  height: 75vw;
+}
 .Profs .Profs__article .carousel-navigation {
   padding-top: 3rem;
 }
@@ -1965,11 +1968,13 @@ th {
   }
   .Profs .Profs__article {
     /* Boite d'évènement récent */
+    height: 40vw;
   }
   .Profs .Profs__article .categorie__article {
     border-radius: 0;
     justify-content: space-between;
     width: 82vw;
+    height: 30vw;
   }
   .Profs .Profs__article .categorie__article .image_titre_date {
     border-radius: 7%;
@@ -2022,12 +2027,6 @@ th {
 @media screen and (min-width: 1800px) {
   .Profs {
     padding: 3vw 0;
-  }
-  .Profs .carousel-content {
-    height: 500px;
-  }
-  .Profs .carousel-content .carousel-item {
-    height: 500px;
   }
   .Profs .Profs__article {
     height: 30vw;
