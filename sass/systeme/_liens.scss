@@ -41,7 +41,7 @@ a {
 }
 
 .site__aside{
-  .menu-projets{
+  .menu-projets, .menu-evenements{
     a{
       color: var(--blanc);
       &:hover,
@@ -98,6 +98,11 @@ a {
 }
 
 .Liste_programme{
+  .cours_session{
+    .filter-button{
+      color: var(--noir);
+    }
+  }
   #content{
     .article-button{
       color: var(--blanc);
