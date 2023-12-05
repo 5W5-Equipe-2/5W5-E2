@@ -85,7 +85,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -1059,6 +1060,9 @@ menu tablet
 .recherche > label input.recherche__input:focus {
   outline: none;
 }
+.recherche > label input.recherche__input::-moz-placeholder {
+  color: var(--blanc);
+}
 .recherche > label input.recherche__input::placeholder {
   color: var(--blanc);
 }
@@ -1148,6 +1152,7 @@ menu tablet
   position: absolute;
   right: 0;
   top: 46%;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .media_vedette .logo_tim span {
@@ -1197,6 +1202,7 @@ menu tablet
   margin: 0 auto;
   position: absolute;
   right: 0;
+  width: -moz-max-content;
   width: max-content;
 }
 .media_vedette .fleche {
@@ -1209,6 +1215,7 @@ menu tablet
   margin: 0 auto;
   position: absolute;
   right: 0;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -1222,7 +1229,8 @@ menu tablet
 .diaporama img {
   height: 100%;
   max-width: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   padding: 0;
   position: absolute;
   margin: 0;
@@ -1765,6 +1773,7 @@ th {
 .erreur section {
   z-index: 5;
   padding: 1vw;
+  height: -moz-fit-content;
   height: fit-content;
   left: 50%;
   position: absolute;
@@ -1800,6 +1809,7 @@ th {
 .erreur section .bouton_retour {
   margin: auto;
   margin-top: 4vh;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .erreur section .bouton_retour a {
@@ -1845,6 +1855,7 @@ th {
     width: 60%;
   }
   .erreur h1 {
+    width: -moz-fit-content;
     width: fit-content;
   }
   .erreur section > div:first-of-type {
@@ -1958,9 +1969,11 @@ th {
   padding: 0;
 }
 .Profs .categorie__article .image_titre_date .contenant__image a img {
-  object-fit: cover;
-  object-position: center center;
-  height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  height: clamp(12rem, 2.6667rem + 52.6667vw, 50rem);
   width: auto;
   margin: auto auto;
 }
@@ -2015,9 +2028,11 @@ th {
     height: 6.5vw;
   }
   .Profs .Profs__article .categorie__article .image_titre_date a img {
-    object-fit: cover;
-    object-position: center center;
-    height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+    height: clamp(12rem, 5.6535rem + 17.7525vw, 50.5rem);
     width: auto;
     margin: auto auto;
   }

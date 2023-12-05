@@ -47,7 +47,7 @@
             a img{
                 object-fit: cover;
                 object-position: center center;
-              height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);//clamp(110%, calc(110% + (100dvw /)), 180%);
+              height: clamp(12rem, 2.6667rem + 52.6667vw, 50rem);
               width: auto;
               margin: auto auto;
             }
@@ -108,7 +108,7 @@
             a img{
                 object-fit: cover;
                 object-position: center center;
-              height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);//clamp(110%, calc(110% + (100dvw /)), 180%);
+              height: clamp(12rem, 5.6535rem + 17.7525vw, 50.5rem);
               width: auto;
               margin: auto auto;
             }
