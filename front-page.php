@@ -6,7 +6,6 @@
  */
 
 /****Requêtes pour la catégorie media (et extension Diaporama) *****************/
-
 $args = array(
     'category_name' => 'media',
     'posts_per_page' => -1, 
@@ -58,10 +57,10 @@ get_header(); ?>
       <span><img src="<?php echo $imagePathM; ?>" alt="M"></span>
     </div>
     <div class="sous_titre"><?php dynamic_sidebar('mv_nom_techniques'); ?></div>
-    <a href="#sous_titre"><div class="fleche"></div></a>
+    <div class="fleche"></div>
   </section>
 <!-- Section du sous-titre / widget -->
-  <section id="sous_titre" class="accueil_description">
+  <section class="accueil_description">
     <?php dynamic_sidebar('description_punch'); ?>
   </section>
 <!-- Section des évènements récents -->
@@ -76,5 +75,4 @@ get_header(); ?>
     <?php dynamic_sidebar('inscription_accueil'); ?>
   </section>
 </main>
-
 <?php get_footer(); ?>
