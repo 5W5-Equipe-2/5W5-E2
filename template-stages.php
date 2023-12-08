@@ -10,14 +10,14 @@
 <main class="site_main site_main_stages">
 
     <?php /****** Introduction aux stages *******/ ?>
-    <div class="info_stages">
+    <!-- <div class="info_stages"> -->
     <section class="description_stages">
         <?php the_content(); ?>
     </section>
     <hr>
-    </div>
+    <!-- </div> -->
 
-    <hr>
+    <!-- <hr> -->
 
     <?php /****** Carrousel des témoignages de stages *******/ ?>
     <section class="temoignage">

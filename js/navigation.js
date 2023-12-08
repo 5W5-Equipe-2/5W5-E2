@@ -68,7 +68,7 @@
 			if(NavigationProjet.classList.contains('toggled')){
 				for (let nav_projet of nav_projet_scroll){
 					nav_projet.style.position = "fixed";
-					nav_projet.style.top = "8.6dvh";  // !!!----hauteur du header----!!!
+					nav_projet.style.top = "5vh";  // !!!----hauteur du header----!!!
 				}
 				for (let nav_header of nav_header_scroll){
 					nav_header.style.position = "fixed";
@@ -100,7 +100,7 @@
 		NavigationProjet.classList.remove( 'toggled' );
 	} */
 
-	const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
+	/* const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
 	const NavigationProjet = document.getElementById( 'navigation-projet' );
 	const siteNavigation = document.getElementById( 'site-navigation' );
 
@@ -110,6 +110,6 @@
 
 	if(siteNavigation.classList.contains('toggled') && mediaQueryCondition.matches){
 		siteNavigation.classList.remove( 'toggled' );
-	}
+	} */
 	
 }() );
