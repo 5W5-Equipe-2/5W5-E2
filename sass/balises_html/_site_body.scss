@@ -365,12 +365,12 @@ body {
   }
 }
 
-.section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche, .erreur{
+.section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche{
   backdrop-filter: blur(10px);
   border-radius: 1em;
 }
 
-.accueil_description{
+.accueil_description, .erreur, .description_stages{
   backdrop-filter: blur(10px);
 }
 
@@ -494,6 +494,23 @@ body {
     left: 0;
 }
 
+.description_stages::after{
+  background-color: var(--blanc);
+  //border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /*-----------------------------single evenement------------------------------------*/
 
 
@@ -526,3 +543,97 @@ body {
 /*-----------------------------fin single projet---------------------------------*/
 
 /*-----------------------------fin page projet et évènement----------------------*/
+
+/*----------------------stage--------------------------------*/
+
+.description_stages{
+  margin: 0 auto;
+  padding: 5%;
+  //text-align: center;
+  width: 80vw;
+
+  li{
+    list-style-type: disc;
+    list-style-position: outside;
+    margin-left: 2em;
+  }
+
+  hr{
+    background-color: black;
+    height: 2px;
+    margin: 0 auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 30%;  
+  }
+
+  .stage_description{
+    //border-bottom: 2px solid var(--noir);
+    margin: 0 auto;
+    padding-top: 2em;
+    //padding-bottom: 2em;
+    width: 100%;
+  }
+
+  .stage{
+    //border-bottom: 2px solid var(--noir);
+    margin: 0 auto;
+    //padding-top: 2em;
+    //padding-bottom: 2em;
+    width: 100%;
+
+    /* h3, h4, h5{
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+
+    h4:first-of-type{
+      padding-top: 0;
+    } */
+  }
+
+  .stage_employeurs{
+    margin: 0 auto;
+    //padding-top: 2em;
+    padding-bottom: 2em;
+    width: 100%;
+
+    /* p{
+      text-align: left;
+    } */
+  }
+}
+
+@media screen and (min-width : $largeur__bureau){
+  .description_stages{
+    display: flex;
+    //flex-direction: column;
+    flex-wrap: wrap;
+    padding: 2em;
+
+    hr{
+      width: 15%;
+    }
+
+    .stage{
+      border-right: 2px solid var(--noir);
+      //margin: 5%;
+      //padding: 5%;
+      width: 50%;
+
+      hr{
+        display: none;
+      }
+    }
+
+    .stage:nth-child(2){
+      //border-right: none;
+      padding-right: 5%;
+    }
+
+    .stage:nth-child(3){
+      border-right: none;
+      padding-left: 5%;
+    }
+  }
+}

@@ -815,12 +815,12 @@ body {
   margin-right: 0.5em;
 }
 
-.section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche, .erreur {
+.section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche {
   backdrop-filter: blur(10px);
   border-radius: 1em;
 }
 
-.accueil_description {
+.accueil_description, .erreur, .description_stages {
   backdrop-filter: blur(10px);
 }
 
@@ -932,6 +932,20 @@ body {
   left: 0;
 }
 
+.description_stages::after {
+  background-color: var(--blanc);
+  content: "";
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 /*-----------------------------single evenement------------------------------------*/
 /*-----------------------------single evenement fin------------------------------------*/
 /*-----------------------------single projet bureau------------------------------------*/
@@ -950,6 +964,75 @@ body {
 }
 /*-----------------------------fin single projet---------------------------------*/
 /*-----------------------------fin page projet et évènement----------------------*/
+/*----------------------stage--------------------------------*/
+.description_stages {
+  margin: 0 auto;
+  padding: 5%;
+  width: 80vw;
+}
+.description_stages li {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 2em;
+}
+.description_stages hr {
+  background-color: black;
+  height: 2px;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 30%;
+}
+.description_stages .stage_description {
+  margin: 0 auto;
+  padding-top: 2em;
+  width: 100%;
+}
+.description_stages .stage {
+  margin: 0 auto;
+  width: 100%;
+  /* h3, h4, h5{
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  h4:first-of-type{
+    padding-top: 0;
+  } */
+}
+.description_stages .stage_employeurs {
+  margin: 0 auto;
+  padding-bottom: 2em;
+  width: 100%;
+  /* p{
+    text-align: left;
+  } */
+}
+
+@media screen and (min-width: 992px) {
+  .description_stages {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+  }
+  .description_stages hr {
+    width: 15%;
+  }
+  .description_stages .stage {
+    border-right: 2px solid var(--noir);
+    width: 50%;
+  }
+  .description_stages .stage hr {
+    display: none;
+  }
+  .description_stages .stage:nth-child(2) {
+    padding-right: 5%;
+  }
+  .description_stages .stage:nth-child(3) {
+    border-right: none;
+    padding-left: 5%;
+  }
+}
 /* 
 ** Tout ce qui concerne la balise header
 */
@@ -1654,7 +1737,7 @@ th {
 
 .site_main_programme hr {
   background-color: black;
-  height: 0.1vh;
+  height: 2px;
   margin: 0 auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
@@ -1875,7 +1958,6 @@ th {
   background-size: cover;
   min-height: 80vh;
   position: relative;
-  z-index: 4;
 }
 .erreur section > * {
   margin: auto;
@@ -2076,17 +2158,9 @@ th {
   padding: 0;
 }
 .Profs .categorie__article .image_titre_date .contenant__image a img {
-
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
-  height: clamp(12rem, 2.6667rem + 52.6667vw, 50rem);
-
   object-fit: cover;
   object-position: center center;
-  height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);
-
+  height: clamp(12rem, 2.6667rem + 52.6667vw, 50rem);
   width: auto;
   margin: auto auto;
 }
@@ -2141,17 +2215,9 @@ th {
     height: 6.5vw;
   }
   .Profs .Profs__article .categorie__article .image_titre_date a img {
-
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center center;
-       object-position: center center;
-    height: clamp(12rem, 5.6535rem + 17.7525vw, 50.5rem);
-
     object-fit: cover;
     object-position: center center;
-    height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);
-
+    height: clamp(12rem, 5.6535rem + 17.7525vw, 50.5rem);
     width: auto;
     margin: auto auto;
   }
