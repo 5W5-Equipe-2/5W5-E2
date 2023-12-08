@@ -526,6 +526,14 @@ a:hover, a:focus, a:active {
   background-color: var(--simili-noir);
 } */
 /* 
+** Tout ce qui concerne la balise html
+** 
+*/
+html {
+  scroll-behavior: smooth;
+}
+
+/* 
 ** Tout ce qui concerne la balise body
 ** 
 */
@@ -947,7 +955,7 @@ body {
 */
 .site_entete {
   background-color: var(--noir);
-  min-height: 4em;
+  min-height: 5vh;
   width: 100%;
   display: flex;
   z-index: 9999;
@@ -1214,8 +1222,8 @@ menu tablet
 
 /* Pour front-page.php */
 .media_vedette {
-  height: 75vh;
-  min-height: 100%;
+  /*hauteur moins la hauteur du header*/
+  height: 80vh;
   opacity: 0.8;
   position: relative;
   width: 100%;
@@ -2026,6 +2034,9 @@ th {
   padding-bottom: 3rem;
   width: 100%;
 }
+.Profs .Profs__article {
+  height: 75vw;
+}
 .Profs .Profs__article .carousel-navigation {
   padding-top: 3rem;
 }
@@ -2065,9 +2076,17 @@ th {
   padding: 0;
 }
 .Profs .categorie__article .image_titre_date .contenant__image a img {
+
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  height: clamp(12rem, 2.6667rem + 52.6667vw, 50rem);
+
   object-fit: cover;
   object-position: center center;
   height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);
+
   width: auto;
   margin: auto auto;
 }
@@ -2105,11 +2124,13 @@ th {
   }
   .Profs .Profs__article {
     /* Boite d'évènement récent */
+    height: 40vw;
   }
   .Profs .Profs__article .categorie__article {
     border-radius: 0;
     justify-content: space-between;
     width: 82vw;
+    height: 30vw;
   }
   .Profs .Profs__article .categorie__article .image_titre_date {
     border-radius: 7%;
@@ -2120,9 +2141,17 @@ th {
     height: 6.5vw;
   }
   .Profs .Profs__article .categorie__article .image_titre_date a img {
+
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+    height: clamp(12rem, 5.6535rem + 17.7525vw, 50.5rem);
+
     object-fit: cover;
     object-position: center center;
     height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);
+
     width: auto;
     margin: auto auto;
   }
@@ -2161,12 +2190,6 @@ th {
   .Profs {
     padding: 3vw 0;
   }
-  .Profs .carousel-content {
-    height: 500px;
-  }
-  .Profs .carousel-content .carousel-item {
-    height: 500px;
-  }
   .Profs .Profs__article {
     height: 30vw;
     /* Boite d'évènement récent */
@@ -2188,4 +2211,7 @@ th {
   .Profs .Profs__article .categorie__article .content p {
     margin-top: 2rem;
   }
+}
+.temoignage__article {
+  min-height: 30vh;
 }/*# sourceMappingURL=style.css.map */
