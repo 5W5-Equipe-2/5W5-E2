@@ -945,7 +945,7 @@ menu bureau
   }
   .main-navigation .titre_boutton {
     position: absolute;
-    left: 5%;
+    left: 6.8%;
   }
   .main-navigation .titre_boutton .logo-TIM {
     flex-basis: 100%;
@@ -955,7 +955,7 @@ menu bureau
   }
   .main-navigation .site__header__recherche {
     order: 3;
-    margin-right: 5%;
+    margin-right: 6.5%;
   }
   .main-navigation ul li {
     font-size: 18px;
@@ -1200,7 +1200,7 @@ menu tablet
 }
 @media screen and (min-width: 992px) {
   .media_vedette .sous_titre .widget_block:first-of-type {
-    left: 5%;
+    left: 6.8%;
   }
 }
 .media_vedette .sous_titre .widget_block:first-of-type > h2 {
@@ -1289,7 +1289,7 @@ menu tablet
   height: 55vw;
   overflow: hidden;
   text-align: center;
-  width: 85vw;
+  width: 75vw;
 }
 .accueil_evenements .categorie__article div {
   width: 100%;
@@ -1299,7 +1299,7 @@ menu tablet
   height: 100%;
 }
 .accueil_evenements .categorie__article .image_titre_date .contenant__image {
-  height: 78%;
+  height: 75%;
   margin: 0;
   overflow: hidden;
   padding: 0;
@@ -1328,33 +1328,47 @@ menu tablet
   display: none;
 }
 
+.espacement {
+  margin: 4vh 0;
+  background-color: var(--simili-noir);
+  height: 0.2vh;
+  width: 40%;
+}
+
 .accueil_programme {
+  background-color: var(--complementaire);
+  border-radius: 5px;
+  box-shadow: 12px 12px 8px 1px rgba(0, 0, 0, 0.16);
   display: flex;
   flex-direction: column;
-  width: 75vw;
-  background-color: var(--complementaire);
+  justify-content: space-evenly;
+  margin-bottom: 5vh;
+  min-height: 40vh;
+  padding: 5% 0;
+  text-align: center;
+  width: 100vw;
+}
+.accueil_programme hr {
+  margin: 0 20%;
+}
+.accueil_programme h2 {
+  padding-bottom: 1%;
 }
 .accueil_programme .widget_block {
-  padding-top: 5%;
+  margin: 5% 10%;
   z-index: 5;
-}
-.accueil_programme .widget_block .wp-widget-group__inner-blocks {
-  padding-bottom: 5%;
 }
 .accueil_programme .widget_block .wp-block-buttons {
+  width: 100%;
   font-family: var(--police-texte);
-  z-index: 5;
-  padding-top: 10%;
+  width: fit-content;
+  padding-top: 3%;
+  margin: 0 auto;
 }
 .accueil_programme .widget_block .wp-block-buttons a {
-  background-color: transparent;
   border: 1px solid var(--simili-noir);
   color: var(--simili-noir);
   z-index: 5;
-}
-.accueil_programme .widget_block .wp-block-buttons a:hover {
-  background-color: var(--simili-noir);
-  color: var(--blanc);
 }
 
 @media screen and (min-width: 800px) {
@@ -1372,22 +1386,22 @@ menu tablet
     border-radius: 0;
     height: 30vw;
     justify-content: space-between;
-    width: 82vw;
+    width: 75vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .image_titre_date {
-    border-radius: 7%;
+    border-radius: 2vw;
     overflow: hidden;
-    width: 35vw;
+    width: 30vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .image_titre_date .contenant__titre {
     height: 6.5vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content {
-    border-radius: 7%;
+    border-radius: 2vw;
     display: block;
     position: relative;
     text-align: left;
-    width: 46vw;
+    width: 44vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu {
     position: absolute;
@@ -1409,6 +1423,33 @@ menu tablet
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
+  }
+  .accueil_programme {
+    margin-bottom: 5vh;
+    padding: 5% 0;
+    width: 100vw;
+  }
+  .accueil_programme hr {
+    margin: 0 20%;
+  }
+  .accueil_programme h2 {
+    padding-bottom: 1%;
+  }
+  .accueil_programme .widget_block {
+    margin: 5% 10%;
+    z-index: 5;
+  }
+  .accueil_programme .widget_block .wp-block-buttons {
+    width: 100%;
+    font-family: var(--police-texte);
+    width: fit-content;
+    padding-top: 3%;
+    margin: 0 auto;
+  }
+  .accueil_programme .widget_block .wp-block-buttons a {
+    border: 1px solid var(--simili-noir);
+    color: var(--simili-noir);
+    z-index: 5;
   }
 }
 @media screen and (min-width: 1800px) {
