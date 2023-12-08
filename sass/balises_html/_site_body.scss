@@ -20,6 +20,12 @@ body {
   padding-right: 5%;
   padding-top: 5%;
 
+  .boutton-projet{
+    button{
+      cursor: pointer;
+    }
+  }
+
   .menu-evenements{
     display: flex;
     justify-content: flex-start;
@@ -164,6 +170,8 @@ body {
 /*----------------projet toggled-------------*/
 .site__aside.toggled{
   background-color: var(--simili-noir);
+  width: 100vw;
+  z-index: 3;
 
   .menu-projets{
     display: block;
@@ -226,17 +234,9 @@ body {
 
   .categorie__article{
     background-color: var(--simili-noir);
-    //border: 1px solid var(--noir);
     border-radius: 1em; // arrondir les coins
-    /* color: var(--blanc); // couleur texte blanc */
-    //margin: 2em auto; // Centrer horizontalement
-    /* display: flex;
-    align-items: flex-start;
-    flex-direction: column; */
     margin: 5%;
     overflow: hidden; // pour que les coin du haut reste courber
-    //padding: 2em;
-    //line-height: 5%;
     text-align: center; // Center le texte
     width: 90%;
     height: auto;
@@ -251,8 +251,6 @@ body {
 
     h3{
       font-size: 18px;
-      //margin-top: 0.2em;
-      //margin-bottom: 0.2em;
     }
 
     p{
@@ -275,14 +273,9 @@ body {
 @media screen and (min-width : $largeur__bureau){
   .categorie__section{
     justify-content: flex-start;
-    //align-items: flex-start;
 
     .categorie__article{
-      //margin: 0;
-      //width: 25em;
       width: 40%;
-      //flex-basis: 40%;
-      //height: 20em;
     }
   }
 
@@ -318,22 +311,20 @@ body {
 
 
 .section_single{
+  //border: 1px solid var(--noir);
   display: flex;
   flex-wrap: wrap;
-  //flex-direction: column;
   padding: 5%;
+  position: relative;
 
   .wp-block-group{
-    background-color: var(--blanc);
-    border-radius: 1em;
     flex-basis: 98%;
     padding: 2%;
+    //position: relative;
     margin-top: 1%;
     margin-left: 1%;
     margin-right: 1%;
     margin-bottom: 1%;
-    /* padding-top: 2.5%;
-    padding-bottom: 2.5%; */
     p{
       padding-bottom: 1em;
       
@@ -374,6 +365,135 @@ body {
   }
 }
 
+.section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche, .erreur{
+  backdrop-filter: blur(10px);
+  border-radius: 1em;
+}
+
+.accueil_description{
+  backdrop-filter: blur(10px);
+}
+
+.section_single::after{
+  background-color: var(--blanc);
+  border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.description_programme::after{
+  background-color: var(--blanc);
+  border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Liste_programme::after{
+  background-color: var(--blanc);
+  border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.accueil_description::before{
+  background-color: var(--blanc);
+  //border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.accueil_description::after{
+  content: "";
+    height: 100%;
+    opacity: 0.8;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: right bottom;
+}
+
+.contenant_resultat_recherche::after{
+  background-color: var(--blanc);
+  border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.erreur::after{
+  background-color: var(--blanc);
+  border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
 /*-----------------------------single evenement------------------------------------*/
 
 
@@ -389,29 +509,16 @@ body {
 
   h2{
     flex-basis: 100%;
-    //flex: 2;
   }
 
     figure{
       flex-basis: 60%;
-      //width: 60%;
-      //flex: 1;
     }
 
     .wp-block-group, p{
-      //display: inline-block;
       flex-basis: 38%;
       margin-top: 0;
       margin-bottom: 0;
-      //flex: 1;
-      //width: 40%;
-
-      p{
-        //padding-left: 1em;
-      }
-    }
-
-    .information_single{
     }
   }
 }
