@@ -22,14 +22,15 @@ button {
         margin: 0 auto;
         margin-top: 2em;
         width: 80%;
+        padding: 5%;
         h2{
             padding-bottom: 2em;
         }
 
         p{
-            background-color: var(--blanc);
-            border-radius: 2em;
-            padding: 1em;
+            //background-color: var(--blanc);
+            //border-radius: 2em;
+            //padding: 1em;
         }
     }
 
@@ -78,6 +79,12 @@ button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
+    width: 80vw;
+
+    h2{
+        margin-top: 1em;
+    }
 
     h3{
         margin-top: 1em;
@@ -110,7 +117,7 @@ button {
         height: 40em;
         overflow: hidden;
         position: relative;
-        width: 80%;
+        width: 100%;
 
         .article-button{ //boutton pour les cours
             background-color: transparent;
