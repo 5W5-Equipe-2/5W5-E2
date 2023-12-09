@@ -556,6 +556,9 @@ body {
   padding-right: 5%;
   padding-top: 5%;
 }
+.site__aside .boutton-projet button {
+  cursor: pointer;
+}
 .site__aside .menu-evenements {
   display: flex;
   justify-content: flex-start;
@@ -668,6 +671,8 @@ body {
 /*----------------projet toggled-------------*/
 .site__aside.toggled {
   background-color: var(--simili-noir);
+  width: 100vw;
+  z-index: 3;
 }
 .site__aside.toggled .menu-projets {
   display: block;
@@ -721,10 +726,6 @@ body {
 .categorie__section .categorie__article {
   background-color: var(--simili-noir);
   border-radius: 1em;
-  /* color: var(--blanc); // couleur texte blanc */
-  /* display: flex;
-  align-items: flex-start;
-  flex-direction: column; */
   margin: 5%;
   overflow: hidden;
   text-align: center;
@@ -778,18 +779,15 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 5%;
+  position: relative;
 }
 .section_single .wp-block-group {
-  background-color: var(--blanc);
-  border-radius: 1em;
   flex-basis: 98%;
   padding: 2%;
   margin-top: 1%;
   margin-left: 1%;
   margin-right: 1%;
   margin-bottom: 1%;
-  /* padding-top: 2.5%;
-  padding-bottom: 2.5%; */
 }
 .section_single .wp-block-group p {
   padding-bottom: 1em;
@@ -821,6 +819,137 @@ body {
   margin-right: 0.5em;
 }
 
+.section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche {
+  backdrop-filter: blur(10px);
+  border-radius: 1em;
+}
+
+.accueil_description, .erreur, .description_stages {
+  backdrop-filter: blur(10px);
+}
+
+.section_single::after {
+  background-color: var(--blanc);
+  border-radius: 1em;
+  content: "";
+  height: 100%;
+  opacity: 0.7;
+  padding: 5%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.description_programme::after {
+  background-color: var(--blanc);
+  border-radius: 1em;
+  content: "";
+  height: 100%;
+  opacity: 0.7;
+  padding: 5%;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.Liste_programme::after {
+  background-color: var(--blanc);
+  border-radius: 1em;
+  content: "";
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.accueil_description::before {
+  background-color: var(--blanc);
+  content: "";
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.accueil_description::after {
+  content: "";
+  height: 100%;
+  opacity: 0.8;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+  background-repeat: no-repeat;
+  background-size: 120px;
+  background-position: right bottom;
+}
+
+.contenant_resultat_recherche::after {
+  background-color: var(--blanc);
+  border-radius: 1em;
+  content: "";
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.erreur::after {
+  background-color: var(--blanc);
+  border-radius: 1em;
+  content: "";
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.description_stages::after {
+  background-color: var(--blanc);
+  content: "";
+  height: 100%;
+  opacity: 0.7;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 /*-----------------------------single evenement------------------------------------*/
 /*-----------------------------single evenement fin------------------------------------*/
 /*-----------------------------single projet bureau------------------------------------*/
@@ -839,14 +968,84 @@ body {
 }
 /*-----------------------------fin single projet---------------------------------*/
 /*-----------------------------fin page projet et évènement----------------------*/
+/*----------------------stage--------------------------------*/
+.description_stages {
+  margin: 0 auto;
+  padding: 5%;
+  width: 80vw;
+}
+.description_stages li {
+  list-style-type: disc;
+  list-style-position: outside;
+  margin-left: 2em;
+}
+.description_stages hr {
+  background-color: black;
+  height: 2px;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  width: 30%;
+}
+.description_stages .stage_description {
+  margin: 0 auto;
+  padding-top: 2em;
+  width: 100%;
+}
+.description_stages .stage {
+  margin: 0 auto;
+  width: 100%;
+  /* h3, h4, h5{
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+
+  h4:first-of-type{
+    padding-top: 0;
+  } */
+}
+.description_stages .stage_employeurs {
+  margin: 0 auto;
+  padding-bottom: 2em;
+  width: 100%;
+  /* p{
+    text-align: left;
+  } */
+}
+
+@media screen and (min-width: 992px) {
+  .description_stages {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+  }
+  .description_stages hr {
+    width: 15%;
+  }
+  .description_stages .stage {
+    border-right: 2px solid var(--noir);
+    width: 50%;
+  }
+  .description_stages .stage hr {
+    display: none;
+  }
+  .description_stages .stage:nth-child(2) {
+    padding-right: 5%;
+  }
+  .description_stages .stage:nth-child(3) {
+    border-right: none;
+    padding-left: 5%;
+  }
+}
 /* 
 ** Tout ce qui concerne la balise header
 */
 .site_entete {
   background-color: var(--noir);
-  height: 8.6dvh;
+  min-height: 5vh;
   width: 100%;
   display: flex;
+  z-index: 9999;
 }
 
 .main-navigation {
@@ -891,6 +1090,9 @@ Bouton burger
   flex-basis: 50%;
   justify-content: flex-end;
   align-items: center;
+}
+.boutton button {
+  cursor: pointer;
 }
 
 .menu-toggle {
@@ -1108,7 +1310,7 @@ menu tablet
 /* Pour front-page.php */
 .media_vedette {
   /*hauteur moins la hauteur du header*/
-  height: 91.4dvh;
+  height: 80vh;
   opacity: 0.8;
   position: relative;
   width: 100%;
@@ -1241,7 +1443,6 @@ menu tablet
  ---> les balises section, article, les div
 */
 .accueil_description {
-  background-color: var(--blanc);
   padding-top: 3vh;
   padding-bottom: 6vh;
   width: 100%;
@@ -1502,14 +1703,10 @@ th {
   margin: 0 auto;
   margin-top: 2em;
   width: 80%;
+  padding: 5%;
 }
 .info_programme .description_programme h2 {
   padding-bottom: 2em;
-}
-.info_programme .description_programme p {
-  background-color: var(--blanc);
-  border-radius: 2em;
-  padding: 1em;
 }
 .info_programme .inscription_programme {
   align-items: center;
@@ -1534,7 +1731,7 @@ th {
 
 .site_main_programme hr {
   background-color: black;
-  height: 0.1vh;
+  height: 2px;
   margin: 0 auto;
   margin-top: 5vh;
   margin-bottom: 5vh;
@@ -1547,6 +1744,11 @@ th {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
+  width: 80vw;
+}
+.Liste_programme h2 {
+  margin-top: 1em;
 }
 .Liste_programme h3 {
   margin-top: 1em;
@@ -1573,7 +1775,7 @@ th {
   height: 40em;
   overflow: hidden;
   position: relative;
-  width: 80%;
+  width: 100%;
 }
 .Liste_programme #content .article-button {
   background-color: transparent;
@@ -1701,6 +1903,17 @@ th {
   background-repeat: no-repeat;
   background-size: 120px;
   background-position: right bottom;
+  /* .contenant_resultat_recherche::after{
+  background-color: var(--blanc);
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  } */
 }
 .recherche .contenant_resultat_recherche {
   padding: 1vw;
@@ -1721,17 +1934,6 @@ th {
   font-family: var(--police-texte);
   padding-bottom: 1.5vh;
 }
-.recherche .contenant_resultat_recherche::after {
-  background-color: var(--blanc);
-  content: "";
-  height: 100%;
-  left: 0;
-  opacity: 0.8;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
 
 @media screen and (min-width: 800px) {
   .recherche .contenant_resultat_recherche {
@@ -1745,7 +1947,6 @@ th {
   background-size: cover;
   min-height: 80vh;
   position: relative;
-  z-index: 4;
 }
 .erreur section > * {
   margin: auto;
@@ -1801,16 +2002,15 @@ th {
   color: var(--blanc);
 }
 
-.erreur::after {
-  background-color: rgb(255, 255, 255);
-  content: "";
-  height: 100%;
-  opacity: 0.5;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-}
-
+/* .erreur::after{
+    background-color: rgb(255, 255, 255);
+    content: "";
+    height: 100%;
+    opacity: 0.5;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+} */
 @media screen and (min-width: 800px) {
   .erreur {
     background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
@@ -1894,6 +2094,9 @@ th {
   padding-bottom: 3rem;
   width: 100%;
 }
+.Profs .Profs__article {
+  height: 75vw;
+}
 .Profs .Profs__article .carousel-navigation {
   padding-top: 3rem;
 }
@@ -1935,7 +2138,7 @@ th {
 .Profs .categorie__article .image_titre_date .contenant__image a img {
   object-fit: cover;
   object-position: center center;
-  height: clamp(12.5rem, 1.452rem + 88.3838vw, 56.25rem);
+  height: clamp(12rem, 2.6667rem + 52.6667vw, 50rem);
   width: auto;
   margin: auto auto;
 }
@@ -1973,11 +2176,13 @@ th {
   }
   .Profs .Profs__article {
     /* Boite d'évènement récent */
+    height: 40vw;
   }
   .Profs .Profs__article .categorie__article {
     border-radius: 0;
     justify-content: space-between;
     width: 82vw;
+    height: 30vw;
   }
   .Profs .Profs__article .categorie__article .image_titre_date {
     border-radius: 7%;
@@ -1990,7 +2195,7 @@ th {
   .Profs .Profs__article .categorie__article .image_titre_date a img {
     object-fit: cover;
     object-position: center center;
-    height: clamp(25rem, 9.6535rem + 24.7525vw, 37.5rem);
+    height: clamp(12rem, 5.6535rem + 17.7525vw, 50.5rem);
     width: auto;
     margin: auto auto;
   }
@@ -2029,12 +2234,6 @@ th {
   .Profs {
     padding: 3vw 0;
   }
-  .Profs .carousel-content {
-    height: 500px;
-  }
-  .Profs .carousel-content .carousel-item {
-    height: 500px;
-  }
   .Profs .Profs__article {
     height: 30vw;
     /* Boite d'évènement récent */
@@ -2056,4 +2255,7 @@ th {
   .Profs .Profs__article .categorie__article .content p {
     margin-top: 2rem;
   }
+}
+.temoignage__article {
+  min-height: 30vh;
 }/*# sourceMappingURL=style.css.map */

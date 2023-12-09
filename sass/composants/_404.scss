@@ -5,7 +5,7 @@
     background-size: cover;
     min-height: 80vh;
     position: relative;
-    z-index: 4;
+    //z-index: 4;
     section > *{
         margin: auto; // necessaire pour centre le contenu
         width: 70%;
@@ -62,7 +62,7 @@
         }  
     }
 }
-.erreur::after{
+/* .erreur::after{
     background-color: rgb(255, 255, 255);
     content: "";
     height: 100%;
@@ -70,7 +70,7 @@
     position: absolute;
     width: 100%;
     z-index: -1;
-}
+} */
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
     .erreur{
         background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");

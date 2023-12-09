@@ -22,7 +22,7 @@
             }
         }
     }
-    .contenant_resultat_recherche::after{
+    /* .contenant_resultat_recherche::after{
     background-color: var(--blanc);
     content: "";
     height: 100%;
@@ -32,7 +32,7 @@
     top: 0;
     width: 100%;
     z-index: -1;
-    }
+    } */
 }
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
     .recherche{

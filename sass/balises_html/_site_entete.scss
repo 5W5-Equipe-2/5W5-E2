@@ -4,9 +4,10 @@
 
 .site_entete {
   background-color: var(--noir);
-  height: 8.6dvh;
+  min-height: 5vh;
   width: 100%;
   display: flex;
+  z-index: 9999;
 }
 
   .main-navigation {
@@ -68,6 +69,10 @@
     justify-content: flex-end;
     align-items: center;
     //margin-top: 3%;
+
+    button{
+      cursor: pointer;
+    }
   
   }
   .menu-toggle{
