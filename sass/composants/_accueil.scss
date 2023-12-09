@@ -66,10 +66,16 @@
         margin: 0;
         overflow: hidden;
         padding: 0;
+        position: relative;
         a img{
-          height: 110%;
-          margin: auto auto;
-          width: 110%;
+          height: 100%;
+          margin: 0;
+          left: 0;
+          max-width: 100%;
+          object-fit: cover;
+          object-position: center center;
+          position: absolute;
+          width: 100%;
         }
       }
      .contenant__titre{
@@ -126,7 +132,7 @@
       width: 100%;
       font-family: var(--police-texte);
       width: fit-content;
-      padding-top: 3%;
+      padding-top: 5%;
       margin: 0 auto;
       a{ // style du bouton
         border: 1px solid var(--simili-noir);
@@ -140,6 +146,14 @@
 
 
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
+  .accueil_description { // La section qui contient la phrase punch de la page d'accueil
+  p,h2{
+    width: 65vw;
+  }
+  p{
+    text-align: left;
+  }
+  }
   .accueil_evenements { 
     padding: 4vw 0;
     h2{ // le titre
@@ -152,13 +166,13 @@
         border-radius: 0; // on enleve l'arrondissement et on met au enfant
         height: 30vw; // ajustement de l'hauteur
         justify-content: space-between; // met un à cote de l'autre
-        width: 75vw; // ajustement de largeur
+        width: 80vw; // ajustement de largeur
 
         // Les informations necessaires/importants -titre -image -Date
         .image_titre_date{
           border-radius: 2vw; // arrondis
           overflow: hidden; // pour garder les coins arrondis
-          width: 30vw;
+          width: 35vw;
           .contenant__titre{
           height: 6.5vw; // le full height - l'hauteur de l'image
           }
@@ -171,12 +185,14 @@
           text-align: left; // pour que le texte s'affiche vers la gauche
           width: 44vw; // grosseur
           .contenant_contenu{  // contenu
+            width: fit-content;
             position: absolute; // necessaire pour centre le contenu
             top: 50%; // necessaire pour centre le contenu
             left: 50%; // necessaire pour centre le contenu
             transform: translate(-50%, -50%); // necessaire pour centre le contenu
             margin: auto; // necessaire pour centre le contenu
             p,h5,div{
+              display: none;
               margin: 0 auto; // centrer horizontal
               width: 38vw; // largeur
             }
@@ -188,14 +204,28 @@
               gap: 0.3vw;
             }
           }
+          .contenant_contenu p:first-of-type{
+            display: block;
+          }
+          @media screen and (min-width : 1400px){ //inscription pour bureau
+            .contenant_contenu{  // contenu
+              p,h5{
+                display: block;
+              }
+              div{
+                display: flex;
+              }
+            }
+          }
           .contenant_contenu > p:last-of-type, .contenant_contenu > p:first-of-type{  padding-bottom: 1.5vw;}
         }
       }
     }
   }
   .accueil_programme { // section de inscription
+    border-radius: 1.5em;
     margin-bottom: 5vh;
-    padding: 5% 0;
+    padding: 3% 0;
     width: 80vw;
     hr{
       margin: 0 5%;
@@ -204,7 +234,10 @@
       padding-bottom: 1%;
     }
     .widget_block{ // Le premier bloc : tu veux nous rejoindre4
-      margin: 3% 5%;
+      margin: 3% 3%;
+    }
+    .wp-block-buttons{ // le bouton plus de détails
+      padding-top: 2%;
     }
   }
 }// Fin requête média Tablette
@@ -212,17 +245,16 @@
 @media screen and (min-width:$largeur__bureau_large){ // Début requête média Bureau
   .accueil_description { // La section qui contient la phrase punch de la page d'accueil
   p,h2{
-    margin: 0 auto;
-    width: 65vw;
+    width: 45vw;
   }
-}
+  }
   .accueil_evenements { 
     padding: 3vw 0;
     h2{ // le titre
       padding-bottom: 1vw;
     }
     .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
-      height: 28vw;
+      height: 27vw;
       /* Boite d'évènement récent */
       .categorie__article{ 
         height: 20vw;
@@ -237,22 +269,33 @@
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
         .content{
           width: 39vw;
+          .contenant_contenu{  // contenu
+            p,h5,div{
+              width: 33vw; // largeur
+            }}
         }
       }
     }
   }
   .accueil_programme { // section de inscription
+    border-radius: 2em;
     margin-bottom: 5vh;
-    padding: 5% 0;
-    width: 60vw;
+    padding: 1.5% 0;
+    width: 65vw;
+    min-height: 20vh;
     hr{
-      margin: 0 5%;
+      margin: 0 2.5%;
     }
     h2{
       padding-bottom: 1%;
     }
     .widget_block{ // Le premier bloc : tu veux nous rejoindre4
-      margin: 3% 5%;
+      margin: 1.5% 2%;
+
+      .wp-block-buttons{ // le bouton plus de détails
+        padding-top: 3%;
+      }
     }
+
   }
 }
