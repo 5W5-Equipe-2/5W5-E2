@@ -15,7 +15,7 @@
         </div>
         <div class="liens">
             <h3>Voici quelques liens à la place :</h3>
-            <!-- // Afficher la navigation principale à la place -->
+            <!-- // Afficher la navigation principale -->
             <?php wp_nav_menu(array('theme_location' => 'entete')); ?>
     </div>
     </div>
