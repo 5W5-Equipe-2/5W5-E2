@@ -398,6 +398,13 @@ li {
   font-family: var(--police-texte);
   line-height: 150%;
 }
+@media screen and (min-width: 992px) {
+  p,
+ul,
+li {
+    font-size: clamp(1.1875rem, 1.1337rem + 0.0615vw, 1.28125rem);
+  }
+}
 
 h1,
 h2,
@@ -1409,7 +1416,7 @@ menu tablet
   padding-bottom: 2vh;
 }
 .media_vedette .sous_titre .widget_block:last-of-type {
-  bottom: 10%;
+  bottom: 8%;
   left: 0;
   margin: 0 auto;
   position: absolute;
@@ -1504,11 +1511,17 @@ menu tablet
   margin: 0;
   overflow: hidden;
   padding: 0;
+  position: relative;
 }
 .accueil_evenements .categorie__article .image_titre_date .contenant__image a img {
-  height: 110%;
-  margin: auto auto;
-  width: 110%;
+  height: 100%;
+  margin: 0;
+  left: 0;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  width: 100%;
 }
 .accueil_evenements .categorie__article .image_titre_date .contenant__titre {
   align-items: center;
@@ -1563,7 +1576,7 @@ menu tablet
   width: 100%;
   font-family: var(--police-texte);
   width: fit-content;
-  padding-top: 3%;
+  padding-top: 5%;
   margin: 0 auto;
 }
 .accueil_programme .widget_block .wp-block-buttons a {
@@ -1573,6 +1586,12 @@ menu tablet
 }
 
 @media screen and (min-width: 800px) {
+  .accueil_description p, .accueil_description h2 {
+    width: 65vw;
+  }
+  .accueil_description p {
+    text-align: left;
+  }
   .accueil_evenements {
     padding: 4vw 0;
   }
@@ -1587,12 +1606,12 @@ menu tablet
     border-radius: 0;
     height: 30vw;
     justify-content: space-between;
-    width: 75vw;
+    width: 80vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .image_titre_date {
     border-radius: 2vw;
     overflow: hidden;
-    width: 30vw;
+    width: 35vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .image_titre_date .contenant__titre {
     height: 6.5vw;
@@ -1605,6 +1624,7 @@ menu tablet
     width: 44vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu {
+    width: fit-content;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1612,6 +1632,7 @@ menu tablet
     margin: auto;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu h5, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
+    display: none;
     margin: 0 auto;
     width: 38vw;
   }
@@ -1622,12 +1643,28 @@ menu tablet
     width: 38vw;
     gap: 0.3vw;
   }
+  .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p:first-of-type {
+    display: block;
+  }
+}
+@media screen and (min-width: 800px) and (min-width: 1400px) {
+  .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu h5 {
+    display: block;
+  }
+  .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
+    display: flex;
+  }
+}
+@media screen and (min-width: 800px) {
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
   }
+}
+@media screen and (min-width: 800px) {
   .accueil_programme {
+    border-radius: 1.5em;
     margin-bottom: 5vh;
-    padding: 5% 0;
+    padding: 3% 0;
     width: 80vw;
   }
   .accueil_programme hr {
@@ -1637,13 +1674,15 @@ menu tablet
     padding-bottom: 1%;
   }
   .accueil_programme .widget_block {
-    margin: 3% 5%;
+    margin: 3% 3%;
+  }
+  .accueil_programme .wp-block-buttons {
+    padding-top: 2%;
   }
 }
 @media screen and (min-width: 1800px) {
   .accueil_description p, .accueil_description h2 {
-    margin: 0 auto;
-    width: 65vw;
+    width: 45vw;
   }
   .accueil_evenements {
     padding: 3vw 0;
@@ -1652,7 +1691,7 @@ menu tablet
     padding-bottom: 1vw;
   }
   .accueil_evenements .evenements_recents {
-    height: 28vw;
+    height: 27vw;
     /* Boite d'évènement récent */
   }
   .accueil_evenements .evenements_recents .categorie__article {
@@ -1668,19 +1707,27 @@ menu tablet
   .accueil_evenements .evenements_recents .categorie__article .content {
     width: 39vw;
   }
+  .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu h5, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
+    width: 33vw;
+  }
   .accueil_programme {
+    border-radius: 2em;
     margin-bottom: 5vh;
-    padding: 5% 0;
-    width: 60vw;
+    padding: 1.5% 0;
+    width: 65vw;
+    min-height: 20vh;
   }
   .accueil_programme hr {
-    margin: 0 5%;
+    margin: 0 2.5%;
   }
   .accueil_programme h2 {
     padding-bottom: 1%;
   }
   .accueil_programme .widget_block {
-    margin: 3% 5%;
+    margin: 1.5% 2%;
+  }
+  .accueil_programme .widget_block .wp-block-buttons {
+    padding-top: 3%;
   }
 }
 table {
@@ -1745,7 +1792,7 @@ th {
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  width: 80vw;
+  width: 75vw;
 }
 .Liste_programme h2 {
   margin-top: 1em;
@@ -1766,6 +1813,7 @@ th {
   font-family: var(--police-texte);
   width: 2em;
   height: 2em;
+  font-size: clamp(1.125rem, 0.874rem + 0.2869vw, 1.5625rem);
 }
 .Liste_programme #content {
   border-radius: 2em;
@@ -1786,6 +1834,7 @@ th {
   flex: 1;
   margin-left: 5%;
   margin-right: 5%;
+  font-size: clamp(1.125rem, 1.1187rem + 0.0287vw, 1.1875rem);
 }
 .Liste_programme #content .article-button:last-of-type {
   border: none;
@@ -1871,21 +1920,29 @@ th {
 /*---------------------------inscription bureau------------------*/
 @media screen and (min-width: 1400px) {
   .info_programme {
+    width: clamp(75rem, 49.1803rem + 29.5082vw, 120rem);
+  }
+  .info_programme .description_programme h2 {
+    padding-bottom: 3%;
+  }
+  .info_programme {
     display: flex;
     align-items: center;
     margin: 0 auto;
-    width: 80%;
   }
   .info_programme .description_programme {
     flex: 2;
-    margin-right: 5%;
   }
   .info_programme .inscription_programme {
+    margin-right: 5%;
     border-radius: 2em;
     flex: 1;
   }
   .info_programme hr {
     display: none;
+  }
+  .Liste_programme {
+    width: clamp(75rem, 49.1803rem + 29.5082vw, 120rem);
   }
 }
 /*------------------------projet dans description cours--------------*/
@@ -1937,7 +1994,7 @@ th {
 
 @media screen and (min-width: 800px) {
   .recherche .contenant_resultat_recherche {
-    width: 88%;
+    width: 75%;
   }
 }
 .erreur {
