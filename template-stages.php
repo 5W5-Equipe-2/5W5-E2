@@ -20,9 +20,9 @@
     <!-- <hr> -->
 
     <?php /****** Carrousel des témoignages de stages *******/ ?>
-    <section class="temoignage">
+    <section class="temoignage Section_carrousel">
         <h2>Témoignages</h2>
-        <div class = "temoignage__article">
+        <div class = "temoignage__article Carrou__article">
         <?php echo do_shortcode('[5w5e2carrousel categories="stages" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="100"]'); ?>
         </div>
     </section>
