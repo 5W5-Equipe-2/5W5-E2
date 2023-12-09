@@ -55,9 +55,9 @@
     <hr>
 
     <?php /****** Carrousel profs *******/ ?>
-    <section class="Profs">
+    <section class="Profs Section_carrousel">
         <h2>Professeurs du TIM</h2>
-        <div class = "Profs__article">
+        <div class = "Carrou__article">
         <?php echo do_shortcode('[5w5e2carrousel categories="profs" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="100"]'); ?>
         </div>
     </section>

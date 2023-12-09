@@ -1,8 +1,8 @@
-.Profs{
+.Section_carrousel{
     background-color: var(--primaire);
     padding-bottom: 3rem;
     width: 100%; // largeur
-    .Profs__article{
+    .Carrou__article{
       height: 75vw;
         .carousel-navigation {
             padding-top: 3rem;
@@ -76,7 +76,7 @@
 
  
   @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
-    .Profs { 
+    .Section_carrousel { 
       padding: 4vw 0;
       h2{ // le titre
         padding-top: 0;
@@ -88,7 +88,7 @@
             height: clamp(300px, 400px, 500px);
         }
     }
-      .Profs__article{ // le div qui contient tous les boîtes d'évènements récents
+      .Carrou__article{ // le div qui contient tous les boîtes d'évènements récents
         /* Boite d'évènement récent */
         height: 40vw;
         .categorie__article{ 
@@ -148,9 +148,9 @@
   }// Fin requête média Tablette
   
   @media screen and (min-width:$largeur__bureau_large){ // Début requête média Bureau
-    .Profs { 
+    .Section_carrousel { 
       padding: 3vw 0;
-      .Profs__article{ // le div qui contient tous les boîtes d'évènements récents
+      .Carrou__article{ // le div qui contient tous les boîtes d'évènements récents
         height: 30vw;
         /* Boite d'évènement récent */
         .categorie__article{ 
