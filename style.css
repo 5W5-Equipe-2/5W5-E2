@@ -1175,16 +1175,16 @@ menu bureau
     display: none;
   }
   .main-navigation.toggled ul,
-.main-navigation ul {
+  .main-navigation ul {
     display: flex;
     padding-top: 0;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-.main-navigation ul a[href="#"]::after {
+  .main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-.main-navigation ul ul {
+  .main-navigation ul ul {
     display: none;
   }
 }
@@ -2146,31 +2146,31 @@ th {
     opacity: 0;
   }
 }
-.Profs {
+.Section_carrousel {
   background-color: var(--primaire);
   padding-bottom: 3rem;
   width: 100%;
 }
-.Profs .Profs__article {
+.Section_carrousel .Carrou__article {
   height: 75vw;
 }
-.Profs .Profs__article .carousel-navigation {
+.Section_carrousel .Carrou__article .carousel-navigation {
   padding-top: 3rem;
 }
-.Profs a {
+.Section_carrousel a {
   color: var(--blanc);
 }
-.Profs h2 {
+.Section_carrousel h2 {
   text-align: center;
   padding: 3rem;
 }
-.Profs .carousel-content {
+.Section_carrousel .carousel-content {
   height: 500px;
 }
-.Profs .carousel-content .carousel-item {
+.Section_carrousel .carousel-content .carousel-item {
   height: 500px;
 }
-.Profs .categorie__article {
+.Section_carrousel .categorie__article {
   border-radius: 2vh;
   color: var(--blanc);
   display: flex;
@@ -2179,137 +2179,137 @@ th {
   text-align: center;
   width: 85vw;
 }
-.Profs .categorie__article .image_titre_date {
+.Section_carrousel .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
   border-radius: 7%;
   overflow: hidden;
   width: 85vw;
 }
-.Profs .categorie__article .image_titre_date .contenant__image {
+.Section_carrousel .categorie__article .image_titre_date .contenant__image {
   height: 78%;
   margin: 0;
   overflow: hidden;
   padding: 0;
 }
-.Profs .categorie__article .image_titre_date .contenant__image a img {
+.Section_carrousel .categorie__article .image_titre_date .contenant__image a img {
   object-fit: cover;
   object-position: center center;
   height: clamp(12rem, 2.6667rem + 52.6667vw, 50rem);
   width: auto;
   margin: auto auto;
 }
-.Profs .categorie__article .image_titre_date .contenant__titre {
+.Section_carrousel .categorie__article .image_titre_date .contenant__titre {
   align-items: center;
   display: flex;
   flex-direction: column;
   height: 14vw;
   justify-content: center;
 }
-.Profs .categorie__article .image_titre_date .contenant__titre .conteneur_date {
+.Section_carrousel .categorie__article .image_titre_date .contenant__titre .conteneur_date {
   display: flex;
   gap: 0.3vw;
   align-items: center;
   justify-content: center;
 }
-.Profs .categorie__article .content {
+.Section_carrousel .categorie__article .content {
   background-color: var(--simili-noir);
   display: none;
 }
 
 @media screen and (min-width: 800px) {
-  .Profs {
+  .Section_carrousel {
     padding: 4vw 0;
   }
-  .Profs h2 {
+  .Section_carrousel h2 {
     padding-top: 0;
     padding-bottom: 3rem;
   }
-  .Profs .carousel-content {
+  .Section_carrousel .carousel-content {
     height: 400px;
   }
-  .Profs .carousel-content .carousel-item {
+  .Section_carrousel .carousel-content .carousel-item {
     height: 400px;
   }
-  .Profs .Profs__article {
+  .Section_carrousel .Carrou__article {
     /* Boite d'évènement récent */
     height: 40vw;
   }
-  .Profs .Profs__article .categorie__article {
+  .Section_carrousel .Carrou__article .categorie__article {
     border-radius: 0;
     justify-content: space-between;
     width: 82vw;
     height: 30vw;
   }
-  .Profs .Profs__article .categorie__article .image_titre_date {
+  .Section_carrousel .Carrou__article .categorie__article .image_titre_date {
     border-radius: 7%;
     overflow: hidden;
     width: 35vw;
   }
-  .Profs .Profs__article .categorie__article .image_titre_date .contenant__titre {
+  .Section_carrousel .Carrou__article .categorie__article .image_titre_date .contenant__titre {
     height: 6.5vw;
   }
-  .Profs .Profs__article .categorie__article .image_titre_date a img {
+  .Section_carrousel .Carrou__article .categorie__article .image_titre_date a img {
     object-fit: cover;
     object-position: center center;
     height: clamp(12rem, 5.6535rem + 17.7525vw, 50.5rem);
     width: auto;
     margin: auto auto;
   }
-  .Profs .Profs__article .categorie__article .content {
+  .Section_carrousel .Carrou__article .categorie__article .content {
     border-radius: 7%;
     display: block;
     width: 46vw;
     position: relative;
   }
-  .Profs .Profs__article .categorie__article .content .contenant_contenu {
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: auto;
   }
-  .Profs .Profs__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
     flex-direction: column;
   }
-  .Profs .Profs__article .categorie__article .content .contenant_contenu p, .Profs .Profs__article .categorie__article .content .contenant_contenu h5, .Profs .Profs__article .categorie__article .content .contenant_contenu div {
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu p, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu h5, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu div {
     margin: 0 auto;
     width: 38vw;
   }
-  .Profs .Profs__article .categorie__article .content .contenant_contenu div {
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu div {
     display: flex;
     justify-content: left;
     align-items: center;
     width: 38vw;
     gap: 0.3vw;
   }
-  .Profs .Profs__article .categorie__article .content .contenant_contenu > p:last-of-type, .Profs .Profs__article .categorie__article .content .contenant_contenu > p:first-of-type {
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu > p:last-of-type, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
   }
 }
 @media screen and (min-width: 1800px) {
-  .Profs {
+  .Section_carrousel {
     padding: 3vw 0;
   }
-  .Profs .Profs__article {
+  .Section_carrousel .Carrou__article {
     height: 30vw;
     /* Boite d'évènement récent */
   }
-  .Profs .Profs__article .categorie__article {
+  .Section_carrousel .Carrou__article .categorie__article {
     height: 23vw;
     width: 75vw;
   }
-  .Profs .Profs__article .categorie__article .image_titre_date {
+  .Section_carrousel .Carrou__article .categorie__article .image_titre_date {
     width: 30vw;
   }
-  .Profs .Profs__article .categorie__article .image_titre_date .contenant__titre {
+  .Section_carrousel .Carrou__article .categorie__article .image_titre_date .contenant__titre {
     height: 5vw;
   }
-  .Profs .Profs__article .categorie__article .content {
+  .Section_carrousel .Carrou__article .categorie__article .content {
     width: 44vw;
     margin-left: 1rem;
   }
-  .Profs .Profs__article .categorie__article .content p {
+  .Section_carrousel .Carrou__article .categorie__article .content p {
     margin-top: 2rem;
   }
 }
