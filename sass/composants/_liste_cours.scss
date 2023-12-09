@@ -81,7 +81,6 @@ button {
     align-items: center;
     margin: 0 auto;
     width: 75vw;
-
     h2{
         margin-top: 1em;
     }
@@ -106,6 +105,7 @@ button {
             //margin: 1em;
             width: 2em;
             height: 2em;
+            font-size: clamp(1.125rem, 0.874rem + 0.2869vw, 1.5625rem);
         }
     }
 
@@ -129,6 +129,7 @@ button {
             flex: 1;
             margin-left: 5%;
             margin-right: 5%;
+            font-size: clamp(1.125rem, 1.1187rem + 0.0287vw, 1.1875rem);
         }
 
         .article-button:last-of-type{

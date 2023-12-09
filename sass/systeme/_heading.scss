@@ -28,6 +28,10 @@ ul,
 li
  {
   font-size: clamp(1.3rem, 1.0887rem + 0.1453vw, 1.4375rem);
+ 
+  @media screen and (min-width:$largeur__bureau){
+    font-size: clamp(1.1875rem, 1.1337rem + 0.0615vw, 1.28125rem);
+  }
   font-family: var(--police-texte);
   line-height: 150%;
 }
