@@ -16,7 +16,6 @@ $args = array(
 );
 $query = new WP_Query($args);
 $cat_slug =  $categorie->slug;
-
 ?>
 
 <?php
@@ -63,7 +62,6 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
     get_template_part("template-parts/aside");
 }
 ?>
-
 <main class="site_main">
     <!--   On affiche le titre de la catégorie -->
     <?php echo '<h2 class="projet_titre">' . $categorie->name . '</h2>'; ?>

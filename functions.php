@@ -2,7 +2,7 @@
 /* ----------------------------------------------------------------------------- Lier les styles */
 
 if (!defined('_S_VERSION')) {
-    // Replace the version number of the theme on each release.
+    // Remplacer le numéro de la version à chaque publication.
     define('_S_VERSION', '1.0.0');
 }
 
@@ -31,7 +31,6 @@ function enregistrement_nav_menu()
         'projets' => 'Menu projets',
     ));
 }
-/* add_action('after_setup_theme', 'enregistrement_nav_menu', 0);  */
 add_action('init', 'enregistrement_nav_menu', 0);
 
 
@@ -50,7 +49,7 @@ add_theme_support('custom-background');
 
 /*------------------------------------------------------------------------------ Enregistrer le sidebar */
 /****** 
- À utiliser dans : footer.php) 
+ Widgets de la page d'accueil et du footer 
  **********************************/
 function enregistrer_sidebar()
 {
@@ -131,7 +130,7 @@ function e2_modifie_requete_principal($query) {
         $query->is_main_query() && // Ce n'est pas une requête secondaire
         !is_admin() // Pas dans le tableau de bord
     ) {
-        // Slugs des catégories à afficher sur la page d'accueil (séparés par des virgules)
+        // Slugs des catégories à afficher sur la page d'accueil 
         $category_slugs_to_show = 'accueil, media';
 
         $query->set('category_name', $category_slugs_to_show);
@@ -154,32 +153,24 @@ function e2_modifie_requete_principal($query) {
 add_action('pre_get_posts', 'e2_modifie_requete_principal');
 
 
-
-
-
-/*-----------------------------------------------------------------------------ajouter le script pour la navugation header */
-
-
+/*-----------------------------------------------------------------------------ajouter le script pour la navigation header */
 function theme5w5_scripts()
 {
 
-    wp_enqueue_script('theme454-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+    wp_enqueue_script('theme5w5-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
 }
 add_action('wp_enqueue_scripts', 'theme5w5_scripts');
 
 
-
-
-
-
-/**---------------------------------------------------------------------------- Ajouter le script.js a la page programme */
+/**---------------------------------------------------------------------------- Ajouter le script.js à la page programme */
 
 function enqueue_custom_script()
 {
     wp_enqueue_script('custom-script', get_template_directory_uri() . '/js/script.js', array('jquery'), '1.0', true);
 }
-
 add_action('wp_enqueue_scripts', 'enqueue_custom_script');
+
+
 /**---------------------------------------------------------------------------- Ajouter url ajax */
 function add_ajax_url()
 {
@@ -188,13 +179,16 @@ function add_ajax_url()
     </script>';
 }
 /**---------------------------------------------------------------------------- Ajouter url ajax au head */
+
 add_action('wp_head', 'add_ajax_url');
 function enqueue_jquery()
 {
     wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'enqueue_jquery');
+
 /**---------------------------------------------------------------------------- filtrer les posts programme */
+
 function filter_posts()
 {
     $session = sanitize_text_field($_POST['session']);
@@ -237,7 +231,9 @@ function filter_posts()
             echo '<button class="article-button" data-article-id="' . $article_id . '">' . $article_title . '</button>';
 
             // Générez un conteneur pour le contenu de l'article
-            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . '<button type="button" onclick="hide_decription_cours()" class="boutton_retour">Retour</button>' . '<p>' . $article_content . '</p>';
+            echo '<div id="article-content-' . $article_id . '" class="article-content" style="display:none;">' . 
+            '<button type="button" onclick="hide_decription_cours()" class="boutton_retour">Retour</button>' . 
+            '<p>' . $article_content . '</p>';
             // Récupérez les articles ayant la même catégorie que le slug du titre de l'article actuel
             $related_articles_args = array(
                 'post_type' => 'post',
@@ -251,7 +247,6 @@ function filter_posts()
             echo '<div class="related-projets">';
 
             // Générez un lien vers la catégorie
-         //   $category_url = 'https://5w5.ndasilva.ca/category/' . $article_category[0]->slug;
          $category_url = '/category/' . $article_category[0]->slug;
          echo '<a href="' . esc_url($category_url) . '">Voir plus de projets réalisés en : ' . $article_title . '.</a>';
 
@@ -271,7 +266,6 @@ function filter_posts()
 
             echo '</div>';
 
-
             echo '</div>'; // Fermez le conteneur du contenu de l'article
         endwhile;
     else :
@@ -282,9 +276,10 @@ function filter_posts()
 
     die();
 }
-
 add_action('wp_ajax_filter_posts', 'filter_posts');
 add_action('wp_ajax_nopriv_filter_posts', 'filter_posts');
+
+
 /**---------------------------------------------------------------------------- Afficher le contenu des articles */
 function get_article_content()
 {
@@ -296,6 +291,5 @@ function get_article_content()
     echo $article_content;
     die();
 }
-
 add_action('wp_ajax_get_article_content', 'get_article_content');
 add_action('wp_ajax_nopriv_get_article_content', 'get_article_content');
