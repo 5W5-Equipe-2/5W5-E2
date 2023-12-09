@@ -70,6 +70,7 @@ get_header(); ?>
       <?php echo do_shortcode('[5w5e2carrousel categories="evenements" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="5"]'); ?>
     </div>
   </section>
+  <hr class="espacement">
 <!-- Section d'information / widget'-->
   <section class="accueil_programme">
     <?php dynamic_sidebar('inscription_accueil'); ?>
