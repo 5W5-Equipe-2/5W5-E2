@@ -2270,8 +2270,8 @@ th {
   .Profs .Carrou__article .categorie__article .content {
     border-radius: 1em;
     display: block;
-    width: 44vw;
     position: relative;
+    width: 44vw;
   }
   .Profs .Carrou__article .categorie__article .content .contenant_contenu {
     position: absolute;
@@ -2304,7 +2304,7 @@ th {
   }
   .Section_carrousel .Carrou__article .categorie__article {
     height: 20vw;
-    width: 70vw;
+    width: 65vw;
   }
   .Section_carrousel .Carrou__article .categorie__article .image_titre_date {
     width: 25vw;
@@ -2319,8 +2319,6 @@ th {
   .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
     height: 20vw;
     line-height: normal;
-    overflow-y: auto;
-    overflow-x: hidden;
   }
   .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
     flex-direction: column;
@@ -2337,14 +2335,172 @@ th {
     justify-content: center;
     align-items: center;
   }
-  .Section_carrousel .Carrou__article .categorie__article .content ::-webkit-scrollbar {
-    width: 10px;
+}
+.temoignage {
+  background-color: var(--primaire);
+  padding-top: 8vw;
+  padding-bottom: 6vw;
+  width: 100%;
+}
+.temoignage h2 {
+  text-align: center;
+  padding-bottom: 8vw;
+  width: 80vw;
+  margin: 0 auto;
+}
+.temoignage .temoignage__article {
+  height: 75vw;
+}
+.temoignage .categorie__article {
+  border-radius: 2em;
+  color: var(--blanc);
+  display: flex;
+  height: 55vw;
+  overflow: hidden;
+  text-align: center;
+  width: 75vw;
+}
+.temoignage .categorie__article div {
+  width: 100%;
+}
+.temoignage .categorie__article .image_titre_date {
+  background-color: var(--simili-noir);
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+.temoignage .categorie__article .image_titre_date .contenant__image {
+  height: 75%;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+}
+.temoignage .categorie__article .image_titre_date .contenant__image a img {
+  height: 100%;
+  margin: 0;
+  left: 0;
+  max-width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  width: 100%;
+}
+.temoignage .categorie__article .image_titre_date .contenant__titre {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 25%;
+  justify-content: center;
+  margin: auto;
+}
+.temoignage .categorie__article .image_titre_date .contenant__titre .conteneur_date {
+  font-size: 12px;
+  display: none;
+  gap: 0.3vw;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (min-width: 450px) {
+  .temoignage .categorie__article .image_titre_date .contenant__titre .conteneur_date {
+    display: flex;
   }
 }
-.description_stages h5, .description_stages h6 {
-  border: 1px solid red;
+.temoignage .categorie__article .content {
+  background-color: var(--simili-noir);
+  display: none;
 }
 
-.temoignage__article {
-  min-height: 30vh;
+@media screen and (min-width: 800px) {
+  .temoignage {
+    padding: 4vw 0;
+  }
+  .temoignage h2 {
+    padding-bottom: 3vw;
+  }
+  .temoignage .temoignage__article {
+    height: 40vw;
+  }
+  .temoignage .temoignage__article .categorie__article {
+    border-radius: 0;
+    height: 30vw;
+    justify-content: space-between;
+    width: 80vw;
+  }
+  .temoignage .temoignage__article .categorie__article .image_titre_date {
+    border-radius: 2vw;
+    overflow: hidden;
+    width: 35vw;
+  }
+  .temoignage .temoignage__article .categorie__article .content {
+    border-radius: 2vw;
+    display: block;
+    position: relative;
+    width: 44vw;
+  }
+  .temoignage .temoignage__article .categorie__article .content .contenant_contenu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vh;
+    height: 25vw;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+  }
+  .temoignage .temoignage__article .categorie__article .content .contenant_contenu p, .temoignage .temoignage__article .categorie__article .content .contenant_contenu h5, .temoignage .temoignage__article .categorie__article .content .contenant_contenu div {
+    margin: 0 auto;
+    width: 38vw;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .temoignage .temoignage__article .categorie__article .content .contenant_contenu p:first-of-type {
+    display: block;
+  }
+}
+@media screen and (min-width: 800px) and (min-width: 1400px) {
+  .temoignage .temoignage__article .categorie__article .content .contenant_contenu p, .temoignage .temoignage__article .categorie__article .content .contenant_contenu h5 {
+    display: block;
+  }
+  .temoignage .temoignage__article .categorie__article .content .contenant_contenu div {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .temoignage {
+    padding: 3vw 0;
+  }
+  .temoignage .temoignage__article {
+    height: 27vw;
+  }
+  .temoignage .temoignage__article .categorie__article {
+    height: 20vw;
+    width: 65vw;
+  }
+  .temoignage .temoignage__article .categorie__article .image_titre_date {
+    width: 25vw;
+  }
+  .temoignage .temoignage__article .categorie__article .image_titre_date .contenant__titre {
+    height: 5vw;
+  }
+  .temoignage .temoignage__article .categorie__article .content {
+    width: 44vw;
+    margin-left: 1rem;
+  }
+  .temoignage .temoignage__article .categorie__article .content .contenant_contenu {
+    height: fit-content;
+    line-height: normal;
+  }
+  .temoignage .temoignage__article .categorie__article .content .contenant_contenu p, .temoignage .temoignage__article .categorie__article .content .contenant_contenu h5, .temoignage .temoignage__article .categorie__article .content .contenant_contenu div {
+    margin: 0 auto;
+    width: 34vw;
+    display: inline-block;
+    vertical-align: middle;
+  }
 }/*# sourceMappingURL=style.css.map */
