@@ -1175,16 +1175,16 @@ menu bureau
     display: none;
   }
   .main-navigation.toggled ul,
-  .main-navigation ul {
+.main-navigation ul {
     display: flex;
     padding-top: 0;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-  .main-navigation ul a[href="#"]::after {
+.main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-  .main-navigation ul ul {
+.main-navigation ul ul {
     display: none;
   }
 }
@@ -1486,12 +1486,14 @@ menu tablet
 .accueil_evenements h2 {
   text-align: center;
   padding-bottom: 8vw;
+  width: 80vw;
+  margin: 0 auto;
 }
 .accueil_evenements .evenements_recents {
   height: 75vw;
 }
 .accueil_evenements .categorie__article {
-  border-radius: 2vh;
+  border-radius: 2em;
   color: var(--blanc);
   display: flex;
   height: 55vw;
@@ -1505,6 +1507,8 @@ menu tablet
 .accueil_evenements .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
+  overflow: hidden;
+  width: 100%;
 }
 .accueil_evenements .categorie__article .image_titre_date .contenant__image {
   height: 75%;
@@ -1527,15 +1531,21 @@ menu tablet
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 12vw;
+  height: 25%;
   justify-content: center;
   margin: auto;
 }
 .accueil_evenements .categorie__article .image_titre_date .contenant__titre .conteneur_date {
-  display: flex;
+  font-size: 12px;
+  display: none;
   gap: 0.3vw;
   align-items: center;
   justify-content: center;
+}
+@media screen and (min-width: 450px) {
+  .accueil_evenements .categorie__article .image_titre_date .contenant__titre .conteneur_date {
+    display: flex;
+  }
 }
 .accueil_evenements .categorie__article .content {
   background-color: var(--simili-noir);
@@ -1613,9 +1623,6 @@ menu tablet
     overflow: hidden;
     width: 35vw;
   }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_date .contenant__titre {
-    height: 6.5vw;
-  }
   .accueil_evenements .evenements_recents .categorie__article .content {
     border-radius: 2vw;
     display: block;
@@ -1674,7 +1681,7 @@ menu tablet
     padding-bottom: 1%;
   }
   .accueil_programme .widget_block {
-    margin: 3% 3%;
+    margin: 3% 10%;
   }
   .accueil_programme .wp-block-buttons {
     padding-top: 2%;
@@ -1700,9 +1707,6 @@ menu tablet
   }
   .accueil_evenements .evenements_recents .categorie__article .image_titre_date {
     width: 25vw;
-  }
-  .accueil_evenements .evenements_recents .categorie__article .image_titre_date .contenant__titre {
-    height: 5vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content {
     width: 39vw;
@@ -1860,6 +1864,7 @@ th {
   background-color: transparent;
   border: 1px solid var(--blanc);
   border-radius: 50em;
+  font-size: clamp(1.125rem, 1.1187rem + 0.0287vw, 1.1875rem);
   height: 5%;
   margin-bottom: 1em;
   width: 6em;
@@ -2146,145 +2151,119 @@ th {
     opacity: 0;
   }
 }
-.Section_carrousel {
+.Profs {
   background-color: var(--primaire);
-  padding-bottom: 3rem;
+  padding-top: 8vw;
+  padding-bottom: 6vw;
   width: 100%;
 }
-.Section_carrousel .Carrou__article {
-  height: 75vw;
-}
-.Section_carrousel .Carrou__article .carousel-navigation {
-  padding-top: 3rem;
-}
-.Section_carrousel a {
+.Profs a {
   color: var(--blanc);
 }
-.Section_carrousel h2 {
+.Profs h2 {
   text-align: center;
-  padding: 3rem;
+  padding-bottom: 8vw;
+  width: 80vw;
+  margin: 0 auto;
 }
-.Section_carrousel .carousel-content {
-  height: 500px;
+.Profs .Carrou__article {
+  height: 75vw;
 }
-.Section_carrousel .carousel-content .carousel-item {
-  height: 500px;
+.Profs .Carrou__article .carousel-navigation {
+  padding-top: 3rem;
 }
-.Section_carrousel .categorie__article {
-  border-radius: 2vh;
+.Profs .categorie__article {
+  border-radius: 2em;
   color: var(--blanc);
   display: flex;
   height: 55vw;
   overflow: hidden;
   text-align: center;
-  width: 85vw;
+  width: 75vw;
 }
-.Section_carrousel .categorie__article .image_titre_date {
+.Profs .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
-  border-radius: 7%;
   overflow: hidden;
-  width: 85vw;
+  width: 100%;
 }
-.Section_carrousel .categorie__article .image_titre_date .contenant__image {
-  height: 78%;
+.Profs .categorie__article .image_titre_date .contenant__image {
+  height: 80%;
   margin: 0;
   overflow: hidden;
   padding: 0;
+  position: relative;
 }
-.Section_carrousel .categorie__article .image_titre_date .contenant__image a img {
+.Profs .categorie__article .image_titre_date .contenant__image a img {
+  height: 100%;
+  margin: 0;
+  left: 0;
+  max-width: 100%;
   object-fit: cover;
   object-position: center center;
-  height: clamp(12rem, 2.6667rem + 52.6667vw, 50rem);
-  width: auto;
-  margin: auto auto;
+  position: absolute;
+  width: 100%;
 }
-.Section_carrousel .categorie__article .image_titre_date .contenant__titre {
+.Profs .categorie__article .image_titre_date .contenant__titre {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 14vw;
+  height: 20%;
   justify-content: center;
+  margin: auto;
 }
-.Section_carrousel .categorie__article .image_titre_date .contenant__titre .conteneur_date {
-  display: flex;
-  gap: 0.3vw;
-  align-items: center;
-  justify-content: center;
-}
-.Section_carrousel .categorie__article .content {
+.Profs .categorie__article .content {
   background-color: var(--simili-noir);
   display: none;
 }
 
 @media screen and (min-width: 800px) {
-  .Section_carrousel {
+  .Profs {
     padding: 4vw 0;
   }
-  .Section_carrousel h2 {
+  .Profs h2 {
     padding-top: 0;
     padding-bottom: 3rem;
   }
-  .Section_carrousel .carousel-content {
-    height: 400px;
-  }
-  .Section_carrousel .carousel-content .carousel-item {
-    height: 400px;
-  }
-  .Section_carrousel .Carrou__article {
+  .Profs .Carrou__article {
     /* Boite d'évènement récent */
     height: 40vw;
   }
-  .Section_carrousel .Carrou__article .categorie__article {
+  .Profs .Carrou__article .categorie__article {
     border-radius: 0;
-    justify-content: space-between;
-    width: 82vw;
     height: 30vw;
+    justify-content: space-between;
+    width: 80vw;
   }
-  .Section_carrousel .Carrou__article .categorie__article .image_titre_date {
-    border-radius: 7%;
+  .Profs .Carrou__article .categorie__article .image_titre_date {
+    border-radius: 1em;
     overflow: hidden;
     width: 35vw;
   }
-  .Section_carrousel .Carrou__article .categorie__article .image_titre_date .contenant__titre {
-    height: 6.5vw;
-  }
-  .Section_carrousel .Carrou__article .categorie__article .image_titre_date a img {
-    object-fit: cover;
-    object-position: center center;
-    height: clamp(12rem, 5.6535rem + 17.7525vw, 50.5rem);
-    width: auto;
-    margin: auto auto;
-  }
-  .Section_carrousel .Carrou__article .categorie__article .content {
-    border-radius: 7%;
+  .Profs .Carrou__article .categorie__article .content {
+    border-radius: 1em;
     display: block;
-    width: 46vw;
+    width: 44vw;
     position: relative;
   }
-  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
+  .Profs .Carrou__article .categorie__article .content .contenant_contenu {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: auto;
+    height: 25vw;
+    line-height: 25vw;
+    overflow: auto;
   }
-  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
+  .Profs .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
     flex-direction: column;
   }
-  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu p, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu h5, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu div {
+  .Profs .Carrou__article .categorie__article .content .contenant_contenu p, .Profs .Carrou__article .categorie__article .content .contenant_contenu h5, .Profs .Carrou__article .categorie__article .content .contenant_contenu div {
     margin: 0 auto;
     width: 38vw;
-  }
-  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu div {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 38vw;
-    gap: 0.3vw;
-  }
-  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu > p:last-of-type, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu > p:first-of-type {
-    padding-bottom: 1.5vw;
+    display: inline-block;
+    vertical-align: middle;
   }
 }
 @media screen and (min-width: 1800px) {
@@ -2292,15 +2271,15 @@ th {
     padding: 3vw 0;
   }
   .Section_carrousel .Carrou__article {
-    height: 30vw;
+    height: 27vw;
     /* Boite d'évènement récent */
   }
   .Section_carrousel .Carrou__article .categorie__article {
-    height: 23vw;
-    width: 75vw;
+    height: 20vw;
+    width: 70vw;
   }
   .Section_carrousel .Carrou__article .categorie__article .image_titre_date {
-    width: 30vw;
+    width: 25vw;
   }
   .Section_carrousel .Carrou__article .categorie__article .image_titre_date .contenant__titre {
     height: 5vw;
@@ -2309,8 +2288,25 @@ th {
     width: 44vw;
     margin-left: 1rem;
   }
-  .Section_carrousel .Carrou__article .categorie__article .content p {
-    margin-top: 2rem;
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
+    height: 20vw;
+    line-height: normal;
+    overflow: auto;
+  }
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
+    flex-direction: column;
+  }
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu p, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu h5, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu div {
+    margin: 0 auto;
+    width: 34vw;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .temoignage__article {
