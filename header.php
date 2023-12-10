@@ -11,9 +11,9 @@
 
 <body>
 
-     <header class="site_entete">
+     <header id="site-navigation" class="main-navigation">
       
-        <div id="site-navigation" class="main-navigation">
+        <!-- <div > -->
 
         <div class="titre_boutton">
 
@@ -40,7 +40,7 @@
       "container" => "nav"
     )) ?>
 
-		</div><!-- #site-navigation -->
+		<!-- </div> --><!-- #site-navigation -->
   </section>
 
   </header>
