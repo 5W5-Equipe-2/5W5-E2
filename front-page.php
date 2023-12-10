@@ -29,13 +29,13 @@ $imagePathM =  get_template_directory_uri() . '/images/logo_m.png';
 
 get_header(); ?>
 <main class="site_main site_main_accueil">
-  <!-- Section du média vedette / extendion Diaporama -->
+  <!-- Section du média vedette / extension Diaporama -->
   <section class="media_vedette">
     <div class="diaporama masquer-image">
     <?php
     // Vérifier s'il y a des articles après le shuffle
     if ($posts) :
-      // Utiliser la boucle pour afficher les articles dans l'ordre au hasard
+      // Utiliser une boucle pour afficher les articles dans un ordre au hasard
       foreach ($posts as $post) :
         setup_postdata($post);
         get_template_part('template-parts/categorie-media'); //charger le modèle
@@ -70,6 +70,7 @@ get_header(); ?>
       <?php echo do_shortcode('[5w5e2carrousel categories="evenements" operator="ET" exclude_categories="" exclude_operator="ET" max_posts="5"]'); ?>
     </div>
   </section>
+  <hr class="espacement">
 <!-- Section d'information / widget'-->
   <section class="accueil_programme">
     <?php dynamic_sidebar('inscription_accueil'); ?>

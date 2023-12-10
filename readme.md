@@ -1,4 +1,4 @@
-# Branche de développement du Sprint 03
+# Branche de développement du Sprint 04
 
 ## Sprint 04 : finition et améliorations du thème et des extensions en vu du livrable final.
 

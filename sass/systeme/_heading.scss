@@ -1,31 +1,40 @@
 /*
 CSS Clam font-size generator : https://clamp.font-size.app/
 */
-
+a{
+  font-size: clamp(1.25rem, 1.2137rem + 0.1453vw, 1.5625rem);
+}
 h1 {
   font-size: clamp(1.3rem, -0.0385rem + 3vw, 2rem);
 }
 h2 {
-  font-size: clamp(1.375rem, 1.3194rem + 0.2963vw, 1.875rem);
+  font-size: clamp(1.6875rem, 1.6657rem + 0.0872vw, 1.875rem);
 }
 
 h3 {
-  font-size: clamp(1.1rem, 2.6vw, 1.6rem);
+  font-size: clamp(1.375rem, 1.3591rem + 0.0847vw, 1.5625rem);
 }
 
-h4, h5{
-  font-size: clamp(1rem, -0.1875rem + 2.2vw, 1.5rem);
+h4{
+  font-size: clamp(1.34375rem, 1.3252rem + 0.0989vw, 1.5625rem);
 }
 
-h6 {
-  font-size: clamp(0.8rem, 0.125rem + 1.2vw, 1.2rem);
+h5{
+  font-size: clamp(1.3125rem, 1.2913rem + 0.113vw, 1.5625rem);
+}
+h6{
+  font-size: clamp(1.15625rem, 1.1218rem + 0.1836vw, 1.5625rem);
 }
 
 p,
 ul,
 li
  {
-  font-size: clamp(1rem, 0.9653rem + 0.1852vw, 1.3125rem);
+  font-size: clamp(1.3rem, 1.0887rem + 0.1453vw, 1.4375rem);
+ 
+  @media screen and (min-width:$largeur__bureau){
+    font-size: clamp(1.1875rem, 1.1337rem + 0.0615vw, 1.28125rem);
+  }
   font-family: var(--police-texte);
   line-height: 150%;
 }
