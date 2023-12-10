@@ -2254,7 +2254,8 @@ th {
     margin: auto;
     height: 25vw;
     line-height: 25vw;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .Profs .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
     flex-direction: column;
@@ -2291,7 +2292,8 @@ th {
   .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
     height: 20vw;
     line-height: normal;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
     flex-direction: column;
@@ -2307,6 +2309,9 @@ th {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .Section_carrousel .Carrou__article .categorie__article .content ::-webkit-scrollbar {
+    width: 10px;
   }
 }
 .temoignage__article {

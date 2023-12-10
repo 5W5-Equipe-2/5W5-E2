@@ -116,7 +116,8 @@
               margin: auto; // necessaire pour centre le contenu
               height: 25vw;
               line-height: 25vw;
-              overflow: auto;
+              overflow-y: auto;
+              overflow-x: hidden;
 
               .wp-block-group__inner-container{
                 flex-direction: column;
@@ -156,7 +157,8 @@
             .contenant_contenu{  // contenu
               height: 20vw;
               line-height: normal;
-              overflow: auto;
+              overflow-y: auto;
+              overflow-x: hidden;
 
               .wp-block-group__inner-container{
                 flex-direction: column;
@@ -174,6 +176,9 @@
               justify-content: center;
               align-items: center;
             }
+            ::-webkit-scrollbar {
+  width: 10px;
+}
           }
         }
       }
