@@ -406,8 +406,8 @@ li {
 }
 @media screen and (min-width: 992px) {
   p,
-ul,
-li {
+  ul,
+  li {
     font-size: clamp(1.1875rem, 1.1337rem + 0.0615vw, 1.28125rem);
   }
 }
@@ -1207,16 +1207,16 @@ menu bureau
     display: none;
   }
   .main-navigation.toggled ul,
-.main-navigation ul {
+  .main-navigation ul {
     display: flex;
     padding-top: 0;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-.main-navigation ul a[href="#"]::after {
+  .main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-.main-navigation ul ul {
+  .main-navigation ul ul {
     display: none;
   }
 }
@@ -1701,8 +1701,6 @@ menu tablet
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
   }
-}
-@media screen and (min-width: 800px) {
   .accueil_programme {
     border-radius: 1.5em;
     margin-bottom: 5vh;
