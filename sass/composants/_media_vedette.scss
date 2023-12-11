@@ -99,6 +99,16 @@
     .widget_block:first-of-type > h2{
        padding-bottom: 2vh;
     }
+    .widget_block:first-of-type h2:first-of-type{
+      width: 80vw;
+      display: flex;
+      // width: fit-content;
+      flex-wrap: wrap;
+      div{
+        position: initial;
+        width: fit-content;
+      }
+    }
     .widget_block:last-of-type{ // Collège de maisonneuve
       bottom: 8%; // aligner au axe vertical
       left: 0; // centrer les logo
@@ -106,10 +116,12 @@
       position: absolute; // pour le mettre par dessus le média-vedette
       right: 0; // centrer les logo
       // text-align: left;
-      width: fit-content;
+      width: 80vw;
       h2{
         display: flex;
         flex-wrap: wrap;
+        width: fit-content;
+        margin:  0 auto; // centrer les logo
       }
       div{
         position: initial;

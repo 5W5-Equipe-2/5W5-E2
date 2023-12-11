@@ -19,89 +19,173 @@
 
 @keyframes aucun-memo-anim {
   from {
-    color: var(--blanc);
+    color: hsl(180, 14%, 60%);
   }
-  25%{
+  33%{
      color: var(--primaire);
   }
-  50% {
+  66% {
     color: var(--complementaire);
   }
-  75%{
-    color: var(--simili-noir);
-  }
- 
   to {
-     color: var(--blanc);
+     color: hsl(180, 14%, 60%); // complementaire mais plus foncé
   }
 }
 
 .sous_titre {
+  .widget_block:first-of-type h2:first-of-type{
+      div:first-of-type{
+      span:nth-of-type(1){ // C
+        animation: aucun-memo-anim 3s ease-out infinite;
+      }
+      span:nth-of-type(2){ // o
+        animation: aucun-memo-anim 3s 300ms ease-out infinite;
+      }
+      span:nth-of-type(3){ // d
+        animation: aucun-memo-anim 3s 600ms ease-out infinite;
+      }
+      span:nth-of-type(4){ // e
+        animation: aucun-memo-anim 3s 900ms ease-out infinite;
+      }
+    }
+     div:nth-of-type(2){
+       span:nth-of-type(1){ // d
+        animation: aucun-memo-anim 3s 1.2s ease-out infinite;
+      }
+      span:nth-of-type(2){ // e
+        animation: aucun-memo-anim 3s 1.5s ease-out infinite;
+      }
+    }
+     div:nth-of-type(3){
+      span:nth-of-type(1){ // p
+        animation: aucun-memo-anim 3s 1.8s ease-out infinite;
+      }
+      span:nth-of-type(2){ // r
+        animation: aucun-memo-anim 3s 2.1s ease-out infinite;
+      }
+      span:nth-of-type(3){ // o
+        animation: aucun-memo-anim 3s 2.4s ease-out infinite;
+      }
+      span:nth-of-type(4){ // g
+        animation: aucun-memo-anim 3s 2.7s ease-out infinite;
+      }
+      span:nth-of-type(5){ // r
+        animation: aucun-memo-anim 3s 3s ease-out infinite;
+      }
+      span:nth-of-type(6){ // a
+        animation: aucun-memo-anim 3s 3.3s ease-out infinite;
+      }
+      span:nth-of-type(7){ // m
+        animation: aucun-memo-anim 3s 3.6s ease-out infinite;
+      }
+      span:nth-of-type(8){ // m
+        animation: aucun-memo-anim 3s 3.9s ease-out infinite;
+      }
+       span:nth-of-type(9){ // m
+        animation: aucun-memo-anim 3s 4.2s ease-out infinite;
+      }
+    }
+    div:nth-of-type(4){
+      span:nth-of-type(1){ // m
+        animation: aucun-memo-anim 3s 4.5s ease-out infinite;
+      }
+       span:nth-of-type(2){ // m
+        animation: aucun-memo-anim 3s 4.8s ease-out infinite;
+      }
+       span:nth-of-type(3){ // m
+        animation: aucun-memo-anim 3s 5.1s ease-out infinite;
+      }
+       span:nth-of-type(4){ // m
+        animation: aucun-memo-anim 3s 5.4s ease-out infinite;
+      }
+       span:nth-of-type(5){ // m
+        animation: aucun-memo-anim 3s 5.7s ease-out infinite;
+      }
+       span:nth-of-type(6){ // m
+        animation: aucun-memo-anim 3s 6s ease-out infinite;
+      }
+    }
+  }
+  // .widget_block:first-of-type h2:nth-of-type(2){
+  //   span{
+  //      animation: aucun-memo-anim 3s 300ms ease-out infinite;
+  //   }
+  // }
+  // .widget_block:first-of-type h2:nth-of-type(3){
+  //    span{
+  //      animation: aucun-memo-anim 3s 600ms ease-out infinite;
+  //   }
+  // }
+  // .widget_block:first-of-type h2:nth-of-type(4){
+  //    span{
+  //      animation: aucun-memo-anim 3s 900ms ease-out infinite;
+  //   }
+  // }
   .widget_block:last-of-type{
     div:first-of-type{
       span:nth-of-type(1){ // c
-        animation: aucun-memo-anim 5s ease-out infinite;
+        animation: aucun-memo-anim 3s ease-out infinite;
       }
       span:nth-of-type(2){ // o
-        animation: aucun-memo-anim 5s 300ms ease-out infinite;
+        animation: aucun-memo-anim 3s 300ms ease-out infinite;
       }
       span:nth-of-type(3){ // l
-        animation: aucun-memo-anim 5s 600ms ease-out infinite;
+        animation: aucun-memo-anim 3s 600ms ease-out infinite;
       }
       span:nth-of-type(4){ // l
-        animation: aucun-memo-anim 5s 900ms ease-out infinite;
+        animation: aucun-memo-anim 3s 900ms ease-out infinite;
       }
       span:nth-of-type(5){ // e
-        animation: aucun-memo-anim 5s 1.2s ease-out infinite;
+        animation: aucun-memo-anim 3s 1.2s ease-out infinite;
       }
       span:nth-of-type(6){ // g
-        animation: aucun-memo-anim 5s 1.5s ease-out infinite;
+        animation: aucun-memo-anim 3s 1.5s ease-out infinite;
       }
       span:nth-of-type(7){ // e
-        animation: aucun-memo-anim 5s 1.8s ease-out infinite;
+        animation: aucun-memo-anim 3s 1.8s ease-out infinite;
       }
     }
     div:nth-of-type(2){
       span:nth-of-type(1){ // d
-        animation: aucun-memo-anim 5s 2.1s ease-out infinite;
+        animation: aucun-memo-anim 3s 2.1s ease-out infinite;
       }
       span:nth-of-type(2){ // e
-        animation: aucun-memo-anim 5s 2.4s ease-out infinite;
+        animation: aucun-memo-anim 3s 2.4s ease-out infinite;
       }
     }
     div:nth-of-type(3){
       span:nth-of-type(1){ // m
-        animation: aucun-memo-anim 5s 2.7s ease-out infinite;
+        animation: aucun-memo-anim 3s 2.7s ease-out infinite;
       }
       span:nth-of-type(2){ // a
-        animation: aucun-memo-anim 5s 3s ease-out infinite;
+        animation: aucun-memo-anim 3s 3s ease-out infinite;
       }
       span:nth-of-type(3){ // i
-        animation: aucun-memo-anim 5s 3.3s ease-out infinite;
+        animation: aucun-memo-anim 3s 3.3s ease-out infinite;
       }
       span:nth-of-type(4){ // s
-        animation: aucun-memo-anim 5s 3.6s ease-out infinite;
+        animation: aucun-memo-anim 3s 3.6s ease-out infinite;
       }
       span:nth-of-type(5){ // o
-        animation: aucun-memo-anim 5s 3.9s ease-out infinite;
+        animation: aucun-memo-anim 3s 3.9s ease-out infinite;
       }
       span:nth-of-type(6){ // n
-        animation: aucun-memo-anim 5s 4.2s ease-out infinite;
+        animation: aucun-memo-anim 3s 4.2s ease-out infinite;
       }
       span:nth-of-type(7){ // e
-        animation: aucun-memo-anim 5s 4.5s ease-out infinite;
+        animation: aucun-memo-anim 3s 4.5s ease-out infinite;
       }
       span:nth-of-type(8){ // u
-        animation: aucun-memo-anim 5s 4.8s ease-out infinite;
+        animation: aucun-memo-anim 3s 4.8s ease-out infinite;
       }
       span:nth-of-type(9){ // v
-        animation: aucun-memo-anim 5s 5.1s ease-out infinite;
+        animation: aucun-memo-anim 3s 5.1s ease-out infinite;
       }
       span:nth-of-type(10){ // e
-        animation: aucun-memo-anim 5s 5.4s ease-out infinite;
+        animation: aucun-memo-anim 3s 5.4s ease-out infinite;
       }
       span:nth-of-type(11){ // e
-        animation: aucun-memo-anim 5s 5.7s ease-out infinite;
+        animation: aucun-memo-anim 3s 5.7s ease-out infinite;
       }
     }
   }
