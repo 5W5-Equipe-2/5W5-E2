@@ -1185,7 +1185,7 @@ menu bureau
   }
   .main-navigation .titre_boutton {
     position: absolute;
-    left: 5%;
+    left: 6.8%;
     width: auto;
   }
   .main-navigation .titre_boutton .logo-TIM {
@@ -1453,7 +1453,14 @@ menu tablet
   margin: 0 auto;
   position: absolute;
   right: 0;
-  width: max-content;
+  width: fit-content;
+}
+.media_vedette .sous_titre .widget_block:last-of-type h2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.media_vedette .sous_titre .widget_block:last-of-type div {
+  position: initial;
 }
 
 .diaporama {
@@ -1617,6 +1624,10 @@ menu tablet
   border: 1px solid var(--simili-noir);
   color: var(--simili-noir);
   z-index: 5;
+}
+.accueil_programme .widget_block .wp-block-buttons a:hover {
+  color: var(--complementaire);
+  background-color: var(--simili-noir);
 }
 
 @media screen and (min-width: 800px) {
@@ -2175,6 +2186,84 @@ th {
     opacity: 0;
   }
 }
+@keyframes aucun-memo-anim {
+  from {
+    color: var(--blanc);
+  }
+  25% {
+    color: var(--primaire);
+  }
+  50% {
+    color: var(--complementaire);
+  }
+  75% {
+    color: var(--simili-noir);
+  }
+  to {
+    color: var(--blanc);
+  }
+}
+.sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(1) {
+  animation: aucun-memo-anim 5s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(2) {
+  animation: aucun-memo-anim 5s 300ms ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(3) {
+  animation: aucun-memo-anim 5s 600ms ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(4) {
+  animation: aucun-memo-anim 5s 900ms ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(5) {
+  animation: aucun-memo-anim 5s 1.2s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(6) {
+  animation: aucun-memo-anim 5s 1.5s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(7) {
+  animation: aucun-memo-anim 5s 1.8s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(2) span:nth-of-type(1) {
+  animation: aucun-memo-anim 5s 2.1s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(2) span:nth-of-type(2) {
+  animation: aucun-memo-anim 5s 2.4s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(1) {
+  animation: aucun-memo-anim 5s 2.7s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(2) {
+  animation: aucun-memo-anim 5s 3s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(3) {
+  animation: aucun-memo-anim 5s 3.3s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(4) {
+  animation: aucun-memo-anim 5s 3.6s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(5) {
+  animation: aucun-memo-anim 5s 3.9s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(6) {
+  animation: aucun-memo-anim 5s 4.2s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(7) {
+  animation: aucun-memo-anim 5s 4.5s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(8) {
+  animation: aucun-memo-anim 5s 4.8s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(9) {
+  animation: aucun-memo-anim 5s 5.1s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(10) {
+  animation: aucun-memo-anim 5s 5.4s ease-out infinite;
+}
+.sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(11) {
+  animation: aucun-memo-anim 5s 5.7s ease-out infinite;
+}
+
 .Profs {
   background-color: var(--primaire);
   padding-top: 8vw;
@@ -2277,7 +2366,6 @@ th {
     transform: translate(-50%, -50%);
     margin: auto;
     height: 25vw;
-    line-height: 25vw;
     overflow-y: auto;
     overflow-x: hidden;
   }

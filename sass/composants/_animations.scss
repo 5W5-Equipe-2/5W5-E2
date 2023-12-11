@@ -16,3 +16,93 @@
   0%{opacity: 1;}
   100%{opacity: 0;}
 }
+
+@keyframes aucun-memo-anim {
+  from {
+    color: var(--blanc);
+  }
+  25%{
+     color: var(--primaire);
+  }
+  50% {
+    color: var(--complementaire);
+  }
+  75%{
+    color: var(--simili-noir);
+  }
+ 
+  to {
+     color: var(--blanc);
+  }
+}
+
+.sous_titre {
+  .widget_block:last-of-type{
+    div:first-of-type{
+      span:nth-of-type(1){ // c
+        animation: aucun-memo-anim 5s ease-out infinite;
+      }
+      span:nth-of-type(2){ // o
+        animation: aucun-memo-anim 5s 300ms ease-out infinite;
+      }
+      span:nth-of-type(3){ // l
+        animation: aucun-memo-anim 5s 600ms ease-out infinite;
+      }
+      span:nth-of-type(4){ // l
+        animation: aucun-memo-anim 5s 900ms ease-out infinite;
+      }
+      span:nth-of-type(5){ // e
+        animation: aucun-memo-anim 5s 1.2s ease-out infinite;
+      }
+      span:nth-of-type(6){ // g
+        animation: aucun-memo-anim 5s 1.5s ease-out infinite;
+      }
+      span:nth-of-type(7){ // e
+        animation: aucun-memo-anim 5s 1.8s ease-out infinite;
+      }
+    }
+    div:nth-of-type(2){
+      span:nth-of-type(1){ // d
+        animation: aucun-memo-anim 5s 2.1s ease-out infinite;
+      }
+      span:nth-of-type(2){ // e
+        animation: aucun-memo-anim 5s 2.4s ease-out infinite;
+      }
+    }
+    div:nth-of-type(3){
+      span:nth-of-type(1){ // m
+        animation: aucun-memo-anim 5s 2.7s ease-out infinite;
+      }
+      span:nth-of-type(2){ // a
+        animation: aucun-memo-anim 5s 3s ease-out infinite;
+      }
+      span:nth-of-type(3){ // i
+        animation: aucun-memo-anim 5s 3.3s ease-out infinite;
+      }
+      span:nth-of-type(4){ // s
+        animation: aucun-memo-anim 5s 3.6s ease-out infinite;
+      }
+      span:nth-of-type(5){ // o
+        animation: aucun-memo-anim 5s 3.9s ease-out infinite;
+      }
+      span:nth-of-type(6){ // n
+        animation: aucun-memo-anim 5s 4.2s ease-out infinite;
+      }
+      span:nth-of-type(7){ // e
+        animation: aucun-memo-anim 5s 4.5s ease-out infinite;
+      }
+      span:nth-of-type(8){ // u
+        animation: aucun-memo-anim 5s 4.8s ease-out infinite;
+      }
+      span:nth-of-type(9){ // v
+        animation: aucun-memo-anim 5s 5.1s ease-out infinite;
+      }
+      span:nth-of-type(10){ // e
+        animation: aucun-memo-anim 5s 5.4s ease-out infinite;
+      }
+      span:nth-of-type(11){ // e
+        animation: aucun-memo-anim 5s 5.7s ease-out infinite;
+      }
+    }
+  }
+}

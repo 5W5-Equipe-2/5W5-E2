@@ -139,6 +139,10 @@
         color: var(--simili-noir);
         z-index: 5;
       }
+      a:hover{
+        color: var(--complementaire);
+        background-color: var(--simili-noir);
+      }
     }
   }
 }
