@@ -358,10 +358,12 @@ Fichier pour les variables du thème (couleurs, root, polices)
   --primaire: hsl(29, 100%, 65%);
   --complementaire: hsl(180, 100%, 92%);
   --test: hsl(195, 86%, 62%);
+  --blancOpacite: hsla(24, 100%, 99%, 0.7);
   /* **************************************************************** Polices *** */
   --police-texte:"DM Sans", sans-serif;
   --police-titre:"Space Grotesk", sans-serif;
   /* ***************************************************************************** Espacement *** */
+  --hauteurHeader: 4em;
 }
 
 /*
@@ -794,14 +796,14 @@ body {
 }
 .section_single .wp-block-group {
   flex-basis: 98%;
-  padding: 2%;
   margin-top: 1%;
   margin-left: 1%;
   margin-right: 1%;
   margin-bottom: 1%;
+  order: 99;
 }
 .section_single .wp-block-group p {
-  padding-bottom: 1em;
+  padding-top: 1em;
 }
 .section_single .information_single {
   display: flex;
@@ -812,7 +814,6 @@ body {
 .section_single .information_single div:first-child {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1em;
   margin-top: 1em;
 }
 .section_single .information_single div:nth-child(2) {
@@ -830,154 +831,175 @@ body {
   margin-right: 0.5em;
 }
 
+/*-----------------------------single projet bureau------------------------------------*/
+@media screen and (min-width: 992px) {
+  .section_single {
+    display: block;
+  }
+  .section_single h2 {
+    width: 100%;
+  }
+  .section_single figure {
+    float: left;
+    padding-right: 1em;
+    width: 60%;
+  }
+  .section_single .wp-block-group, .section_single p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+/*-----------------------------fin single projet---------------------------------*/
 .section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche {
+  background-color: var(--blancOpacite);
   backdrop-filter: blur(10px);
-  border-radius: 1em;
+  border-radius: 2em;
 }
 
 .accueil_description, .erreur, .description_stages {
+  background-color: var(--blancOpacite);
   backdrop-filter: blur(10px);
 }
 
-.section_single::after {
+/*
+.section_single::after{
   background-color: var(--blanc);
   border-radius: 1em;
-  content: "";
-  height: 100%;
-  opacity: 0.7;
-  padding: 5%;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.description_programme::after {
+.description_programme::after{
   background-color: var(--blanc);
   border-radius: 1em;
-  content: "";
-  height: 100%;
-  opacity: 0.7;
-  padding: 5%;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.Liste_programme::after {
+.Liste_programme::after{
   background-color: var(--blanc);
   border-radius: 1em;
-  content: "";
-  height: 100%;
-  opacity: 0.7;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.accueil_description::before {
+.accueil_description::before{
   background-color: var(--blanc);
-  content: "";
-  height: 100%;
-  opacity: 0.7;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  //border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.accueil_description::after {
+.accueil_description::after{
   content: "";
-  height: 100%;
-  opacity: 0.8;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+    height: 100%;
+    opacity: 0.8;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
   background-repeat: no-repeat;
   background-size: 120px;
   background-position: right bottom;
 }
 
-.contenant_resultat_recherche::after {
+.contenant_resultat_recherche::after{
   background-color: var(--blanc);
   border-radius: 1em;
-  content: "";
-  height: 100%;
-  opacity: 0.7;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.erreur::after {
+.erreur::after{
   background-color: var(--blanc);
   border-radius: 1em;
-  content: "";
-  height: 100%;
-  opacity: 0.7;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 
-.description_stages::after {
+.description_stages::after{
   background-color: var(--blanc);
-  content: "";
-  height: 100%;
-  opacity: 0.7;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
+  //border-radius: 1em;
+  //filter: blur(10px);
+    content: "";
+    height: 100%;
+    opacity: 0.7;
+    //padding: 5%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+} */
 /*-----------------------------single evenement------------------------------------*/
 /*-----------------------------single evenement fin------------------------------------*/
-/*-----------------------------single projet bureau------------------------------------*/
-@media screen and (min-width: 992px) {
-  .section_single h2 {
-    flex-basis: 100%;
-  }
-  .section_single figure {
-    flex-basis: 60%;
-  }
-  .section_single .wp-block-group, .section_single p {
-    flex-basis: 38%;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-}
-/*-----------------------------fin single projet---------------------------------*/
 /*-----------------------------fin page projet et évènement----------------------*/
 /*----------------------stage--------------------------------*/
 .description_stages {
@@ -1056,28 +1078,26 @@ body {
 /* 
 ** Tout ce qui concerne la balise header
 */
-.site_entete {
-  background-color: var(--noir);
-  min-height: 5vh;
-  width: 100%;
-  display: flex;
-  z-index: 9999;
-}
-
 .main-navigation {
-  width: 80vw;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
   margin: 0 auto;
-  /* -----------------------------------------------------------------------------
-  Barre de recherche
-  ------------------------------------------------------------------------------*/
+  background-color: var(--noir);
+  height: var(--hauteurHeader);
+  width: 100%;
+  display: flex;
+  z-index: 9999;
 }
 .main-navigation .titre_boutton {
   display: flex;
+  height: var(--hauteurHeader);
+  width: 80%;
+  margin: 0 auto;
 }
 .main-navigation .titre_boutton .logo-TIM {
+  align-items: center;
+  display: flex;
   flex-basis: 50%;
 }
 .main-navigation .titre_boutton .titre-header {
@@ -1086,9 +1106,9 @@ body {
 .main-navigation ul {
   display: none;
   /*position : absolute;*/
-  width: 100%;
+  width: 80%;
   list-style: none;
-  margin: 0;
+  margin: 0 auto;
   padding-left: 0;
   text-align: left;
   z-index: 99999;
@@ -1126,6 +1146,8 @@ Bouton burger
   display: flex;
   height: 15vh;
   justify-content: flex-start;
+  margin: 0 auto;
+  width: 80%;
 }
 .main-navigation.toggled .menu-menu-principal-container {
   display: flex;
@@ -1163,7 +1185,8 @@ menu bureau
   }
   .main-navigation .titre_boutton {
     position: absolute;
-    left: 6.8%;
+    left: 5%;
+    width: auto;
   }
   .main-navigation .titre_boutton .logo-TIM {
     flex-basis: 100%;
