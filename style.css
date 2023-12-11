@@ -981,8 +981,8 @@ body {
 /*-----------------------------fin page projet et évènement----------------------*/
 /*----------------------stage--------------------------------*/
 .description_stages {
-  margin: 0 auto;
-  padding: 5%;
+  margin: 2% auto;
+  padding: 3%;
   width: 80vw;
 }
 .description_stages li {
@@ -1046,6 +1046,11 @@ body {
   .description_stages .stage:nth-child(3) {
     border-right: none;
     padding-left: 5%;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .description_stages {
+    width: 65vw;
   }
 }
 /* 
@@ -1454,13 +1459,13 @@ menu tablet
  ---> les balises section, article, les div
 */
 .accueil_description {
-  padding-top: 3vh;
-  padding-bottom: 6vh;
-  width: 100%;
   background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
+  background-position: right bottom;
   background-repeat: no-repeat;
   background-size: 120px;
-  background-position: right bottom;
+  padding-bottom: 6vh;
+  padding-top: 3vh;
+  width: 100%;
 }
 .accueil_description div {
   margin-top: 2vh;
@@ -1468,13 +1473,6 @@ menu tablet
 .accueil_description p, .accueil_description h2 {
   margin: 0 auto;
   width: 75vw;
-}
-.accueil_description hr {
-  background-color: black;
-  height: 0.1vh;
-  margin: 0 auto;
-  margin-top: 6vh;
-  width: 15%;
 }
 
 .accueil_evenements {
@@ -1488,10 +1486,10 @@ menu tablet
   color: var(--blanc);
 }
 .accueil_evenements h2 {
-  text-align: center;
   padding-bottom: 8vw;
-  width: 80vw;
   margin: 0 auto;
+  text-align: center;
+  width: 80vw;
 }
 .accueil_evenements .evenements_recents {
   height: 75vw;
@@ -1523,8 +1521,8 @@ menu tablet
 }
 .accueil_evenements .categorie__article .image_titre_date .contenant__image a img {
   height: 100%;
-  margin: 0;
   left: 0;
+  margin: 0;
   max-width: 100%;
   object-fit: cover;
   object-position: center center;
@@ -1540,10 +1538,10 @@ menu tablet
   margin: auto;
 }
 .accueil_evenements .categorie__article .image_titre_date .contenant__titre .conteneur_date {
-  font-size: 12px;
-  display: none;
-  gap: 0.3vw;
   align-items: center;
+  display: none;
+  font-size: 12px;
+  gap: 0.3vw;
   justify-content: center;
 }
 @media screen and (min-width: 450px) {
@@ -1557,8 +1555,8 @@ menu tablet
 }
 
 .espacement {
-  margin: 4vh 0;
   background-color: var(--simili-noir);
+  margin: 4vh 0;
   height: 0.2vh;
   width: 40%;
 }
@@ -1587,11 +1585,10 @@ menu tablet
   z-index: 5;
 }
 .accueil_programme .widget_block .wp-block-buttons {
-  width: 100%;
   font-family: var(--police-texte);
-  width: fit-content;
-  padding-top: 5%;
   margin: 0 auto;
+  padding-top: 5%;
+  width: fit-content;
 }
 .accueil_programme .widget_block .wp-block-buttons a {
   border: 1px solid var(--simili-noir);
@@ -1635,12 +1632,12 @@ menu tablet
     width: 44vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu {
-    width: fit-content;
-    position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     margin: auto;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    width: fit-content;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu h5, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
     display: none;
@@ -1648,17 +1645,17 @@ menu tablet
     width: 38vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
-    display: flex;
-    justify-content: left;
     align-items: center;
-    width: 38vw;
+    display: flex;
     gap: 0.3vw;
+    justify-content: left;
+    width: 38vw;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p:first-of-type {
     display: block;
   }
 }
-@media screen and (min-width: 800px) and (min-width: 1400px) {
+@media screen and (min-width: 800px) and (min-width: 992px) {
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu h5 {
     display: block;
   }
@@ -1721,9 +1718,9 @@ menu tablet
   .accueil_programme {
     border-radius: 2em;
     margin-bottom: 5vh;
+    min-height: 20vh;
     padding: 1.5% 0;
     width: 65vw;
-    min-height: 20vh;
   }
   .accueil_programme hr {
     margin: 0 2.5%;

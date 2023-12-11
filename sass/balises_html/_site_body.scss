@@ -547,8 +547,8 @@ body {
 /*----------------------stage--------------------------------*/
 
 .description_stages{
-  margin: 0 auto;
-  padding: 5%;
+  margin: 2% auto;
+  padding: 3%;
   //text-align: center;
   width: 80vw;
 
@@ -603,7 +603,6 @@ body {
     } */
   }
 }
-
 @media screen and (min-width : $largeur__bureau){
   .description_stages{
     display: flex;
@@ -635,5 +634,11 @@ body {
       border-right: none;
       padding-left: 5%;
     }
+  }
+}
+
+@media screen and (min-width : $largeur__bureau_large){
+  .description_stages{
+    width: 65vw;
   }
 }
