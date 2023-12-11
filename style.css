@@ -406,8 +406,8 @@ li {
 }
 @media screen and (min-width: 992px) {
   p,
-  ul,
-  li {
+ul,
+li {
     font-size: clamp(1.1875rem, 1.1337rem + 0.0615vw, 1.28125rem);
   }
 }
@@ -1207,16 +1207,16 @@ menu bureau
     display: none;
   }
   .main-navigation.toggled ul,
-  .main-navigation ul {
+.main-navigation ul {
     display: flex;
     padding-top: 0;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-  .main-navigation ul a[href="#"]::after {
+.main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-  .main-navigation ul ul {
+.main-navigation ul ul {
     display: none;
   }
 }
@@ -1712,6 +1712,8 @@ menu tablet
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
   }
+}
+@media screen and (min-width: 800px) {
   .accueil_programme {
     border-radius: 1.5em;
     margin-bottom: 5vh;
@@ -2254,9 +2256,6 @@ th {
 .sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(9) {
   animation: aucun-memo-anim 3s 4.2s ease-out infinite;
 }
-.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) {
-  border: 1px solid red;
-}
 .sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) span:nth-of-type(1) {
   animation: aucun-memo-anim 3s 4.5s ease-out infinite;
 }
@@ -2274,15 +2273,6 @@ th {
 }
 .sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) span:nth-of-type(6) {
   animation: aucun-memo-anim 3s 6s ease-out infinite;
-}
-.sous_titre .widget_block:first-of-type h2:nth-of-type(2) span {
-  animation: aucun-memo-anim 3s 300ms ease-out infinite;
-}
-.sous_titre .widget_block:first-of-type h2:nth-of-type(3) span {
-  animation: aucun-memo-anim 3s 600ms ease-out infinite;
-}
-.sous_titre .widget_block:first-of-type h2:nth-of-type(4) span {
-  animation: aucun-memo-anim 3s 900ms ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(1) {
   animation: aucun-memo-anim 3s ease-out infinite;
