@@ -1447,17 +1447,28 @@ menu tablet
 .media_vedette .sous_titre .widget_block:first-of-type > h2 {
   padding-bottom: 2vh;
 }
+.media_vedette .sous_titre .widget_block:first-of-type h2:first-of-type {
+  width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.media_vedette .sous_titre .widget_block:first-of-type h2:first-of-type div {
+  position: initial;
+  width: fit-content;
+}
 .media_vedette .sous_titre .widget_block:last-of-type {
   bottom: 8%;
   left: 0;
   margin: 0 auto;
   position: absolute;
   right: 0;
-  width: fit-content;
+  width: 80vw;
 }
 .media_vedette .sous_titre .widget_block:last-of-type h2 {
   display: flex;
   flex-wrap: wrap;
+  width: fit-content;
+  margin: 0 auto;
 }
 .media_vedette .sous_titre .widget_block:last-of-type div {
   position: initial;
@@ -2188,80 +2199,152 @@ th {
 }
 @keyframes aucun-memo-anim {
   from {
-    color: var(--blanc);
+    color: hsl(180deg, 14%, 60%);
   }
-  25% {
+  33% {
     color: var(--primaire);
   }
-  50% {
+  66% {
     color: var(--complementaire);
   }
-  75% {
-    color: var(--simili-noir);
-  }
   to {
-    color: var(--blanc);
+    color: hsl(180deg, 14%, 60%);
   }
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:first-of-type span:nth-of-type(1) {
+  animation: aucun-memo-anim 3s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:first-of-type span:nth-of-type(2) {
+  animation: aucun-memo-anim 3s 300ms ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:first-of-type span:nth-of-type(3) {
+  animation: aucun-memo-anim 3s 600ms ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:first-of-type span:nth-of-type(4) {
+  animation: aucun-memo-anim 3s 900ms ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(2) span:nth-of-type(1) {
+  animation: aucun-memo-anim 3s 1.2s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(2) span:nth-of-type(2) {
+  animation: aucun-memo-anim 3s 1.5s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(1) {
+  animation: aucun-memo-anim 3s 1.8s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(2) {
+  animation: aucun-memo-anim 3s 2.1s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(3) {
+  animation: aucun-memo-anim 3s 2.4s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(4) {
+  animation: aucun-memo-anim 3s 2.7s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(5) {
+  animation: aucun-memo-anim 3s 3s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(6) {
+  animation: aucun-memo-anim 3s 3.3s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(7) {
+  animation: aucun-memo-anim 3s 3.6s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(8) {
+  animation: aucun-memo-anim 3s 3.9s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(3) span:nth-of-type(9) {
+  animation: aucun-memo-anim 3s 4.2s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) {
+  border: 1px solid red;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) span:nth-of-type(1) {
+  animation: aucun-memo-anim 3s 4.5s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) span:nth-of-type(2) {
+  animation: aucun-memo-anim 3s 4.8s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) span:nth-of-type(3) {
+  animation: aucun-memo-anim 3s 5.1s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) span:nth-of-type(4) {
+  animation: aucun-memo-anim 3s 5.4s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) span:nth-of-type(5) {
+  animation: aucun-memo-anim 3s 5.7s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:first-of-type div:nth-of-type(4) span:nth-of-type(6) {
+  animation: aucun-memo-anim 3s 6s ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:nth-of-type(2) span {
+  animation: aucun-memo-anim 3s 300ms ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:nth-of-type(3) span {
+  animation: aucun-memo-anim 3s 600ms ease-out infinite;
+}
+.sous_titre .widget_block:first-of-type h2:nth-of-type(4) span {
+  animation: aucun-memo-anim 3s 900ms ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(1) {
-  animation: aucun-memo-anim 5s ease-out infinite;
+  animation: aucun-memo-anim 3s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(2) {
-  animation: aucun-memo-anim 5s 300ms ease-out infinite;
+  animation: aucun-memo-anim 3s 300ms ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(3) {
-  animation: aucun-memo-anim 5s 600ms ease-out infinite;
+  animation: aucun-memo-anim 3s 600ms ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(4) {
-  animation: aucun-memo-anim 5s 900ms ease-out infinite;
+  animation: aucun-memo-anim 3s 900ms ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(5) {
-  animation: aucun-memo-anim 5s 1.2s ease-out infinite;
+  animation: aucun-memo-anim 3s 1.2s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(6) {
-  animation: aucun-memo-anim 5s 1.5s ease-out infinite;
+  animation: aucun-memo-anim 3s 1.5s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:first-of-type span:nth-of-type(7) {
-  animation: aucun-memo-anim 5s 1.8s ease-out infinite;
+  animation: aucun-memo-anim 3s 1.8s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(2) span:nth-of-type(1) {
-  animation: aucun-memo-anim 5s 2.1s ease-out infinite;
+  animation: aucun-memo-anim 3s 2.1s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(2) span:nth-of-type(2) {
-  animation: aucun-memo-anim 5s 2.4s ease-out infinite;
+  animation: aucun-memo-anim 3s 2.4s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(1) {
-  animation: aucun-memo-anim 5s 2.7s ease-out infinite;
+  animation: aucun-memo-anim 3s 2.7s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(2) {
-  animation: aucun-memo-anim 5s 3s ease-out infinite;
+  animation: aucun-memo-anim 3s 3s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(3) {
-  animation: aucun-memo-anim 5s 3.3s ease-out infinite;
+  animation: aucun-memo-anim 3s 3.3s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(4) {
-  animation: aucun-memo-anim 5s 3.6s ease-out infinite;
+  animation: aucun-memo-anim 3s 3.6s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(5) {
-  animation: aucun-memo-anim 5s 3.9s ease-out infinite;
+  animation: aucun-memo-anim 3s 3.9s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(6) {
-  animation: aucun-memo-anim 5s 4.2s ease-out infinite;
+  animation: aucun-memo-anim 3s 4.2s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(7) {
-  animation: aucun-memo-anim 5s 4.5s ease-out infinite;
+  animation: aucun-memo-anim 3s 4.5s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(8) {
-  animation: aucun-memo-anim 5s 4.8s ease-out infinite;
+  animation: aucun-memo-anim 3s 4.8s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(9) {
-  animation: aucun-memo-anim 5s 5.1s ease-out infinite;
+  animation: aucun-memo-anim 3s 5.1s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(10) {
-  animation: aucun-memo-anim 5s 5.4s ease-out infinite;
+  animation: aucun-memo-anim 3s 5.4s ease-out infinite;
 }
 .sous_titre .widget_block:last-of-type div:nth-of-type(3) span:nth-of-type(11) {
-  animation: aucun-memo-anim 5s 5.7s ease-out infinite;
+  animation: aucun-memo-anim 3s 5.7s ease-out infinite;
 }
 
 .Profs {
