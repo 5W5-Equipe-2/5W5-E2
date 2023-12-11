@@ -48,3 +48,19 @@ jQuery(document).ready(function($) {
         }        
     }
 
+/**
+ * Rediriger l'utilisateur vers l'URL prédédent.
+ *
+ * @param {string} referenceUrl - L'URL de référence vers laquelle l'utilisateur sera redirigé.
+ */
+function goBack() {
+       
+    let referenceUrl = document.getElementById('referenceUrl').value;
+    
+    if (referenceUrl) {
+        window.location.href = referenceUrl;
+    } else {
+        window.location.href = '<?php echo esc_url(home_url('/')); ?>';
+    }
+    
+}
