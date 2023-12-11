@@ -106,7 +106,14 @@
       position: absolute; // pour le mettre par dessus le média-vedette
       right: 0; // centrer les logo
       // text-align: left;
-      width: max-content;
+      width: fit-content;
+      h2{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      div{
+        position: initial;
+      }
     }
   }
 }
