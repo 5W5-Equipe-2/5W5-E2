@@ -36,42 +36,6 @@ jQuery(document).ready(function ($) {
   // Au chargement de la page, déclenchez la requête AJAX pour la "session1"
   filterPosts("1");
 });
-document.addEventListener("DOMContentLoaded", function () {
-  let menuItems = document.querySelectorAll(".sub-menu li");
-  let subMenu = document.querySelector(".sub-menu");
-  let storedSubMenuLink = sessionStorage.getItem("subMenuLink");
-  let storedLinkColor = sessionStorage.getItem("linkId");
-  let lienActif = document.getElementById(storedLinkColor);
-  //si le lien l'adresse de la page actuelle concorde avec un lien enregistré du sub-menu
-  let isSubMenuOpen = storedSubMenuLink === window.location.href;
-
-  // condition si isSubMenuOpen est vrai ou pas
-  if (isSubMenuOpen) {
-    //ajoute la classe open a sub-menu pour garder le menu ouvert
-    subMenu.classList.add("open");
-    //ajout de la classe lienActif pour changer l'aspect du lien selectionné
-    lienActif.classList.add("lienActif");
-  } else {
-    subMenu.classList.remove("open");
-    lienActif.classList.remove("lienActif");
-  }
-
-  menuItems.forEach(function (menuItem) {
-    menuItem.addEventListener("click", function (event) {
-      // Get the href attribute of the clicked link
-      let linkHref = event.currentTarget
-        .querySelector("a")
-        .getAttribute("href");
-      let linkId = event.currentTarget.id;
-
-      // Store the link's href in sessionStorage
-      sessionStorage.setItem("subMenuLink", linkHref);
-
-      // Store the clicked element in sessionStorage
-      sessionStorage.setItem("linkId", linkId);
-    });
-  });
-});
 
 /* ---------------boutton retour pour la liste de cours-----------*/
 
