@@ -8,7 +8,7 @@
 	const NavigationProjet = document.getElementById( 'navigation-projet' );
 	const nav_header_scroll = document.getElementsByClassName('main-navigation');
 	const nav_projet_scroll = document.getElementsByClassName('site__aside');
-	const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
+	//const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
 
 	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
 	//const menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
@@ -34,10 +34,10 @@
 			}
 		}
 
-		if(siteNavigation.classList.contains('toggled') && mediaQueryCondition.matches){
+		/* if(siteNavigation.classList.contains('toggled') && mediaQueryCondition.matches){
 			siteNavigation.classList.remove( 'toggled' );
 			alert("Hello! I am an alert box!!");
-		}
+		} */
 
 		//document.getElementsByClassName('site_entete').style.position="fixed";
 
