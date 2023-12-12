@@ -36,7 +36,15 @@ jQuery(document).ready(function($) {
     // Au chargement de la page, déclenchez la requête AJAX pour la "session1"
     filterPosts('1');   
 });
+$(document).ready(function() {
+    $('.menu li').click(function() {
+      // Close all sub-menus
+      $('.sub-menu').removeClass('open');
 
+      // Open the sub-menu of the clicked item
+      $(this).find('.sub-menu').addClass('open');
+    });
+  });
 /* ---------------boutton retour pour la liste de cours-----------*/
 
     
