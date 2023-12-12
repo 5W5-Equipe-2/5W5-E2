@@ -27,8 +27,9 @@
   <section class="section_footer">
     <p>© <?= date("Y") ?> Collège de Maisonneuve. Tous droits réservés. </p>
   </section>
-
-  </div>
+<a id="retour_haut" href="#" title="Retour en haut de page">
+</a>
+</div>
 
 </footer>
 <?php wp_footer(); ?>

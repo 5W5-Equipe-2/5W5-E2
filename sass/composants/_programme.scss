@@ -106,8 +106,8 @@
           .content{ // contenant qui contient toutes les informations secondaires
             border-radius: 1em; // arrondis
             display: block; // afficher le contenu
-            width: 44vw; // grosseur
             position: relative;
+            width: 44vw; // grosseur
             .contenant_contenu{  // contenu
               position: absolute; // necessaire pour centre le contenu
               top: 50%; // necessaire pour centre le contenu
@@ -115,7 +115,7 @@
               transform: translate(-50%, -50%); // necessaire pour centre le contenu
               margin: auto; // necessaire pour centre le contenu
               height: 25vw;
-              line-height: 25vw;
+              // line-height: 25vw;
               overflow-y: auto;
               overflow-x: hidden;
 
@@ -142,7 +142,7 @@
         /* Boite d'évènement récent */
         .categorie__article{ 
           height: 20vw;
-          width: 70vw;
+          width: 65vw;
           // Les informations necessaires/importants -titre -image -Date
           .image_titre_date{
             width: 25vw;
@@ -157,8 +157,6 @@
             .contenant_contenu{  // contenu
               height: 20vw;
               line-height: normal;
-              overflow-y: auto;
-              overflow-x: hidden;
 
               .wp-block-group__inner-container{
                 flex-direction: column;
@@ -176,9 +174,6 @@
               justify-content: center;
               align-items: center;
             }
-            ::-webkit-scrollbar {
-  width: 10px;
-}
           }
         }
       }
