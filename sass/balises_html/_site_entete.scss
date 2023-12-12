@@ -41,7 +41,6 @@
       width : 80%; 
       //padding-top: 2vh;
       list-style: none;
-      margin: 0 auto;
       padding-left: 0;
      
       text-align : left;
@@ -101,6 +100,7 @@
         display: flex;
         flex-direction: column;
         height: 65vh;
+        margin: 0 auto;
 
         li{
           align-items: center;

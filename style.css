@@ -713,7 +713,7 @@ body {
 }
 .site__aside.toggled .menu-projets {
   display: block;
-  height: 90vh;
+  height: 100vh;
 }
 .site__aside.toggled .menu-projets .menu {
   align-items: center;
@@ -756,6 +756,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding: 5%;
+  padding-top: 0;
 }
 .categorie__section h3 {
   flex-basis: 100%;
@@ -765,19 +766,18 @@ body {
   border-radius: 1em;
   margin: 5%;
   overflow: hidden;
+  padding-bottom: 0.8em;
   text-align: center;
   width: 90%;
   height: auto;
 }
 .categorie__section .categorie__article figure {
   background-color: var(--simili-noir);
+  padding-bottom: 0.8em;
 }
 .categorie__section .categorie__article figure a img {
   margin: 0;
   width: 100%;
-}
-.categorie__section .categorie__article h3 {
-  font-size: 18px;
 }
 .categorie__section .categorie__article p {
   color: var(--blanc);
@@ -859,6 +859,14 @@ body {
 @media screen and (min-width: 992px) {
   .section_single {
     display: block;
+    /* display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-start; */
+    /* & .information_single{
+      flex-basis: 50%;
+      align-self: flex-start;
+    } */
   }
   .section_single h2 {
     width: 100%;
@@ -867,10 +875,17 @@ body {
     float: left;
     padding-right: 1em;
     width: 60%;
+    /* flex-basis: 50%;
+    float: left; */
   }
-  .section_single .wp-block-group, .section_single p {
+  .section_single .wp-block-group {
     margin-top: 0;
     margin-bottom: 0;
+    /* flex-basis: 50%;
+    order: 99;
+    margin-left: 50%;
+    margin-top: -10em;
+    border: 2px solid aqua; */
   }
 }
 /*-----------------------------fin single projet---------------------------------*/
@@ -1134,7 +1149,6 @@ body {
   /*position : absolute;*/
   width: 80%;
   list-style: none;
-  margin: 0 auto;
   padding-left: 0;
   text-align: left;
   z-index: 99999;
@@ -1182,6 +1196,7 @@ Bouton burger
   display: flex;
   flex-direction: column;
   height: 65vh;
+  margin: 0 auto;
 }
 .main-navigation.toggled .menu-menu-principal-container ul li {
   align-items: center;
@@ -1969,6 +1984,7 @@ th {
   background-color: transparent;
   border: 1px solid var(--blanc);
   border-radius: 50em;
+  cursor: pointer;
   font-size: clamp(1.125rem, 1.1187rem + 0.0287vw, 1.1875rem);
   height: 5%;
   margin-bottom: 1em;
