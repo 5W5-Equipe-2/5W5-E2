@@ -6,7 +6,7 @@
  ( function() {
 	const siteNavigation = document.getElementById( 'site-navigation' );
 	const NavigationProjet = document.getElementById( 'navigation-projet' );
-	const nav_header_scroll = document.getElementsByClassName('site_entete');
+	const nav_header_scroll = document.getElementsByClassName('main-navigation');
 	const nav_projet_scroll = document.getElementsByClassName('site__aside');
 	const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
 
@@ -34,6 +34,11 @@
 			}
 		}
 
+		if(siteNavigation.classList.contains('toggled') && mediaQueryCondition.matches){
+			siteNavigation.classList.remove( 'toggled' );
+			alert("Hello! I am an alert box!!");
+		}
+
 		//document.getElementsByClassName('site_entete').style.position="fixed";
 
 		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
@@ -53,7 +58,8 @@
 		const NavigationProjet = document.getElementById( 'navigation-projet' );
 		//let nav_projet_scroll = document.querySelectorAll('.site__aside');
 		const nav_projet_scroll = document.getElementsByClassName('site__aside');
-		const nav_header_scroll = document.getElementsByClassName('site_entete');
+		const nav_header_scroll = document.getElementsByClassName('main-navigation');
+		const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
 
 		if ( ! NavigationProjet ) {
 			return;
@@ -68,7 +74,7 @@
 			if(NavigationProjet.classList.contains('toggled')){
 				for (let nav_projet of nav_projet_scroll){
 					nav_projet.style.position = "fixed";
-					nav_projet.style.top = "5vh";  // !!!----hauteur du header----!!!
+					nav_projet.style.top = "var(--hauteurHeader)";  // !!!----hauteur du header----!!!
 				}
 				for (let nav_header of nav_header_scroll){
 					nav_header.style.position = "fixed";

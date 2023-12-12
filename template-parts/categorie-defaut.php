@@ -1,12 +1,12 @@
 <?php
 /**
- * Template part pour afficher par défaut s'il n'y a pas de template part au nom d'une catégorie
+ * Template part pour affichage par défaut s'il n'y a pas de template part au nom d'une catégorie
  */
     $titre = get_the_title();
   ?>
 <article class="categorie__article">
   <?php  if(has_post_thumbnail()) {
-    the_post_thumbnail('thumbnail');
+    the_post_thumbnail('thumbnail', 'large');
   } 
 ?>
   <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>

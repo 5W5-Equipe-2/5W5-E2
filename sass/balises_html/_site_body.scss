@@ -322,14 +322,16 @@ body {
 
   .wp-block-group{
     flex-basis: 98%;
-    padding: 2%;
+    //padding: 2%;
     //position: relative;
     margin-top: 1%;
     margin-left: 1%;
     margin-right: 1%;
     margin-bottom: 1%;
+    order: 99;
+
     p{
-      padding-bottom: 1em;
+      padding-top: 1em;
       
     }
   }
@@ -342,7 +344,7 @@ body {
     div:first-child{
       display: flex;
       flex-direction: column;
-      margin-bottom: 1em;
+      //margin-bottom: 1em;
       margin-top: 1em;
     }
 
@@ -368,15 +370,57 @@ body {
   }
 }
 
+/*-----------------------------single projet bureau------------------------------------*/
+
+@media screen and (min-width : $largeur__bureau){
+
+  .section_single{
+    //flex-wrap: wrap;
+    display: block;
+
+  h2{
+    //flex-basis: 100%;
+    width: 100%;
+  }
+
+    figure{
+      //display: table-column-group;
+      //flex-basis: 60%;
+      float: left;
+      padding-right: 1em;
+      //padding-bottom: 1em;
+      width: 60%;
+    }
+
+    .information_single{
+      //display: table-row;
+    }
+
+    .wp-block-group, p{
+      //display: table-footer-group;
+      //flex-basis: 38%;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    //.class:nth-child(2) {display: table-footer-group;}
+  }
+}
+
+/*-----------------------------fin single projet---------------------------------*/
+
 .section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche{
+  background-color: var(--blancOpacite);
   backdrop-filter: blur(10px);
-  border-radius: 1em;
+  border-radius: 2em;
 }
 
 .accueil_description, .erreur, .description_stages{
+  background-color: var(--blancOpacite);
   backdrop-filter: blur(10px);
 }
 
+/*
 .section_single::after{
   background-color: var(--blanc);
   border-radius: 1em;
@@ -512,7 +556,7 @@ body {
     right: 0;
     bottom: 0;
     left: 0;
-}
+} */
 
 /*-----------------------------single evenement------------------------------------*/
 
@@ -521,37 +565,15 @@ body {
 
 /*-----------------------------single evenement fin------------------------------------*/
 
-/*-----------------------------single projet bureau------------------------------------*/
 
-@media screen and (min-width : $largeur__bureau){
-
-  .section_single{
-
-  h2{
-    flex-basis: 100%;
-  }
-
-    figure{
-      flex-basis: 60%;
-    }
-
-    .wp-block-group, p{
-      flex-basis: 38%;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  }
-}
-
-/*-----------------------------fin single projet---------------------------------*/
 
 /*-----------------------------fin page projet et évènement----------------------*/
 
 /*----------------------stage--------------------------------*/
 
 .description_stages{
-  margin: 0 auto;
-  padding: 5%;
+  margin: 2% auto;
+  padding: 3%;
   //text-align: center;
   width: 80vw;
 
@@ -606,7 +628,6 @@ body {
     } */
   }
 }
-
 @media screen and (min-width : $largeur__bureau){
   .description_stages{
     display: flex;
@@ -638,5 +659,11 @@ body {
       border-right: none;
       padding-left: 5%;
     }
+  }
+}
+
+@media screen and (min-width : $largeur__bureau_large){
+  .description_stages{
+    width: 65vw;
   }
 }

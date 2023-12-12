@@ -4,26 +4,19 @@
 */
 .accueil_description { // La section qui contient la phrase punch de la page d'accueil
   //background-color: var(--blanc);
-  padding-top: 3vh;
+  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png"); // Mettre le fond cristal
+  background-position: right bottom; // positionnement coin inférieur droite
+  background-repeat: no-repeat; // on la veut juste 1 fois
+  background-size: 120px; // taille
   padding-bottom: 6vh;
+  padding-top: 3vh;
   width: 100%;
-  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
-    background-repeat: no-repeat;
-    background-size: 120px;
-    background-position: right bottom;
   div{
     margin-top: 2vh;
   }
   p,h2{
-    margin: 0 auto;
-    width: 75vw;
-  }
-  hr{
-    background-color: black;
-    height: 0.1vh;
-    margin: 0 auto;
-    margin-top: 6vh;
-    width: 15%;  
+    margin: 0 auto; // Centrer
+    width: 75vw; // margin
   }
 }
 
@@ -33,11 +26,13 @@
   padding-bottom: 6vw; // espacement bas
   width: 100%; // largeur
   a{
-    color: var(--blanc); //a retirer
+    color: var(--blanc);
   }
   h2{ // le titre
-    text-align: center;
     padding-bottom: 8vw;
+    margin: 0 auto;
+    text-align: center;
+    width: 80vw;
   }
 
   .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
@@ -46,7 +41,7 @@
   /* Boite d'évènement récent */
   .categorie__article{ 
     // background-color: var(--simili-noir);
-    border-radius: 2vh; // arrondir les coins
+    border-radius: 2em; // arrondir les coins
     color: var(--blanc); // couleur texte blanc
     display: flex;
     height: 55vw;
@@ -61,29 +56,41 @@
     .image_titre_date{
       background-color: var(--simili-noir);
       height: 100%;
+      overflow: hidden; // pour garder les coins arrondis
+      width: 100%;
       .contenant__image {
         height: 75%;
         margin: 0;
         overflow: hidden;
         padding: 0;
+        position: relative;
         a img{
-          height: 110%;
-          margin: auto auto;
-          width: 110%;
+          height: 100%;
+          left: 0;
+          margin: 0;
+          max-width: 100%;
+          object-fit: cover;
+          object-position: center center;
+          position: absolute;
+          width: 100%;
         }
       }
      .contenant__titre{
         align-items: center;
         display: flex;
         flex-direction: column;
-        height: 12vw; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
+        height: 25%; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
         justify-content: center;
         margin: auto;
         .conteneur_date{
-          display: flex;
-          gap: 0.3vw;
           align-items: center;
+          display: none;
+          font-size: 12px;
+          gap: 0.3vw;
           justify-content: center;
+          @media screen and (min-width:450px){ // Début requête média Bureau
+            display: flex; 
+          }
         }
       }
     }
@@ -95,8 +102,8 @@
   }
 }
 .espacement{
-  margin: 4vh 0;
   background-color: var(--simili-noir);
+  margin: 4vh 0;
   height: 0.2vh;
   width: 40%;
 }
@@ -123,15 +130,18 @@
     margin: 5% 10%;
     z-index: 5;
     .wp-block-buttons{ // le bouton plus de détails
-      width: 100%;
       font-family: var(--police-texte);
-      width: fit-content;
-      padding-top: 3%;
       margin: 0 auto;
+      padding-top: 5%;
+      width: fit-content;
       a{ // style du bouton
         border: 1px solid var(--simili-noir);
         color: var(--simili-noir);
         z-index: 5;
+      }
+      a:hover{
+        color: var(--complementaire);
+        background-color: var(--simili-noir);
       }
     }
   }
@@ -140,6 +150,14 @@
 
 
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
+  .accueil_description { // La section qui contient la phrase punch de la page d'accueil
+  p,h2{
+    width: 65vw;
+  }
+  p{
+    text-align: left;
+  }
+  }
   .accueil_evenements { 
     padding: 4vw 0;
     h2{ // le titre
@@ -152,16 +170,13 @@
         border-radius: 0; // on enleve l'arrondissement et on met au enfant
         height: 30vw; // ajustement de l'hauteur
         justify-content: space-between; // met un à cote de l'autre
-        width: 75vw; // ajustement de largeur
+        width: 80vw; // ajustement de largeur
 
         // Les informations necessaires/importants -titre -image -Date
         .image_titre_date{
           border-radius: 2vw; // arrondis
           overflow: hidden; // pour garder les coins arrondis
-          width: 30vw;
-          .contenant__titre{
-          height: 6.5vw; // le full height - l'hauteur de l'image
-          }
+          width: 35vw;
         }
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
         .content{ // contenant qui contient toutes les informations secondaires
@@ -171,21 +186,36 @@
           text-align: left; // pour que le texte s'affiche vers la gauche
           width: 44vw; // grosseur
           .contenant_contenu{  // contenu
-            position: absolute; // necessaire pour centre le contenu
-            top: 50%; // necessaire pour centre le contenu
             left: 50%; // necessaire pour centre le contenu
-            transform: translate(-50%, -50%); // necessaire pour centre le contenu
             margin: auto; // necessaire pour centre le contenu
+            position: absolute; // necessaire pour centre le contenu
+            transform: translate(-50%, -50%); // necessaire pour centre le contenu
+            top: 50%; // necessaire pour centre le contenu
+            width: fit-content;
             p,h5,div{
+              display: none;
               margin: 0 auto; // centrer horizontal
               width: 38vw; // largeur
             }
             div{ // pour mettre les icone et les information a cote
-              display: flex;
-              justify-content: left;
               align-items: center;
-              width: 38vw;
+              display: flex;
               gap: 0.3vw;
+              justify-content: left;
+              width: 38vw;
+            }
+          }
+          .contenant_contenu p:first-of-type{
+            display: block;
+          }
+          @media screen and (min-width:$largeur__bureau){ //inscription pour bureau
+            .contenant_contenu{  // contenu
+              p,h5{
+                display: block;
+              }
+              div{
+                display: flex;
+              }
             }
           }
           .contenant_contenu > p:last-of-type, .contenant_contenu > p:first-of-type{  padding-bottom: 1.5vw;}
@@ -194,8 +224,9 @@
     }
   }
   .accueil_programme { // section de inscription
+    border-radius: 1.5em;
     margin-bottom: 5vh;
-    padding: 5% 0;
+    padding: 3% 0;
     width: 80vw;
     hr{
       margin: 0 5%;
@@ -204,7 +235,10 @@
       padding-bottom: 1%;
     }
     .widget_block{ // Le premier bloc : tu veux nous rejoindre4
-      margin: 3% 5%;
+      margin: 3% 10%;
+    }
+    .wp-block-buttons{ // le bouton plus de détails
+      padding-top: 2%;
     }
   }
 }// Fin requête média Tablette
@@ -212,17 +246,16 @@
 @media screen and (min-width:$largeur__bureau_large){ // Début requête média Bureau
   .accueil_description { // La section qui contient la phrase punch de la page d'accueil
   p,h2{
-    margin: 0 auto;
-    width: 65vw;
+    width: 45vw;
   }
-}
-  .accueil_evenements { 
+  }
+  .accueil_evenements {  // section évènements récents
     padding: 3vw 0;
     h2{ // le titre
       padding-bottom: 1vw;
     }
     .evenements_recents{ // le div qui contient tous les boîtes d'évènements récents
-      height: 28vw;
+      height: 27vw;
       /* Boite d'évènement récent */
       .categorie__article{ 
         height: 20vw;
@@ -230,29 +263,37 @@
         // Les informations necessaires/importants -titre -image -Date
         .image_titre_date{
           width: 25vw;
-          .contenant__titre{
-          height: 5vw; // le full height - l'hauteur de l'image
-          }
         }
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
-        .content{
+        .content{ // contenant
           width: 39vw;
+          .contenant_contenu{  // contenu
+            p,h5,div{
+              width: 33vw; // largeur
+            }}
         }
       }
     }
   }
   .accueil_programme { // section de inscription
+    border-radius: 2em;
     margin-bottom: 5vh;
-    padding: 5% 0;
-    width: 60vw;
+    min-height: 20vh;
+    padding: 1.5% 0;
+    width: 65vw;
     hr{
-      margin: 0 5%;
+      margin: 0 2.5%;
     }
     h2{
       padding-bottom: 1%;
     }
     .widget_block{ // Le premier bloc : tu veux nous rejoindre4
-      margin: 3% 5%;
+      margin: 1.5% 2%;
+
+      .wp-block-buttons{ // le bouton plus de détails
+        padding-top: 3%;
+      }
     }
+
   }
 }

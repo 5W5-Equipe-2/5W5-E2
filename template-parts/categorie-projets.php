@@ -3,8 +3,12 @@
 /**
  * Template part la catégorie projets
  */
-$titre = get_the_title();
-$auteur = get_field('auteur');
+$auteur = wp_trim_words(get_field('auteur'), 5);
+
+// Couper et ajouter des points de suspension si plus de 5 mots
+if (str_word_count($auteur) > 5) {
+    $auteur = wp_trim_words($auteur, 5, ' ...');
+}
 ?>
 
 <?php
@@ -14,12 +18,12 @@ if (has_post_thumbnail() && !empty($auteur)) : ?>
         <!--  Afficher l'image et en faire un lien clicable -->
         <figure>
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('thumbnail',  ['alt' => get_the_title()]); ?>
+                <?php the_post_thumbnail('thumbnail', 'large',  ['alt' => get_the_title()]); ?>
             </a>
         </figure>
         <!--  Afficher le titre l'article (clicable) -->
-        <h3><a href="<?php the_permalink(); ?>"> <?= get_the_title(); ?></a></h3>
+        <h3><a href="<?php the_permalink(); ?>"><i><?= get_the_title(); ?></i></a></h3>
         <!--  Afficher les informations des champs AFC (clicable) -->
-        <h3><a href="<?php the_permalink(); ?>"> <?= the_field('auteur'); ?></a></h3>
+        <h3><a href="<?php the_permalink(); ?>"> <?=$auteur ?></a></h3>
     </article>
 <?php endif; ?>
