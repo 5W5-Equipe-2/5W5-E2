@@ -14,7 +14,12 @@ body {
 /*---------------------------page projet et évènement-------------------------*/
 
 /*-------------------navigation----------------*/
-
+.lienActif{
+  color: var(--primaire) !important;
+  a{
+    color: var(--primaire) !important;
+  }
+}
 .site__aside{
   padding-left: 5%;
   padding-right: 5%;
@@ -35,7 +40,6 @@ body {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-
       li{
         font-family: var(--police-titre);
         font-size: 21px;
@@ -66,6 +70,7 @@ body {
           margin-right: 0.5em;
           width: auto;
         }
+        
       }
     }
   }
@@ -78,7 +83,11 @@ body {
   .sub-menu{
     display: none;
   }
-
+  .sub-menu.open{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
   li:hover .sub-menu{
     align-items: center;
     display: flex;
@@ -162,7 +171,22 @@ body {
       }
     }
     }
+    .sub-menu.open{
+      display: flex !important; 
+      flex-direction: row !important;
+      //margin-left: 0.8em;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
 
+      li{
+        font-size: 18px !important;
+        margin-left: 0.5em !important;
+        margin-right: 0.5em !important;
+        width: auto;
+      }
+  }
       
   }
 
@@ -175,7 +199,7 @@ body {
 
   .menu-projets{
     display: block;
-    height: 90vh;
+    height: 100vh;
 
     .menu{
       align-items: center;
@@ -227,6 +251,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   padding: 5%;
+  padding-top: 0;
 
   h3{
     flex-basis: 100%;
@@ -237,12 +262,14 @@ body {
     border-radius: 1em; // arrondir les coins
     margin: 5%;
     overflow: hidden; // pour que les coin du haut reste courber
+    padding-bottom: 0.8em;
     text-align: center; // Center le texte
     width: 90%;
     height: auto;
 
     figure{
       background-color: var(--simili-noir);
+      padding-bottom: 0.8em;
       a img{
         margin: 0;
         width: 100%;
@@ -250,7 +277,7 @@ body {
     }
 
     h3{
-      font-size: 18px;
+      //font-size: 18px;
     }
 
     p{
@@ -375,6 +402,11 @@ body {
     //flex-wrap: wrap;
     display: block;
 
+    /* display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-start; */
+
   h2{
     //flex-basis: 100%;
     width: 100%;
@@ -387,18 +419,33 @@ body {
       padding-right: 1em;
       //padding-bottom: 1em;
       width: 60%;
+
+      /* flex-basis: 50%;
+      float: left; */
     }
 
     .information_single{
       //display: table-row;
+      //margin-top: -50%;
     }
 
-    .wp-block-group, p{
+    .wp-block-group{
       //display: table-footer-group;
       //flex-basis: 38%;
       margin-top: 0;
       margin-bottom: 0;
+
+      /* flex-basis: 50%;
+      order: 99;
+      margin-left: 50%;
+      margin-top: -10em;
+      border: 2px solid aqua; */
     }
+
+    /* & .information_single{
+      flex-basis: 50%;
+      align-self: flex-start;
+    } */
 
     //.class:nth-child(2) {display: table-footer-group;}
   }
