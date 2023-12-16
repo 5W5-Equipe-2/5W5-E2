@@ -302,7 +302,12 @@ body {
     justify-content: flex-start;
 
     .categorie__article{
+      transition: transform 0.5s ease-in-out;
       width: 40%;
+    }
+
+    .categorie__article:hover {
+      transform: scale(1.13)
     }
   }
 
