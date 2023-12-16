@@ -109,6 +109,7 @@
           justify-content: space-between; // met un à cote de l'autre
           width: 80vw; // ajustement de largeur
           flex-direction: row;
+          gap: 0;
   
           // Les informations necessaires/importants -titre -image -Date
           .image_titre_date{
