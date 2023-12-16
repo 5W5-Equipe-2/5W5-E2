@@ -2423,7 +2423,6 @@ th {
   padding-top: 3rem;
 }
 .Profs .categorie__article {
-  border-radius: 2em;
   color: var(--blanc);
   display: flex;
   flex-direction: column;
@@ -2431,12 +2430,14 @@ th {
   overflow: hidden;
   text-align: center;
   width: 75vw;
+  gap: 5vw;
 }
 .Profs .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
   overflow: hidden;
   width: 100%;
+  border-radius: 1em;
 }
 .Profs .categorie__article .image_titre_date .contenant__image {
   height: 80%;
@@ -2465,6 +2466,7 @@ th {
 }
 .Profs .categorie__article .content {
   background-color: var(--simili-noir);
+  border-radius: 1em;
   overflow-x: hidden;
   height: 100%;
   width: 75vw;
@@ -2472,7 +2474,6 @@ th {
 .Profs .categorie__article .content .contenant_contenu {
   height: 90%;
   margin: 5%;
-  overflow-y: auto;
 }
 
 @media screen and (min-width: 800px) {
@@ -2582,22 +2583,24 @@ th {
   margin: 0 auto;
 }
 .temoignage .temoignage__article {
-  height: 75vw;
+  height: 135vw;
 }
 .temoignage .categorie__article {
-  border-radius: 2em;
   color: var(--blanc);
   display: flex;
-  height: 55vw;
+  flex-direction: column;
+  height: 110vw;
   overflow: hidden;
   text-align: center;
   width: 75vw;
+  gap: 5vw;
 }
 .temoignage .categorie__article div {
   width: 100%;
 }
 .temoignage .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
+  border-radius: 1em;
   height: 100%;
   overflow: hidden;
   width: 100%;
@@ -2641,7 +2644,14 @@ th {
 }
 .temoignage .categorie__article .content {
   background-color: var(--simili-noir);
-  display: none;
+  border-radius: 1em;
+  overflow-x: hidden;
+  height: 100%;
+  width: 75vw;
+  padding: 5%;
+}
+.temoignage .categorie__article .content .contenant_contenu {
+  height: 90%;
 }
 
 @media screen and (min-width: 800px) {
@@ -2659,6 +2669,8 @@ th {
     height: 30vw;
     justify-content: space-between;
     width: 80vw;
+    flex-direction: row;
+    gap: 0;
   }
   .temoignage .temoignage__article .categorie__article .image_titre_date {
     border-radius: 2vw;
