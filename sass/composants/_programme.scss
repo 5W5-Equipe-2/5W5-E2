@@ -17,20 +17,22 @@
     //     height: 75vw;
     // }
     .Carrou__article{
-      height: 75vw;
+      height: 135vw; // valeur origine : 75 vw
         .carousel-navigation {
             padding-top: 3rem;
         }
     }
     .categorie__article{ 
         // background-color: var(--simili-noir);
-        border-radius: 2em; // arrondir les coins
+        // border-radius: 2em; // arrondir les coins
         color: var(--blanc); // couleur texte blanc
         display: flex;
-        height: 55vw;
+        flex-direction: column;
+        height: 110vw; // valeur origine : 55 vw
         overflow: hidden; // pour que les coin du haut reste courber
         text-align: center; // Center le texte
         width: 75vw;
+        gap: 5vw;
     
         // Les informations necessaires/importants -titre -image -Date
         .image_titre_date{
@@ -38,6 +40,7 @@
           height: 100%;
           overflow: hidden; // pour garder les coins arrondis
           width: 100%;
+          border-radius: 1em;
 
           .contenant__image {
             height: 80%;
@@ -68,7 +71,17 @@
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
         .content{
           background-color: var(--simili-noir);
-          display: none;
+          // display: none;
+          // position: absolute; 
+          border-radius: 1em;
+          overflow-x: hidden;
+          height: 100%;
+          width: 75vw;
+          .contenant_contenu{
+            height: 90%;
+            margin: 5%;
+            // overflow-y: auto;
+          }
         }
       }
 }
@@ -95,6 +108,7 @@
           height: 30vw;
           justify-content: space-between; // met un à cote de l'autre
           width: 80vw; // ajustement de largeur
+          flex-direction: row;
   
           // Les informations necessaires/importants -titre -image -Date
           .image_titre_date{
@@ -106,6 +120,8 @@
           .content{ // contenant qui contient toutes les informations secondaires
             border-radius: 1em; // arrondis
             display: block; // afficher le contenu
+            height: 100%;
+            margin: 0%;
             position: relative;
             width: 44vw; // grosseur
             .contenant_contenu{  // contenu
