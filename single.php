@@ -89,11 +89,12 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             // Vérifiez si le champ n'est pas vide
             if (!empty($informations_additonnelles)) {
         ?>
+        </div>
           <p>Information additionnelle : <?php echo $informations_additonnelles; ?></p>
         <?php
             }
         ?>
-      </div>
+      
     <?php } ?>
 
     <?php if (has_term(array('evenements'), 'category')) { ?>

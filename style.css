@@ -500,9 +500,6 @@ a:hover, a:focus, a:active {
 .site_pied_page a {
   color: var(--blanc);
   text-decoration: none;
-  /* &:visited {
-    color: var(--complementaire);
-  } */
 }
 .site_pied_page a:hover, .site_pied_page a:focus, .site_pied_page a:active {
   color: var(--primaire);
@@ -527,21 +524,12 @@ a:hover, a:focus, a:active {
 }
 .Liste_programme #content .article-content .boutton_retour {
   color: var(--blanc);
-  /* &:hover,
-  &:focus,
-  &:active {
-    background-color: var(--blanc);
-    color: var(--simili-noir);
-  } */
 }
 
 .menu-projets {
   background-color: var(--simili-noir);
 }
 
-/* .menu-evenements {
-  background-color: var(--simili-noir);
-} */
 /* 
 ** Tout ce qui concerne la balise html
 ** 
@@ -557,7 +545,6 @@ html {
 body {
   background-color: var(--blanc);
   height: 100%;
-  /* Éviter la barre de défilement horizontale */
   max-width: 100%;
   width: 100vw;
 }
@@ -638,9 +625,6 @@ body {
     padding: 0;
     background-color: var(--simili-noir);
     min-height: 4em;
-    /* .navigation-projet{
-      display: none;
-    } */
   }
   .site__aside .boutton-projet {
     display: none;
@@ -806,7 +790,6 @@ body {
   padding-top: 1em;
 }
 .section_single .information_single {
-  display: flex;
   flex-basis: 100%;
   flex-direction: column;
   /*-----évènement------------*/
@@ -835,14 +818,6 @@ body {
 @media screen and (min-width: 992px) {
   .section_single {
     display: block;
-    /* display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-start; */
-    /* & .information_single{
-      flex-basis: 50%;
-      align-self: flex-start;
-    } */
   }
   .section_single h2 {
     width: 100%;
@@ -851,17 +826,10 @@ body {
     float: left;
     padding-right: 1em;
     width: 60%;
-    /* flex-basis: 50%;
-    float: left; */
   }
   .section_single .wp-block-group {
     margin-top: 0;
     margin-bottom: 0;
-    /* flex-basis: 50%;
-    order: 99;
-    margin-left: 50%;
-    margin-top: -10em;
-    border: 2px solid aqua; */
   }
 }
 /*-----------------------------fin single projet---------------------------------*/
@@ -876,146 +844,6 @@ body {
   backdrop-filter: blur(10px);
 }
 
-/*
-.section_single::after{
-  background-color: var(--blanc);
-  border-radius: 1em;
-  //filter: blur(10px);
-    content: "";
-    height: 100%;
-    opacity: 0.7;
-    padding: 5%;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.description_programme::after{
-  background-color: var(--blanc);
-  border-radius: 1em;
-  //filter: blur(10px);
-    content: "";
-    height: 100%;
-    opacity: 0.7;
-    padding: 5%;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.Liste_programme::after{
-  background-color: var(--blanc);
-  border-radius: 1em;
-  //filter: blur(10px);
-    content: "";
-    height: 100%;
-    opacity: 0.7;
-    //padding: 5%;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.accueil_description::before{
-  background-color: var(--blanc);
-  //border-radius: 1em;
-  //filter: blur(10px);
-    content: "";
-    height: 100%;
-    opacity: 0.7;
-    //padding: 5%;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.accueil_description::after{
-  content: "";
-    height: 100%;
-    opacity: 0.8;
-    //padding: 5%;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  background-image: url("https://5w5.ndasilva.ca/wp-content/uploads/Fond.png");
-  background-repeat: no-repeat;
-  background-size: 120px;
-  background-position: right bottom;
-}
-
-.contenant_resultat_recherche::after{
-  background-color: var(--blanc);
-  border-radius: 1em;
-  //filter: blur(10px);
-    content: "";
-    height: 100%;
-    opacity: 0.7;
-    //padding: 5%;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.erreur::after{
-  background-color: var(--blanc);
-  border-radius: 1em;
-  //filter: blur(10px);
-    content: "";
-    height: 100%;
-    opacity: 0.7;
-    //padding: 5%;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.description_stages::after{
-  background-color: var(--blanc);
-  //border-radius: 1em;
-  //filter: blur(10px);
-    content: "";
-    height: 100%;
-    opacity: 0.7;
-    //padding: 5%;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-} */
-/*-----------------------------single evenement------------------------------------*/
-/*-----------------------------single evenement fin------------------------------------*/
-/*-----------------------------fin page projet et évènement----------------------*/
 /*----------------------stage--------------------------------*/
 .description_stages {
   margin: 0 auto;
@@ -1043,22 +871,11 @@ body {
 .description_stages .stage {
   margin: 0 auto;
   width: 100%;
-  /* h3, h4, h5{
-    padding-top: 1em;
-    padding-bottom: 1em;
-  }
-
-  h4:first-of-type{
-    padding-top: 0;
-  } */
 }
 .description_stages .stage_employeurs {
   margin: 0 auto;
   padding-bottom: 2em;
   width: 100%;
-  /* p{
-    text-align: left;
-  } */
 }
 
 @media screen and (min-width: 992px) {
@@ -1115,7 +932,6 @@ body {
 }
 .main-navigation ul {
   display: none;
-  /*position : absolute;*/
   width: 80%;
   list-style: none;
   padding-left: 0;
@@ -1184,14 +1000,6 @@ menu bureau
     align-items: center;
     flex-direction: row;
     width: 100%;
-    /* .menu{ 
-      padding-right: 15vw;
-    } */
-    /* a{
-      padding-left: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: none;
-    } */
   }
   .main-navigation .titre_boutton {
     position: absolute;
@@ -1269,8 +1077,12 @@ menu bureau
 .site_pied_page .section_footer {
   padding-top: 1.3em;
 }
-.site_pied_page .section_footer_logo a {
+.site_pied_page .section_footer h4 {
+  padding-bottom: 0.5em;
+}
+.site_pied_page .section_footer_logo figure {
   border-bottom: solid 2px var(--blanc);
+  min-width: 100px;
 }
 
 /* ---------------------------------------------------------------------------
@@ -1286,9 +1098,6 @@ menu tablet
   .site_pied_page .contenu_footer .section_footer {
     padding-left: 2em;
     padding-right: 2em;
-  }
-  .site_pied_page .contenu_footer .section_footer h4 {
-    margin-bottom: 0.3em;
   }
 }
 /* Fichier pour le style de la barre de recherche
@@ -1324,13 +1133,6 @@ menu tablet
   margin: 0 auto;
   margin-right: 0.8em;
   padding: 0;
-  /* Google material symbol search */
-  /* .material-symbols-outlined {
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-    color: var(--blanc);
-    cursor: pointer;
-    padding-right: 0.4rem;
-  } */
 }
 
 /*-----------------------------------barre de recherche----------------------*/
@@ -1344,8 +1146,6 @@ menu tablet
 @media screen and (min-width: 992px) {
   .site__header__recherche {
     display: flex;
-    /* position: absolute;
-    right: 1vw; */
   }
   .site__header__recherche .recherche > label {
     width: 20vw;
@@ -1796,7 +1596,7 @@ th {
   margin: 0 auto;
   margin-top: 2em;
   width: 80%;
-  padding: 5%;
+  padding: 2em;
 }
 .info_programme .description_programme h2 {
   padding-bottom: 2em;
@@ -1893,10 +1693,6 @@ th {
   font-family: var(--police-texte);
   padding: 1em;
   position: absolute;
-  /* top: 1em;
-  left: 1em;
-  right: 1em;
-  bottom: 1em; */
   top: 0;
   left: 0;
   right: 0;
@@ -1970,8 +1766,8 @@ th {
   .info_programme {
     width: clamp(75rem, 49.1803rem + 29.5082vw, 120rem);
   }
-  .info_programme .description_programme h2 {
-    padding-bottom: 3%;
+  .info_programme .description_programme {
+    margin-right: 2em;
   }
   .info_programme {
     display: flex;

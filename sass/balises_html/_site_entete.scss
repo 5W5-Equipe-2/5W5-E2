@@ -2,8 +2,6 @@
 ** Tout ce qui concerne la balise header
 */
   .main-navigation {
-    //display: flex;
-    //width: 80vw;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
@@ -25,8 +23,6 @@
         align-items: center;
         display: flex;
         flex-basis: 50%;
-        //justify-content: center;
-        //width: 10vw;
       }
       
       .titre-header{
@@ -37,9 +33,7 @@
 
     ul {
       display: none;
-      /*position : absolute;*/
       width : 80%; 
-      //padding-top: 2vh;
       list-style: none;
       padding-left: 0;
      
@@ -60,10 +54,8 @@
   .boutton {
     display : flex;
     flex-basis: 50%;
-    //height: 100%;
     justify-content: flex-end;
     align-items: center;
-    //margin-top: 3%;
 
     button{
       cursor: pointer;
@@ -78,9 +70,7 @@
   
   
   .main-navigation.toggled{
-    //display: flex;
     height: 100vh;
-    //justify-content: center;
     display: block;
 
     .site__header__recherche{
@@ -95,7 +85,6 @@
 
     .menu-menu-principal-container{
       display: flex;
-      //height: 75vh;
       ul{
         display: flex;
         flex-direction: column;
@@ -125,15 +114,11 @@
       justify-content: flex-end;
       align-items: center;
       flex-direction: row;
-      //margin-right: 2vw;
       width: 100%;
 
       .titre_boutton{
         position: absolute;
         left: 6.8%;
-        //justify-content: flex-start;
-        //float: left;
-        //height: 100%;
         width: auto;
         
         .logo-TIM{
@@ -150,10 +135,6 @@
         margin-right: 6.5%;
       }
 
-      /* .menu{ 
-        padding-right: 15vw;
-      } */
-
       ul{
 
         li{
@@ -162,12 +143,6 @@
           margin-right: 0.8em;
         }
       }
-
-      /* a{
-        padding-left: 1.5rem;
-        padding-bottom: 1.5rem;
-        border-bottom: none;
-      } */
     }
     
     .boutton {
@@ -177,10 +152,6 @@
     .main-navigation ul {
       display: flex;
       padding-top: 0;
-      //position : static;
-      //justify-content: flex-end;
-      //padding-right: 5%;
-
       
       a[href='#']::after{
         display : none;
