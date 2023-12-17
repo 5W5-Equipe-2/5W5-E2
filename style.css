@@ -566,7 +566,10 @@ body {
 /*---------------------------page projet et évènement-------------------------*/
 /*-------------------navigation----------------*/
 .lienActif {
-  color: var(--primaire);
+  color: var(--primaire) !important;
+}
+.lienActif a {
+  color: var(--primaire) !important;
 }
 
 .site__aside {
