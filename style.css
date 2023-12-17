@@ -1152,6 +1152,20 @@ menu bureau
 /* ---------------------------------------------------------------------------
 menu tablet
 ------------------------------------------------------------------------------ */
+@media screen and (min-width: 800px) {
+  #retour_haut,
+  #retour_haut.touche {
+    bottom: 60px;
+    padding: 14px 8px;
+    right: 20px;
+  }
+  .fleche_pointe_top {
+    transform: scale(1.1);
+  }
+}
+/* ---------------------------------------------------------------------------
+menu Bureau
+------------------------------------------------------------------------------ */
 @media screen and (min-width: 992px) {
   .site_pied_page .contenu_footer {
     align-items: center;

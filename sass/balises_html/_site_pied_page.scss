@@ -64,6 +64,24 @@
   /* ---------------------------------------------------------------------------
   menu tablet
   ------------------------------------------------------------------------------ */
+ 
+  @media screen and (min-width : $largeur__tablette) {
+    #retour_haut,
+    #retour_haut.touche {
+      bottom: 60px;
+      padding: 14px 08px;
+      right: 20px;
+    }
+
+    .fleche_pointe_top {
+      transform: scale(1.1);
+    }
+  }
+ 
+  
+  /* ---------------------------------------------------------------------------
+  menu Bureau
+  ------------------------------------------------------------------------------ */
   @media screen and (min-width : $largeur__bureau) {
 
     .site_pied_page{
