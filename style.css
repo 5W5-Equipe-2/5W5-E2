@@ -453,6 +453,7 @@ figcaption {
 a {
   color: var(--noir);
   text-decoration: none;
+  transition: color 400ms;
   /* &:visited {
     color: var(--complementaire);
   } */
@@ -474,10 +475,12 @@ a:hover, a:focus, a:active {
 
 .inscription_programme .grille_cours a {
   color: var(--noir);
+  transition: color 400ms;
 }
 
 .menu-menu-principal-container a {
   color: var(--blanc);
+  transition: color 400ms;
 }
 .menu-menu-principal-container a:hover, .menu-menu-principal-container a:focus, .menu-menu-principal-container a:active {
   color: var(--primaire);
@@ -1717,6 +1720,7 @@ menu tablet
   border: 1px solid var(--simili-noir);
   color: var(--simili-noir);
   z-index: 5;
+  transition: background-color 400ms;
 }
 .accueil_programme .widget_block .wp-block-buttons a:hover {
   color: var(--complementaire);
@@ -1906,6 +1910,7 @@ th {
   padding-left: 2em;
   padding-right: 2em;
   text-align: center;
+  transition: background-color 400ms;
 }
 
 .site_main_programme hr {
@@ -2560,9 +2565,6 @@ th {
   }
   .Section_carrousel .Carrou__article .categorie__article .image_titre_date {
     width: 25vw;
-  }
-  .Section_carrousel .Carrou__article .categorie__article .image_titre_date .contenant__titre {
-    height: 5vw;
   }
   .Section_carrousel .Carrou__article .categorie__article .content {
     width: 44vw;
