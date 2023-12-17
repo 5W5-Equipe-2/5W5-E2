@@ -13,7 +13,12 @@ body {
 /*---------------------------page projet et évènement-------------------------*/
 
 /*-------------------navigation----------------*/
-
+.lienActif{
+  color: var(--primaire) !important;
+  a{
+    color: var(--primaire) !important;
+  }
+}
 .site__aside{
   padding-left: 5%;
   padding-right: 5%;
@@ -34,7 +39,6 @@ body {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
-
       li{
         font-family: var(--police-titre);
         font-size: 21px;
@@ -62,6 +66,7 @@ body {
           margin-right: 0.5em;
           width: auto;
         }
+        
       }
     }
   }
@@ -74,7 +79,11 @@ body {
   .sub-menu{
     display: none;
   }
-
+  .sub-menu.open{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
   li:hover .sub-menu{
     align-items: center;
     display: flex;
@@ -152,7 +161,22 @@ body {
       }
     }
     }
+    .sub-menu.open{
+      display: flex !important; 
+      flex-direction: row !important;
+      //margin-left: 0.8em;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 100%;
 
+      li{
+        font-size: 18px !important;
+        margin-left: 0.5em !important;
+        margin-right: 0.5em !important;
+        width: auto;
+      }
+  }
       
   }
 
@@ -387,8 +411,9 @@ body {
 /*----------------------stage--------------------------------*/
 
 .description_stages{
-  margin: 0 auto;
-  padding: 5%;
+  margin: 2% auto;
+  padding: 3%;
+  //text-align: center;
   width: 80vw;
 
   li{
@@ -423,7 +448,6 @@ body {
     width: 100%;
   }
 }
-
 @media screen and (min-width : $largeur__bureau){
   .description_stages{
     display: flex;
@@ -451,5 +475,11 @@ body {
       border-right: none;
       padding-left: 5%;
     }
+  }
+}
+
+@media screen and (min-width : $largeur__bureau_large){
+  .description_stages{
+    width: 65vw;
   }
 }

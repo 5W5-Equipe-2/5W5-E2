@@ -33,8 +33,29 @@
     }
   }
 
+  #retour_haut,
+  #retour_haut.touche {
+      background-color: var(--complementaire);
+      border: solid 1px var(--simili-noir);
+      border-radius: 20px;
+      bottom: 40px;
+      color: #fff;
+      cursor: pointer;
+      display: none;
+      padding: 16px 10px;
+      position: fixed;
+      right: 25px;
+      transition: background-color 400ms, transform 400ms;
+  }
+  
+  #retour_haut:active,
+  #retour_haut:hover {
+      background-color: var(--primaire);
+      border: solid 1px var(--complementaire);
+      transform: scale(1.1);
+  }
+  
 }
-
   /* ---------------------------------------------------------------------------
   menu tablet
   ------------------------------------------------------------------------------ */
@@ -53,7 +74,10 @@
         padding-right: 2em;
       }
       }
+      #retour_haut,
+      #retour_haut.touche {
+        padding: 22px 14px;
+      }
     }
-
     
   } 

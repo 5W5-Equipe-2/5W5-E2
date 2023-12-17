@@ -302,3 +302,11 @@ function get_article_content()
 }
 add_action('wp_ajax_get_article_content', 'get_article_content');
 add_action('wp_ajax_nopriv_get_article_content', 'get_article_content');
+
+
+/*****************Bouton retour de single.php ******************************************/
+function store_reference_url() {
+    session_start();
+    $_SESSION['reference_url'] = wp_get_referer();
+}
+add_action('wp', 'store_reference_url');
