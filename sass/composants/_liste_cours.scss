@@ -262,7 +262,7 @@ button {
                 }
 
                 p{
-                    //height: 70%;
+                    padding: 0 clamp(1.875rem, -5.1673rem + 11.2676vw, 21.875rem);
                 }
 
                 .related-projets{
@@ -308,6 +308,13 @@ button {
     }
     .Liste_programme{
         width: clamp(75rem, 49.1803rem + 29.5082vw, 120rem);
+        #content{
+            .article-content{
+                p{
+                    padding: 0 15%;
+                }
+            }
+        }
     }
 }
 
