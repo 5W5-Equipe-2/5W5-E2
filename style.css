@@ -2309,6 +2309,7 @@ th {
     justify-content: space-between;
     width: 80vw;
     flex-direction: row;
+    gap: 0;
   }
   .Profs .Carrou__article .categorie__article .image_titre_date {
     border-radius: 1em;
