@@ -29,7 +29,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
 ?>
 <main class="site_main">
   <article class="section_single">
-  <button onclick="goBack()">Retour</button>
+  <button onclick="goBack()" class="single_retour">Retour</button>
   <input type="hidden" id="referenceUrl" value="<?php echo isset($_SESSION['reference_url']) ? esc_url($_SESSION['reference_url']) : home_url(); ?>">
     <?php
     if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'), 'category'))) {
@@ -94,24 +94,26 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             // Vérifiez si le champ n'est pas vide
             if (!empty($informations_additonnelles)) {
         ?>
+        </div>
           <p>Information additionnelle : <?php echo $informations_additonnelles; ?></p>
         <?php
             }
         ?>
-      </div>
+      
     <?php } ?>
 
     <?php if (has_term(array('evenements'), 'category')) { ?>
       <!-- /****Modèle si c'est la catégorie evenements *************************************************/ -->
       <!-- Afficher les informations des champs ACF -->
+      <br>
       <div class="information_single">
-        <p>Information (et inscription)</p>
+        <h5>Information (et inscription)</h5>
         <p>Qui : <?php the_field('qui'); ?></p>
         <p>Quoi : <?php the_field('quoi'); ?></p>
         <p>Lieu : <?php the_field('lieu'); ?></p>
         <p>Quand : <?php the_field('date_et_heure'); ?></p>
 
-
+        <br>
         <!-- Afficher les informations quant à l'heure et la date de la publication-->
         <div class="info_heure_date">
           <svg xmlns="http://www.w3.org/2000/svg" width="21.289" height="21.289" viewBox="0 0 21.289 21.289">
@@ -129,7 +131,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             </g>
           </svg>
           <!-- Afficher date et heure de la publication'-->
-          <p>Heure de publication : <?php the_time('j F Y \à G:i'); ?></p>
+          <p><b>Heure de publication : <?php the_time('j F Y \à G:i'); ?></b></p>
         </div>
 
         <!-- Afficher l'icône pour la date de mise à jour -->
@@ -141,7 +143,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             </g>
           </svg>
           <!-- Afficher la date et heure de la mise-à-jour'-->
-          <p>Heure de mise à jour : <?php the_modified_time('j F Y \à G:i'); ?></p>
+          <p><b>Heure de mise à jour : <?php the_modified_time('j F Y \à G:i'); ?></b></p>
         </div>
       </div>
     <?php } ?>

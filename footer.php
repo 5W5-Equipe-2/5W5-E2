@@ -9,9 +9,9 @@
   <div class="contenu_footer">
 
   <section class="section_footer_logo">
-    <?php the_custom_logo(); ?>
+    <?php /* the_custom_logo(); */ dynamic_sidebar('footer_0'); ?>
   </section>
-  
+
   <section class="section_footer">
     <?php dynamic_sidebar('footer_1'); ?>
   </section>

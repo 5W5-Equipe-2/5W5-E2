@@ -73,9 +73,6 @@ a {
   a{
     color: var(--blanc);
   text-decoration: none;
-  /* &:visited {
-    color: var(--complementaire);
-  } */
   &:hover,
   &:focus,
   &:active {
@@ -94,10 +91,6 @@ a {
     color: var(--complementaire);
   }
   }
-}
-
-.boutton_retour{
-
 }
 
 .Liste_programme{
@@ -119,12 +112,6 @@ a {
     .article-content{
       .boutton_retour{
         color: var(--blanc);
-        /* &:hover,
-  &:focus,
-  &:active {
-    background-color: var(--blanc);
-    color: var(--simili-noir);
-  } */
       }
     }
   }
@@ -133,7 +120,3 @@ a {
 .menu-projets {
   background-color: var(--simili-noir);
 }
-
-/* .menu-evenements {
-  background-color: var(--simili-noir);
-} */
