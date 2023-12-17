@@ -8,9 +8,7 @@
   const NavigationProjet = document.getElementById("navigation-projet");
   const nav_header_scroll = document.getElementsByClassName("main-navigation");
   const nav_projet_scroll = document.getElementsByClassName("site__aside");
-  const mediaQueryCondition = window.matchMedia(
-    "( min-width: $largeur__bureau )"
-  );
+  //const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
 
   const button = siteNavigation.getElementsByTagName("button")[0];
   //const menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
@@ -35,13 +33,10 @@
       }
     }
 
-    if (
-      siteNavigation.classList.contains("toggled") &&
-      mediaQueryCondition.matches
-    ) {
-      siteNavigation.classList.remove("toggled");
-      alert("Hello! I am an alert box!!");
-    }
+    /* if(siteNavigation.classList.contains('toggled') && mediaQueryCondition.matches){
+			siteNavigation.classList.remove( 'toggled' );
+			alert("Hello! I am an alert box!!");
+		} */
 
     //document.getElementsByClassName('site_entete').style.position="fixed";
 
@@ -60,9 +55,7 @@
   //let nav_projet_scroll = document.querySelectorAll('.site__aside');
   const nav_projet_scroll = document.getElementsByClassName("site__aside");
   const nav_header_scroll = document.getElementsByClassName("main-navigation");
-  const mediaQueryCondition = window.matchMedia(
-    "( min-width: $largeur__bureau )"
-  );
+  //const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
 
   if (!NavigationProjet) {
     return;
@@ -97,7 +90,6 @@
       button_projet.setAttribute("aria-expanded", "true");
     }
   });
-
   document.addEventListener("DOMContentLoaded", function () {
     let menuItems = document.querySelectorAll(".sub-menu li");
     let subMenu = document.querySelector(".sub-menu");
@@ -157,3 +149,44 @@
 		siteNavigation.classList.remove( 'toggled' );
 	} */
 })();
+
+// Define a media query string
+var mediaQuery = window.matchMedia("(min-width: 992px)");
+const NavigationProjet = document.getElementById("navigation-projet");
+const siteNavigation = document.getElementById("site-navigation");
+const nav_header_scroll = document.getElementsByClassName("main-navigation");
+const nav_projet_scroll = document.getElementsByClassName("site__aside");
+
+// Check if the media query matches
+/* if (mediaQuery.matches) {
+    // The screen width is 600 pixels or less
+    console.log('Media query matched!');
+} else {
+    // The screen width is greater than 600 pixels
+    console.log('Media query did not match.');
+} */
+
+// You can also add an event listener to respond to changes in the media query
+mediaQuery.addListener(function (event) {
+  if (event.matches && siteNavigation.classList.contains("toggled")) {
+    console.log("Media query matched!");
+
+    siteNavigation.classList.remove("toggled");
+    for (let nav_header of nav_header_scroll) {
+      nav_header.style.position = "static";
+    }
+  } else if (event.matches && NavigationProjet.classList.contains("toggled")) {
+    console.log("Media query matched! but projet");
+
+    NavigationProjet.classList.remove("toggled");
+    for (let nav_projet of nav_projet_scroll) {
+      nav_projet.style.position = "static";
+      nav_projet.style.top = "0";
+    }
+    for (let nav_header of nav_header_scroll) {
+      nav_header.style.position = "static";
+    }
+  } else {
+    console.log("Media query did not match.");
+  }
+});

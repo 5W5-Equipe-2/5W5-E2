@@ -20,11 +20,16 @@
 
   .section_footer{
     padding-top: 1.3em;
-  }
+
+    h4{
+      padding-bottom: 0.5em;
+    }
+  } 
 
   .section_footer_logo{
-    a{
+    figure{
       border-bottom: solid 2px var(--blanc);
+      min-width: 100px;
     }
   }
 
@@ -67,11 +72,16 @@
       .section_footer{
         padding-left: 2em;
         padding-right: 2em;
-
-        h4{
-          margin-bottom: 0.3em;
-        }
       }
+
+      .section_footer_logo{
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .section_footer_logo:hover{
+        transform: scale(1.15);
+      }
+
       }
       #retour_haut,
       #retour_haut.touche {
