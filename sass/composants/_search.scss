@@ -4,7 +4,7 @@
     background-size: 120px;
     background-position: right bottom;
     .contenant_resultat_recherche{
-        padding: 1vw;
+        padding: 2vw;
         z-index: 4;
         width: 90%;
         margin: auto;
@@ -37,7 +37,14 @@
 @media screen and (min-width:$largeur__tablette){ // Début requête média Tablette
     .recherche{
         .contenant_resultat_recherche{
-            width: 75%;
+            width: 70%;
+        }
+    }
+}
+@media screen and (min-width:$largeur__bureau_large){ // Début requête média Tablette
+    .recherche{
+        .contenant_resultat_recherche{
+            width: 45%;
         }
     }
 }
