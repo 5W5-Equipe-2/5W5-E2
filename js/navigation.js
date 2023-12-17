@@ -90,6 +90,7 @@
       button_projet.setAttribute("aria-expanded", "true");
     }
   });
+
   document.addEventListener("DOMContentLoaded", function () {
     let menuItems = document.querySelectorAll(".sub-menu li");
     let subMenu = document.querySelector(".sub-menu");
@@ -127,7 +128,6 @@
     });
   });
 })();
-
 /*---------------fermer les menu burger quand on est en version bureau-----------------*/
 (function () {
   /* let largeur = screen.width;
