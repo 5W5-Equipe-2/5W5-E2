@@ -88,14 +88,26 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
         </svg>
         <h5> <?php the_field('saison'); ?></h5>
         <h5> <?php the_field('annee'); ?></h5>
+        </div>
         <?php
             // Récupérez la valeur du champ AFC 'informations_additonnelles'
             $informations_additonnelles = get_field('informations_additonnelles');
             // Vérifiez si le champ n'est pas vide
             if (!empty($informations_additonnelles)) {
         ?>
-        </div>
-          <p>Information additionnelle : <?php echo $informations_additonnelles; ?></p>
+          <p><?php echo $informations_additonnelles; ?></p>
+        <?php
+            }
+        ?>
+      
+
+    <?php
+            // Récupérez la valeur du champ AFC 'informations_additonnelles'
+            $url_portfolio = get_field('url-html');
+            // Vérifiez si le champ n'est pas vide
+            if (!empty($url_portfolio)) {
+        ?>
+          <p><?php echo $url_portfolio; ?></p>
         <?php
             }
         ?>
