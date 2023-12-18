@@ -799,9 +799,6 @@ body {
   }
 }
 /*-----------------------------single projet------------------------------------*/
-/* #navigation-projet{
-  background-color: var(--simili-noir);
-} */
 .section_single {
   display: flex;
   flex-wrap: wrap;
