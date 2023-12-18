@@ -561,10 +561,19 @@ body {
   color: var(--primaire) !important;
 }
 
+.projet_titre {
+  padding-top: 1em;
+}
+
 .site__aside {
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 5%;
+  align-items: center;
+  display: flex;
+  padding: 0;
+  background-color: var(--simili-noir);
+  min-height: 4em;
 }
 .site__aside .boutton-projet button {
   cursor: pointer;
@@ -635,15 +644,12 @@ body {
 
 /*----------------------bureau------------------------------*/
 @media screen and (min-width: 992px) {
-  .projet_titre {
-    padding-top: 1em;
-  }
   .site__aside {
-    align-items: center;
+    /* align-items: center;
     display: flex;
     padding: 0;
     background-color: var(--simili-noir);
-    min-height: 4em;
+    min-height: 4em; */
   }
   .site__aside .boutton-projet {
     display: none;
@@ -814,9 +820,6 @@ body {
   }
 }
 /*-----------------------------single projet------------------------------------*/
-/* #navigation-projet{
-  background-color: var(--simili-noir);
-} */
 .section_single {
   display: flex;
   flex-wrap: wrap;
@@ -1187,7 +1190,7 @@ menu tablet
 ------------------------------------------------------------------------------ */
 @media screen and (min-width: 800px) {
   #retour_haut,
-  #retour_haut.touche {
+#retour_haut.touche {
     bottom: 60px;
     padding: 14px 8px;
     right: 20px;
@@ -1210,7 +1213,6 @@ menu Bureau
     padding-left: 2em;
     padding-right: 2em;
   }
-
   .site_pied_page .contenu_footer .section_footer_logo {
     transition: transform 0.5s ease-in-out;
   }
@@ -1220,9 +1222,11 @@ menu Bureau
   .site_pied_page #retour_haut,
 .site_pied_page #retour_haut.touche {
     padding: 22px 14px;
+
   }
   .site_pied_page .fleche_pointe_top {
     transform: scale(1.2);
+  }
 }
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
