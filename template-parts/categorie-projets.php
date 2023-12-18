@@ -18,7 +18,10 @@ if (has_post_thumbnail() && !empty($auteur)) : ?>
         <!--  Afficher l'image et en faire un lien clicable -->
         <figure>
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail('thumbnail', 'large',  ['alt' => get_the_title()]); ?>
+            <?php
+                                        $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                                        echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '">';
+                                        ?>
             </a>
         </figure>
         <!--  Afficher le titre l'article (clicable) -->

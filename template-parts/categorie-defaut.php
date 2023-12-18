@@ -6,7 +6,8 @@
   ?>
 <article class="categorie__article">
   <?php  if(has_post_thumbnail()) {
-    the_post_thumbnail('thumbnail', 'large');
+                $thumbnail_url = get_the_post_thumbnail_url(get_the_ID(), 'large');
+                echo '<img src="' . esc_url($thumbnail_url) . '" alt="' . esc_attr(get_the_title()) . '">';
   } 
 ?>
   <h3><a href="<?php the_permalink(); ?>"> <?= $titre ?></a></h3>
