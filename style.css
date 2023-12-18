@@ -629,6 +629,10 @@ body {
   display: none;
 }
 
+.active {
+  color: var(--primaire) !important;
+}
+
 /*----------------------bureau------------------------------*/
 @media screen and (min-width: 992px) {
   .projet_titre {
@@ -736,6 +740,10 @@ body {
 }
 
 /*----------------projet/évènement-------------*/
+.aside-ev {
+  background-color: var(--simili-noir);
+}
+
 .projet_titre {
   text-align: center;
 }
@@ -753,6 +761,7 @@ body {
 .categorie__section .categorie__article {
   background-color: var(--simili-noir);
   border-radius: 1em;
+  box-shadow: 12px 12px 8px 1px rgba(0, 0, 0, 0.16);
   margin: 5%;
   overflow: hidden;
   padding-bottom: 0.8em;
@@ -805,11 +814,33 @@ body {
   }
 }
 /*-----------------------------single projet------------------------------------*/
+/* #navigation-projet{
+  background-color: var(--simili-noir);
+} */
 .section_single {
   display: flex;
   flex-wrap: wrap;
   padding: 5%;
   position: relative;
+}
+.section_single .single_retour {
+  background-color: transparent;
+  border: 1px solid var(--simili-noir);
+  border-radius: 50em;
+  cursor: pointer;
+  color: var(--simili-noir);
+  font-family: var(--police-titre);
+  font-size: clamp(1.125rem, 1.1187rem + 0.0287vw, 1.1875rem);
+  height: 5%;
+  margin-bottom: 1em;
+  width: 6em;
+}
+.section_single .single_retour:hover {
+  background-color: var(--simili-noir);
+  color: var(--blanc);
+}
+.section_single h2 {
+  width: 100%;
 }
 .section_single .wp-block-group {
   flex-basis: 98%;
@@ -852,9 +883,6 @@ body {
   .section_single {
     display: block;
   }
-  .section_single h2 {
-    width: 100%;
-  }
   .section_single figure {
     float: left;
     padding-right: 1em;
@@ -865,21 +893,23 @@ body {
     margin-bottom: 0;
   }
 }
-/*-----------------------------fin single projet---------------------------------*/
-.section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche {
+/*-----------------------------lisibilité texte---------------------------------*/
+.description_programme, .Liste_programme, .contenant_resultat_recherche, .description_stages {
   background-color: var(--blancOpacite);
   backdrop-filter: blur(10px);
   border-radius: 2em;
 }
 
-.accueil_description, .erreur, .description_stages {
+.accueil_description, .section_single, .erreur {
   background-color: var(--blancOpacite);
   backdrop-filter: blur(10px);
 }
 
 /*----------------------stage--------------------------------*/
 .description_stages {
-  margin: 2% auto;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   padding: 3%;
   width: 80vw;
 }
@@ -1135,9 +1165,9 @@ menu bureau
   color: #fff;
   cursor: pointer;
   display: none;
-  padding: 16px 10px;
+  padding: 8px 2px;
   position: fixed;
-  right: 25px;
+  right: 8px;
   transition: background-color 400ms, transform 400ms;
 }
 .site_pied_page #retour_haut:active,
@@ -1146,9 +1176,28 @@ menu bureau
   border: solid 1px var(--complementaire);
   transform: scale(1.1);
 }
+.site_pied_page .fleche_pointe_top {
+  opacity: 0.6;
+  padding: 0;
+  margin: 0;
+}
 
 /* ---------------------------------------------------------------------------
 menu tablet
+------------------------------------------------------------------------------ */
+@media screen and (min-width: 800px) {
+  #retour_haut,
+  #retour_haut.touche {
+    bottom: 60px;
+    padding: 14px 8px;
+    right: 20px;
+  }
+  .fleche_pointe_top {
+    transform: scale(1.1);
+  }
+}
+/* ---------------------------------------------------------------------------
+menu Bureau
 ------------------------------------------------------------------------------ */
 @media screen and (min-width: 992px) {
   .site_pied_page .contenu_footer {
@@ -1161,6 +1210,7 @@ menu tablet
     padding-left: 2em;
     padding-right: 2em;
   }
+
   .site_pied_page .contenu_footer .section_footer_logo {
     transition: transform 0.5s ease-in-out;
   }
@@ -1171,6 +1221,8 @@ menu tablet
 .site_pied_page #retour_haut.touche {
     padding: 22px 14px;
   }
+  .site_pied_page .fleche_pointe_top {
+    transform: scale(1.2);
 }
 /* Fichier pour le style de la barre de recherche
 ** Et search.php
@@ -1694,6 +1746,7 @@ th {
 .info_programme .inscription_programme {
   align-items: center;
   background-color: var(--complementaire);
+  box-shadow: 12px 12px 8px 1px rgba(0, 0, 0, 0.16);
   display: flex;
   flex-direction: column;
 }
@@ -1755,6 +1808,7 @@ th {
 .Liste_programme #content {
   border-radius: 2em;
   background-color: var(--simili-noir);
+  box-shadow: 12px 12px 8px 1px rgba(0, 0, 0, 0.16);
   display: flex;
   flex-direction: column;
   height: 40em;
@@ -1805,32 +1859,27 @@ th {
   overflow: auto;
 }
 .Liste_programme #content .article-content .related-projets {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
+  display: block;
   margin-top: 2em;
+  text-align: center;
   width: 100%;
 }
 .Liste_programme #content .article-content .related-projets a {
   color: var(--blanc);
-  flex-basis: 40%;
 }
 .Liste_programme #content .article-content .related-projets .related-articles {
   align-items: center;
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-  flex-grow: 1;
-  height: 100%;
-  width: 60%;
+  margin: 0 auto;
+  min-height: 100px;
 }
 .Liste_programme #content .article-content .related-projets .related-articles a {
   margin-left: 5%;
   margin-right: 5%;
 }
 .Liste_programme #content .article-content .related-projets .related-articles a img {
-  border-radius: 10%;
-  height: 100%;
+  border-radius: 0.5em;
 }
 
 /*--------------------------------bureau------------------------*/
@@ -1889,10 +1938,13 @@ th {
 /*------------------------projet dans description cours--------------*/
 @media screen and (min-width: 700px) {
   .Liste_programme #content .article-content .related-projets {
-    height: 20%;
+    display: flex;
+  }
+  .Liste_programme #content .article-content .related-projets a {
+    flex-basis: 40%;
   }
   .Liste_programme #content .article-content .related-projets .related-articles {
-    flex-wrap: nowrap;
+    flex-basis: 60%;
   }
 }
 /*-----------------------liste cours fin--------------------------*/
@@ -1901,17 +1953,6 @@ th {
   background-repeat: no-repeat;
   background-size: 120px;
   background-position: right bottom;
-  /* .contenant_resultat_recherche::after{
-  background-color: var(--blanc);
-  content: "";
-  height: 100%;
-  left: 0;
-  opacity: 0.8;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-  } */
 }
 .recherche .contenant_resultat_recherche {
   padding: 2vw;
@@ -1931,6 +1972,19 @@ th {
 .recherche .contenant_resultat_recherche .resultat_recherche p {
   font-family: var(--police-texte);
   padding-bottom: 1.5vh;
+}
+.recherche [type=search]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE2LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgd2lkdGg9IjEyMy4wNXB4IiBoZWlnaHQ9IjEyMy4wNXB4IiB2aWV3Qm94PSIwIDAgMTIzLjA1IDEyMy4wNSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTIzLjA1IDEyMy4wNTsiDQoJIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPHBhdGggZD0iTTEyMS4zMjUsMTAuOTI1bC04LjUtOC4zOTljLTIuMy0yLjMtNi4xLTIuMy04LjUsMGwtNDIuNCw0Mi4zOTlMMTguNzI2LDEuNzI2Yy0yLjMwMS0yLjMwMS02LjEwMS0yLjMwMS04LjUsMGwtOC41LDguNQ0KCQljLTIuMzAxLDIuMy0yLjMwMSw2LjEsMCw4LjVsNDMuMSw0My4xbC00Mi4zLDQyLjVjLTIuMywyLjMtMi4zLDYuMSwwLDguNWw4LjUsOC41YzIuMywyLjMsNi4xLDIuMyw4LjUsMGw0Mi4zOTktNDIuNGw0Mi40LDQyLjQNCgkJYzIuMywyLjMsNi4xLDIuMyw4LjUsMGw4LjUtOC41YzIuMy0yLjMsMi4zLTYuMSwwLTguNWwtNDIuNS00Mi40bDQyLjQtNDIuMzk5QzEyMy42MjUsMTcuMTI1LDEyMy42MjUsMTMuMzI1LDEyMS4zMjUsMTAuOTI1eiIvPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPC9zdmc+DQo=);
+  background-size: 12px 12px;
+  opacity: 0.6;
+}
+.recherche input[type=search]::-webkit-search-decoration:hover,
+.recherche input[type=search]::-webkit-search-cancel-button:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 800px) {
