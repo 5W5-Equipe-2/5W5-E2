@@ -8,10 +8,10 @@
         color: var(--blanc); //a retirer
     }
     h2{ // le titre
-      text-align: center;
-      padding-bottom: 8vw;
-      width: 80vw;
       margin: 0 auto;
+      padding-bottom: 8vw;
+      text-align: center;
+      width: 80vw;
     }
 
     // .carousel-content{
@@ -24,24 +24,22 @@
         }
     }
     .categorie__article{ 
-        // background-color: var(--simili-noir);
-        // border-radius: 2em; // arrondir les coins
         color: var(--blanc); // couleur texte blanc
         display: flex;
         flex-direction: column;
+        gap: 5vw;
         height: 110vw; // valeur origine : 55 vw
         overflow: hidden; // pour que les coin du haut reste courber
         text-align: center; // Center le texte
         width: 75vw;
-        gap: 5vw;
     
         // Les informations necessaires/importants -titre -image -Date
         .image_titre_date{
           background-color: var(--simili-noir);
+          border-radius: 1em;
           height: 100%;
           overflow: hidden; // pour garder les coins arrondis
           width: 100%;
-          border-radius: 1em;
 
           .contenant__image {
             height: 80%;
@@ -51,8 +49,8 @@
             position: relative;
             a img{
               height: 100%;
-              margin: 0;
               left: 0;
+              margin: 0;
               max-width: 100%;
               object-fit: cover;
               object-position: center center;
@@ -72,8 +70,6 @@
         // Les informations secondaires -Descriptions -additionnels -information de l'articles
         .content{
           background-color: var(--simili-noir);
-          // display: none;
-          // position: absolute; 
           border-radius: 1em;
           overflow-x: hidden;
           height: 100%;
@@ -81,7 +77,6 @@
           .contenant_contenu{
             height: 90%;
             margin: 5%;
-            // overflow-y: auto;
           }
         }
       }
@@ -95,12 +90,6 @@
         padding-top: 0;
         padding-bottom: 3rem;
       }
-      // .carousel-content{
-      //   height: clamp(300px, 400px, 500px);
-      //   .carousel-item{
-      //       height: clamp(300px, 400px, 500px);
-      //   }
-      // }
       .Carrou__article{ // le div qui contient tous les boîtes d'évènements récents
         /* Boite d'évènement récent */
         height: 40vw;
@@ -111,40 +100,37 @@
           width: 80vw; // ajustement de largeur
           flex-direction: row;
           gap: 0;
-  
           // Les informations necessaires/importants -titre -image -Date
           .image_titre_date{
-            border-radius: 1em; // arrondis
+            border-radius: 2em; // arrondis
             overflow: hidden; // pour garder les coins arrondis
             width: 35vw;
           }
           // Les informations secondaires -Descriptions -additionnels -information de l'articles
           .content{ // contenant qui contient toutes les informations secondaires
-            border-radius: 1em; // arrondis
+            border-radius: 2em; // arrondis
             display: block; // afficher le contenu
             height: 100%;
             margin: 0%;
             position: relative;
             width: 44vw; // grosseur
             .contenant_contenu{  // contenu
-              position: absolute; // necessaire pour centre le contenu
-              top: 50%; // necessaire pour centre le contenu
-              left: 50%; // necessaire pour centre le contenu
-              transform: translate(-50%, -50%); // necessaire pour centre le contenu
-              margin: auto; // necessaire pour centre le contenu
               height: 25vw;
-              // line-height: 25vw;
+              left: 50%; // necessaire pour centre le contenu
+              margin: auto; // necessaire pour centre le contenu
               overflow-y: auto;
               overflow-x: hidden;
-
+              position: absolute; // necessaire pour centre le contenu
+              top: 50%; // necessaire pour centre le contenu
+              transform: translate(-50%, -50%); // necessaire pour centre le contenu
               .wp-block-group__inner-container{
                 flex-direction: column;
               }
               p,h5,div{
-                margin: 0 auto; // centrer horizontal
-                width: 38vw; // largeur
                 display: inline-block;
+                margin: 0 auto; // centrer horizontal
                 vertical-align: middle;
+                width: 38vw; // largeur
               }
             }
           }
@@ -166,8 +152,8 @@
             width: 25vw;
           }
           .content{
-            width: 44vw;
             margin-left: 1rem;
+            width: 44vw;
 
             .contenant_contenu{  // contenu
               height: 20vw;
@@ -177,17 +163,17 @@
                 flex-direction: column;
               }
               p,h5,div{
-                margin: 0 auto; // centrer horizontal
-                width: 34vw; // largeur
                 display: inline-block;
+                margin: 0 auto; // centrer horizontal
                 vertical-align: middle;
+                width: 34vw; // largeur
               }
             }
             .contenant_contenu{
-              height: fit-content;
-              display: flex;
-              justify-content: center;
               align-items: center;
+              display: flex;
+              height: fit-content;
+              justify-content: center;
             }
           }
         }
