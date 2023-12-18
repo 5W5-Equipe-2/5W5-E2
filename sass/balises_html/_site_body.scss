@@ -247,6 +247,7 @@ body {
   .categorie__article{
     background-color: var(--simili-noir);
     border-radius: 1em; // arrondir les coins
+    box-shadow: 12px 12px 8px 1px rgba(0,0,0,0.16);
     margin: 5%;
     overflow: hidden; // pour que les coin du haut reste courber
     padding-bottom: 0.8em;
@@ -319,12 +320,37 @@ body {
 
 /*-----------------------------single projet------------------------------------*/
 
+/* #navigation-projet{
+  background-color: var(--simili-noir);
+} */
 
 .section_single{
   display: flex;
   flex-wrap: wrap;
   padding: 5%;
   position: relative;
+
+  .single_retour{
+    background-color: transparent;
+    border: 1px solid var(--simili-noir);
+    border-radius: 50em;
+    cursor: pointer;
+    color: var(--simili-noir);
+    font-family: var(--police-titre);
+    font-size: clamp(1.125rem, 1.1187rem + 0.0287vw, 1.1875rem);
+    height: 5%;
+    margin-bottom: 1em;
+    width: 6em;
+
+    &:hover{
+      background-color: var(--simili-noir);
+      color: var(--blanc);
+    }
+    }
+
+    h2{
+      width: 100%;
+    }
 
   .wp-block-group{
     flex-basis: 98%;
@@ -378,10 +404,6 @@ body {
   .section_single{
     display: block;
 
-  h2{
-    width: 100%;
-  }
-
     figure{
       float: left;
       padding-right: 1em;
@@ -395,15 +417,15 @@ body {
   }
 }
 
-/*-----------------------------fin single projet---------------------------------*/
+/*-----------------------------lisibilité texte---------------------------------*/
 
-.section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche{
+.description_programme, .Liste_programme, .contenant_resultat_recherche,  .description_stages{
   background-color: var(--blancOpacite);
   backdrop-filter: blur(10px);
   border-radius: 2em;
 }
 
-.accueil_description, .erreur, .description_stages{
+.accueil_description,.section_single,  .erreur{
   background-color: var(--blancOpacite);
   backdrop-filter: blur(10px);
 }
@@ -411,7 +433,9 @@ body {
 /*----------------------stage--------------------------------*/
 
 .description_stages{
-  margin: 2% auto;
+  margin: 0 auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
   padding: 3%;
   //text-align: center;
   width: 80vw;

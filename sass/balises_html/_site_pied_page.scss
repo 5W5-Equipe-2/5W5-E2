@@ -10,7 +10,7 @@
   min-height: 10vh;
   width: 100%;
 
-  .contenu_footer{
+  .contenu_footer{//tout les div du footer
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -18,7 +18,7 @@
     padding: 2em;
   }
 
-  .section_footer{
+  .section_footer{//div individuel du footer
     padding-top: 1.3em;
 
     h4{

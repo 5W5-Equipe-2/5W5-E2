@@ -29,7 +29,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
 ?>
 <main class="site_main">
   <article class="section_single">
-  <button onclick="goBack()">Retour</button>
+  <button onclick="goBack()" class="single_retour">Retour</button>
   <input type="hidden" id="referenceUrl" value="<?php echo isset($_SESSION['reference_url']) ? esc_url($_SESSION['reference_url']) : home_url(); ?>">
     <?php
     if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'), 'category'))) {
