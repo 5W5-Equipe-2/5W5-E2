@@ -42,9 +42,9 @@
       color: #fff;
       cursor: pointer;
       display: none;
-      padding: 8px 2px;
+      padding: 16px 10px;
       position: fixed;
-      right: 8px;
+      right: 25px;
       transition: background-color 400ms, transform 400ms;
   }
   
@@ -54,33 +54,10 @@
       border: solid 1px var(--complementaire);
       transform: scale(1.1);
   }
-
-  .fleche_pointe_top {
-    opacity: 0.6;
-    padding: 0;
-    margin: 0;
-  }
+  
 }
   /* ---------------------------------------------------------------------------
   menu tablet
-  ------------------------------------------------------------------------------ */
- 
-  @media screen and (min-width : $largeur__tablette) {
-    #retour_haut,
-    #retour_haut.touche {
-      bottom: 60px;
-      padding: 14px 08px;
-      right: 20px;
-    }
-
-    .fleche_pointe_top {
-      transform: scale(1.1);
-    }
-  }
- 
-  
-  /* ---------------------------------------------------------------------------
-  menu Bureau
   ------------------------------------------------------------------------------ */
   @media screen and (min-width : $largeur__bureau) {
 
@@ -96,25 +73,10 @@
         padding-left: 2em;
         padding-right: 2em;
       }
-
-      .section_footer_logo{
-        transition: transform 0.5s ease-in-out;
-      }
-
-      .section_footer_logo:hover{
-        transform: scale(1.15);
-      }
-
       }
       #retour_haut,
       #retour_haut.touche {
-        bottom: 60px;
-        padding: 16px 10px;
-        right: 24px;
-      }
-
-      .fleche_pointe_top {
-        transform: scale(1.2);
+        padding: 22px 14px;
       }
     }
     

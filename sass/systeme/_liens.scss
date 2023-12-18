@@ -1,7 +1,6 @@
 a {
   color: var(--noir);
   text-decoration: none;
-  transition: color 400ms;
   /* &:visited {
     color: var(--complementaire);
   } */
@@ -27,14 +26,12 @@ a {
 .inscription_programme .grille_cours{
   a{
     color: var(--noir);
-    transition: color 400ms;
   }
 }
 
 .menu-menu-principal-container {
   a{
     color: var(--blanc);
-    transition: color 400ms;
     &:hover,
     &:focus,
     &:active {

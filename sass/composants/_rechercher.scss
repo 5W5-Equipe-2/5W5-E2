@@ -50,10 +50,6 @@
   @media screen and (min-width : $largeur__bureau){
     display: flex;
 
-    .recherche__bouton{
-      cursor: pointer;
-    }
-
     .recherche > label{
       width: 20vw;
       height: 1.8em;

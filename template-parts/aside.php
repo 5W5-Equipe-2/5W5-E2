@@ -5,14 +5,14 @@
  */
 ?>
 
-<aside id="navigation-projet" class="site__aside <?php echo (in_category('evenements') ? 'aside-ev' : ''); ?>">
+<aside id="navigation-projet" class="site__aside">
   <?php
   $ma_categorie = "projets";
   if (in_category('projets') || is_page_template('template-projet.php')) {
     $ma_categorie = "projets";
   ?>
     <!-- Bouton pour filtres de la catégorie Projets / menu burger ************************  -->
-    <div class="boutton-projet">
+      <div class="boutton-projet">
         <button class="menu_toggle_projet" aria-controls="primary-menu" aria-expanded="false">
           <svg xmlns="http://www.w3.org/2000/svg" width="51.63" height="27" viewBox="0 0 51.63 27">
             <g transform="translate(-36.5 -94)">
@@ -42,6 +42,5 @@
     "menu" => $ma_categorie,
     "container" => "nav",
     "container_class" => $menu_classe
-  ));
-  ?>
+  )); ?>
 </aside>

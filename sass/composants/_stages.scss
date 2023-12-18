@@ -10,19 +10,17 @@
         margin: 0 auto;
     }
     .temoignage__article {
-        height: 135vw; //à enlever quand carrousel mis à jour sur le site
+        height: 75vw; //à enlever quand carrousel mis à jour sur le site
     }
     .categorie__article{ 
     // background-color: var(--simili-noir);
-    // border-radius: 2em; // arrondir les coins
+    border-radius: 2em; // arrondir les coins
     color: var(--blanc); // couleur texte blanc
     display: flex;
-    flex-direction: column;
-    height: 110vw;
+    height: 55vw;
     overflow: hidden; // pour que les coin du haut reste courber
     text-align: center; // Center le texte
     width: 75vw;
-    gap: 5vw;
 
     div{
       width: 100%;
@@ -30,7 +28,6 @@
     // Les informations necessaires/importants -titre -image -Date
     .image_titre_date{
       background-color: var(--simili-noir);
-      border-radius: 1em;
       height: 100%;
       overflow: hidden; // pour garder les coins arrondis
       width: 100%;
@@ -73,16 +70,7 @@
     // Les informations secondaires -Descriptions -additionnels -information de l'articles
     .content{
       background-color: var(--simili-noir);
-          // display: none;
-          // position: absolute; 
-          border-radius: 1em;
-          overflow-x: hidden;
-          height: 100%;
-          width: 75vw;
-          padding: 5%;
-          .contenant_contenu{
-            height: 90%;
-          }
+      display: none;
     }
   }
 }
@@ -100,8 +88,6 @@
                 height: 30vw; // ajustement de l'hauteur
                 justify-content: space-between; // met un à cote de l'autre
                 width: 80vw; // ajustement de largeur
-                flex-direction: row;
-                gap: 0;
                 // Les informations necessaires/importants -titre -image -Date
                 .image_titre_date{
                     border-radius: 2vw; // arrondis

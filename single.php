@@ -88,26 +88,14 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
         </svg>
         <h5> <?php the_field('saison'); ?></h5>
         <h5> <?php the_field('annee'); ?></h5>
-        </div>
         <?php
             // Récupérez la valeur du champ AFC 'informations_additonnelles'
             $informations_additonnelles = get_field('informations_additonnelles');
             // Vérifiez si le champ n'est pas vide
             if (!empty($informations_additonnelles)) {
         ?>
-          <p><?php echo $informations_additonnelles; ?></p>
-        <?php
-            }
-        ?>
-      
-
-    <?php
-            // Récupérez la valeur du champ AFC 'informations_additonnelles'
-            $url_portfolio = get_field('url-html');
-            // Vérifiez si le champ n'est pas vide
-            if (!empty($url_portfolio)) {
-        ?>
-          <p><?php echo $url_portfolio; ?></p>
+        </div>
+          <p>Information additionnelle : <?php echo $informations_additonnelles; ?></p>
         <?php
             }
         ?>
@@ -117,15 +105,14 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
     <?php if (has_term(array('evenements'), 'category')) { ?>
       <!-- /****Modèle si c'est la catégorie evenements *************************************************/ -->
       <!-- Afficher les informations des champs ACF -->
-      <br>
       <div class="information_single">
-        <h5>Information (et inscription)</h5>
+        <p>Information (et inscription)</p>
         <p>Qui : <?php the_field('qui'); ?></p>
         <p>Quoi : <?php the_field('quoi'); ?></p>
         <p>Lieu : <?php the_field('lieu'); ?></p>
         <p>Quand : <?php the_field('date_et_heure'); ?></p>
 
-        <br>
+
         <!-- Afficher les informations quant à l'heure et la date de la publication-->
         <div class="info_heure_date">
           <svg xmlns="http://www.w3.org/2000/svg" width="21.289" height="21.289" viewBox="0 0 21.289 21.289">
@@ -143,7 +130,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             </g>
           </svg>
           <!-- Afficher date et heure de la publication'-->
-          <p><b>Heure de publication : <?php the_time('j F Y \à G:i'); ?></b></p>
+          <p>Heure de publication : <?php the_time('j F Y \à G:i'); ?></p>
         </div>
 
         <!-- Afficher l'icône pour la date de mise à jour -->
@@ -155,7 +142,7 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
             </g>
           </svg>
           <!-- Afficher la date et heure de la mise-à-jour'-->
-          <p><b>Heure de mise à jour : <?php the_modified_time('j F Y \à G:i'); ?></b></p>
+          <p>Heure de mise à jour : <?php the_modified_time('j F Y \à G:i'); ?></p>
         </div>
       </div>
     <?php } ?>
