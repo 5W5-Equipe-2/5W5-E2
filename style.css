@@ -569,11 +569,6 @@ body {
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 5%;
-  align-items: center;
-  display: flex;
-  padding: 0;
-  background-color: var(--simili-noir);
-  min-height: 4em;
 }
 .site__aside .boutton-projet button {
   cursor: pointer;
@@ -645,11 +640,11 @@ body {
 /*----------------------bureau------------------------------*/
 @media screen and (min-width: 992px) {
   .site__aside {
-    /* align-items: center;
+    align-items: center;
     display: flex;
     padding: 0;
     background-color: var(--simili-noir);
-    min-height: 4em; */
+    min-height: 4em;
   }
   .site__aside .boutton-projet {
     display: none;
@@ -748,6 +743,11 @@ body {
 /*----------------projet/évènement-------------*/
 .aside-ev {
   background-color: var(--simili-noir);
+  align-items: center;
+  display: flex;
+  padding: 0;
+  background-color: var(--simili-noir);
+  min-height: 4em;
 }
 
 .projet_titre {
