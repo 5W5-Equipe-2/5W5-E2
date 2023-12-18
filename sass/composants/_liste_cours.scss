@@ -16,7 +16,7 @@ button {
 
 /*-----------------------description et inscription--------------------------*/
 
-.info_programme{
+.info_programme{//description et inscription
 
     .description_programme{
         margin: 0 auto;
@@ -31,15 +31,16 @@ button {
     .inscription_programme{
         align-items: center;
         background-color: var(--complementaire);
+        box-shadow: 12px 12px 8px 1px rgba(0,0,0,0.16);
         display: flex;
         flex-direction: column;
 
-        h2{
+        h2{//veux t'inscrire
             margin: 1.5em;
             text-align: center;
         }
 
-        a{
+        a{//lien d'uinscription
             border: 1px solid var(--simili-noir);
             border-radius: 50em;
             font-family: var(--police-texte);
@@ -69,22 +70,22 @@ button {
 
 /*-----------------------liste cours--------------------------*/
 
-.Liste_programme{
+.Liste_programme{ //section pour la liste de cours
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
     width: 75vw;
-    h2{
+    h2{//Liste des cours
         margin-top: 1em;
     }
 
-    h3{
+    h3{//Sessions
         margin-top: 1em;
         margin-bottom: 0.5em;
     }
 
-    .cours_session{
+    .cours_session{ //boutton de session (1 a 6)
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -99,9 +100,10 @@ button {
         }
     }
 
-    #content{
+    #content{ //liste de cours
         border-radius: 2em;
         background-color: var(--simili-noir);
+        box-shadow: 12px 12px 8px 1px rgba(0,0,0,0.16);
         display: flex;
         flex-direction: column;
         height: 40em;
@@ -125,7 +127,7 @@ button {
             border: none;
         }
 
-        .article-content{
+        .article-content{//description d'un cours
             background-color: var(--simili-noir);
             color: var(--blanc);
             display: flex;
@@ -157,15 +159,16 @@ button {
             }
 
             .related-projets{ //en dessous de la description d'un cours
-                align-items: center;
-                display: flex;
-                flex-direction: row;
+                //align-items: center;
+                display: block;
+                //flex-direction: row;
                 margin-top: 2em;
+                text-align: center;
                 width: 100%;
 
                 a{ //voir plus de projets réalisé
                     color: var(--blanc);
-                    flex-basis: 40%;
+                    //flex-basis: 40%;
                     
                 }
 
@@ -173,17 +176,19 @@ button {
                     align-items: center;
                     display: flex;
                     justify-content: space-around;
-                    flex-wrap: wrap;
-                    flex-grow: 1;
-                    height: 100%;
-                    width: 60%;
+                    //flex-wrap: wrap;
+                    //flex-grow: 1;
+                    //height: 100%;
+                    margin: 0 auto;
+                    min-height: 100px;
+                    //width: 60%;
 
                     a{
                         margin-left: 5%;
                         margin-right: 5%;
                         img{
-                            border-radius: 10%;
-                            height: 100%;
+                            border-radius: 0.5em;
+                            //height: 100%;
                         }
                     }
                 }
@@ -276,9 +281,15 @@ button {
         #content{
             .article-content{
                 .related-projets{
-                    height: 20%;
+                    display: flex;
+                    //height: 20%;
+
+                    a{
+                        flex-basis: 40%;
+                    }
                     .related-articles{
-                        flex-wrap: nowrap;
+                        //flex-wrap: nowrap;
+                        flex-basis: 60%;
                     }
                 }
             }

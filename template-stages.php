@@ -11,7 +11,7 @@
     <section class="description_stages">
         <?php the_content(); ?>
     </section>
-    <hr>
+    
     <?php /****** Carrousel des témoignages de stages *******/ ?>
     <section class="temoignage Section_carrousel">
         <h2>Témoignages</h2>
