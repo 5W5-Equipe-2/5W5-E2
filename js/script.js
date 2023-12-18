@@ -39,7 +39,7 @@ jQuery(document).ready(function ($) {
 document.addEventListener("DOMContentLoaded", function () {
   // Sélectionnez tous les boutons de classe "filter-button"
   var buttons = document.querySelectorAll(".filter-button");
-
+  
   // Ajoutez un gestionnaire d'événement à chaque bouton
   buttons.forEach(function (button) {
     button.addEventListener("click", function () {
