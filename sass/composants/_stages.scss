@@ -4,10 +4,10 @@
     padding-bottom: 6vw; // espacement bas
     width: 100%; // largeur
     h2{ // le titre
-        text-align: center;
-        padding-bottom: 8vw;
-        width: 80vw;
         margin: 0 auto;
+        padding-bottom: 8vw;
+        text-align: center;
+        width: 80vw;
     }
     .temoignage__article {
         height: 135vw; //à enlever quand carrousel mis à jour sur le site
@@ -16,11 +16,11 @@
     color: var(--blanc); // couleur texte blanc
     display: flex;
     flex-direction: column;
+    gap: 5vw;
     height: 110vw;
     overflow: hidden; // pour que les coin du haut reste courber
     text-align: center; // Center le texte
     width: 75vw;
-    gap: 5vw;
 
     div{
       width: 100%;
@@ -41,8 +41,8 @@
         position: relative;
         a img{
           height: 100%;
-          margin: 0;
           left: 0;
+          margin: 0;
           max-width: 100%;
           object-fit: cover;
           object-position: center center;
@@ -58,10 +58,10 @@
         justify-content: center;
         margin: auto;
         .conteneur_date{
-          font-size: 12px;
+          align-items: center;  
           display: none;
+          font-size: 12px;
           gap: 0.3vw;
-          align-items: center;
           justify-content: center;
           @media screen and (min-width:450px){ // Début requête média Bureau
             display: flex; 
@@ -71,17 +71,15 @@
     }
     // Les informations secondaires -Descriptions -additionnels -information de l'articles
     .content{
-      background-color: var(--simili-noir);
-          // display: none;
-          // position: absolute; 
-          border-radius: 1em;
-          overflow-x: hidden;
-          height: 100%;
-          width: 75vw;
-          padding: 5%;
-          .contenant_contenu{
+        background-color: var(--simili-noir);
+        border-radius: 1em;
+        height: 100%;
+        overflow-x: hidden;
+        padding: 5%;
+        width: 75vw;
+        .contenant_contenu{
             height: 90%;
-          }
+        }
     }
   }
 }
@@ -96,11 +94,11 @@
             height: 40vw;
             .categorie__article{ 
                 border-radius: 0; // on enleve l'arrondissement et on met au enfant
+                flex-direction: row;
+                gap: 0;
                 height: 30vw; // ajustement de l'hauteur
                 justify-content: space-between; // met un à cote de l'autre
                 width: 80vw; // ajustement de largeur
-                flex-direction: row;
-                gap: 0;
                 // Les informations necessaires/importants -titre -image -Date
                 .image_titre_date{
                     border-radius: 2vw; // arrondis
@@ -111,12 +109,12 @@
                 .content{ // contenant qui contient toutes les informations secondaires
                     border-radius: 2vw; // arrondis
                     display: block; // afficher le contenu
-                    position: relative; // necessaire pour centre le contenu
                     // text-align: left; // pour que le texte s'affiche vers la gauche
                     height: 100%;
                     margin: 0%;
-                    width: 44vw; // grosseur
                     overflow: hidden;
+                    position: relative; // necessaire pour centre le contenu
+                    width: 44vw; // grosseur
 
                     .contenant_contenu{  // contenu
                         // align-items: center;
@@ -125,21 +123,21 @@
                         // gap: 0.3vh;
                         height: 25vw;
                         justify-content: center;
-                        top: 50%; // necessaire pour centre le contenu
                         left: 50%; // necessaire pour centre le contenu
                         margin: auto; // necessaire pour centre le contenu
-                        position: absolute; // necessaire pour centre le contenu
-                        transform: translate(-50%, -50%); // necessaire pour centre le contenu
-                        width: fit-content;
                         overflow-y: auto;
                         overflow-x: hidden;
+                        position: absolute; // necessaire pour centre le contenu
+                        transform: translate(-50%, -50%); // necessaire pour centre le contenu
+                        top: 50%; // necessaire pour centre le contenu
+                        width: fit-content;
                         
                         p,h5,div{
-                            margin: 0 auto; // centrer horizontal
-                            width: 38vw; // largeur
                             display: inline-block;
-                            vertical-align: middle;
+                            margin: 0 auto; // centrer horizontal
                             padding: 0.5vw;
+                            vertical-align: middle;
+                            width: 38vw; // largeur
                         }
                     }
                     .contenant_contenu p:first-of-type{
@@ -176,8 +174,8 @@
                     }
                 }
                 .content{
-                    width: 44vw;
                     margin-left: 1rem;
+                    width: 44vw;
                     .contenant_contenu{  // contenu
                         align-items: center;
                         display: flex;
@@ -185,12 +183,11 @@
                         gap: 0.3vh;
                         height: fit-content;
                         line-height: normal;
-
                         p,h5,div{
-                            margin: 0 auto; // centrer horizontal
-                            width: 34vw; // largeur
                             display: inline-block;
+                            margin: 0 auto; // centrer horizontal
                             vertical-align: middle;
+                            width: 34vw; // largeur
                         }
                     }
                 }
