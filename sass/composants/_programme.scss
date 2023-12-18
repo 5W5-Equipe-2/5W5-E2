@@ -23,8 +23,6 @@
         }
     }
     .categorie__article{ 
-        // background-color: var(--simili-noir);
-        // border-radius: 2em; // arrondir les coins
         color: var(--blanc); // couleur texte blanc
         display: flex;
         flex-direction: column;
@@ -38,9 +36,9 @@
         .image_titre_date{
           background-color: var(--simili-noir);
           height: 100%;
+          border-radius: 1em;
           overflow: hidden; // pour garder les coins arrondis
           width: 100%;
-          border-radius: 1em;
 
           .contenant__image {
             height: 80%;
@@ -94,12 +92,6 @@
         padding-top: 0;
         padding-bottom: 3rem;
       }
-      // .carousel-content{
-      //   height: clamp(300px, 400px, 500px);
-      //   .carousel-item{
-      //       height: clamp(300px, 400px, 500px);
-      //   }
-      // }
       .Carrou__article{ // le div qui contient tous les boîtes d'évènements récents
         /* Boite d'évènement récent */
         height: 40vw;
@@ -113,28 +105,28 @@
   
           // Les informations necessaires/importants -titre -image -Date
           .image_titre_date{
-            border-radius: 1em; // arrondis
+            border-radius: 2em; // arrondis
             overflow: hidden; // pour garder les coins arrondis
             width: 35vw;
           }
           // Les informations secondaires -Descriptions -additionnels -information de l'articles
           .content{ // contenant qui contient toutes les informations secondaires
-            border-radius: 1em; // arrondis
+            border-radius: 2em; // arrondis
             display: block; // afficher le contenu
             height: 100%;
             margin: 0%;
             position: relative;
             width: 44vw; // grosseur
             .contenant_contenu{  // contenu
-              position: absolute; // necessaire pour centre le contenu
-              top: 50%; // necessaire pour centre le contenu
-              left: 50%; // necessaire pour centre le contenu
-              transform: translate(-50%, -50%); // necessaire pour centre le contenu
-              margin: auto; // necessaire pour centre le contenu
               height: 25vw;
-              // line-height: 25vw;
+              left: 50%; // necessaire pour centre le contenu
+              margin: auto; // necessaire pour centre le contenu
               overflow-y: auto;
               overflow-x: hidden;
+              position: absolute; // necessaire pour centre le contenu
+              top: 50%; // necessaire pour centre le contenu
+              transform: translate(-50%, -50%); // necessaire pour centre le contenu
+              // line-height: 25vw;
 
               .wp-block-group__inner-container{
                 flex-direction: column;

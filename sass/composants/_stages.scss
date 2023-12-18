@@ -13,8 +13,6 @@
         height: 135vw; //à enlever quand carrousel mis à jour sur le site
     }
     .categorie__article{ 
-    // background-color: var(--simili-noir);
-    // border-radius: 2em; // arrondir les coins
     color: var(--blanc); // couleur texte blanc
     display: flex;
     flex-direction: column;
@@ -34,6 +32,7 @@
       height: 100%;
       overflow: hidden; // pour garder les coins arrondis
       width: 100%;
+
       .contenant__image {
         height: 75%;
         margin: 0;
@@ -114,28 +113,33 @@
                     display: block; // afficher le contenu
                     position: relative; // necessaire pour centre le contenu
                     // text-align: left; // pour que le texte s'affiche vers la gauche
+                    height: 100%;
+                    margin: 0%;
                     width: 44vw; // grosseur
+                    overflow: hidden;
+
                     .contenant_contenu{  // contenu
-                        align-items: center;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 0.3vh;
+                        // align-items: center;
+                        // display: flex;
+                        // flex-direction: column;
+                        // gap: 0.3vh;
                         height: 25vw;
                         justify-content: center;
                         top: 50%; // necessaire pour centre le contenu
                         left: 50%; // necessaire pour centre le contenu
                         margin: auto; // necessaire pour centre le contenu
-                        overflow-y: auto;
-                        overflow-x: hidden;
                         position: absolute; // necessaire pour centre le contenu
                         transform: translate(-50%, -50%); // necessaire pour centre le contenu
                         width: fit-content;
-
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        
                         p,h5,div{
                             margin: 0 auto; // centrer horizontal
                             width: 38vw; // largeur
                             display: inline-block;
                             vertical-align: middle;
+                            padding: 0.5vw;
                         }
                     }
                     .contenant_contenu p:first-of-type{
@@ -156,7 +160,6 @@
         }   
     }
 }   
-
 @media screen and (min-width:$largeur__bureau_large){
     .temoignage{ // section
         padding: 3vw 0;
@@ -176,6 +179,10 @@
                     width: 44vw;
                     margin-left: 1rem;
                     .contenant_contenu{  // contenu
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.3vh;
                         height: fit-content;
                         line-height: normal;
 

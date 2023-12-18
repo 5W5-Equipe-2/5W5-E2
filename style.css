@@ -85,8 +85,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -407,8 +406,8 @@ li {
 }
 @media screen and (min-width: 992px) {
   p,
-  ul,
-  li {
+ul,
+li {
     font-size: clamp(1.1875rem, 1.1337rem + 0.0615vw, 1.28125rem);
   }
 }
@@ -869,15 +868,13 @@ body {
 /*-----------------------------fin single projet---------------------------------*/
 .section_single, .description_programme, .Liste_programme, .contenant_resultat_recherche {
   background-color: var(--blancOpacite);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border-radius: 2em;
 }
 
 .accueil_description, .erreur, .description_stages {
   background-color: var(--blancOpacite);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 /*----------------------stage--------------------------------*/
@@ -1070,16 +1067,16 @@ menu bureau
     display: none;
   }
   .main-navigation.toggled ul,
-  .main-navigation ul {
+.main-navigation ul {
     display: flex;
     padding-top: 0;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-  .main-navigation ul a[href="#"]::after {
+.main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-  .main-navigation ul ul {
+.main-navigation ul ul {
     display: none;
   }
 }
@@ -1171,7 +1168,7 @@ menu tablet
     transform: scale(1.15);
   }
   .site_pied_page #retour_haut,
-  .site_pied_page #retour_haut.touche {
+.site_pied_page #retour_haut.touche {
     padding: 22px 14px;
   }
 }
@@ -1197,9 +1194,6 @@ menu tablet
 }
 .recherche > label input.recherche__input:focus {
   outline: none;
-}
-.recherche > label input.recherche__input::-moz-placeholder {
-  color: var(--blanc);
 }
 .recherche > label input.recherche__input::placeholder {
   color: var(--blanc);
@@ -1284,7 +1278,6 @@ menu tablet
   position: absolute;
   right: 0;
   top: 46%;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .media_vedette .logo_tim span {
@@ -1346,7 +1339,6 @@ menu tablet
 }
 .media_vedette .sous_titre .widget_block:first-of-type h2:first-of-type div {
   position: initial;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .media_vedette .sous_titre .widget_block:last-of-type {
@@ -1360,7 +1352,6 @@ menu tablet
 .media_vedette .sous_titre .widget_block:last-of-type h2 {
   display: flex;
   flex-wrap: wrap;
-  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
 }
@@ -1378,8 +1369,7 @@ menu tablet
 .diaporama img {
   height: 100%;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   padding: 0;
   position: absolute;
   margin: 0;
@@ -1460,10 +1450,8 @@ menu tablet
   left: 0;
   margin: 0;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  object-fit: cover;
+  object-position: center center;
   position: absolute;
   width: 100%;
 }
@@ -1526,7 +1514,6 @@ menu tablet
   font-family: var(--police-texte);
   margin: 0 auto;
   padding-top: 5%;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .accueil_programme .widget_block .wp-block-buttons a {
@@ -1581,7 +1568,6 @@ menu tablet
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
-    width: -moz-fit-content;
     width: fit-content;
   }
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu p, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu h5, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu div {
@@ -1612,6 +1598,8 @@ menu tablet
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
   }
+}
+@media screen and (min-width: 800px) {
   .accueil_programme {
     border-radius: 1.5em;
     margin-bottom: 5vh;
@@ -1970,7 +1958,6 @@ th {
 .erreur section {
   z-index: 5;
   padding: 1vw;
-  height: -moz-fit-content;
   height: fit-content;
   left: 50%;
   position: absolute;
@@ -2006,7 +1993,6 @@ th {
 .erreur section .bouton_retour {
   margin: auto;
   margin-top: 4vh;
-  width: -moz-fit-content;
   width: fit-content;
 }
 .erreur section .bouton_retour a {
@@ -2051,7 +2037,6 @@ th {
     width: 60%;
   }
   .erreur h1 {
-    width: -moz-fit-content;
     width: fit-content;
   }
   .erreur section > div:first-of-type {
@@ -2109,7 +2094,7 @@ th {
 }
 @keyframes aucun-memo-anim {
   from {
-    color: hsl(180, 14%, 60%);
+    color: hsl(180deg, 14%, 60%);
   }
   33% {
     color: var(--primaire);
@@ -2118,7 +2103,7 @@ th {
     color: var(--complementaire);
   }
   to {
-    color: hsl(180, 14%, 60%);
+    color: hsl(180deg, 14%, 60%);
   }
 }
 .sous_titre .widget_block:first-of-type h2:first-of-type div:first-of-type span:nth-of-type(1) {
@@ -2279,9 +2264,9 @@ th {
 .Profs .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
   height: 100%;
+  border-radius: 1em;
   overflow: hidden;
   width: 100%;
-  border-radius: 1em;
 }
 .Profs .categorie__article .image_titre_date .contenant__image {
   height: 80%;
@@ -2295,10 +2280,8 @@ th {
   margin: 0;
   left: 0;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  object-fit: cover;
+  object-position: center center;
   position: absolute;
   width: 100%;
 }
@@ -2343,12 +2326,12 @@ th {
     gap: 0;
   }
   .Profs .Carrou__article .categorie__article .image_titre_date {
-    border-radius: 1em;
+    border-radius: 2em;
     overflow: hidden;
     width: 35vw;
   }
   .Profs .Carrou__article .categorie__article .content {
-    border-radius: 1em;
+    border-radius: 2em;
     display: block;
     height: 100%;
     margin: 0%;
@@ -2356,14 +2339,14 @@ th {
     width: 44vw;
   }
   .Profs .Carrou__article .categorie__article .content .contenant_contenu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
     height: 25vw;
+    left: 50%;
+    margin: auto;
     overflow-y: auto;
     overflow-x: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
   .Profs .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
     flex-direction: column;
@@ -2408,7 +2391,6 @@ th {
     vertical-align: middle;
   }
   .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
-    height: -moz-fit-content;
     height: fit-content;
     display: flex;
     justify-content: center;
@@ -2462,10 +2444,8 @@ th {
   margin: 0;
   left: 0;
   max-width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center center;
-     object-position: center center;
+  object-fit: cover;
+  object-position: center center;
   position: absolute;
   width: 100%;
 }
@@ -2528,30 +2508,29 @@ th {
     border-radius: 2vw;
     display: block;
     position: relative;
+    height: 100%;
+    margin: 0%;
     width: 44vw;
+    overflow: hidden;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3vh;
     height: 25vw;
     justify-content: center;
     top: 50%;
     left: 50%;
     margin: auto;
-    overflow-y: auto;
-    overflow-x: hidden;
     position: absolute;
     transform: translate(-50%, -50%);
-    width: -moz-fit-content;
     width: fit-content;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu p, .temoignage .temoignage__article .categorie__article .content .contenant_contenu h5, .temoignage .temoignage__article .categorie__article .content .contenant_contenu div {
     margin: 0 auto;
     width: 38vw;
     display: inline-block;
     vertical-align: middle;
+    padding: 0.5vw;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu p:first-of-type {
     display: block;
@@ -2587,7 +2566,10 @@ th {
     margin-left: 1rem;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu {
-    height: -moz-fit-content;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vh;
     height: fit-content;
     line-height: normal;
   }
