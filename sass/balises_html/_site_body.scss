@@ -19,10 +19,21 @@ body {
     color: var(--primaire) !important;
   }
 }
+
+.projet_titre{
+  padding-top: 1em;
+}
+
 .site__aside{
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 5%;
+
+  align-items: center;
+  display: flex;
+  padding: 0;
+  background-color: var(--simili-noir);
+  min-height: 4em;
 
   .boutton-projet{
     button{
@@ -109,16 +120,12 @@ body {
 
   @media screen and (min-width : $largeur__bureau){
 
-    .projet_titre{
-      padding-top: 1em;
-    }
-
     .site__aside{
-      align-items: center;
+      /* align-items: center;
       display: flex;
       padding: 0;
       background-color: var(--simili-noir);
-      min-height: 4em;
+      min-height: 4em; */
 
 
     .boutton-projet{
