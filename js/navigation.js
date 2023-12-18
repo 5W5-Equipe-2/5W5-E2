@@ -97,18 +97,28 @@
     let storedSubMenuLink = sessionStorage.getItem("subMenuLink");
     let storedLinkColor = sessionStorage.getItem("linkId");
     let lienActif = document.getElementById(storedLinkColor);
-    //si le lien l'adresse de la page actuelle concorde avec un lien enregistré du sub-menu
-    let isSubMenuOpen = storedSubMenuLink === window.location.href;
 
-    // condition si isSubMenuOpen est vrai ou pas
-    if (isSubMenuOpen) {
-      //ajoute la classe open a sub-menu pour garder le menu ouvert
-      subMenu.classList.add("open");
-      //ajout de la classe lienActif pour changer l'aspect du lien selectionné
-      lienActif.classList.add("lienActif");
-    } else {
-      subMenu.classList.remove("open");
-      lienActif.classList.remove("lienActif");
+    // Vérifier si subMenu existe avant de manipuler ses propriétés
+    if (subMenu) {
+      let isSubMenuOpen = storedSubMenuLink === window.location.href;
+
+      // condition si isSubMenuOpen est vrai ou pas
+      if (isSubMenuOpen) {
+        // Ajoute la classe open à sub-menu pour garder le menu ouvert
+        subMenu.classList.add("open");
+      } else {
+        subMenu.classList.remove("open");
+      }
+    }
+
+    // Vérifier si lienActif existe avant de manipuler ses propriétés
+    if (lienActif) {
+      // Vérifier si linkId est le même que subMenuLink
+      if (window.location.href === storedSubMenuLink) {
+        lienActif.classList.add("lienActif");
+      } else {
+        lienActif.classList.remove("lienActif");
+      }
     }
 
     menuItems.forEach(function (menuItem) {

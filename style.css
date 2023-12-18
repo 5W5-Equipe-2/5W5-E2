@@ -627,6 +627,10 @@ body {
   display: none;
 }
 
+.active {
+  color: var(--primaire) !important;
+}
+
 /*----------------------bureau------------------------------*/
 @media screen and (min-width: 992px) {
   .projet_titre {
