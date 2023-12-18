@@ -29,12 +29,6 @@ body {
   padding-right: 5%;
   padding-top: 5%;
 
-  align-items: center;
-  display: flex;
-  padding: 0;
-  background-color: var(--simili-noir);
-  min-height: 4em;
-
   .boutton-projet{
     button{
       cursor: pointer;
@@ -121,11 +115,11 @@ body {
   @media screen and (min-width : $largeur__bureau){
 
     .site__aside{
-      /* align-items: center;
+      align-items: center;
       display: flex;
       padding: 0;
       background-color: var(--simili-noir);
-      min-height: 4em; */
+      min-height: 4em;
 
 
     .boutton-projet{
@@ -241,6 +235,12 @@ body {
 
 .aside-ev {
   background-color: var(--simili-noir);
+
+  align-items: center; 
+  display: flex;
+  padding: 0;
+  background-color: var(--simili-noir);
+  min-height: 4em;
 }
 
 .projet_titre{
