@@ -399,15 +399,17 @@ h6 {
 
 p,
 ul,
-li {
+li,
+small {
   font-size: clamp(1.3rem, 1.0887rem + 0.1453vw, 1.4375rem);
   font-family: var(--police-texte);
   line-height: 150%;
 }
 @media screen and (min-width: 992px) {
   p,
-ul,
-li {
+  ul,
+  li,
+  small {
     font-size: clamp(1.1875rem, 1.1337rem + 0.0615vw, 1.28125rem);
   }
 }
@@ -1100,16 +1102,16 @@ menu bureau
     display: none;
   }
   .main-navigation.toggled ul,
-.main-navigation ul {
+  .main-navigation ul {
     display: flex;
     padding-top: 0;
   }
   .main-navigation.toggled ul a[href="#"]::after,
-.main-navigation ul a[href="#"]::after {
+  .main-navigation ul a[href="#"]::after {
     display: none;
   }
   .main-navigation.toggled ul ul,
-.main-navigation ul ul {
+  .main-navigation ul ul {
     display: none;
   }
 }
@@ -1190,7 +1192,7 @@ menu tablet
 ------------------------------------------------------------------------------ */
 @media screen and (min-width: 800px) {
   #retour_haut,
-#retour_haut.touche {
+  #retour_haut.touche {
     bottom: 60px;
     padding: 14px 8px;
     right: 20px;
@@ -1220,9 +1222,10 @@ menu Bureau
     transform: scale(1.15);
   }
   .site_pied_page #retour_haut,
-.site_pied_page #retour_haut.touche {
-    padding: 22px 14px;
-
+  .site_pied_page #retour_haut.touche {
+    bottom: 60px;
+    padding: 16px 10px;
+    right: 24px;
   }
   .site_pied_page .fleche_pointe_top {
     transform: scale(1.2);
@@ -1654,8 +1657,6 @@ menu Bureau
   .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:last-of-type, .accueil_evenements .evenements_recents .categorie__article .content .contenant_contenu > p:first-of-type {
     padding-bottom: 1.5vw;
   }
-}
-@media screen and (min-width: 800px) {
   .accueil_programme {
     border-radius: 1.5em;
     margin-bottom: 5vh;
@@ -2152,7 +2153,7 @@ th {
 }
 @keyframes aucun-memo-anim {
   from {
-    color: hsl(180deg, 14%, 60%);
+    color: hsl(180, 14%, 60%);
   }
   33% {
     color: var(--primaire);
@@ -2161,7 +2162,7 @@ th {
     color: var(--complementaire);
   }
   to {
-    color: hsl(180deg, 14%, 60%);
+    color: hsl(180, 14%, 60%);
   }
 }
 .sous_titre .widget_block:first-of-type h2:first-of-type div:first-of-type span:nth-of-type(1) {
