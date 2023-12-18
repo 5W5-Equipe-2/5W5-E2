@@ -101,6 +101,9 @@ body {
     }
   }
 }
+.active{
+  color: var(--primaire) !important;
+}
 
 /*----------------------bureau------------------------------*/
 
@@ -229,6 +232,10 @@ body {
 }
 /*----------------projet/évènement-------------*/
 
+.aside-ev {
+  background-color: var(--simili-noir);
+}
+
 .projet_titre{
   text-align: center;
 }
@@ -286,7 +293,12 @@ body {
     justify-content: flex-start;
 
     .categorie__article{
+      transition: transform 0.5s ease-in-out;
       width: 40%;
+    }
+
+    .categorie__article:hover {
+      transform: scale(1.13)
     }
   }
 

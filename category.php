@@ -63,9 +63,14 @@ if (!is_front_page() && (!is_admin()) && (has_term(array('projets', 'evenements'
 }
 ?>
 <main class="site_main">
-    <!--   On affiche le titre de la catégorie -->
-    <?php echo '<h2 class="projet_titre">' . $categorie->name . '</h2>'; ?>
-
+    <!--   On affiche le titre de la catégorie, si c'est troisD, on affiche 3D -->
+    <?php
+if ($categorie->slug === 'troisd') {
+    echo '<h2 class="projet_titre">3D</h2>';
+} else {
+    echo '<h2 class="projet_titre">' . $categorie->name . '</h2>';
+}
+?>
     <section class="categorie__section">
         <?php if ((str_starts_with($cat_url, 'session'))) {
             //Si c'est l'une des catégories de session ------------------------------->

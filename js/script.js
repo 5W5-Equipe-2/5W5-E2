@@ -36,6 +36,23 @@ jQuery(document).ready(function ($) {
   // Au chargement de la page, déclenchez la requête AJAX pour la "session1"
   filterPosts("1");
 });
+document.addEventListener("DOMContentLoaded", function () {
+  // Sélectionnez tous les boutons de classe "filter-button"
+  var buttons = document.querySelectorAll(".filter-button");
+  
+  // Ajoutez un gestionnaire d'événement à chaque bouton
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      // Retirez la classe "active" de tous les boutons
+      buttons.forEach(function (btn) {
+        btn.classList.remove("active");
+      });
+
+      // Ajoutez la classe "active" au bouton cliqué
+      this.classList.add("active");
+    });
+  });
+});
 
 /* ---------------boutton retour pour la liste de cours-----------*/
 
@@ -89,3 +106,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// -------------------------------------------------------------------------------
