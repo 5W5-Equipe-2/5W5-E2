@@ -741,6 +741,10 @@ body {
 }
 
 /*----------------projet/évènement-------------*/
+.aside-ev {
+  background-color: var(--simili-noir);
+}
+
 .projet_titre {
   text-align: center;
 }
