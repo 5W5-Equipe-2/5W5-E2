@@ -1218,10 +1218,8 @@ menu Bureau
     transform: scale(1.15);
   }
   .site_pied_page #retour_haut,
-  .site_pied_page #retour_haut.touche {
-    bottom: 60px;
-    padding: 16px 10px;
-    right: 24px;
+.site_pied_page #retour_haut.touche {
+    padding: 22px 14px;
   }
   .site_pied_page .fleche_pointe_top {
     transform: scale(1.2);
@@ -2296,10 +2294,10 @@ th {
   color: var(--blanc);
 }
 .Profs h2 {
-  text-align: center;
-  padding-bottom: 8vw;
-  width: 80vw;
   margin: 0 auto;
+  padding-bottom: 8vw;
+  text-align: center;
+  width: 80vw;
 }
 .Profs .Carrou__article {
   height: 135vw;
@@ -2311,18 +2309,18 @@ th {
   color: var(--blanc);
   display: flex;
   flex-direction: column;
+  gap: 5vw;
   height: 110vw;
   overflow: hidden;
   text-align: center;
   width: 75vw;
-  gap: 5vw;
 }
 .Profs .categorie__article .image_titre_date {
   background-color: var(--simili-noir);
+  border-radius: 1em;
   height: 100%;
   overflow: hidden;
   width: 100%;
-  border-radius: 1em;
 }
 .Profs .categorie__article .image_titre_date .contenant__image {
   height: 80%;
@@ -2333,8 +2331,8 @@ th {
 }
 .Profs .categorie__article .image_titre_date .contenant__image a img {
   height: 100%;
-  margin: 0;
   left: 0;
+  margin: 0;
   max-width: 100%;
   object-fit: cover;
   object-position: center center;
@@ -2382,12 +2380,12 @@ th {
     gap: 0;
   }
   .Profs .Carrou__article .categorie__article .image_titre_date {
-    border-radius: 1em;
+    border-radius: 2em;
     overflow: hidden;
     width: 35vw;
   }
   .Profs .Carrou__article .categorie__article .content {
-    border-radius: 1em;
+    border-radius: 2em;
     display: block;
     height: 100%;
     margin: 0%;
@@ -2395,23 +2393,23 @@ th {
     width: 44vw;
   }
   .Profs .Carrou__article .categorie__article .content .contenant_contenu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
     height: 25vw;
+    left: 50%;
+    margin: auto;
     overflow-y: auto;
     overflow-x: hidden;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
   .Profs .Carrou__article .categorie__article .content .contenant_contenu .wp-block-group__inner-container {
     flex-direction: column;
   }
   .Profs .Carrou__article .categorie__article .content .contenant_contenu p, .Profs .Carrou__article .categorie__article .content .contenant_contenu h5, .Profs .Carrou__article .categorie__article .content .contenant_contenu div {
-    margin: 0 auto;
-    width: 38vw;
     display: inline-block;
+    margin: 0 auto;
     vertical-align: middle;
+    width: 38vw;
   }
 }
 @media screen and (min-width: 1800px) {
@@ -2430,8 +2428,8 @@ th {
     width: 25vw;
   }
   .Section_carrousel .Carrou__article .categorie__article .content {
-    width: 44vw;
     margin-left: 1rem;
+    width: 44vw;
   }
   .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
     height: 20vw;
@@ -2441,16 +2439,16 @@ th {
     flex-direction: column;
   }
   .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu p, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu h5, .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu div {
-    margin: 0 auto;
-    width: 34vw;
     display: inline-block;
+    margin: 0 auto;
     vertical-align: middle;
+    width: 34vw;
   }
   .Section_carrousel .Carrou__article .categorie__article .content .contenant_contenu {
-    height: fit-content;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    display: flex;
+    height: fit-content;
+    justify-content: center;
   }
 }
 .temoignage {
@@ -2460,10 +2458,10 @@ th {
   width: 100%;
 }
 .temoignage h2 {
-  text-align: center;
-  padding-bottom: 8vw;
-  width: 80vw;
   margin: 0 auto;
+  padding-bottom: 8vw;
+  text-align: center;
+  width: 80vw;
 }
 .temoignage .temoignage__article {
   height: 135vw;
@@ -2472,11 +2470,11 @@ th {
   color: var(--blanc);
   display: flex;
   flex-direction: column;
+  gap: 5vw;
   height: 110vw;
   overflow: hidden;
   text-align: center;
   width: 75vw;
-  gap: 5vw;
 }
 .temoignage .categorie__article div {
   width: 100%;
@@ -2497,8 +2495,8 @@ th {
 }
 .temoignage .categorie__article .image_titre_date .contenant__image a img {
   height: 100%;
-  margin: 0;
   left: 0;
+  margin: 0;
   max-width: 100%;
   object-fit: cover;
   object-position: center center;
@@ -2514,10 +2512,10 @@ th {
   margin: auto;
 }
 .temoignage .categorie__article .image_titre_date .contenant__titre .conteneur_date {
-  font-size: 12px;
-  display: none;
-  gap: 0.3vw;
   align-items: center;
+  display: none;
+  font-size: 12px;
+  gap: 0.3vw;
   justify-content: center;
 }
 @media screen and (min-width: 450px) {
@@ -2528,10 +2526,10 @@ th {
 .temoignage .categorie__article .content {
   background-color: var(--simili-noir);
   border-radius: 1em;
-  overflow-x: hidden;
   height: 100%;
-  width: 75vw;
+  overflow-x: hidden;
   padding: 5%;
+  width: 75vw;
 }
 .temoignage .categorie__article .content .contenant_contenu {
   height: 90%;
@@ -2549,11 +2547,11 @@ th {
   }
   .temoignage .temoignage__article .categorie__article {
     border-radius: 0;
+    flex-direction: row;
+    gap: 0;
     height: 30vw;
     justify-content: space-between;
     width: 80vw;
-    flex-direction: row;
-    gap: 0;
   }
   .temoignage .temoignage__article .categorie__article .image_titre_date {
     border-radius: 2vw;
@@ -2563,30 +2561,30 @@ th {
   .temoignage .temoignage__article .categorie__article .content {
     border-radius: 2vw;
     display: block;
+    height: 100%;
+    margin: 0%;
+    overflow: hidden;
     position: relative;
     width: 44vw;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3vh;
     height: 25vw;
     justify-content: center;
-    top: 50%;
     left: 50%;
     margin: auto;
     overflow-y: auto;
     overflow-x: hidden;
     position: absolute;
     transform: translate(-50%, -50%);
+    top: 50%;
     width: fit-content;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu p, .temoignage .temoignage__article .categorie__article .content .contenant_contenu h5, .temoignage .temoignage__article .categorie__article .content .contenant_contenu div {
-    margin: 0 auto;
-    width: 38vw;
     display: inline-block;
+    margin: 0 auto;
+    padding: 0.5vw;
     vertical-align: middle;
+    width: 38vw;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu p:first-of-type {
     display: block;
@@ -2618,17 +2616,21 @@ th {
     height: 5vw;
   }
   .temoignage .temoignage__article .categorie__article .content {
-    width: 44vw;
     margin-left: 1rem;
+    width: 44vw;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vh;
     height: fit-content;
     line-height: normal;
   }
   .temoignage .temoignage__article .categorie__article .content .contenant_contenu p, .temoignage .temoignage__article .categorie__article .content .contenant_contenu h5, .temoignage .temoignage__article .categorie__article .content .contenant_contenu div {
-    margin: 0 auto;
-    width: 34vw;
     display: inline-block;
+    margin: 0 auto;
     vertical-align: middle;
+    width: 34vw;
   }
 }/*# sourceMappingURL=style.css.map */
