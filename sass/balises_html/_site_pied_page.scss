@@ -10,7 +10,7 @@
   min-height: 10vh;
   width: 100%;
 
-  .contenu_footer{
+  .contenu_footer{//tout les div du footer
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -18,20 +18,69 @@
     padding: 2em;
   }
 
-  .section_footer{
+  .section_footer{//div individuel du footer
     padding-top: 1.3em;
-  }
+
+    h4{
+      padding-bottom: 0.5em;
+    }
+  } 
 
   .section_footer_logo{
-    a{
+    figure{
       border-bottom: solid 2px var(--blanc);
+      min-width: 100px;
     }
   }
 
-}
+  #retour_haut,
+  #retour_haut.touche {
+      background-color: var(--complementaire);
+      border: solid 1px var(--simili-noir);
+      border-radius: 20px;
+      bottom: 40px;
+      color: #fff;
+      cursor: pointer;
+      display: none;
+      padding: 8px 2px;
+      position: fixed;
+      right: 8px;
+      transition: background-color 400ms, transform 400ms;
+  }
+  
+  #retour_haut:active,
+  #retour_haut:hover {
+      background-color: var(--primaire);
+      border: solid 1px var(--complementaire);
+      transform: scale(1.1);
+  }
 
+  .fleche_pointe_top {
+    opacity: 0.6;
+    padding: 0;
+    margin: 0;
+  }
+}
   /* ---------------------------------------------------------------------------
   menu tablet
+  ------------------------------------------------------------------------------ */
+ 
+  @media screen and (min-width : $largeur__tablette) {
+    #retour_haut,
+    #retour_haut.touche {
+      bottom: 60px;
+      padding: 14px 08px;
+      right: 20px;
+    }
+
+    .fleche_pointe_top {
+      transform: scale(1.1);
+    }
+  }
+ 
+  
+  /* ---------------------------------------------------------------------------
+  menu Bureau
   ------------------------------------------------------------------------------ */
   @media screen and (min-width : $largeur__bureau) {
 
@@ -46,13 +95,27 @@
       .section_footer{
         padding-left: 2em;
         padding-right: 2em;
-
-        h4{
-          margin-bottom: 0.3em;
-        }
       }
+
+      .section_footer_logo{
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .section_footer_logo:hover{
+        transform: scale(1.15);
+      }
+
+      }
+      #retour_haut,
+      #retour_haut.touche {
+        bottom: 60px;
+        padding: 16px 10px;
+        right: 24px;
+      }
+
+      .fleche_pointe_top {
+        transform: scale(1.2);
       }
     }
-
     
   } 

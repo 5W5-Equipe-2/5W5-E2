@@ -1,0 +1,197 @@
+.temoignage{ // section
+    background-color: var(--primaire);
+    padding-top: 8vw; // espacement haut
+    padding-bottom: 6vw; // espacement bas
+    width: 100%; // largeur
+    h2{ // le titre
+        margin: 0 auto;
+        padding-bottom: 8vw;
+        text-align: center;
+        width: 80vw;
+    }
+    .temoignage__article {
+        height: 135vw; //à enlever quand carrousel mis à jour sur le site
+    }
+    .categorie__article{ 
+    color: var(--blanc); // couleur texte blanc
+    display: flex;
+    flex-direction: column;
+    gap: 5vw;
+    height: 110vw;
+    overflow: hidden; // pour que les coin du haut reste courber
+    text-align: center; // Center le texte
+    width: 75vw;
+
+    div{
+      width: 100%;
+    }
+    // Les informations necessaires/importants -titre -image -Date
+    .image_titre_date{
+      background-color: var(--simili-noir);
+      border-radius: 1em;
+      height: 100%;
+      overflow: hidden; // pour garder les coins arrondis
+      width: 100%;
+
+      .contenant__image {
+        height: 75%;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        a img{
+          height: 100%;
+          left: 0;
+          margin: 0;
+          max-width: 100%;
+          object-fit: cover;
+          object-position: center center;
+          position: absolute;
+          width: 100%;
+        }
+      }
+     .contenant__titre{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 25%; // le full height (55vw) - l'hauteur de l'image ( 80% de 55 vw )
+        justify-content: center;
+        margin: auto;
+        .conteneur_date{
+          align-items: center;  
+          display: none;
+          font-size: 12px;
+          gap: 0.3vw;
+          justify-content: center;
+          @media screen and (min-width:450px){ // Début requête média Bureau
+            display: flex; 
+          }
+        }
+      }
+    }
+    // Les informations secondaires -Descriptions -additionnels -information de l'articles
+    .content{
+        background-color: var(--simili-noir);
+        border-radius: 1em;
+        height: 100%;
+        overflow-x: hidden;
+        padding: 5%;
+        width: 75vw;
+        .contenant_contenu{
+            height: 90%;
+        }
+    }
+  }
+}
+
+@media screen and (min-width:$largeur__tablette){
+    .temoignage{ // section
+        padding: 4vw 0;
+        h2{ // le titre
+            padding-bottom: 3vw;
+        }
+        .temoignage__article{
+            height: 40vw;
+            .categorie__article{ 
+                border-radius: 0; // on enleve l'arrondissement et on met au enfant
+                flex-direction: row;
+                gap: 0;
+                height: 30vw; // ajustement de l'hauteur
+                justify-content: space-between; // met un à cote de l'autre
+                width: 80vw; // ajustement de largeur
+                // Les informations necessaires/importants -titre -image -Date
+                .image_titre_date{
+                    border-radius: 2vw; // arrondis
+                    overflow: hidden; // pour garder les coins arrondis
+                    width: 35vw;
+                }
+                // Les informations secondaires -Descriptions -additionnels -information de l'articles
+                .content{ // contenant qui contient toutes les informations secondaires
+                    border-radius: 2vw; // arrondis
+                    display: block; // afficher le contenu
+                    // text-align: left; // pour que le texte s'affiche vers la gauche
+                    height: 100%;
+                    margin: 0%;
+                    overflow: hidden;
+                    position: relative; // necessaire pour centre le contenu
+                    width: 44vw; // grosseur
+
+                    .contenant_contenu{  // contenu
+                        // align-items: center;
+                        // display: flex;
+                        // flex-direction: column;
+                        // gap: 0.3vh;
+                        height: 25vw;
+                        justify-content: center;
+                        left: 50%; // necessaire pour centre le contenu
+                        margin: auto; // necessaire pour centre le contenu
+                        overflow-y: auto;
+                        overflow-x: hidden;
+                        position: absolute; // necessaire pour centre le contenu
+                        transform: translate(-50%, -50%); // necessaire pour centre le contenu
+                        top: 50%; // necessaire pour centre le contenu
+                        width: fit-content;
+                        
+                        p,h5,div{
+                            display: inline-block;
+                            margin: 0 auto; // centrer horizontal
+                            padding: 0.5vw;
+                            vertical-align: middle;
+                            width: 38vw; // largeur
+                        }
+                    }
+                    .contenant_contenu p:first-of-type{
+                        display: block;
+                    }
+                    @media screen and (min-width : 1400px){ //inscription pour bureau
+                        .contenant_contenu{  // contenu
+                            p,h5{
+                                display: block;
+                            }
+                            div{
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+        }   
+    }
+}   
+@media screen and (min-width:$largeur__bureau_large){
+    .temoignage{ // section
+        padding: 3vw 0;
+        .temoignage__article{
+            height: 27vw;
+            .categorie__article{ 
+                height: 20vw;
+                width: 65vw;
+                // Les informations necessaires/importants -titre -image -Date
+                .image_titre_date{
+                    width: 25vw;
+                    .contenant__titre{
+                        height: 5vw; // le full height - l'hauteur de l'image
+                    }
+                }
+                .content{
+                    margin-left: 1rem;
+                    width: 44vw;
+                    .contenant_contenu{  // contenu
+                        align-items: center;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.3vh;
+                        height: fit-content;
+                        line-height: normal;
+                        p,h5,div{
+                            display: inline-block;
+                            margin: 0 auto; // centrer horizontal
+                            vertical-align: middle;
+                            width: 34vw; // largeur
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

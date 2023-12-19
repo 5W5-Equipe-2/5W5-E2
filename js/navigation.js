@@ -1,124 +1,202 @@
 /**
- * File navigation.js.
+ *navigation.js.
  *
- * Handles toggling the navigation menu for small screens and enables TAB key
- * navigation support for dropdown menus.
+ *navigation header et projet
  */
- ( function() {
-	const siteNavigation = document.getElementById( 'site-navigation' );
-	//const siteBarreRecherche = document.getElementByClass( 'site__header__recherche' );
+(function () {
+  const siteNavigation = document.getElementById("site-navigation");
+  const NavigationProjet = document.getElementById("navigation-projet");
+  const nav_header_scroll = document.getElementsByClassName("main-navigation");
+  const nav_projet_scroll = document.getElementsByClassName("site__aside");
+  //const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
 
-	// Return early if the navigation don't exist.
-	if ( ! siteNavigation ) {
-		return;
-	}
+  const button = siteNavigation.getElementsByTagName("button")[0];
+  //const menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
 
-	const button = siteNavigation.getElementsByTagName( 'button' )[ 0 ];
+  // Toggle .toggled quand boutton est appuyé
+  button.addEventListener("click", function () {
+    siteNavigation.classList.toggle("toggled");
+    //nav_header.style.position = "fixed";
 
-	// Return early if the button don't exist.
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
+    if (siteNavigation.classList.contains("toggled")) {
+      for (let nav_header of nav_header_scroll) {
+        nav_header.style.position = "fixed";
+      }
+    } else {
+      for (let nav_header of nav_header_scroll) {
+        nav_header.style.position = "static";
+        NavigationProjet.classList.remove("toggled");
+        //nav_projet.style.position = "static";
+        for (let nav_projet of nav_projet_scroll) {
+          nav_projet.style.position = "static";
+        }
+      }
+    }
 
-	const menu = siteNavigation.getElementsByTagName( 'ul' )[ 0 ];
-
-	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
-		return;
-	}
-
-	if ( ! menu.classList.contains( 'nav-menu' ) ) {
-		menu.classList.add( 'nav-menu' );
-	}
-
-	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
-	button.addEventListener( 'click', function() {
-		siteNavigation.classList.toggle( 'toggled' );
-
-		if ( button.getAttribute( 'aria-expanded' ) === 'true' ) {
-			button.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			button.setAttribute( 'aria-expanded', 'true' );
-		}
-	} );
-
-	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
-	document.addEventListener( 'click', function( event ) {
-		const isClickInside = siteNavigation.contains( event.target );
-
-		if ( ! isClickInside ) {
+    /* if(siteNavigation.classList.contains('toggled') && mediaQueryCondition.matches){
 			siteNavigation.classList.remove( 'toggled' );
-			button.setAttribute( 'aria-expanded', 'false' );
-		}
-	} );
+			alert("Hello! I am an alert box!!");
+		} */
 
-	// Get all the link elements within the menu.
-	const links = menu.getElementsByTagName( 'a' );
+    //document.getElementsByClassName('site_entete').style.position="fixed";
 
-	// Get all the link elements with children within the menu.
-	const linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
-
-	// Toggle focus each time a menu link is focused or blurred.
-	for ( const link of links ) {
-		link.addEventListener( 'focus', toggleFocus, true );
-		link.addEventListener( 'blur', toggleFocus, true );
-	}
-
-	// Toggle focus each time a menu link with children receive a touch event.
-	for ( const link of linksWithChildren ) {
-		link.addEventListener( 'touchstart', toggleFocus, false );
-	//	link.addEventListener( 'mousedown', toggleFocus, false );
-	}
-
-	/**
-	 * Sets or removes .focus class on an element.
-	 */
-	function toggleFocus(event) {
-		if ( event.type === 'focus' || event.type === 'blur' ) {
-			let self = this;
-			// Move up through the ancestors of the current link until we hit .nav-menu.
-			while ( ! self.classList.contains( 'nav-menu' ) ) {
-				// On li elements toggle the class .focus.
-				if ( 'li' === self.tagName.toLowerCase() ) {
-					self.classList.toggle( 'focus' );
-				}
-				self = self.parentNode;
-			}
-		}
-
-		if ( event.type === 'touchstart'  ) {
-			const menuItem = this.parentNode;
-			event.preventDefault();
-			for ( const link of menuItem.parentNode.children ) {
-				if ( menuItem !== link ) {
-					link.classList.remove( 'focus' );
-				}
-			}
-			menuItem.classList.toggle( 'focus' );
-		}
-	}
-}() );
-
+    if (button.getAttribute("aria-expanded") === "true") {
+      button.setAttribute("aria-expanded", "false");
+    } else {
+      button.setAttribute("aria-expanded", "true");
+    }
+  });
+})();
 
 /* --------------------page projet---------------------------- */
 
-( function (){
-		const NavigationProjet = document.getElementById( 'navigation-projet' );
+(function () {
+  const NavigationProjet = document.getElementById("navigation-projet");
+  //let nav_projet_scroll = document.querySelectorAll('.site__aside');
+  const nav_projet_scroll = document.getElementsByClassName("site__aside");
+  const nav_header_scroll = document.getElementsByClassName("main-navigation");
+  //const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
 
-		if ( ! NavigationProjet ) {
-			return;
-		}
+  if (!NavigationProjet) {
+    return;
+  }
 
-		const button_projet = NavigationProjet.getElementsByTagName( 'button' )[ 0 ];
+  const button_projet = NavigationProjet.getElementsByTagName("button")[0];
 
-		button_projet.addEventListener( 'click', function() {
-			NavigationProjet.classList.toggle( 'toggled' );
+  button_projet.addEventListener("click", function () {
+    NavigationProjet.classList.toggle("toggled");
+    //nav_projet_scroll.style.position = "fixed";
+
+    if (NavigationProjet.classList.contains("toggled")) {
+      for (let nav_projet of nav_projet_scroll) {
+        nav_projet.style.position = "fixed";
+        nav_projet.style.top = "var(--hauteurHeader)"; // !!!----hauteur du header----!!!
+      }
+      for (let nav_header of nav_header_scroll) {
+        nav_header.style.position = "fixed";
+      }
+    } else {
+      for (let nav_projet of nav_projet_scroll) {
+        nav_projet.style.position = "static";
+      }
+      for (let nav_header of nav_header_scroll) {
+        nav_header.style.position = "static";
+      }
+    }
+
+    if (button_projet.getAttribute("aria-expanded") === "true") {
+      button_projet.setAttribute("aria-expanded", "false");
+    } else {
+      button_projet.setAttribute("aria-expanded", "true");
+    }
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    let menuItems = document.querySelectorAll(".sub-menu li");
+    let subMenu = document.querySelector(".sub-menu");
+    let storedSubMenuLink = sessionStorage.getItem("subMenuLink");
+    let storedLinkColor = sessionStorage.getItem("linkId");
+    let lienActif = document.getElementById(storedLinkColor);
+
+    // Vérifier si subMenu existe avant de manipuler ses propriétés
+    if (subMenu) {
+      let isSubMenuOpen = storedSubMenuLink === window.location.href;
+
+      // condition si isSubMenuOpen est vrai ou pas
+      if (isSubMenuOpen) {
+        // Ajoute la classe open à sub-menu pour garder le menu ouvert
+        subMenu.classList.add("open");
+      } else {
+        subMenu.classList.remove("open");
+      }
+    }
+
+    // Vérifier si lienActif existe avant de manipuler ses propriétés
+    if (lienActif) {
+      // Vérifier si linkId est le même que subMenuLink
+      if (window.location.href === storedSubMenuLink) {
+        lienActif.classList.add("lienActif");
+      } else {
+        lienActif.classList.remove("lienActif");
+      }
+    }
+
+    menuItems.forEach(function (menuItem) {
+      menuItem.addEventListener("click", function (event) {
+        // Get the href attribute of the clicked link
+        let linkHref = event.currentTarget
+          .querySelector("a")
+          .getAttribute("href");
+        let linkId = event.currentTarget.id;
+
+        // Store the link's href in sessionStorage
+        sessionStorage.setItem("subMenuLink", linkHref);
+
+        // Store the clicked element in sessionStorage
+        sessionStorage.setItem("linkId", linkId);
+      });
+    });
+  });
+})();
+/*---------------fermer les menu burger quand on est en version bureau-----------------*/
+(function () {
+  /* let largeur = screen.width;
+	const NavigationProjet = document.getElementById( 'navigation-projet' );
+	const siteNavigation = document.getElementById( 'site-navigation' );
 	
-			if ( button_projet.getAttribute( 'aria-expanded' ) === 'true' ) {
-				button_projet.setAttribute( 'aria-expanded', 'false' );
-			} else {
-				button_projet.setAttribute( 'aria-expanded', 'true' );
-			}
-		} );
-}() );
+	if(siteNavigation.classList.contains('toggled') && largeur >= 992){
+		NavigationProjet.classList.remove( 'toggled' );
+	} */
+  /* const mediaQueryCondition = window.matchMedia( '( min-width: $largeur__bureau )' );
+	const NavigationProjet = document.getElementById( 'navigation-projet' );
+	const siteNavigation = document.getElementById( 'site-navigation' );
+
+	if ( NavigationProjet.classList.contains('toggled') && mediaQueryCondition.matches ) {
+		NavigationProjet.classList.remove( 'toggled' );
+	}
+
+	if(siteNavigation.classList.contains('toggled') && mediaQueryCondition.matches){
+		siteNavigation.classList.remove( 'toggled' );
+	} */
+})();
+
+// Define a media query string
+var mediaQuery = window.matchMedia("(min-width: 992px)");
+const NavigationProjet = document.getElementById("navigation-projet");
+const siteNavigation = document.getElementById("site-navigation");
+const nav_header_scroll = document.getElementsByClassName("main-navigation");
+const nav_projet_scroll = document.getElementsByClassName("site__aside");
+
+// Check if the media query matches
+/* if (mediaQuery.matches) {
+    // The screen width is 600 pixels or less
+    console.log('Media query matched!');
+} else {
+    // The screen width is greater than 600 pixels
+    console.log('Media query did not match.');
+} */
+
+// You can also add an event listener to respond to changes in the media query
+mediaQuery.addListener(function (event) {
+  if (event.matches && siteNavigation.classList.contains("toggled")) {
+    console.log("Media query matched!");
+
+    siteNavigation.classList.remove("toggled");
+    for (let nav_header of nav_header_scroll) {
+      nav_header.style.position = "static";
+    }
+  } else if (event.matches && NavigationProjet.classList.contains("toggled")) {
+    console.log("Media query matched! but projet");
+
+    NavigationProjet.classList.remove("toggled");
+    for (let nav_projet of nav_projet_scroll) {
+      nav_projet.style.position = "static";
+      nav_projet.style.top = "0";
+    }
+    for (let nav_header of nav_header_scroll) {
+      nav_header.style.position = "static";
+    }
+  } else {
+    console.log("Media query did not match.");
+  }
+});

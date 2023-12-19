@@ -9,7 +9,6 @@
 $categorie = get_queried_object();
 $args = array(
   'category_name' => 'projets',
-  /* 'category_name' => 'projets,cours', */
   'orderby' => 'rand', // Ordre aléatoire
   'post_type' => 'post',
   'posts_per_page' => -1,
@@ -22,7 +21,7 @@ $query = new WP_Query($args);
 <!-- Entête    *** -->
 <?php get_header(); ?>
 
-<!-- Aside    ***  -->
+<!-- On charge le menu Aside   ***  -->
 <?php
 if (!is_front_page() && (!is_admin())) {
   get_template_part("template-parts/aside");
@@ -46,9 +45,7 @@ if (!is_front_page() && (!is_admin())) {
     else :
       echo 'Aucun article trouvé.';
     endif;
-
     ?>
   </section>
-
 </main>
 <?php get_footer(); ?>
